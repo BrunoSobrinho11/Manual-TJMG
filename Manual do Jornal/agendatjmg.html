@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TJMG - Agenda Telefônica</title>
+<style>
+  /* Reset básico */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc;
+    color: #0f3057;
+  }
+  /* Header azul escuro */
+  header {
+    background-color: #204d82;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header .branding {
+    display: flex;
+    align-items: center;
+  }
+  /* Ícone da balança (usando SVG inline) */
+  .icon-scale {
+    width: 24px;
+    height: 24px;
+    fill: white;
+    margin-right: 10px;
+  }
+  header h1 {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+  header small {
+    margin-left: 10px;
+    font-weight: 400;
+    font-size: 0.875rem;
+  }
+  /* Data atualização com ícone */
+  .update-info {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+  }
+  .update-info svg {
+    fill: white;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+  }
+  /* Container do conteúdo */
+  main {
+    max-width: 760px;
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+  /* Search box */
+  .search-box {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgb(15 48 87 / 0.1);
+    margin-bottom: 30px;
+  }
+  .search-box h2 {
+    color: #204d82;
+    margin: 0 0 15px 0;
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .search-box h2 svg {
+    fill: #204d82;
+    width: 20px;
+    height: 20px;
+  }
+  input[type="search"] {
+    width: 100%;
+    padding: 12px 18px;
+    font-size: 1rem;
+    border-radius: 25px;
+    border: 2px solid #204d82;
+    outline-color: #204d82;
+  }
+  /* Tabela */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 10px rgb(15 48 87 / 0.1);
+  }
+  thead {
+    background-color: #204d82;
+    color: white;
+  }
+  th, td {
+    text-align: left;
+    padding: 14px 18px;
+    font-weight: 400;
+  }
+  th {
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #f2f6fb;
+  }
+  /* Link copiar */
+  .copy-link {
+    color: #204d82;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .copy-link svg {
+    fill: #204d82;
+    width: 16px;
+    height: 16px;
+  }
+  .copy-link:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="branding">
+    <svg class="icon-scale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M32 2L24 22H12a2 2 0 100 4h2.51l-9.35 15.52a1.98 1.98 0 100 1.96L14.5 62a2 2 0 103.5-2L18.92 54h26.16l.92 6a2 2 0 103.5 2L60.35 45.5a2 2 0 100-1.96L51 27.53H53a2 2 0 100-4h-12l-8-20zm-6.43 20h8.86l2.36 6H23.21l2.36-6zM25.69 42h12.62L40 46H24l1.69-4z"/></svg>
+    <h1>TJMG <small>Agenda Telefônica</small></h1>
+  </div>
+  <div class="update-info">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10A10.011 10.011 0 0012 2zm.25 5v6l5.25 3.15-.75 1.23L11 13V7z"/></svg>
+    Atualizado em: 2020
+  </div>
+</header>
+<main>
+  <div class="search-box">
+    <h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.71 20.29l-3.388-3.388A7.956 7.956 0 0016 10a8 8 0 10-8 8 7.956 7.956 0 006.902-4.678l3.388 3.388a1 1 0 001.414-1.414zM4 10a6 6 0 1112 0 6 6 0 01-12 0z"/></svg>
+      Localizar Comarca
+    </h2>
+    <input type="search" placeholder="Digite o nome da comarca ou telefone..." id="search" />
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Comarca</th>
+        <th>Telefone</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+      <tr>
+        <td>ABAETÉ</td>
+        <td><strong>*4300</strong> (37) 3541-1800 / (37) 3541-1797</td>
+        <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4300 (37) 3541-1800 / (37) 3541-1797')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+      </tr>
+      <tr>
+        <td>ABRE CAMPO</td>
+        <td><strong>*4301</strong> (31) 3872-1243 / (31) 3872-1177</td>
+        <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4301 (31) 3872-1243 / (31) 3872-1177')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+      </tr>
+      <tr>
+  <td>AÇUCENA</td>
+  <td><strong>*4302</strong> (33) 3298-1195 / 3298-1147</td>
+  <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4302 (33) 3298-1195 / 3298-1147')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+</tr>
+<tr>
+  <td>ÁGUAS FORMOSAS</td>
+  <td><strong>*4303</strong> (33) 3611-3500</td>
+  <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4303 (33) 3611-3500')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+</tr>
+<tr>
+  <td>AIMORÉS</td>
+  <td><strong>*4304</strong> (33) 3267-1728 / 3267-1938</td>
+  <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4304 (33) 3267-1728 / 3267-1938')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+</tr>
+<tr>
+  <td>AIURUOCA</td>
+  <td><strong>*4305</strong> (35) 3344-1308 / 3344-1504</td>
+  <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4305 (35) 3344-1308 / 3344-1504')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+</tr>
+<tr>
+  <td>ALÉM PARAÍBA</td>
+  <td><strong>*4306</strong> (32) 3462-6603 / 3462-6588</td>
+  <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4306 (32) 3462-6603 / 3462-6588')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+</tr>
+<tr>
+  <td>ALFENAS</td>
+  <td><strong>*4307</strong> (35) 3701-1550 / 3292-5407</td>
+  <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4307 (35) 3701-1550 / 3292-5407')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+</tr>
+<tr>
+  <td>ALMENARA</td>
+  <td><strong>*4308</strong> (33) 3721-9550</td>
+  <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4308 (33) 3721-9550')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+</tr>
+<tr>
+  <td>Juizado Especial (ALMENARA)</td>
+  <td><strong>*4672</strong> (33) 3721-1537</td>
+  <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4672 (33) 3721-1537')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+</tr>
+<tr>
+  <td>ALPINÓPOLIS</td>
+  <td><strong>*4309</strong> (35) 3523-1385</td>
+  <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4309 (35) 3523-1385')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+</tr>
+<tr>
+  <td>ALTO RIO DOCE</td>
+  <td><strong>*4310</strong> (32) 3345-1277 / 3345-1478</td>
+  <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4310 (32) 3345-1277 / 3345-1478')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+</tr>
+<tr>
+  <td>ALVINÓPOLIS</td>
+  <td><strong>*4311</strong> (31) 3855-1434</td>
+  <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4311 (31) 3855-1434')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+</tr>
+<tr>
+  <td>ANDRADAS</td>
+  <td><strong>*4312</strong> (35) 3731-1319 / 3731-4502</td>
+  <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4312 (35) 3731-1319 / 3731-4502')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+</tr>
+<tr>
+  <td>ANDRELÂNDIA</td>
+  <td><strong>*4313</strong> (35) 3325-1690 / 3325-1691</td>
+  <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4313 (35) 3325-1690 / 3325-1691')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+</tr>
+<tr>
+  <td>ARAÇUAÍ</td>
+  <td><strong>*4314</strong> (33) 3731-1797 / 3731-1994</td>
+  <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4314 (33) 3731-1797 / 3731-1994')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+</tr>
+<tr>
+  <td>ARAGUARI</td>
+  <td><strong>*4315</strong> (34) 3242-6464 / 3242-7676</td>
+  <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4315 (34) 3242-6464 / 3242-7676')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+</tr>
+<tr>
+  <td>Juizado Especial (ARAGUARI)</td>
+  <td><strong>*4600</strong> (34) 3242-8249</td>
+  <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4600 (34) 3242-8249')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+</tr>
+<tr>
+  <td>ARAXÁ</td>
+  <td><strong>*4316</strong> (34) 3669-5600</td>
+  <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4316 (34) 3669-5600')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+</tr>
+<tr>
+  <td>Juizado Especial (ARAXÁ)</td>
+  <td><strong>*4632</strong> (34) 3662-8621</td>
+  <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4632 (34) 3662-8621')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+</tr>
+<tr>
+    <td>ARCOS</td>
+    <td><strong>*4317</strong> (37) 3351-3571 / 3351-1939</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4317 (37) 3351-3571 / 3351-1939')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>AREADO</td>
+    <td><strong>*4318</strong> (35) 3293-1494</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4318 (35) 3293-1494')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ARINOS</td>
+    <td><strong>*4319</strong> (38) 3635-1632 / 3635-1460</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4319 (38) 3635-1632 / 3635-1460')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BAEPENDI</td>
+    <td><strong>*4320</strong> (35) 3343-2022</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4320 (35) 3343-2022')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BAMBUÍ</td>
+    <td><strong>*4321</strong> (37) 3431-1534</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4321 (37) 3431-1534')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BARÃO DE COCAIS</td>
+    <td><strong>*4322</strong> (31) 3837-2933</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4322 (31) 3837-2933')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BARBACENA</td>
+    <td><strong>*4323</strong> (32) 3339-5000</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4323 (32) 3339-5000')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (BARBACENA)</td>
+    <td><strong>*4601</strong> (32) 3333-7908</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4601 (32) 3333-7908')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BARROSO</td>
+    <td><strong>*4586</strong> (32) 3351-1648 / 3351-1416</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4586 (32) 3351-1648 / 3351-1416')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BELO HORIZONTE</td>
+    <td><strong>2000</strong> (31) 3330-2000</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '2000 (31) 3330-2000')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BELO VALE</td>
+    <td><strong>*4324</strong> (31) 3734-1342</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4324 (31) 3734-1342')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BETIM</td>
+    <td><strong>*4325</strong> (31) 3512-1700</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4325 (31) 3512-1700')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (BETIM)</td>
+    <td><strong>*4602</strong> (31) 3529-1350</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4602 (31) 3529-1350')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BICAS</td>
+    <td><strong>*4327</strong> (32) 3271-1274 / 3271-2740</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4327 (32) 3271-1274 / 3271-2740')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BOA ESPERANÇA</td>
+    <td><strong>*4328</strong> (35) 3851-2000 / 3851-2361</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4328 (35) 3851-2000 / 3851-2361')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BOCAIÚVA</td>
+    <td><strong>*4329</strong> (38) 3251-9400 / 3251-1093</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4329 (38) 3251-9400 / 3251-1093')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BOM DESPACHO</td>
+    <td><strong>*4330</strong> (37) 3521-1986</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4330 (37) 3521-1986')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BOM SUCESSO</td>
+    <td><strong>*4331</strong> (35) 3841-1247</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4331 (35) 3841-1247')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BONFIM</td>
+    <td><strong>*4332</strong> (31) 3576-1238 / 3576-1415</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4332 (31) 3576-1238 / 3576-1415')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BONFINÓPOLIS DE MINAS</td>
+    <td><strong>*4333</strong> (38) 3675-1710 / 3675-1312</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4333 (38) 3675-1710 / 3675-1312')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BORDA DA MATA</td>
+    <td><strong>*4334</strong> (35) 3445-1669</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4334 (35) 3445-1669')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BOTELHOS</td>
+    <td><strong>*4335</strong> (35) 3741-1287 / 3741-2169</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4335 (35) 3741-1287 / 3741-2169')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BRASÍLIA DE MINAS</td>
+    <td><strong>*4336</strong> (38) 3231-1312</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4336 (38) 3231-1312')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BRASÓPOLIS</td>
+    <td><strong>*4337</strong> (35) 3641-1036</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4337 (35) 3641-1036')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BRUMADINHO</td>
+    <td><strong>*4338</strong> (31) 3571-2122 / 3571-1176</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4338 (31) 3571-2122 / 3571-1176')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BUENO BRANDÃO</td>
+    <td><strong>*4339</strong> (35) 3463-1221 / 3463-1146</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4339 (35) 3463-1221 / 3463-1146')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BUENÓPOLIS</td>
+    <td><strong>*4340</strong> (38) 3756-4000 / 3756-1355</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4340 (38) 3756-4000 / 3756-1355')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>BURITIS</td>
+    <td><strong>*4343</strong> (38) 3662-3922</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4343 (38) 3662-3922')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CABO VERDE</td>
+    <td><strong>*4344</strong> (35) 3736-1376</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4344 (35) 3736-1376')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>COROMANDEL</td>
+    <td><strong>*4382</strong> (34) 3841-2963 / 3841-1680</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4382 (34) 3841-2963 / 3841-1680')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CORONEL FABRICIANO</td>
+    <td><strong>*4383</strong> (31) 3865-2200</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4383 (31) 3865-2200')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CRISTINA</td>
+    <td><strong>*4384</strong> (35) 3281-1200</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4384 (35) 3281-1200')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CRUZÍLIA</td>
+    <td><strong>*4648</strong> (35) 3346-1660 / 3346-2982</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4648 (35) 3346-1660 / 3346-2982')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CURVELO</td>
+    <td><strong>*4385</strong> (38) 3721-2940 / 3721-1515</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4385 (38) 3721-2940 / 3721-1515')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>DIAMANTINA</td>
+    <td><strong>*4386</strong> (38) 3531-1628 / 3531-1647</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4386 (38) 3531-1628 / 3531-1647')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (DIAMANTINA)</td>
+    <td><strong>*4652</strong> (38) 3531-1996</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4652 (38) 3531-1996')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>DIVINO</td>
+    <td><strong>*4387</strong> (32) 3743-1548 / 3743-1549</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4387 (32) 3743-1548 / 3743-1549')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>DIVINÓPOLIS</td>
+    <td><strong>*4388</strong> (37) 3216-6200</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4388 (37) 3216-6200')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (DIVINÓPOLIS)</td>
+    <td><strong>*4388</strong> (37) 3216-6400</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4388 (37) 3216-6400')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Varas da Faz. Estadual / Municipal (DIVINÓPOLIS)</td>
+    <td><strong>*4388</strong> (37) 3213-2212</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4388 (37) 3213-2212')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>DORES DO INDAIÁ</td>
+    <td><strong>*4389</strong> (37) 3551-1490 / 3551-1020</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4389 (37) 3551-1490 / 3551-1020')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ELÓI MENDES</td>
+    <td><strong>*4390</strong> (35) 3264-1103 / 3264-2144</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4390 (35) 3264-1103 / 3264-2144')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ENTRE RIOS DE MINAS</td>
+    <td><strong>*4391</strong> (31) 3751-1397 / 3751-1830</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4391 (31) 3751-1397 / 3751-1830')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ERVÁLIA</td>
+    <td><strong>*4392</strong> (32) 3554-1389 / 3554-1569</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4392 (32) 3554-1389 / 3554-1569')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ESMERALDAS</td>
+    <td><strong>*4393</strong> (31) 3538-1010 / 3538-1436</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4393 (31) 3538-1010 / 3538-1436')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ESPERA FELIZ</td>
+    <td><strong>*4394</strong> (32) 3746-1571 / 3746-1341</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4394 (32) 3746-1571 / 3746-1341')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ESPINOSA</td>
+    <td><strong>*4395</strong> (38) 3812-1666</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4395 (38) 3812-1666')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ESTRELA DO SUL</td>
+    <td><strong>*4396</strong> (34) 3843-1397 / 3843-1328</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4396 (34) 3843-1397 / 3843-1328')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>EUGENÓPOLIS</td>
+    <td><strong>*4397</strong> (32) 3724-1058</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4397 (32) 3724-1058')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>EXTREMA</td>
+    <td><strong>*4398</strong> (35) 3435-1499 / 3435-1109</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4398 (35) 3435-1499 / 3435-1109')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>FERROS</td>
+    <td><strong>*4399</strong> (31) 3863-1360</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4399 (31) 3863-1360')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>FORMIGA</td>
+    <td><strong>*4400</strong> (37) 3322-1192 / 3322-2199</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4400 (37) 3322-1192 / 3322-2199')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>FRANCISCO SÁ</td>
+    <td><strong>*4401</strong> (38) 3233-1470 / 3233-1185</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4401 (38) 3233-1470 / 3233-1185')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>FRUTAL</td>
+    <td><strong>*4402</strong> (34) 3429-8600</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4402 (34) 3429-8600')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>GALILÉIA</td>
+    <td><strong>*4403</strong> (33) 3244-1370</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4403 (33) 3244-1370')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>GOVERNADOR VALADARES</td>
+    <td><strong>*4404</strong> (33) 3279-5800</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4404 (33) 3279-5800')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (GOVERNADOR VALADARES)</td>
+    <td><strong>*4671</strong> (33) 3278-1866</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4671 (33) 3278-1866')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>GRÃO MOGOL</td>
+    <td><strong>*4405</strong> (38) 3238-1198 / 3238-1186</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4405 (38) 3238-1198 / 3238-1186')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>GUANHÃES</td>
+    <td><strong>*4406</strong> (33) 3421-1816 / 3421-1523</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4406 (33) 3421-1816 / 3421-1523')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>GUAPÉ</td>
+    <td><strong>*4407</strong> (35)3856-1531/3856-1193</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4407 (35) 3856-1531 / 3856-1193')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>GUARANÉSIA</td>
+    <td><strong>*4408</strong> (35) 3555-1540</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4408 (35) 3555-1540')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>GUARANI</td>
+    <td><strong>*4409</strong> (32) 3575-1623</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4409 (32) 3575-1623')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>GUAXUPÉ</td>
+    <td><strong>*4410</strong> (35) 3552-4600</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4410 (35) 3552-4600')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>IBIÁ</td>
+    <td><strong>*4411</strong> (34) 3631-1011 / 3631-1375</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4411 (34) 3631-1011 / 3631-1375')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>IBIRACI</td>
+    <td><strong>*4412</strong> (35) 3544-1270 / 3544-1100</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4412 (35) 3544-1270 / 3544-1100')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>IBIRITÉ</td>
+    <td><strong>*4413</strong> (31) 3533-1997 / 3533-1555</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4413 (31) 3533-1997 / 3533-1555')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (IBIRITÉ)</td>
+    <td><strong>*4656</strong> (31) 3598-6555</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4656 (31) 3598-6555')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>IGARAPÉ</td>
+    <td><strong>*4414</strong> (31) 3534-2250 / 3534-2240</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4414 (31) 3534-2250 / 3534-2240')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>IGUATAMA</td>
+    <td><strong>*4415</strong> (37) 3353-2310</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4415 (37) 3353-2310')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>INHAPIM</td>
+    <td><strong>*4416</strong> (33) 3315-3350</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4416 (33) 3315-3350')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>IPANEMA</td>
+    <td><strong>*4417</strong> (33) 3314-1457</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4417 (33) 3314-1457')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>IPATINGA</td>
+    <td><strong>*4418</strong> (31) 3828-6500</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4418 (31) 3828-6500')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (IPATINGA)</td>
+    <td><strong>*4607</strong> (31) 3822-3889</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4607 (31) 3822-3889')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ITABIRA</td>
+    <td><strong>*4419</strong> (31) 3835-8700 / Fax-8708</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4419 (31) 3835-8700 / Fax-8708')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ITABIRITO</td>
+    <td><strong>*4420</strong> (31) 3561-1692 / 3562-4600</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4420 (31) 3561-1692 / 3562-4600')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ITAGUARA</td>
+    <td><strong>*4342</strong> (31) 3184-0000</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4342 (31) 3184-0000')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ITAJUBÁ / Fórum Cível</td>
+    <td><strong>*4635</strong> (35) 3622-6784 / 3622-6785</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4635 (35) 3622-6784 / 3622-6785')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ITAJUBÁ / Fórum Criminal</td>
+    <td><strong>*4421</strong> (35) 3629-8850 / 3622-2500</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4421 (35) 3629-8850 / 3622-2500')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MANHUMIRIM</td>
+    <td><strong>*4455</strong> (33) 3341-1007 / 3341-2191</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4455 (33) 3341-1007 / 3341-2191')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MANTENA</td>
+    <td><strong>*4456</strong> (33) 3241-1104 / 3241-2320</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4456 (33) 3241-1104 / 3241-2320')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MAR DE ESPANHA</td>
+    <td><strong>*4457</strong> (32) 3276-1315</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4457 (32) 3276-1315')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MARIANA</td>
+    <td><strong>*4458</strong> (31) 3557-1517 / 3557-2162</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4458 (31) 3557-1517 / 3557-2162')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (MARIANA)</td>
+    <td><strong>*4651</strong> (31) 3557-2558</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4651 (31) 3557-2558')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MARTINHO CAMPOS</td>
+    <td><strong>*4664</strong> (37) 3524-1676 / 3524-2649</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4664 (37) 3524-1676 / 3524-2649')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MATEUS LEME</td>
+    <td><strong>*4459</strong> (31) 3535-1500 / 3535-2779</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4459 (31) 3535-1500 / 3535-2779')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (MATEUS LEME)</td>
+    <td><strong>*4642</strong> (31) 3535-1712</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4642 (31) 3535-1712')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MATIAS BARBOSA</td>
+    <td><strong>*4460</strong> (32) 3273-1681 / 3273-1034</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4460 (32) 3273-1681 / 3273-1034')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MATOZINHOS</td>
+    <td><strong>*4461</strong> (31) 3712-3915 / 3712-5697</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4461 (31) 3712-3915 / 3712-5697')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (MATOZINHOS)</td>
+    <td><strong>*4686</strong> (31) 3712-7021</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4686 (31) 3712-7021')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MEDINA</td>
+    <td><strong>*4462</strong> (33) 3753-1275 / 3753-1366</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4462 (33) 3753-1275 / 3753-1366')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MERCÊS</td>
+    <td><strong>*4463</strong> (32) 3337-1573 / 3337-1141</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4463 (32) 3337-1573 / 3337-1141')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MESQUITA</td>
+    <td><strong>*4464</strong> (33) 3251-1314</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4464 (33) 3251-1314')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MINAS NOVAS</td>
+    <td><strong>*4465</strong> (33) 3764-1136</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4465 (33) 3764-1136')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MIRADOURO</td>
+    <td><strong>*4466</strong> (32) 3753-1125 / 3753-1096</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4466 (32) 3753-1125 / 3753-1096')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MIRAÍ</td>
+    <td><strong>*4467</strong> (32) 3426-1209</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4467 (32) 3426-1209')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MONTALVÂNIA</td>
+    <td><strong>*4468</strong> (38) 3614-1122 / 3614-1100</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4468 (38) 3614-1122 / 3614-1100')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MONTE ALEGRE DE MINAS</td>
+    <td><strong>*4469</strong> (34) 3283-1953</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4469 (34) 3283-1953')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MONTE AZUL</td>
+    <td><strong>*4470</strong> (38) 3811-1001 / 3811-1517</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4470 (38) 3811-1001 / 3811-1517')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MONTE BELO</td>
+    <td><strong>*4471</strong> (35) 3573-1132 / 3573-1480</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4471 (35) 3573-1132 / 3573-1480')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MONTE CARMELO</td>
+    <td><strong>*4472</strong> (34) 3842-1433</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4472 (34) 3842-1433')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MONTE SANTO DE MINAS</td>
+    <td><strong>*4473</strong> (35) 3591-1156 / 3591-2551</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4473 (35) 3591-1156 / 3591-2551')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MONTE SIÃO</td>
+    <td><strong>*4474</strong> (35) 3465-1017 / 3465-1615</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4474 (35) 3465-1017 / 3465-1615')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MONTES CLAROS</td>
+    <td><strong>*4475</strong> (38) 3229-1300</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4475 (38) 3229-1300')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (MONTES CLAROS)</td>
+    <td><strong>*4610</strong> (38) 3221-5734</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4610 (38) 3221-5734')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MINAS NOVAS</td>
+    <td><strong>*4465</strong> (33) 3764-1136</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4465 (33) 3764-1136')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MIRADOURO</td>
+    <td><strong>*4466</strong> (32) 3753-1125 / 3753-1096</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4466 (32) 3753-1125 / 3753-1096')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MIRAÍ</td>
+    <td><strong>*4467</strong> (32) 3426-1209</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4467 (32) 3426-1209')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MONTALVÂNIA</td>
+    <td><strong>*4468</strong> (38) 3614-1122 / 3614-1100</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4468 (38) 3614-1122 / 3614-1100')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MONTE ALEGRE DE MINAS</td>
+    <td><strong>*4469</strong> (34) 3283-1953</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4469 (34) 3283-1953')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MONTE AZUL</td>
+    <td><strong>*4470</strong> (38) 3811-1001 / 3811-1517</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4470 (38) 3811-1001 / 3811-1517')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MONTE BELO</td>
+    <td><strong>*4471</strong> (35) 3573-1132 / 3573-1480</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4471 (35) 3573-1132 / 3573-1480')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MONTE CARMELO</td>
+    <td><strong>*4472</strong> (34) 3842-1433</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4472 (34) 3842-1433')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MONTE SANTO DE MINAS</td>
+    <td><strong>*4473</strong> (35) 3591-1156 / 3591-2551</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4473 (35) 3591-1156 / 3591-2551')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MONTE SIÃO</td>
+    <td><strong>*4474</strong> (35) 3465-1017 / 3465-1615</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4474 (35) 3465-1017 / 3465-1615')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MONTES CLAROS</td>
+    <td><strong>*4475</strong> (38) 3229-1300</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4475 (38) 3229-1300')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (MONTES CLAROS)</td>
+    <td><strong>*4610</strong> (38) 3221-5734</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4610 (38) 3221-5734')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Núcleo Regional de Saúde</td>
+    <td><strong>*4610</strong> (38) 3221-5734</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4610 (38) 3221-5734')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MORADA NOVA DE MINAS</td>
+    <td><strong>*4476</strong> (37) 3755-1286</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4476 (37) 3755-1286')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MURIAÉ</td>
+    <td><strong>*4477</strong> (32) 3729-3100 / 3729-3146</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4477 (32) 3729-3100 / 3729-3146')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (MURIAÉ)</td>
+    <td> (32) 3729-3143</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '(32) 3729-3143')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MUTUM</td>
+    <td><strong>*4478</strong> (33) 3312-1333</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4478 (33) 3312-1333')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MUZAMBINHO</td>
+    <td><strong>*4479</strong> (35) 3571-2288 / 3571-1083</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4479 (35) 3571-2288 / 3571-1083')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>NANUQUE</td>
+    <td><strong>*4480</strong> (33) 3621-4184 / 3621-4382</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4480 (33) 3621-4184 / 3621-4382')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>NATÉRCIA</td>
+    <td><strong>*4481</strong> (35) 3456-1383</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4481 (35) 3456-1383')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>NEPOMUCENO</td>
+    <td><strong>*4482</strong> (35) 3861-3474 / 3861-3106</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4482 (35) 3861-3474 / 3861-3106')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>NOVA ERA</td>
+    <td><strong>*4483</strong> (31) 3861-1865 / 3861-1482</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4483 (31) 3861-1865 / 3861-1482')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>NOVA LIMA</td>
+    <td><strong>*4484</strong> (31) 3589-3250 / 3589-3262</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4484 (31) 3589-3250 / 3589-3262')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (NOVA LIMA)</td>
+    <td><strong>*4634</strong> (31) 3542-6395 / 3542-5787</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4634 (31) 3542-6395 / 3542-5787')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>NOVA PONTE</td>
+    <td><strong>*4649</strong> (34) 3356-1474 / 3356-1475</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4649 (34) 3356-1474 / 3356-1475')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>NOVA RESENDE</td>
+    <td><strong>*4485</strong> (35) 3562-1100</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4485 (35) 3562-1100')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>NOVA SERRANA</td>
+    <td><strong>*4486</strong> (37) 3228-1500</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4486 (37) 3228-1500')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>NOVO CRUZEIRO</td>
+    <td><strong>*4487</strong> (33) 3533-1296 / 3533-1397</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4487 (33) 3533-1296 / 3533-1397')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>OLIVEIRA</td>
+    <td><strong>*4488</strong> (37) 3331-8139</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4488 (37) 3331-8139')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>OURO BRANCO</td>
+    <td><strong>*4489</strong> (31) 3741-1231</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4489 (31) 3741-1231')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>OURO FINO</td>
+    <td><strong>*4490</strong> (35) 3441-9250 / 3441-1163</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4490 (35) 3441-9250 / 3441-1163')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>OURO PRETO / Cível</td>
+    <td><strong>*4491</strong> (31) 3552-7100</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4491 (31) 3552-7100')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>OURO PRETO / Criminal</td>
+    <td><strong>*4637</strong> (31) 3551-3547 / 3551-0401</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4637 (31) 3551-3547 / 3551-0401')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (OURO PRETO)</td>
+    <td><strong>*4454</strong> (33) 3331-4509</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4454 (33) 3331-4509')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>RIO NOVO</td>
+    <td><strong>*4530</strong> (32) 3274-1120</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4530 (32) 3274-1120')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>RIO PARDO DE MINAS</td>
+    <td><strong>*4532</strong> (38) 3824-1133 / 3824-1314</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4532 (38) 3824-1133 / 3824-1314')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>RIO PIRACICABA</td>
+    <td><strong>*4533</strong> (31) 3854-1565 / 3854-1231</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4533 (31) 3854-1565 / 3854-1231')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>RIO POMBA</td>
+    <td><strong>*4534</strong> (32) 3571-1333</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4534 (32) 3571-1333')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>RIO PRETO</td>
+    <td><strong>*4535</strong> (32) 3283-1120 / 3283-1459</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4535 (32) 3283-1120 / 3283-1459')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>RIO VERMELHO</td>
+    <td><strong>*4536</strong> (33) 3436-1248</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4536 (33) 3436-1248')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SABARÁ</td>
+    <td><strong>*4537</strong> (31) 3671-1247 / 3671-2857</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4537 (31) 3671-1247 / 3671-2857')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SABINÓPOLIS</td>
+    <td><strong>*4538</strong> (33) 3423-1334</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4538 (33) 3423-1334')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SACRAMENTO</td>
+    <td><strong>*4539</strong> (34) 3351-1770 / 3351-2655</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4539 (34) 3351-1770 / 3351-2655')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SALINAS</td>
+    <td><strong>*4540</strong> (38) 3841-7400 / 3841-3130</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4540 (38) 3841-7400 / 3841-3130')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SANTA BÁRBARA</td>
+    <td><strong>*4541</strong> (31) 3832-2540 / 3832-4943</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4541 (31) 3832-2540 / 3832-4943')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SANTA LUZIA</td>
+    <td><strong>*4542</strong> (31) 3478-7200</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4542 (31) 3478-7200')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SANTA MARIA DO SUAÇUÍ</td>
+    <td><strong>*4543</strong> (33) 3431-1494 / 3431-1523</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4543 (33) 3431-1494 / 3431-1523')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SANTA RITA DE CALDAS</td>
+    <td><strong>*4544</strong> (35) 3734-1398 / 3734-1478</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4544 (35) 3734-1398 / 3734-1478')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SANTA RITA DO SAPUCAÍ</td>
+    <td><strong>*4545</strong> (35) 3471-1690</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4545 (35) 3471-1690')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SANTA VITÓRIA</td>
+    <td><strong>*4546</strong> (34) 3251-2079</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4546 (34) 3251-2079')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SANTO ANTÔNIO DO MONTE</td>
+    <td><strong>*4547</strong> (37) 3281-1790</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4547 (37) 3281-1790')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SANTOS DUMONT</td>
+    <td><strong>*4548</strong> (32) 3251-3650 / 3251-6286</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4548 (32) 3251-3650 / 3251-6286')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (SANTOS DUMONT)</td>
+    <td><strong>*4641</strong> (32) 3251-4747</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4641 (32) 3251-4747')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SÃO DOMINGOS DO PRATA</td>
+    <td><strong>*4549</strong> (31) 3856-1246 / 3856-1791</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4549 (31) 3856-1246 / 3856-1791')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SÃO FRANCISCO</td>
+    <td><strong>*4550</strong> (38) 3631-1624</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4550 (38) 3631-1624')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SÃO GONÇALO DO SAPUCAÍ</td>
+    <td><strong>*4551</strong> (35) 3241-1638</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4551 (35) 3241-1638')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SÃO GOTARDO</td>
+    <td><strong>*4552</strong> (34) 3671-2354 / 3671-2259</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4552 (34) 3671-2354 / 3671-2259')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SÃO JOÃO DA PONTE</td>
+    <td><strong>*4553</strong> (38) 3234-1134 / 3234-1119</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4553 (38) 3234-1134 / 3234-1119')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SÃO JOÃO DEL-REI</td>
+    <td><strong>*4554</strong> (32) 3379-8300</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4554 (32) 3379-8300')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (SÃO JOÃO DEL-REI)</td>
+    <td><strong>*4631</strong> (32) 3379-8300</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4631 (32) 3379-8300')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SÃO JOAO DO PARAÍSO</td>
+    <td><strong>*4594</strong> (38) 3832-1142 / 3832-1504</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4594 (38) 3832-1142 / 3832-1504')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SÃO JOÃO EVANGELISTA</td>
+    <td><strong>*4555</strong> (33) 3412-1323 / 3412-1812</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4555 (33) 3412-1323 / 3412-1812')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SÃO JOÃO NEPOMUCENO</td>
+    <td><strong>*4556</strong> (32) 3261-8200 / 3261-1300</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4556 (32) 3261-8200 / 3261-1300')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SÃO LOURENÇO</td>
+    <td><strong>*4557</strong> (35) 3331-2352 / 3331-2700</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4557 (35) 3331-2352 / 3331-2700')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SÃO ROMÃO</td>
+    <td><strong>*4558</strong> (38) 3624-1269</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4558 (38) 3624-1269')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SÃO ROQUE DE MINAS</td>
+    <td><strong>*4559</strong> (37) 3433-1350</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4559 (37) 3433-1350')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SÃO SEBAST. DO PARAÍSO</td>
+    <td><strong>*4560</strong> (35) 3539-8250</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4560 (35) 3539-8250')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (SÃO SEBAST. DO PARAÍSO)</td>
+    <td><strong>*4560</strong> (35) 3539-8250</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4560 (35) 3539-8250')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Núcleo Regional de Saúde</td>
+    <td><strong>*4676</strong> (35) 3558-7651</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4676 (35) 3558-7651')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SENADOR FIRMINO</td>
+    <td><strong>*4561</strong> (32) 3536-1290</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4561 (32) 3536-1290')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SERRO</td>
+    <td><strong>*4562</strong> (38) 3541-1337</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4562 (38) 3541-1337')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SETE LAGOAS</td>
+    <td><strong>*4563</strong> (31) 3779-5900</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4563 (31) 3779-5900')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (SETE LAGOAS)</td>
+    <td><strong>*4614</strong> (31) 3771-9472</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4614 (31) 3771-9472')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>SILVIANÓPOLIS</td>
+    <td><strong>*4564</strong> (35) 3451-1185 / 3451-1416</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4564 (35) 3451-1185 / 3451-1416')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>TAIOBEIRAS</td>
+    <td><strong>*4565</strong> (38) 3845-1412 / 3845-1389</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4565 (38) 3845-1412 / 3845-1389')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CACHOEIRA DE MINAS</td>
+    <td><strong>*4345</strong> (35) 3472-1250</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4345 (35) 3472-1250')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CAETÉ</td>
+    <td><strong>*4346</strong> (31) 3651-2993 / 3651-3693</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4346 (31) 3651-2993 / 3651-3693')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (CAETÉ)</td>
+    <td><strong>*4627</strong> (31) 3651-9997</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4627 (31) 3651-9997')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CALDAS</td>
+    <td><strong>*4347</strong> (35) 3735-1563 / 3735-1856</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4347 (35) 3735-1563 / 3735-1856')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CAMANDUCAIA</td>
+    <td><strong>*4348</strong> (35) 3433-1029 / 3433-2008</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4348 (35) 3433-1029 / 3433-2008')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CAMBUÍ</td>
+    <td><strong>*4349</strong> (35) 3431-1007</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4349 (35) 3431-1007')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CAMBUQUIRA</td>
+    <td><strong>*4350</strong> (35) 3251-1288</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4350 (35) 3251-1288')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CAMPANHA</td>
+    <td><strong>*4351</strong> (35) 3261-1311</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4351 (35) 3261-1311')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CAMPESTRE</td>
+    <td><strong>*4352</strong> (35) 3743-1610</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4352 (35) 3743-1610')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CAMPINA VERDE</td>
+    <td><strong>*4353</strong> (34) 3412-1161 / 3412-4036</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4353 (34) 3412-1161 / 3412-4036')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CAMPO BELO</td>
+    <td><strong>*4354</strong> (35) 3831-9700</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4354 (35) 3831-9700')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CAMPOS ALTOS</td>
+    <td><strong>*4587</strong> (37) 3426-1778 / 3426-1821</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4587 (37) 3426-1778 / 3426-1821')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CAMPOS GERAIS</td>
+    <td><strong>*4355</strong> (35) 3853-0200 / 3853-1520</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4355 (35) 3853-0200 / 3853-1520')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CANÁPOLIS</td>
+    <td><strong>*4341</strong> (34) 3266-1175</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4341 (34) 3266-1175')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CANDEIAS</td>
+    <td><strong>*4356</strong> (35) 3833-1421</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4356 (35) 3833-1421')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CAPELINHA</td>
+    <td><strong>*4357</strong> (33) 3516-1397</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4357 (33) 3516-1397')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CAPINÓPOLIS</td>
+    <td><strong>*4358</strong> (34) 3263-1162 / 3263-3637</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4358 (34) 3263-1162 / 3263-3637')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CARANDAÍ</td>
+    <td><strong>*4359</strong> (32) 3361-1039 / 3361-1432</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4359 (32) 3361-1039 / 3361-1432')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CARANGOLA</td>
+    <td><strong>*4360</strong> (32) 3741-9550</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4360 (32) 3741-9550')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CARATINGA</td>
+    <td><strong>*4361</strong> (33) 3322-6450</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4361 (33) 3322-6450')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (CARATINGA)</td>
+    <td><strong>*4361</strong> (33) 3322-6450</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4361 (33) 3322-6450')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CARLOS CHAGAS</td>
+    <td><strong>*4362</strong> (33) 3624-1469 / 3624-1725</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4362 (33) 3624-1469 / 3624-1725')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CARMO DA MATA</td>
+    <td><strong>*4363</strong> (37) 3383-1521 / 3383-1998</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4363 (37) 3383-1521 / 3383-1998')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CARMO DE MINAS</td>
+    <td><strong>*4364</strong> (35) 3334-1177 / 3334-1675</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4364 (35) 3334-1177 / 3334-1675')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CARMO DO CAJURU</td>
+    <td><strong>*4365</strong> (37) 3244-1413</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4365 (37) 3244-1413')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CARMO DO PARANAÍBA</td>
+    <td><strong>*4366</strong> (34) 3851-1491 / 3851-2347</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4366 (34) 3851-1491 / 3851-2347')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CARMO DO RIO CLARO</td>
+    <td><strong>*4367</strong> (35) 3561-1713</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4367 (35) 3561-1713')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CARMÓPOLIS DE MINAS</td>
+    <td><strong>*4592</strong> (37) 3333-1501 / 3333-1556</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4592 (37) 3333-1501 / 3333-1556')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CÁSSIA</td>
+    <td><strong>*4368</strong> (35) 3541-1020 / 3541-1077</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4368 (35) 3541-1020 / 3541-1077')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (CÁSSIA)</td>
+    <td><strong>*4683</strong> (35) 3541-1187</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4683 (35) 3541-1187')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CATAGUASES</td>
+    <td><strong>*4369</strong> (32) 3429-8150</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4369 (32) 3429-8150')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CAXAMBU</td>
+    <td><strong>*4370</strong> (35) 3341-1205</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4370 (35) 3341-1205')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CLÁUDIO</td>
+    <td><strong>*4371</strong> (37) 3381-1900</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4371 (37) 3381-1900')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CONCEIÇÃO DAS ALAGOAS</td>
+    <td><strong>*4372</strong> (34) 3321-3735 / 3321-0667</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4372 (34) 3321-3735 / 3321-0667')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CONCEIÇÃO DO MATO DENTRO</td>
+    <td><strong>*4373</strong> (31) 3868-1575</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4373 (31) 3868-1575')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CONCEIÇÃO DO RIO VERDE</td>
+    <td><strong>*4374</strong> (35) 3335-1468</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4374 (35) 3335-1468')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CONGONHAS</td>
+    <td><strong>*4375</strong> (31) 3731-1058 / 3731-1518</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4375 (31) 3731-1058 / 3731-1518')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (CONGONHAS)</td>
+    <td><strong>*4623</strong> (31) 3731-2452</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4623 (31) 3731-2452')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CONQUISTA</td>
+    <td><strong>*4376</strong> (34) 3353-1239</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4376 (34) 3353-1239')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CONSELHEIRO LAFAIETE</td>
+    <td><strong>*4377</strong> (31) 3764-5500</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4377 (31) 3764-5500')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (CONSELHEIRO LAFAIETE)</td>
+    <td><strong>*4377</strong> (31) 3764-5500</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4377 (31) 3764-5500')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CONSELHEIRO PENA</td>
+    <td><strong>*4378</strong> (33) 3261-1413 / 3261-3006</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4378 (33) 3261-1413 / 3261-3006')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CONTAGEM</td>
+    <td><strong>*4379</strong> (31) 3399-8300</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4379 (31) 3399-8300')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial </td>
+    <td><strong>*4379</strong> (31) 3399-8300</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4379 (31) 3399-8300')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado da infância e juventude (CONTAGEM)</td>
+    <td><strong>*4379</strong> (31) 3399-8300</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4379 (31) 3399-8300')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Varas da Faz. Estadual / Municipal (CONTAGEM)</td>
+    <td><strong>*4379</strong> (31) 3399-8300</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4379 (31) 3399-8300')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Varas de Família (CONTAGEM)</td>
+    <td><strong>*4379</strong> (31) 3399-8300</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4379 (31) 3399-8300')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CORAÇÃO DE JESUS</td>
+    <td><strong>*4380</strong> (38) 3228-1160 / 3228-1414</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4380 (38) 3228-1160 / 3228-1414')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>CORINTO</td>
+    <td><strong>*4381</strong> (38) 3751-1293 / 3751-2005</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4381 (38) 3751-1293 / 3751-2005')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ITAJUBÁ / Juizado Especial</td>
+    <td><strong>*4421</strong> (35) 3629-8850 / 3622-2500</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4421 (35) 3629-8850 / 3622-2500')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ITAMARANDIBA</td>
+    <td><strong>*4422</strong> (38) 3521-1105</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4422 (38) 3521-1105')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ITAMBACURI</td>
+    <td><strong>*4423</strong> (33) 3511-3100</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4423 (33) 3511-3100')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ITAMOJI</td>
+    <td><strong>*4424</strong> (35) 3534-1248 / 3534-1117</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4424 (35) 3534-1248 / 3534-1117')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ITAMONTE</td>
+    <td><strong>*4425</strong> (35) 3363-1698 / 3363-1536</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4425 (35) 3363-1698 / 3363-1536')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ITANHANDU</td>
+    <td><strong>*4426</strong> (35) 3361-2356</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4426 (35) 3361-2356')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ITANHOMI</td>
+    <td><strong>*4427</strong> (33) 3231-1392 / 3231-1513</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4427 (33) 3231-1392 / 3231-1513')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ITAPAJIPE</td>
+    <td><strong>*4428</strong> (34) 3424-1162 / 3424-2849</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4428 (34) 3424-1162 / 3424-2849')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ITAPECERICA</td>
+    <td><strong>*4429</strong> (37) 3341-1455 / 3341-2074</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4429 (37) 3341-1455 / 3341-2074')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ITAÚNA</td>
+    <td><strong>*4430</strong> (37) 3249-0200</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4430 (37) 3249-0200')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (ITAÚNA)</td>
+    <td><strong>*4673</strong> (37) 3241-3936</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4673 (37) 3241-3936')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ITUIUTABA</td>
+    <td><strong>*4431</strong> (34) 3271-9800</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4431 (34) 3271-9800')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (ITUIUTABA)</td>
+    <td><strong>*4608</strong> (34) 3261-4500 / 3261-0219</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4608 (34) 3261-4500 / 3261-0219')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ITUMIRIM</td>
+    <td><strong>*4432</strong> (35) 3823-1573 / 3823-1236</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4432 (35) 3823-1573 / 3823-1236')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>ITURAMA</td>
+    <td><strong>*4433</strong> (34) 3411-0440 / 3411-1547</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4433 (34) 3411-0440 / 3411-1547')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>JABUTICATUBAS</td>
+    <td><strong>*4434</strong> (31) 3683-1289</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4434 (31) 3683-1289')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>JACINTO</td>
+    <td><strong>*4435</strong> (33) 3723-1134 / 3723-1893</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4435 (33) 3723-1134 / 3723-1893')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>JACUÍ</td>
+    <td><strong>*4436</strong> (35) 3593-1301</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4436 (35) 3593-1301')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>JACUTINGA</td>
+    <td><strong>*4437</strong> (35) 3443-2893 / 3443-1135</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4437 (35) 3443-2893 / 3443-1135')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>JAÍBA</td>
+    <td><strong>*4595</strong> (38) 3833-2107 / 3833-2412</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4595 (38) 3833-2107 / 3833-2412')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>JANAÚBA</td>
+    <td><strong>*4438</strong> (38) 3829-3500 / 3821-2988</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4438 (38) 3829-3500 / 3821-2988')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (JANAÚBA)</td>
+    <td><strong>*4626</strong> (38) 3821-4602</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4626 (38) 3821-4602')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>JANUÁRIA</td>
+    <td><strong>*4439</strong> (38) 3621-1123 / 3621-2534</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4439 (38) 3621-1123 / 3621-2534')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>JEQUERI</td>
+    <td><strong>*4590</strong> (31) 3877-1413</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4590 (31) 3877-1413')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>JEQUITINHONHA</td>
+    <td><strong>*4440</strong> (33) 3741-1337</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4440 (33) 3741-1337')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>JOÃO MONLEVADE</td>
+    <td><strong>*4500</strong> (31) 3859-2100 / 3859-2103</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4500 (31) 3859-2100 / 3859-2103')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>JOÃO PINHEIRO</td>
+    <td><strong>*4441</strong> (38) 3561-2964</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4441 (38) 3561-2964')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>JUIZ DE FORA</td>
+    <td><strong>*4442</strong> (32) 3257-5800</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4442 (32) 3257-5800')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial Cível</td>
+    <td><strong>*4609</strong> (32) 3691-9870 / 3691-9871</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4609 (32) 3691-9870 / 3691-9871')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial Criminal</td>
+    <td><strong>*4670</strong> (32) 3691-9873</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4670 (32) 3691-9873')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado da Infância e Juventude</td>
+    <td><strong>*4663</strong> (32) 3691-9853</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4663 (32) 3691-9853')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Pólo Regional de Saúde</td>
+    <td><strong>*4660</strong> (32) 3239-2621</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4660 (32) 3239-2621')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Vara da Fazenda Estadual</td>
+    <td><strong>*4689</strong> (32) 3239-2503</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4689 (32) 3239-2503')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>1ª Vara da Fazenda Municipal</td>
+    <td><strong>*4690</strong> (32) 3239-2665</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4690 (32) 3239-2665')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>LAGOA DA PRATA</td>
+    <td><strong>*4443</strong> (37) 3261-2586 / 3261-2136</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4443 (37) 3261-2586 / 3261-2136')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (LAGOA DA PRATA)</td>
+    <td><strong>*4674</strong> (37) 3261-3909</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4674 (37) 3261-3909')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>LAGOA SANTA</td>
+    <td><strong>*4444</strong> (31) 3681-1066</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4444 (31) 3681-1066')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>LAJINHA</td>
+    <td><strong>*4445</strong> (33) 3344-1288 / 3344-1156</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4445 (33) 3344-1288 / 3344-1156')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>LAMBARI</td>
+    <td><strong>*4446</strong> (35) 3271-1283 / 3271-3765</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4446 (35) 3271-1283 / 3271-3765')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>LAVRAS</td>
+    <td><strong>*4447</strong> (35) 3829-4900 / 3821-5067</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4447 (35) 3829-4900 / 3821-5067')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (LAVRAS)</td>
+    <td><strong>*4636</strong> (35) 3821-3203 / 3826-5600</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4636 (35) 3821-3203 / 3826-5600')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>LEOPOLDINA</td>
+    <td><strong>*4448</strong> (32) 3441-4384 / 3441-4339</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4448 (32) 3441-4384 / 3441-4339')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (LEOPOLDINA)</td>
+    <td><strong>*4625</strong> (32) 3441-5748</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4625 (32) 3441-5748')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>LIMA DUARTE</td>
+    <td><strong>*4449</strong> (32) 3281-1636 / 3281-1599</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4449 (32) 3281-1636 / 3281-1599')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>LUZ</td>
+    <td><strong>*4450</strong> (37) 3421-1253 / 3421-2900</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4450 (37) 3421-1253 / 3421-2900')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MACHADO</td>
+    <td><strong>*4451</strong> (35) 3295-0450</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4451 (35) 3295-0450')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MALACACHETA</td>
+    <td><strong>*4452</strong> (33) 3514-1398</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4452 (33) 3514-1398')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MANGA</td>
+    <td><strong>*4453</strong> (38) 3615-1077 / 3615-1851</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4453 (38) 3615-1077 / 3615-1851')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>MANHUAÇU</td>
+    <td><strong>*4454</strong> (33) 3331-4335 / 3331-2283</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4454 (33) 3331-4335 / 3331-2283')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PALMA</td>
+    <td><strong>*4492</strong> (32) 3446-1125</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4492 (32) 3446-1125')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PARÁ DE MINAS</td>
+    <td><strong>*4493</strong> (37) 3231-8100</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4493 (37) 3231-8100')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (PARÁ DE MINAS)</td>
+    <td><strong>*4638</strong> (37) 3231-2730</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4638 (37) 3231-2730')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PARACATU</td>
+    <td><strong>*4494</strong> (38) 3671-1761 / 3671-4033</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4494 (38) 3671-1761 / 3671-4033')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (PARACATU)</td>
+    <td><strong>*4650</strong> (38) 3672-1975 / 3671-4033</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4650 (38) 3672-1975 / 3671-4033')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PARAGUAÇU</td>
+    <td><strong>*4495</strong> (35) 3267-4500 / 3267-3455</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4495 (35) 3267-4500 / 3267-3455')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PARAISOPÓPLIS</td>
+    <td><strong>*4496</strong> (35) 3651-1800</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4496 (35) 3651-1800')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PARAOPEBA</td>
+    <td><strong>*4497</strong> (31) 3714-1456 / 3714-1034</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4497 (31) 3714-1456 / 3714-1034')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PASSA QUATRO</td>
+    <td><strong>*4498</strong> (35) 3371-2171 / 3371-2250</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4498 (35) 3371-2171 / 3371-2250')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PASSA TEMPO</td>
+    <td><strong>*4499</strong> (37) 3335-1399</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4499 (37) 3335-1399')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PASSOS</td>
+    <td><strong>*4501</strong> (35) 3529-4000</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4501 (35) 3529-4000')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (PASSOS)</td>
+    <td><strong>*4611</strong> (35) 3529-4000</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4611 (35) 3529-4000')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PATOS DE MINAS</td>
+    <td><strong>*4502</strong> (34) 3821-2194 / 3814-6947</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4502 (34) 3821-2194 / 3814-6947')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (PATOS DE MINAS)</td>
+    <td><strong>*4502</strong> (34) 3821-2473</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4502 (34) 3821-2473')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PATROCÍNIO</td>
+    <td><strong>*4503</strong> (34) 3839-9700</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4503 (34) 3839-9700')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PEÇANHA</td>
+    <td><strong>*4504</strong> (33) 3411-1373 / 3411-1762</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4504 (33) 3411-1373 / 3411-1762')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PEDRA AZUL</td>
+    <td><strong>*4505</strong> (33) 3751-1130 / 3751-1128</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4505 (33) 3751-1130 / 3751-1128')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PEDRALVA</td>
+    <td><strong>*4506</strong> (35) 3663-1169 / 3663-1211</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4506 (35) 3663-1169 / 3663-1211')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PEDRO LEOPOLDO</td>
+    <td><strong>*4507</strong> (31) 3661-3622 / 3661-1568</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4507 (31) 3661-3622 / 3661-1568')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (PEDRO LEOPOLDO)</td>
+    <td><strong>*4620</strong> (31) 3662-4573</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4620 (31) 3662-4573')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PERDIZES</td>
+    <td><strong>*4508</strong> (34) 3663-1303 / 3663-1260</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4508 (34) 3663-1303 / 3663-1260')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PERDÕES</td>
+    <td><strong>*4509</strong> (35) 3864-1191</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4509 (35) 3864-1191')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PIRANGA</td>
+    <td><strong>*4510</strong> (31) 3746-1368 / 3746-1499</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4510 (31) 3746-1368 / 3746-1499')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PIRAPETINGA</td>
+    <td><strong>*4511</strong> (32) 3465-1133 / 3465-1494</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4511 (32) 3465-1133 / 3465-1494')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PIRAPORA</td>
+    <td><strong>*4512</strong> (38) 3743-9650</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4512 (38) 3743-9650')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PITANGUI</td>
+    <td><strong>*4513</strong> (37) 3271-4093 / 3271-4400</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4513 (37) 3271-4093 / 3271-4400')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PIUMHI</td>
+    <td><strong>*4514</strong> (37) 3371-2200 / 3371-3023</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4514 (37) 3371-2200 / 3371-3023')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>POÇO FUNDO</td>
+    <td><strong>*4515</strong> (35) 3283-1238 / 3283-1862</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4515 (35) 3283-1238 / 3283-1862')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>POÇOS DE CALDAS</td>
+    <td><strong>*4516</strong> (35) 3729-0900</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4516 (35) 3729-0900')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (POÇOS DE CALDAS)</td>
+    <td><strong>*4612</strong> (35) 3722-9745</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4612 (35) 3722-9745')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado da Infância e Juventude (POÇOS DE CALDAS)</td>
+    <td><strong>*4654</strong> (35) 3713-3564</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4654 (35) 3713-3564')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>POMPÉU</td>
+    <td><strong>*4517</strong> (37) 3523-1369 / 3523-1329</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4517 (37) 3523-1369 / 3523-1329')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PONTE NOVA</td>
+    <td><strong>*4518</strong> (31) 3819-5750 / 3819-5751</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4518 (31) 3819-5750 / 3819-5751')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (PONTE NOVA)</td>
+    <td><strong>*4518</strong> (31) 3819-5775</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4518 (31) 3819-5775')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PORTEIRINHA</td>
+    <td><strong>*4519</strong> (38) 3831-1056</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4519 (38) 3831-1056')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>POUSO ALEGRE</td>
+    <td><strong>*4520</strong> (35) 3429-6600</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4520 (35) 3429-6600')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PRADOS</td>
+    <td><strong>*4521</strong> (32) 3353-6336 / 3353-6519</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4521 (32) 3353-6336 / 3353-6519')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PRATA</td>
+    <td><strong>*4522</strong> (34) 3431-1312</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4522 (34) 3431-1312')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PRATÁPOLIS</td>
+    <td><strong>*4523</strong> (35) 3533-1127 / 3533-1755</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4523 (35) 3533-1127 / 3533-1755')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>PRESIDENTE OLEGÁRIO</td>
+    <td><strong>*4524</strong> (34) 3811-1236</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4524 (34) 3811-1236')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>RAUL SOARES</td>
+    <td><strong>*4525</strong> (33) 3351-1792 / 3351-1167</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4525 (33) 3351-1792 / 3351-1167')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>RESENDE COSTA</td>
+    <td><strong>*4526</strong> (32) 3354-1388 / 3354-1544</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4526 (32) 3354-1388 / 3354-1544')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>RESPLENDOR</td>
+    <td><strong>*4527</strong> (33) 3263-1411 / 3263-1330</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4527 (33) 3263-1411 / 3263-1330')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>RIBEIRÃO DAS NEVES</td>
+    <td><strong>*4528</strong> (31) 3307-8900</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4528 (31) 3307-8900')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (RIBEIRÃO DAS NEVES)</td>
+    <td><strong>*4528</strong> (31) 3307-8900</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4528 (31) 3307-8900')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Vara de Execuções Criminais (RIBEIRÃO DAS NEVES)</td>
+    <td><strong>*4528</strong> (31) 3307-8900</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4528 (31) 3307-8900')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>RIO CASCA</td>
+    <td><strong>*4529</strong> (31) 3871-1000 / 3871-1268</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4529 (31) 3871-1000 / 3871-1268')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>RIO PARANAÍBA</td>
+    <td><strong>*4531</strong> (34) 3855-1122 / 3855-1103</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4531 (34) 3855-1122 / 3855-1103')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>TARUMIRIM</td>
+    <td><strong>*4566</strong> (33) 3233-1293</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4566 (33) 3233-1293')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>TEIXEIRAS</td>
+    <td><strong>*4567</strong> (31) 3895-1301 / 3895-1500</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4567 (31) 3895-1301 / 3895-1500')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>TEÓFILO OTONI</td>
+    <td><strong>*4568</strong> (33) 3529-5700 / 3521-9237</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4568 (33) 3529-5700 / 3521-9237')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (TEÓFILO OTONI)</td>
+    <td><strong>*4615</strong> (33) 3521-9321 / 3523-6004</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4615 (33) 3521-9321 / 3523-6004')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado da Inf. e Juv. Rodoviária</td>
+    <td><strong>*4677</strong> (33) 3522-4815</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4677 (33) 3522-4815')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Núcleo Regional de Saúde</td>
+    <td><strong>*4678</strong> (33) 3522-3224</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4678 (33) 3522-3224')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>TIMÓTEO</td>
+    <td><strong>*4569</strong> (31) 3849-2114</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4569 (31) 3849-2114')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>TIROS</td>
+    <td><strong>*4588</strong> (34) 3853-1185 / 3853-2009</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4588 (34) 3853-1185 / 3853-2009')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>TOMBOS</td>
+    <td><strong>*4570</strong> (32) 3751-1107</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4570 (32) 3751-1107')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>TRÊS CORAÇÕES</td>
+    <td><strong>*4571</strong> (35) 3239-6200</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4571 (35) 3239-6200')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (TRÊS CORAÇÕES)</td>
+    <td><strong>*4629</strong> (35) 3232-3268</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4629 (35) 3232-3268')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>TRÊS MARIAS</td>
+    <td><strong>*4572</strong> (38) 3754-2070 / 3754-1570</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4572 (38) 3754-2070 / 3754-1570')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>TRÊS PONTAS</td>
+    <td><strong>*4573</strong> (35) 3265-9450</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4573 (35) 3265-9450')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (TRÊS PONTAS)</td>
+    <td><strong>*4626</strong> (35) 3265-1024</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4626 (35) 3265-1024')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>TUPACIGUARA</td>
+    <td><strong>*4574</strong> (34) 3281-2445 / 3281-2727</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4574 (34) 3281-2445 / 3281-2727')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>TURMALINA</td>
+    <td><strong>*4589</strong> (38) 3527-2455 / 3527-2417</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4589 (38) 3527-2455 / 3527-2417')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>UBÁ</td>
+    <td><strong>*4575</strong> (32) 3301-1400</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4575 (32) 3301-1400')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>UBERABA</td>
+    <td><strong>*4576</strong> (34) 3319-2800</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4576 (34) 3319-2800')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>UBERLÂNDIA</td>
+    <td><strong>*4577</strong> (34) 3228-8300</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4577 (34) 3228-8300')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial Cível (UBERLÂNDIA)</td>
+    <td><strong>*4577</strong> (34) 3228-8300</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4577 (34) 3228-8300')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial Criminal (UBERLÂNDIA)</td>
+    <td><strong>*4577</strong> (34) 3228-8300</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4577 (34) 3228-8300')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>1ª Vara da Faz. Públ. e Autarquia (UBERLÂNDIA)</td>
+    <td><strong>*4577</strong> (34) 3228-8300</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4577 (34) 3228-8300')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>2ª Vara da Faz. Públ. e Autarquia (UBERLÂNDIA)</td>
+    <td><strong>*4577</strong> (34) 3228-8300</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4577 (34) 3228-8300')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>UNAÍ</td>
+    <td><strong>*4578</strong> (38) 3676-4040 / 3676-2126</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4578 (38) 3676-4040 / 3676-2126')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>VARGINHA</td>
+    <td><strong>*4579</strong> (35) 3690-9900</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4579 (35) 3690-9900')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (VARGINHA)</td>
+    <td><strong>*4619</strong> (35) 3221-3322</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4619 (35) 3221-3322')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>VÁRZEA DA PALMA</td>
+    <td><strong>*4580</strong> (38) 3731-1517</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4580 (38) 3731-1517')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>VAZANTE</td>
+    <td><strong>*4581</strong> (34) 3813-1226</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4581 (34) 3813-1226')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>VESPASIANO</td>
+    <td><strong>*4582</strong> (31) 3621-3083 / 3621-3033</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4582 (31) 3621-3083 / 3621-3033')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (VESPASIANO)</td>
+    <td><strong>*4630</strong> (31) 3621-1079 / 3621-8474</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4630 (31) 3621-1079 / 3621-8474')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>VIÇOSA</td>
+    <td><strong>*4583</strong> (31) 3891-4144 / 3891-4191</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4583 (31) 3891-4144 / 3891-4191')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>VIRGINÓPOLIS</td>
+    <td><strong>*4584</strong> (33) 3416-1166 / 3416-1618</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4584 (33) 3416-1166 / 3416-1618')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>VISCONDE DO RIO BRANCO</td>
+    <td><strong>*4585</strong> (32) 3551-2177 / 3551-2810</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4585 (32) 3551-2177 / 3551-2810')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juizado Especial (VISCONDE DO RIO BRANCO)</td>
+    <td><strong>*4643</strong> (32) 3551-1303 / 3551-1303</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4643 (32) 3551-1303 / 3551-1303')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+  <tr>
+    <td>Juatuba</td>
+    <td><strong>*4632</strong> (31) 3535-8554 / 9071 / 8885</td>
+    <td><a href="#" class="copy-link" onclick="copiarTexto(event, '*4632 (31) 3535-8554 / 9071 / 8885')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zM19 5H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>Copiar</a></td>
+  </tr>
+   
+      <!-- Mais linhas aqui -->
+    </tbody>
+  </table>
+</main>
+
+<script>
+  const searchInput = document.getElementById("search");
+  const tableBody = document.getElementById("table-body");
+
+  searchInput.addEventListener("input", function () {
+    const filter = this.value.toLowerCase();
+    const rows = tableBody.querySelectorAll("tr");
+    rows.forEach(row => {
+      const comarca = row.cells[0].textContent.toLowerCase();
+      const telefone = row.cells[1].textContent.toLowerCase();
+      if (comarca.includes(filter) || telefone.includes(filter)) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
+  });
+
+  function copiarTexto(event, texto) {
+    event.preventDefault();
+    navigator.clipboard.writeText(texto).then(() => {
+      alert("Telefone copiado: " + texto);
+    }).catch(() => {
+      alert("Erro ao copiar o texto.");
+    });
+  }
+</script>
+</body>
+</html>
