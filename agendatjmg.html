@@ -2098,5 +2098,143 @@
     });
   }
 </script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sua Página</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+      /* Estilos gerais para garantir que o rodapé fique no final */
+      body {
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+          margin: 0;
+          font-family: sans-serif; /* Use a fonte do seu site */
+      }
+      main {
+          flex: 1;
+      }
+
+      /* --- ESTILOS DO RODAPÉ --- */
+      .site-footer {
+          background-color: #1a3b6b; /* Cor de fundo azul escuro, similar à imagem */
+          color: #f0f0f0; /* Cor do texto principal (cinza claro) */
+          padding: 40px 20px;
+          font-size: 14px;
+      }
+
+      .footer-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between; /* Alinha as colunas */
+          align-items: flex-start; /* Alinha os itens no topo */
+          flex-wrap: wrap; /* Permite que as colunas quebrem em telas menores */
+          gap: 20px; /* Espaçamento entre as colunas quando quebram */
+      }
+
+      .footer-column {
+          flex: 1; /* Faz as colunas ocuparem espaço igual */
+          min-width: 250px; /* Largura mínima antes de quebrar a linha */
+      }
+
+      .footer-column h3 {
+          color: #f0c64a; /* Cor dourada para os títulos, similar à imagem */
+          font-size: 16px;
+          margin-top: 0;
+          margin-bottom: 15px;
+      }
+
+      .footer-column p {
+          margin: 0 0 10px 0;
+          line-height: 1.6;
+      }
+      
+      /* Estiliza os links de contato */
+      .contact-info a {
+          color: #f0f0f0; /* Mesma cor do texto */
+          text-decoration: none; /* Remove o sublinhado */
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+      }
+
+      .contact-info a:hover {
+          color: #ffffff; /* Clareia o link ao passar o mouse */
+      }
+      
+      /* Estiliza os ícones */
+      .contact-info .icon {
+          color: #f0c64a; /* Cor dourada para os ícones */
+          margin-right: 10px;
+          width: 20px; /* Define uma largura fixa para alinhar o texto */
+      }
+      
+      .footer-copyright {
+          text-align: right;
+      }
+
+      /* --- AJUSTES PARA CELULAR (Responsividade) --- */
+      @media (max-width: 768px) {
+          .footer-container {
+              flex-direction: column; /* Empilha as colunas verticalmente */
+              align-items: center; /* Centraliza o conteúdo */
+              text-align: center;
+          }
+
+          .footer-column {
+              min-width: 100%;
+              margin-bottom: 20px;
+          }
+          
+          .contact-info a {
+              justify-content: center; /* Centraliza os itens de contato */
+          }
+
+          .footer-copyright {
+              text-align: center; /* Centraliza o texto de copyright */
+              margin-top: 20px;
+              width: 100%;
+          }
+      }
+
+  </style>
+</head>
+</body>
+<body>
+
+  <footer class="site-footer">
+      <div class="footer-container">
+          
+          <div class="footer-column">
+              <h3>TJMG</h3>
+              <p>Equipe Certificado Digital</p>
+          </div>
+
+          <div class="footer-column contact-info">
+              <h3>Contato</h3>
+              <a href="tel:+553133397696">
+                  <i class="fas fa-phone icon"></i>
+                  <span>Central: (31) 3339-7696</span>
+              </a>
+              <a href="mailto:operacao.informatica@tjmg.jus.br">
+                  <i class="fas fa-envelope icon"></i>
+                  <span>operacao.informatica@tjmg.jus.br</span>
+              </a>
+              <p>
+                  <i class="fas fa-map-marker-alt icon"></i>
+                  <span>Belo Horizonte</span>
+              </p>
+          </div>
+
+          <div class="footer-column footer-copyright">
+              <p>&copy; 2025. Equipe Certificado Digital.</p>
+          </div>
+
+      </div>
+  </footer>
 </body>
 </html>
