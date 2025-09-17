@@ -136,17 +136,108 @@
   }
 </style>
 </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sua Página</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+      /* Zera as margens padrão do navegador */
+      body {
+          margin: 0;
+          font-family: sans-serif; /* Use a fonte principal do seu site */
+      }
+
+      /* --- ESTILOS DO CABEÇALHO --- */
+      .site-header {
+          background-color: #2a528a; /* Cor de fundo azul escuro, igual à imagem */
+          color: #ffffff; /* Cor do texto e ícones */
+          padding: 15px 25px; /* Espaçamento interno (vertical e horizontal) */
+          display: flex;
+          justify-content: center; /* Centraliza o container principal */
+      }
+
+      .header-container {
+          width: 100%;
+          max-width: 1400px; /* Largura máxima do conteúdo */
+          display: flex;
+          justify-content: space-between; /* Empurra o logo para a esquerda e a data para a direita */
+          align-items: center; /* Alinha verticalmente os itens ao centro */
+          flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+          gap: 15px; /* Espaço entre os elementos quando quebram a linha */
+      }
+
+      /* Estilo dos blocos da esquerda (logo) e direita (data) */
+      .header-left, .header-right {
+          display: flex;
+          align-items: center; /* Alinha o ícone com o texto */
+          gap: 15px; /* Espaço entre o ícone e o texto */
+      }
+
+      /* Estilo específico do ícone do logo */
+      .header-left .logo-icon {
+          font-size: 40px; /* Tamanho do ícone de balança */
+      }
+      
+      /* Título "TJMG" */
+      .logo-text .title {
+          font-size: 20px;
+          font-weight: bold;
+          display: block; /* Faz com que o subtítulo vá para a linha de baixo */
+      }
+
+      /* Subtítulo "Agenda Telefônica" */
+      .logo-text .subtitle {
+          font-size: 14px;
+          font-weight: normal;
+      }
+
+      /* Estilo do texto de atualização */
+      .header-right p {
+          margin: 0; /* Remove margem padrão do parágrafo */
+          font-size: 14px;
+      }
+      
+      /* --- AJUSTES PARA CELULAR (Responsividade) --- */
+      @media (max-width: 600px) {
+          .header-container {
+              justify-content: center; /* Centraliza tudo em telas pequenas */
+              flex-direction: column; /* Coloca um item embaixo do outro */
+          }
+
+          .header-left {
+              order: 1; /* Define a ordem do logo */
+          }
+
+          .header-right {
+              order: 2; /* Define a ordem da data */
+          }
+      }
+
+  </style>
+</head>
 <body>
-<header>
-  <div class="branding">
-    <svg class="icon-scale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M32 2L24 22H12a2 2 0 100 4h2.51l-9.35 15.52a1.98 1.98 0 100 1.96L14.5 62a2 2 0 103.5-2L18.92 54h26.16l.92 6a2 2 0 103.5 2L60.35 45.5a2 2 0 100-1.96L51 27.53H53a2 2 0 100-4h-12l-8-20zm-6.43 20h8.86l2.36 6H23.21l2.36-6zM25.69 42h12.62L40 46H24l1.69-4z"/></svg>
-    <h1>TJMG <small>Agenda Telefônica</small></h1>
-  </div>
-  <div class="update-info">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10A10.011 10.011 0 0012 2zm.25 5v6l5.25 3.15-.75 1.23L11 13V7z"/></svg>
-    Atualizado em: 2020
-  </div>
-</header>
+
+  <header class="site-header">
+      <div class="header-container">
+          
+          <div class="header-left">
+              <i class="fa-solid fa-scale-balanced logo-icon"></i>
+              <div class="logo-text">
+                  <span class="title">TJMG</span>
+                  <span class="subtitle">Agenda Telefônica</span>
+              </div>
+          </div>
+
+          <div class="header-right">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+              <p>Atualizado em: 01/12/2023</p>
+          </div>
+
+      </div>
+  </header>
 <main>
   <div class="search-box">
     <h2>
