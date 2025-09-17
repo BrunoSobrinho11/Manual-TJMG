@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Interativo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            font-size: 28px;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        nav a:hover {
+            color: #f1c40f;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            margin: 30px 0;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #555;
+        }
+        
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        .search-box button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .search-box button:hover {
+            background: #2980b9;
+        }
+        
+        .sections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            padding: 20px;
+            background: #3498db;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        .card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .card-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .card-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .card-button:hover {
+            background: #2980b9;
+        }
+        
+        .quick-help {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 50px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .quick-help h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .quick-help p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: #666;
+        }
+        
+        .contact-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .contact-button:hover {
+            background: #c0392b;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-logo h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #f1c40f;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #f1c40f;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #3c546c;
+            color: #aaa;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 15px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .sections-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-book"></i>
+                <h1>Manual Interativo TJMG</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i> Início</a></li>
+   
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Bem-vindo ao Manual Interativo TJMG</h2>
+            
+            
+          
+        <section class="sections-grid">
+            <div class="section-card" onclick="navigateToSection('instalacao')">
+                <div class="card-header">
+                    <i class="fas fa-search"></i>
+                    <h3>PRIMEIRA INSTÂNCIA (AUTOMÁTICO)</h3>
+                </div>
+                <div class="card-content">
+                    <p></p>
+                    <a href="primeirainstancia.html" class="card-button">Acessar</a>
+                </div>
+            </div>
+
+            <div class="section-card" onclick="navigateToSection('uso-basico')">
+                <div class="card-header">
+                    <i class="fas fa-search"></i>
+                    <h3>SEGUNDA INSTÂNCIA</h3>
+                </div>
+                <div class="card-content">
+                    <p>Conheça as funcionalidades principais do sistema e como utilizá-las no dia a dia.</p>
+                    <span class="card-button">Acessar</span>
+                </div>
+            </div>
+
+            <div class="section-card" onclick="navigateToSection('dicas-avancadas')">
+                <div class="card-header">
+                    <i class="fas fa-search"></i>
+                    <h3>ADMINISTRATIVO</h3>
+                </div>
+                <div class="card-content">
+                    <p>Técnicas e recursos para usuários experientes que desejam aproveitar ao máximo o sistema.</p>
+                    <a href="administrativo.html" class="card-button">Acessar</a>
+                </div>
+            </div>
+
+            <div class="section-card" onclick="navigateToSection('solucao-problemas')">
+                <div class="card-header">
+                    <i class="fas fa-search"></i>
+                    <h3>HTML (RTF)</h3>
+                </div>
+                <div class="card-content">
+                    <p>Resolução dos problemas mais comuns que podem ocorrer durante o uso do sistema.</p>
+                    <span class="card-button">Acessar</span>
+                </div>
+            </div>
+
+            <div class="section-card" onclick="navigateToSection('faq')">
+                <div class="card-header">
+                    <i class="fas fa-search"></i>
+                    <h3>ENVIAR PUB PARA OAB</h3>
+                </div>
+                <div class="card-content">
+                    <p>Respostas para as dúvidas mais comuns sobre o sistema e suas funcionalidades.</p>
+                    <span class="card-button">Acessar</span>
+                </div>
+            </div>
+
+            <div class="section-card" onclick="navigateToSection('contato')">
+                <div class="card-header">
+                    <i class="fas fa-search"></i>
+                    <h3>RODAR O BANCO</h3>
+                </div>
+                <div class="card-content">
+                    <p>Entre em contato com nossa equipe de suporte para ajuda personalizada.</p>
+                    <span class="card-button">Acessar</span>
+                </div>
+            </div>
+                <div class="section-card" onclick="navigateToSection('contato')">
+                    <div class="card-header">
+                        <i class="fas fa-search"></i>
+                        <h3>AGENDA TELEFÔNICA</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Contatos de todas as comarcas.</p>
+                        <a href="agendatjmg.html" class="card-button">Acessar</a>
+                    </div>
+            </div>
+            <div class="section-card" onclick="navigateToSection('contato')">
+                <div class="card-header">
+                    <i class="fas fa-search"></i>
+                    <h3>PJE MIDIAS</h3>
+                </div>
+                <div class="card-content">
+                    <p>Configuração do PJEMIDIAS com RunAs.</p>
+                    <a href="pjemidias.html" class="card-button">Acessar</a>
+                </div>
+
+            
+        </section>
+             
+
+    
+    </script>
+</body>
+</html>
