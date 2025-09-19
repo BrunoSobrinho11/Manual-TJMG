@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Procedimentos - Envio de PUBs para OAB</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Estilos Gerais */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+        }
+
+        /* --- ESTILOS DO CABEÇALHO PADRÃO --- */
+        .site-header {
+            background-color: #2a528a;
+            color: #ffffff;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .header-container {
+            width: 100%;
+            max-width: 1400px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-icon {
+            font-size: 40px;
+        }
+        .logo-text .title {
+            font-size: 20px;
+            font-weight: bold;
+            display: block;
+        }
+        .logo-text .subtitle {
+            font-size: 14px;
+        }
+
+        /* Conteúdo Principal */
+        main.container {
+            flex: 1 0 auto;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 25px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn-voltar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #004085;
+            color: #ffffff;
+            padding: 10px 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 25px;
+            transition: background-color 0.3s;
+        }
+        .btn-voltar:hover {
+            background-color: #00336a;
+        }
+
+        .content h1 {
+            color: #2a528a;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .step h3 {
+            font-size: 1.3em;
+            color: #1d3557;
+            margin-bottom: 15px;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        li {
+            background-color: #f1f3f5;
+            padding: 12px 12px 12px 40px;
+            border-left: 4px solid #457b9d;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        li::before {
+            content: '\f058'; /* Ícone de check-circle do Font Awesome */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #2a528a;
+            position: absolute;
+            left: 12px;
+            top: 13px;
+        }
+        
+        code {
+            background-color: #e9ecef;
+            color: #c92a2a;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        }
+
+        .step img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-top: 15px;
+            border: 1px solid #ccc;
+        }
+
+        .attention {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            color: #856404;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 30px 0;
+        }
+        .attention h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+        .attention li::before {
+             content: '\f071'; /* Ícone de warning do Font Awesome */
+             color: #856404;
+        }
+        .attention li {
+            border-left-color: #ffc107;
+        }
+
+        /* --- ESTILOS DO RODAPÉ PADRÃO --- */
+        .site-footer {
+            background-color: #1a3b6b;
+            color: #f0f0f0;
+            padding: 40px 20px;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        .footer-column h3 {
+            color: #f0c64a;
+            font-size: 16px;
+        }
+        .contact-info a {
+            color: #f0f0f0;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .contact-info .icon {
+            color: #f0c64a;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-left">
+                <i class="fa-solid fa-scale-balanced logo-icon"></i>
+                <div class="logo-text">
+                    <span class="title">TJMG</span>
+                    <span class="subtitle">Manual de Procedimentos</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html" class="btn-voltar">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Voltar para o Início</span>
+        </a>
+
+        <div class="content">
+            <h1>Manual de Envio do PUB para OAB</h1>
+
+            <div class="step">
+                <h3>Passo 1: Acessar e Preparar Arquivos</h3>
+                <ul>
+                    <li>Acesse o diretório no servidor <strong>FILEZILA (SUMCOP-2)</strong>: <code>/producao/transfer/receber/publica</code></li>
+                    <li>Organize os arquivos por nome.</li>
+                    <li><strong>Apague todos os arquivos</strong> com a extensão <code>.dat</code>.</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3>Passo 2: Criar Pasta e Copiar Arquivos</h3>
+                <ul>
+                    <li>Crie uma pasta temporária em seu computador com a data atual (ex: <code>PUB19092025</code>).</li>
+                    <li>Copie todos os arquivos restantes do servidor FILEZILA para esta nova pasta.</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3>Passo 3: Compactar e Renomear</h3>
+                <ul>
+                    <li>Compacte o conteúdo da pasta temporária em um único arquivo <strong>.ZIP</strong>.</li>
+                    <li>Renomeie o arquivo compactado com o padrão <strong>PUBDDMMAAAA</strong> (ex: <code>PUB19092025.zip</code>).</li>
+                </ul>
+            </div>
+
+            <div class="attention">
+                <h3>Atenção: Verificações Importantes</h3>
+                <ul>
+                    <li>Arquivos com final "p" <strong>não precisam ser compactados</strong> e devem ser enviados separadamente.</li>
+                    <li>Se houver arquivos PUB de dias anteriores, eles também devem ser incluídos no envio.</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3>Passo 4: Envio e Limpeza</h3>
+                <ul>
+                    <li>Envie o arquivo <code>.zip</code> e quaisquer outros arquivos necessários para a OAB, conforme o exemplo.</li>
+                </ul>
+                <img src="pub.jpg" alt="Exemplo de e-mail sendo preparado para a OAB com o arquivo PUB anexado." />
+                <ul>
+                    <li>Após a confirmação do envio, <strong>apague os arquivos originais</strong> do diretório <code>/producao/transfer/receber/publica</code> no servidor.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>TJMG</h3>
+                <p>Equipe Certificado Digital</p>
+            </div>
+            <div class="footer-column contact-info">
+                <h3>Contato</h3>
+                <a href="tel:+553133397696"><i class="fas fa-phone icon"></i> Central: (31) 3339-7696</a>
+                <a href="mailto:operacao.informatica@tjmg.jus.br"><i class="fas fa-envelope icon"></i> operacao.informatica@tjmg.jus.br</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
