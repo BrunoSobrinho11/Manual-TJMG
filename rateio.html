@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Manual Rateio do Banco</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Estilos Gerais */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- ESTILOS DO CABEÇALHO --- */
+        .site-header {
+            background-color: #2a528a;
+            color: #ffffff;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .header-container {
+            width: 100%;
+            max-width: 1400px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .header-left, .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .header-left .logo-icon {
+            font-size: 40px;
+        }
+        .logo-text .title {
+            font-size: 20px;
+            font-weight: bold;
+            display: block;
+        }
+        .logo-text .subtitle {
+            font-size: 14px;
+            font-weight: normal;
+        }
+        .header-right p {
+            margin: 0;
+            font-size: 14px;
+        }
+        
+        /* Estilos do Conteúdo Principal */
+        main.container {
+            flex: 1 0 auto;
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+
+        /* --- CÓDIGO DO BOTÃO VOLTAR (NOVO) --- */
+        .btn-voltar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px; 
+            background-color: #004085; 
+            color: #ffffff;
+            padding: 10px 18px;
+            border-radius: 5px; 
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 25px; 
+            transition: background-color 0.3s;
+        }
+        .btn-voltar:hover {
+            background-color: #00336a;
+        }
+        
+        h1, h2 {
+            color: #004085;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+        }
+        .warning {
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border: 1px solid #ffeeba;
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        code {
+            background-color: #e9ecef;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        /* --- ESTILOS DO RODAPÉ --- */
+        .site-footer {
+            background-color: #1a3b6b;
+            color: #f0f0f0;
+            padding: 40px 20px;
+            font-size: 14px;
+            width: 100%;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        .footer-column h3 {
+            color: #f0c64a;
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .footer-column p, .footer-column a {
+            margin: 0 0 10px 0;
+            line-height: 1.6;
+            color: #f0f0f0;
+            text-decoration: none;
+        }
+        .contact-info a {
+            display: flex;
+            align-items: center;
+        }
+        .contact-info a:hover {
+            color: #ffffff;
+        }
+        .contact-info .icon {
+            color: #f0c64a;
+            margin-right: 10px;
+            width: 20px;
+        }
+        .footer-copyright {
+            text-align: right;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-container {
+                justify-content: center;
+                flex-direction: column;
+            }
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .footer-copyright {
+                text-align: center;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-left">
+                <i class="fa-solid fa-scale-balanced logo-icon"></i>
+                <div class="logo-text">
+                    <span class="title">TJMG</span>
+                    <span class="subtitle">Agenda Telefônica</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <p>Atualizado em: 2020</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <a href="index.html" class="btn-voltar">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Voltar para o Início</span>
+        </a>
+
+        <h1>Manual Rateio do Banco</h1>
+
+        <div class="section">
+            <h2>Acesso e Configuração Inicial</h2>
+            <p>Conexão remota IP: <code>10.0.40.200</code></p>
+            <p>Usuário: <strong>(Coloque seu Field)</strong></p> 
+            <p>Senha: <strong>(Digite a senha do seu Field)</strong>.</p>
+            <img src="rateio1.jpg" alt="Tela de Conexão de Área de Trabalho Remota do Windows." />
+
+            <p>Ao entrar na máquina virtual, abra o explorador de arquivos > Este computador > Acesse a unidade <strong>R:</strong>.</p>
+            <img src="rateio2.png" alt="Explorador de arquivos mostrando a unidade R: selecionada." />
+
+            <p>Procure o aplicativo <strong>Sperr</strong>.</p>
+            <img src="rateio3.png" alt="Pasta na unidade R: com o aplicativo Sperr destacado." />
+            
+            <p>Ao clicar no Sperr, uma janela de login será exibida. Use sua <strong>matrícula P</strong> como usuário e sua senha.</p>
+            <img src="rateio4.png" alt="Janela de login do sistema Sperr pedindo usuário e senha." />
+        </div>
+
+        <div class="section">
+            <h2>Processamento do Rateio</h2>
+            <p>Agora vamos processar o arquivo de rateio do banco.</p>
+            <img src="rateio5.png" alt="Menu principal do sistema Sperr com a opção de processar arquivos." />
+            
+            <div class="warning">
+                <p><strong>ATENÇÃO!</strong> Se na listagem aparecerem arquivos com <strong>menos de 1Mb</strong>, não continue. Avise o Humberto para que ele retifique a listagem antes de rodar o banco.</p>
+            </div>
+
+            <p>Selecione o arquivo <code>.RET</code> e clique em <strong>OPEN</strong>. </p>
+            <p><strong>OBS:</strong> Tire um print desta tela e salve no caminho <code>Digital\Certminas\_backup_rateio_banco\2025\09. Setembro\19.09.25</code></p>
+            <img src="rateio6.png" alt="Janela para selecionar o arquivo .RET para processamento." />
+            
+            <p>Após clicar em <strong>OPEN</strong>, o rateio começará a ser processado.</p>
+            <img src="rateio7.png" alt="Tela mostrando o progresso do processamento do rateio." />
+            
+            <p>Atenção: Após um tempo, aparecerá a mensagem perguntando se há mais arquivos <code>.RET</code> a serem carregados. Caso não haja, escolha a opção <strong>No</strong>.</p>
+            <img src="rateio8.png" alt="Caixa de diálogo perguntando se há mais arquivos a serem carregados, com opções Yes e No." />
+            
+            <p>Após escolher uma das opções acima, o rateio continuará o procedimento.</p>
+            <img src="rateio9.png" alt="Tela mostrando a continuação do processamento do rateio." />
+            
+            <p>Quando o rateio for concluído, a mensagem de finalização será exibida.</p>
+            <img src="rateio10.png" alt="Mensagem de confirmação de que o processamento foi finalizado com sucesso." />
+            
+            <p><strong>OBS:</strong> Tire um print da tela de finalizado e salve no mesmo caminho: <code>Digital\Certminas\_backup_rateio_banco\2025\09. Setembro\19.09.25</code></p>
+            <img src="rateio11.png" alt="Tela final do processamento do rateio." />
+        </div>
+
+        <div class="section">
+            <h2>Verificação Final</h2>
+            <p>Após o procedimento, clique em <strong>Processar Arquivo</strong> novamente. Você perceberá que o arquivo <code>.RET</code> desapareceu da lista inicial, pois foi processado.</p>
+            <img src="rateio13.png" alt="Menu do sistema com o botão 'Processar Arquivo'." />
+            <img src="rateio12.png" alt="A lista de arquivos .RET agora está vazia." />
+            
+            <p>Clique na pasta <strong>Processados</strong> e verifique se o arquivo que foi selecionado no início do rateio está lá.</p>
+            <img src="rateio14.png" alt="Explorador de arquivos mostrando o arquivo .RET dentro da pasta 'Processados'." />
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            
+            <div class="footer-column">
+                <h3>TJMG</h3>
+                <p>Equipe Certificado Digital</p>
+            </div>
+    
+            <div class="footer-column contact-info">
+                <h3>Contato</h3>
+                <a href="tel:+553133397696">
+                    <i class="fas fa-phone icon"></i>
+                    <span>Central: (31) 3339-7696</span>
+                </a>
+                <a href="mailto:operacao.informatica@tjmg.jus.br">
+                    <i class="fas fa-envelope icon"></i>
+                    <span>operacao.informatica@tjmg.jus.br</span>
+                </a>
+                <p>
+                    <i class="fas fa-map-marker-alt icon"></i>
+                    <span>Belo Horizonte</span>
+                </p>
+            </div>
+    
+            <div class="footer-column footer-copyright">
+                <p>&copy; 2025. Equipe Certificado Digital.</p>
+            </div>
+    
+        </div>
+    </footer>
+
+</body>
+</html>
