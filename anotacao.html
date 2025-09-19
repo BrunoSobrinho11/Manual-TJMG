@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual - Certificado Digital e Soluções</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Estilos Gerais */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+        }
+
+        /* --- Cabeçalho Padrão --- */
+        .site-header {
+            background-color: #2a528a;
+            color: #ffffff;
+            padding: 15px 25px;
+        }
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-icon {
+            font-size: 40px;
+        }
+        .logo-text .title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .logo-text .subtitle {
+            font-size: 14px;
+        }
+
+        /* --- Conteúdo Principal --- */
+        main.container {
+            flex: 1 0 auto;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 25px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn-voltar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #004085;
+            color: #ffffff;
+            padding: 10px 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+        .btn-voltar:hover {
+            background-color: #00336a;
+        }
+
+        h1, h2, h3 {
+            color: #004085;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h2 {
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+        }
+        
+        code, pre {
+            background-color: #e9ecef;
+            color: #333;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        pre {
+            padding: 15px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        .note, .warning {
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid;
+        }
+        .note {
+            border-color: #17a2b8;
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+        .warning {
+            border-color: #ffc107;
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .error-section {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        /* --- Rodapé Padrão --- */
+        .site-footer {
+            background-color: #1a3b6b;
+            color: #f0f0f0;
+            padding: 40px 20px;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-column h3 {
+            color: #f0c64a;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-left">
+                <i class="fa-solid fa-scale-balanced logo-icon"></i>
+                <div class="logo-text">
+                    <span class="title">TJMG</span>
+             
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html" class="btn-voltar">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Voltar para o Início</span>
+        </a>
+        
+        <h1>Manual de Suporte ao Certificado Digital</h1>
+
+        <div class="section">
+         
+            <h3>Links e Caminhos Úteis</h3>
+            <ul>
+                <li><strong>Instalador SafeNet, Soluti, Aladdin:</strong> <a href="https://youtu.be/0TMIOBWSt6k" target="_blank">https://youtu.be/0TMIOBWSt6k</a></li>
+                <li><strong>Drivers de Tokens (Certisign):</strong> <a href="https://www.certisign.com.br/duvidas-suporte/downloads" target="_blank">https://www.certisign.com.br/duvidas-suporte/downloads</a>]</li>
+                <li><strong>Verificar Acesso a E-mail:</strong> <a href="http://linngs-1.intra.tjmg.gov.br/busca/" target="_blank">http://linngs-1.intra.tjmg.gov.br/busca/</a> </li>
+                <li><strong>Acesso PJe (Suporte):</strong> <a href="http://pjesup.intra.tjmg.gov.br/pje/login.seam" target="_blank">http://pjesup.intra.tjmg.gov.br/pje/login.seam</a> </li>
+                <li><strong>Agendamento Videoconferência (Certisign):</strong> <a href="https://gestaoar.certisign.com.br/AgendamentoOnLine/cliente/actionPedido.action" target="_blank">https://gestaoar.certisign.com.br/AgendamentoOnLine/cliente/actionPedido.action</a> </li>
+               <li><strong>Atalho Opções de Internet:</strong> Tecla Windows + R, depois digitar <code>inetcpl.cpl</code> </li>
+                <li><strong>Caminho Internet Explorer:</strong> <code>"C:\Program Files\Internet Explorer\iexplore.exe"</code> </li>
+                <li><strong>Caminho Token GD:</strong> <code>C:\Program Files (x86)\A.E.T.Europe B.V\SafeSign\Management Utility</code> </li>
+            </ul>
+            
+            <h3>Contatos para aberturas de chamados</h3>
+            <ul>
+               <li><strong>Telefone Suporte Servidor TJ:</strong> 31 3237-7060 </li>
+                <li><strong>Telefone Suporte Advogado:</strong> 0800 3535600 </li>
+               
+            </ul>
+            <h3>Senhas PUK dos Tokens</h3>
+            <li><strong>Token Soluti 5110/Aladin72k:</strong> <code>Tjmg2018</code> / <code>123456</code>
+            <li><strong>Token Epass:</strong> <code>SOLUTICD</code>
+            <li><strong>Token GD:</strong> <code>1234</code> / <code>123456</code> / <code>12345678</code> / <code>1234567890</code>  / <code>Tjmg2018</code></li>
+                <li><strong>Chave de Inicialização SafeNet:</strong> <code>SolutiAC</code> </li>
+        </div>
+
+        <div class="section">
+            <h2>Emissão de Novo Certificado Digital</h2>
+            <ol>
+                <li>Acesse o Portal de Serviços de Informática: <a href="http://informatica.tjmg.jus.br" target="_blank">http://informatica.tjmg.jus.br</a>. </li>
+                <li>Siga o caminho: <strong>Certificado digital > Escolha de acordo com a instância em que está lotado</strong>. </li>
+                <li>Após receber o voucher, envie um e-mail para <code>agendamento@3rcertificadora.com.br</code> com o número do voucher no assunto.</li>
+               <li>Anexe uma imagem (JPG ou PDF) do seu documento de identificação (RG ou CNH). </li>
+                <li>No corpo do e-mail, forneça os dados solicitados (Órgão, Nome, CPF, Data de Nascimento, etc.).</li>
+                <img src="anotacao1.png" alt="Uma descrição clara do que a imagem mostra">
+            </ol>
+             <div class="note">
+                <p>A certificadora (3R Certificadora) entrará em contato em até 48 horas para agendar a emissão, que pode ser presencial ou por videochamada.</p>
+            </div>
+            <h3>Documentação Necessária</h3>
+            <ul>
+                <li>Dois documentos de identificação diferentes (preferencialmente RG e CNH). </li>
+                <li>Comprovante de endereço recente (máximo 90 dias). </li>
+                <li>Foto 3x4 colorida (dispensada se a identidade tiver sido emitida há menos de 5 anos). </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Solução de Problemas Comuns</h2>
+
+            <div class="error-section">
+                <h3>Se aparecer o erro abaixo encaminhar para GSE - FIELD ATENDIMENTOS de acordo com o IN1712356, foi reinstalado a imagem do Windows 
+                <img src="anotacao2.png" alt="Erro de certificado não encontrado no PJe"> </h3>
+              
+            </div>
+
+            <div class="error-section">
+                <h3>Se aparecer o erro abaixo no PJE troque a versão 8 para a versão 9 do gerenciador Soluti 5110. No Epass deu este erro e foi reinstalado o gerenciador do epass. 
+                <img src="anotacao3.png" alt="Erro de certificado não encontrado no PJe"> </h3>
+              
+            </div>
+
+            <div class="error-section">
+                <h3>Se der o erro abaixo, eu resolvi removendo certificados expirados e válidos que não estava sendo usando mais no opções de Internet. 
+                <img src="anotacao4.png" alt="Erro de certificado não encontrado no PJe"> </h3>
+              
+            </div>
+
+            <div class="error-section">
+                <h3>Se aparecer a mensagem abaixo é só formatar com a chave SolutiAC.
+                <img src="anotacao5.png" alt="Erro de certificado não encontrado no PJe"> </h3>
+              
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>TJMG</h3>
+                <p>Equipe Certificado Digital</p>
+            </div>
+            <div class="footer-column">
+                <h3>Contato</h3>
+                [cite_start]<p>Telefone: (31) 3237-7060 [cite: 20]</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,88 +1,245 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Manual com Fotos</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      background-color: #f9f9f9;
-      color: #333;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    h1, h2 {
-      color: #004085;
-    }
-    .section {
-      margin-bottom: 40px;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 6px;
-      margin: 15px 0;
-      border: 1px solid #ccc;
-      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-    }
-    .caption {
-      font-size: 0.9em;
-      color: #666;
-      font-style: italic;
-      margin-bottom: 10px;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Manual - Procedimento Administrativo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Estilos Gerais */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- Cabeçalho Padrão --- */
+        .site-header {
+            background-color: #2a528a;
+            color: #ffffff;
+            padding: 15px 25px;
+        }
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-icon {
+            font-size: 40px;
+        }
+        .logo-text .title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .logo-text .subtitle {
+            font-size: 14px;
+        }
+
+        /* --- Conteúdo Principal --- */
+        main.container {
+            flex: 1 0 auto;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 25px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn-voltar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #004085;
+            color: #ffffff;
+            padding: 10px 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+        .btn-voltar:hover {
+            background-color: #00336a;
+        }
+
+        h1, h2 {
+            color: #004085;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h2 {
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+        }
+        
+        code {
+            background-color: #e9ecef;
+            color: #c92a2a;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        pre {
+            background-color: #2c3e50;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin: 10px 0;
+        }
+        
+        .note {
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid #17a2b8;
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+
+        /* --- Rodapé Padrão --- */
+        .site-footer {
+            background-color: #1a3b6b;
+            color: #f0f0f0;
+            padding: 40px 20px;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-column h3 {
+            color: #f0c64a;
+        }
+    </style>
 </head>
 <body>
 
-         <h1>ADMINISTRATIVO</h1>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-left">
+                <i class="fa-solid fa-scale-balanced logo-icon"></i>
+                <div class="logo-text">
+                    <span class="title">TJMG</span>
+                    <span class="subtitle">Manual de Procedimentos</span>
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <div class="section">
-    <h2>Manual</h2>
-    <p>ABRIR E-MAIL OPERAÇÃO.</p>
-    <p>PROCURAR E-MAIL DO DIA DO EXPEDINTE (procurar e-mail do dia anterior).</p>
-    <p>CLICAR NA SETA DO ÚLTIMO ARQUIVO E SALVAR TODOS ARQUIVOS NA PASTA (CRIAR A PASTA DO EXPEDIENTE) Z:\Arquivos PUBLICACOES\Arquivos administrativos\2023\5. Maio\03.05.23.</p>
-    <img src="adm1.jpg" alt="email OPERAÇÃO" />
+    <main class="container">
+        <a href="index.html" class="btn-voltar">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Voltar para o Início</span>
+        </a>
+        
+        <h1>Manual de Publicação (Administrativo)</h1>
 
-    <p><strong>OBS.: SE O E-MAIL PUBLICAÇÃO Dje não aparecer enviar mensagem para Paula ou Michele da presidência.</strong></p>
+        <div class="section">
+            <h2>Passo 1:</h2>
+            <ol>
+                <li>Abra o e-mail da "OPERAÇÃO" e localize a mensagem do dia anterior referente ao expediente.</li>
+                <li>Clique na seta do último anexo e selecione "Salvar todos os anexos".</li>
+                <li>Salve os arquivos em uma nova pasta com a data do expediente, seguindo o caminho: <br><code>Z:\Arquivos PUBLICACOES\Arquivos administrativos\2023\5. Maio\03.05.23</code></li>
+            </ol>
+            <img src="adm1.jpg" alt="Interface de e-mail mostrando a opção para salvar todos os anexos." />
+            <div class="note">
+                <strong>OBSERVAÇÃO:</strong> Se o e-mail "Publicação DJe" não for encontrado, contate Paula ou Michele da presidência.
+            </div>
+        </div>
 
-    <p>ENTRAR NA PASTA:
-        Z:\Arquivos PUBLICACOES\Arquivos administrativos\2023\3.Março\<strong>15.03.23</strong></p>
-        <p>Abrir o arquivo do word no libre office</p>
-        <p>Ir em arquivo salvar como e salvar com o nome diamestjmg01 (DIA E MÊS DO EXPEDIENTE)</p>
-        <p>Em tipo salvar como RTF e Feche o documento</p>
-        <p>Abrir filezila</p>
-        <p>Ir em SITE TJ_Arquivos RTF (NA SETINHA) </p>
-        <p>Ir ao endereço:<strong>/web1/www/arquivos/juridico/sf/diario</strong></p>
-        <p>E procurar a pasta rtf</p>
-        <img src="adm2.jpg" alt="email OPERAÇÃO" />
-       <p>Acessar SOLWEB-5</p>
-       <img src="adm3.jpg" alt="email OPERAÇÃO" />
-       <p>CLICAR EM PROFILES E DEPOIS EM SOLWEB-5</p>
-       <img src="adm4.jpg" alt="email OPERAÇÃO" />
-       <p>SENHA:imprensa</p>
-        <p>Colar o comando abaixo:</p> 
-        <p>cd /home/publica/rotina</p>
-        <img src="adm5.jpg" alt="email OPERAÇÃO" />
-        <p>Colar o outro comando:</p>
-        <p>./rtf2html.pl –t</p>
-        <p><strong>AGUARDE RODAR O COMANDO ATÉ APARCER NO FINAL O CIFRÃO</strong></p>
-        <p>Após o enter o arquivo vai sumir do zila (F5 NO ZILA PARA ATUALIZAR)</p>
-        <p>Ir no site dje e verificar se criou</p>
-        <img src="adm6.jpg" alt="email OPERAÇÃO" />
-        <p>No zila abrir pasta do dia do expediente e procurar o arquivo diamestjmg01.txt e copiá-lo para z:\Arquivos PUBLICACOES\Arquivos administrativos\2023\3. Março\15.03.23 (dentro do zila)</p>
+        <div class="section">
+            <h2>Passo 2:</h2>
+            <ol>
+                <li>Navegue até a pasta do dia e abra o arquivo Word (.docx) com o <strong>LibreOffice</strong>.</li>
+                <li>No LibreOffice, vá em <strong>Arquivo &gt; Salvar como...</strong></li>
+                <li>Em "Tipo", selecione <strong>Texto em Formato Rich Text (.rtf)</strong>.</li>
+                <li>Nomeie o arquivo como <code>diamestjmg01</code> (ex: para 15 de março, ficaria <strong>1503tjmg01</strong>). Salve e feche o documento.</li>
+            </ol>
+        </div>
 
-<p>
+        <div class="section">
+            <h2>Passo 3:</h2>
+            <ol>
+                <li>Abra o <strong>FileZilla</strong> e conecte-se ao site <strong>TJ_Arquivos RTF</strong>.</li>
+                <li>Navegue até o diretório remoto: <code>/web1/www/arquivos/juridico/sf/diario</code> e entre na pasta <code>rtf</code>.</li>
+                <li>Transfira o arquivo <code>.rtf</code> que você acabou de salvar para esta pasta.</li>
+            </ol>
+            <img src="adm2.jpg" alt="Tela do FileZilla mostrando a navegação de pastas no servidor remoto." />
+        </div>
 
-  
+        <div class="section">
+            <h2>Passo 4:</h2>
+            <ol>
+                <li>Acesse o servidor <code>SOLWEB-5</code> (via PuTTY ou outro cliente SSH).</li>
+                <img src="adm3.jpg" alt="Janela de configuração de sessão do PuTTY." />
+                <li>Clique em "Profiles" e depois em "SOLWEB-5" para carregar a sessão e conectar.</li>
+                <img src="adm4.jpg" alt="Tela do PuTTY mostrando perfis de sessão salvos." />
+                <li>Quando solicitado, utilize a senha: <code>imprensa</code>.</li>
+                <li>Cole o primeiro comando para navegar até a pasta correta e pressione Enter:</li>
+                <pre><code>cd /home/publica/rotina</code></pre>
+                <img src="adm5.jpg" alt="Terminal do servidor após a execução do comando 'cd'." />
+                <li>Cole o segundo comando para executar o script de conversão e pressione Enter:</li>
+                <pre><code>./rtf2html.pl –t</code></pre>
+                <li><strong>AGUARDE!</strong> O comando pode demorar. Espere até que o cursor com o cifrão (<code>$</code>) apareça novamente no final.</li>
+            </ol>
+        </div>
 
+        <div class="section">
+            <h2>Passo 5:</h2>
+            <ol>
+                <li>No FileZilla, pressione F5 para atualizar a pasta <code>rtf</code>. O arquivo que você enviou deve ter desaparecido.</li>
+                <li>Acesse o site do <strong>DJe (Diário Judiciário Eletrônico)</strong> e verifique se a publicação foi criada corretamente.</li>
+                <img src="adm6.jpg" alt="Página do Diário Judiciário Eletrônico mostrando as publicações do dia." />
+                <li>No servidor (via FileZilla ou pasta de rede), procure pelo arquivo gerado <code>diamestjmg01.txt</code> e copie-o para a pasta do dia correspondente.</li>
+            </ol>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>TJMG</h3>
+                <p>Equipe Certificado Digital</p>
+            </div>
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <p>Central: (31) 3339-7696</p>
+                <p>operacao.informatica@tjmg.jus.br</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>

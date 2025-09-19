@@ -1,112 +1,256 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Manual com Fotos</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      background-color: #f9f9f9;
-      color: #333;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    h1, h2 {
-      color: #004085;
-    }
-    .section {
-      margin-bottom: 40px;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 6px;
-      margin: 15px 0;
-      border: 1px solid #ccc;
-      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-    }
-    .caption {
-      font-size: 0.9em;
-      color: #666;
-      font-style: italic;
-      margin-bottom: 10px;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Manual - Configuração do PJE Mídias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Estilos Gerais */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- Cabeçalho Padrão --- */
+        .site-header {
+            background-color: #2a528a;
+            color: #ffffff;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: center;
+        }
+        .header-container {
+            width: 100%;
+            max-width: 1400px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-icon {
+            font-size: 40px;
+        }
+        .logo-text .title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .logo-text .subtitle {
+            font-size: 14px;
+        }
+
+        /* --- Conteúdo Principal --- */
+        main.container {
+            flex: 1 0 auto;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 25px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn-voltar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #004085;
+            color: #ffffff;
+            padding: 10px 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+        .btn-voltar:hover {
+            background-color: #00336a;
+        }
+
+        h1, h2 {
+            color: #004085;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h2 {
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+        }
+        
+        code {
+            background-color: #e9ecef;
+            color: #c92a2a;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        pre {
+            background-color: #2c3e50;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin: 10px 0;
+        }
+        
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        /* --- Rodapé Padrão --- */
+        .site-footer {
+            background-color: #1a3b6b;
+            color: #f0f0f0;
+            padding: 40px 20px;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-column h3 {
+            color: #f0c64a;
+        }
+        .contact-info a {
+            color: #f0f0f0;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .contact-info .icon {
+            color: #f0c64a;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
 
-         <h1>Manual de Configuração do PJE Mídias utilizando RunAs</h1>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-left">
+                <i class="fa-solid fa-scale-balanced logo-icon"></i>
+                <div class="logo-text">
+                    <span class="title">TJMG</span>
+                    <span class="subtitle">Manual de Procedimentos</span>
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <div class="section">
-    <h2>Configurando o PJE Mídias para execução via RunAs</h2>
-    <p>Em todos os casos em que o Gerenciador do Token DX estava instalado na máquina, o aplicativo PJE Mídias Desktop era encerrado, sem exibir mensagem de erro, durante o processo de assinatura.</p>
-    <p>Quando o aplicativo foi executado em um perfil de Administrador, o processo de assinatura pôde ser concluído sem problemas.</p>
-    <p>Como solução paliativa, o aplicativo está sendo configurado para execução via RunAs, por meio da criação de um atalho utilizando o perfil <strong>DIRFOR</strong>.</p>
-    <p>Ressaltamos que, em alguns casos, mesmo configurando a execução com o perfil de Administrador ou de Suporte (FIELD), o problema persistiu, sendo solucionado apenas após a formatação da máquina.</p>
-  </div>
+    <main class="container">
+        <a href="index.html" class="btn-voltar">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Voltar para o Início</span>
+        </a>
+        <h1>Manual de Configuração do PJE Mídias via RunAs</h1>
 
-  <div class="section">
-    <h2>Execução de teste</h2>
-    <p>O procedimento pode ser realizado de duas formas:</p>
-    <ol>
-      <li>Executando o aplicativo diretamente com o usuário <strong>DIRFOR</strong>;</li>
-      <img src="exemplo1.jpg" alt="Executando o arquivo como Administrador" />
-    
-      <img src="exemplo2.jpg" alt="Logando como adm" />
+        <div class="section">
+            <h2>Contexto do Problema</h2>
+            <p>Em máquinas com o "Gerenciador do Token DX" instalado, o aplicativo PJE Mídias Desktop encerrava inesperadamente durante a assinatura, sem apresentar mensagens de erro. A execução em um perfil de Administrador permitia a conclusão do processo.</p>
+            <p>Como solução paliativa, o aplicativo foi configurado para ser executado com privilégios elevados através do <code>RunAs</code>, utilizando um perfil de suporte como <strong>DIRFOR</strong> ou <strong>FIELD</strong>.</p>
+            <p><strong>Observação:</strong> Em alguns casos, o problema persistiu mesmo com perfis elevados, sendo solucionado apenas com a formatação da máquina.</p>
+        </div>
 
-      <li>Criando um atalho na Área de Trabalho do usuário, configurado para execução via RunAs (Recomendado):</li>
-    </ol>
-    <p>Passos para criar o atalho:</p>
-    <ul>
-      <li>Clique com o botão direito na Área de Trabalho e selecione <strong>Novo &gt; Atalho</strong>.</li>
-            <img src="exemplo3.jpg" alt="Executando o arquivo como Administrador" />
-      <li>Em “Digite o local do item:” insira o comando abaixo:</li>
-      <pre><code>C:\Windows\System32\runas.exe /savecred /user:dirfor "C:\Users\GVSTJMG\Arquivos de Programas CNJ\AD\app\ad.exe" </code></pre>
-      <pre><code> OU </code></pre>
-      <pre><code>C:\Windows\System32\runas.exe /savecred /user:tjmg\field225 "%userprofile%\Arquivos de Programas CNJ\AD\app\ad.exe" </code></pre>
-      <img src="exemplo4.jpg" alt="Executando o arquivo como Administrador" />
-          <img src="exemplo5.jpg" alt="Executando o arquivo como Administrador" />
-      <li>Na primeira execução com RunAs, será solicitada a senha do perfil utilizado (no caso, o DIRFOR).</li>
-      <img src="exemplo6.jpg"/>
-      <li>Após digitar a senha, o aplicativo será executado. Recomendamos fechá-lo e abri-lo novamente pelo atalho para verificar se as credenciais foram salvas corretamente.</li>
-    </ul>
-  </div>
-    </ul>
-       
-  </div>
+        <div class="section">
+            <h2>Passo a Passo para Criação do Atalho</h2>
+            <p>O método recomendado é a criação de um atalho na Área de Trabalho do usuário.</p>
+            <ol>
+                <li>Clique com o botão direito na Área de Trabalho e selecione <strong>Novo &gt; Atalho</strong>.</li>
+            </ol>
+            <img src="exemplo3.jpg" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
 
-  <div class="section">
-    <h2>Configurações adicionais </h2>
-    <ul>
-      <li>Como a execução ocorre em outro usuário, no primeiro acesso será necessário cadastrar novamente a Comarca, o Juiz e a Sala.</li>
-      <li>Todas as mídias pendentes de assinatura devem ser adicionadas novamente.</li>
-      <li>Em alguns casos, as mídias podem estar em uma unidade de rede mapeada. Como o aplicativo está sendo executado em outro perfil, será necessário copiar a mídia para uma pasta temporária local antes da assinatura.</li>
-    </ul>
-    <img src="exemplo7.jpg" alt="Executando o arquivo como Administrador" />
-    <img src="exemplo8.jpg" alt="Executando o arquivo como Administrador" />
+            <p>Em “Digite o local do item”, insira um dos comandos abaixo:</p>
+            <pre><code>C:\Windows\System32\runas.exe /savecred /user:dirfor "C:\Users\GVSTJMG\Arquivos de Programas CNJ\AD\app\ad.exe"</code></pre>
+            <p>OU</p>
+            <pre><code>C:\Windows\System32\runas.exe /savecred /user:tjmg\field225 "%userprofile%\Arquivos de Programas CNJ\AD\app\ad.exe"</code></pre>
+            <img src="exemplo4.jpg" alt="Janela de criação de atalho com o comando RunAs inserido no campo de local." />
+            <img src="exemplo5.jpg" alt="Tela final da criação do atalho, solicitando um nome para o mesmo." />
 
-  </div>
+            <ol start="2">
+                <li>Na primeira execução, será solicitada a senha do perfil utilizado (<code>DIRFOR</code> ou <code>FIELD</code>).</li>
+            </ol>
+            <img src="exemplo6.jpg" alt="Prompt de comando solicitando a senha para o usuário do RunAs."/>
+            
+            <ol start="3">
+                <li>Após digitar a senha, o aplicativo será executado. Feche-o e abra novamente pelo atalho para confirmar que as credenciais foram salvas.</li>
+            </ol>
+        </div>
 
-  <div class="section">
-    <p>Após adicionar a mídia, prossiga com o processo de assinatura:</p>
-    <ul>
-      <li>Ao clicar na opção de assinatura, será exibida a tela para localizar o driver do token.</li>
-      <img src="exemplo9.jpg" alt="Executando o arquivo como Administrador" />
-      <li>Selecione o driver Token DX, localizado em: <code>C:\Windows\System32\DXSafePKCS11.dll</code>;</li>
-      <img src="exemplo10.jpg" alt="Executando o arquivo como Administrador" />
-      <li>Digite a senha do token para concluir a assinatura.</li>
-      <img src="exemplo12.jpg" alt="Executando o arquivo como Administrador" />
-    </ul>
-    <p>Após finalizar o processo de sincronização, verifique com o usuário se há mais mídias para assinatura e peça que ele execute o processo desde o ínicio.</p>
+        <div class="section">
+            <h2>Configurações Pós-Instalação</h2>
+            <ul>
+                <li>Como a execução ocorre em outro perfil, no primeiro acesso será necessário cadastrar novamente a <strong>Comarca, o Juiz e a Sala</strong>.</li>
+                <li>Todas as mídias pendentes de assinatura deverão ser adicionadas novamente ao aplicativo.</li>
+                <li>Se as mídias estiverem em uma unidade de rede mapeada, copie-as para uma pasta local antes de iniciar a assinatura.</li>
+            </ul>
+            <img src="exemplo7.jpg" alt="Tela de cadastro da comarca, juiz e sala de audiência no PJE Mídias." />
+            <img src="exemplo8.jpg" alt="Tela principal do PJE Mídias, pronta para adicionar novas mídias." />
+        </div>
 
-  </div>
+        <div class="section">
+            <h2>Processo de Assinatura de Mídia</h2>
+            <ol>
+                <li>Após adicionar a mídia, clique na opção de assinatura. A tela para localizar o driver do token será exibida.</li>
+            </ol>
+            <img src="exemplo9.jpg" alt="Janela para selecionar o arquivo de driver do token PKCS11." />
+
+            <ol start="2">
+                <li>Selecione o driver <strong>Token DX</strong>, localizado em: <code>C:\Windows\System32\DXSafePKCS11.dll</code></li>
+            </ol>
+            <img src="exemplo10.jpg" alt="Explorador de arquivos mostrando o caminho e a seleção do arquivo DXSafePKCS11.dll." />
+            
+            <ol start="3">
+                <li>Digite a senha (PIN) do seu token para concluir a assinatura.</li>
+            </ol>
+            <img src="exemplo12.jpg" alt="Tela do PJE Mídias solicitando a senha do token para assinar o arquivo." />
+            
+            <p>Após a sincronização, verifique com o usuário se há mais mídias para assinar e oriente-o a repetir o processo.</p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>TJMG</h3>
+                <p>Equipe Certificado Digital</p>
+            </div>
+            <div class="footer-column contact-info">
+                <h3>Contato</h3>
+                <a href="tel:+553133397696"><i class="fas fa-phone icon"></i> Central: (31) 3339-7696</a>
+                <a href="mailto:operacao.informatica@tjmg.jus.br"><i class="fas fa-envelope icon"></i> operacao.informatica@tjmg.jus.br</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
