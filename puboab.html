@@ -6,80 +6,103 @@
     <title>Manual de Procedimentos - Envio de PUBs para OAB</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-        /* Estilos Gerais */
+        /* Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
         body {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f8f9fa;
+            background: #f5f7fa;
             color: #333;
-            margin: 0;
         }
 
-        /* --- ESTILOS DO CABEÇALHO PADRÃO --- */
+        /* --- Cabeçalho Padrão --- */
         .site-header {
-            background-color: #2a528a;
-            color: #ffffff;
-            padding: 15px 25px;
-            display: flex;
-            justify-content: center;
-            width: 100%;
+            background: linear-gradient(90deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        .header-container {
-            width: 100%;
+        .header-content {
             max-width: 1400px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .header-left {
+            margin: 0 auto;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
-        .logo-icon {
-            font-size: 40px;
-        }
-        .logo-text .title {
-            font-size: 20px;
-            font-weight: bold;
-            display: block;
-        }
-        .logo-text .subtitle {
-            font-size: 14px;
+        .header-content i { font-size: 32px; }
+        .header-content h1 { font-size: 26px; }
+
+        /* --- Estrutura da Página --- */
+        .page-layout {
+            display: flex;
+            gap: 30px;
+            padding: 30px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex: 1;
         }
 
-        /* Conteúdo Principal */
-        main.container {
-            flex: 1 0 auto;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 25px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        /* --- Menu Lateral (Sidebar) --- */
+        .sidebar {
+            flex: 0 0 260px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            height: fit-content;
         }
-
-        .btn-voltar {
-            display: inline-flex;
+        
+        .sidebar h2 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar li a {
+            display: flex;
             align-items: center;
-            gap: 8px;
-            background-color: #004085;
-            color: #ffffff;
-            padding: 10px 18px;
-            border-radius: 5px;
+            gap: 12px;
+            padding: 12px 15px;
             text-decoration: none;
-            font-weight: bold;
-            margin-bottom: 25px;
-            transition: background-color 0.3s;
+            color: #333;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
-        .btn-voltar:hover {
-            background-color: #00336a;
+        .sidebar li a:hover, .sidebar li a.active {
+            background-color: #ecf0f1;
+            color: #2980b9;
+            font-weight: 700;
+        }
+        .sidebar li a i {
+            width: 20px;
+            text-align: center;
+            color: #3498db;
         }
 
-        .content h1 {
+        /* --- Área de Conteúdo Principal --- */
+        .main-content {
+            flex: 1;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        .main-content h1 {
             color: #2a528a;
             border-bottom: 2px solid #e9ecef;
             padding-bottom: 10px;
@@ -87,19 +110,16 @@
             text-align: center;
             margin-bottom: 30px;
         }
-
         .step h3 {
             font-size: 1.3em;
             color: #1d3557;
             margin-bottom: 15px;
         }
-        
-        ul {
+        .main-content ul {
             list-style-type: none;
             padding-left: 0;
         }
-        
-        li {
+        .main-content li {
             background-color: #f1f3f5;
             padding: 12px 12px 12px 40px;
             border-left: 4px solid #457b9d;
@@ -107,9 +127,8 @@
             border-radius: 4px;
             position: relative;
         }
-
-        li::before {
-            content: '\f058'; /* Ícone de check-circle do Font Awesome */
+        .main-content li::before {
+            content: '\f058';
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
             color: #2a528a;
@@ -117,23 +136,19 @@
             left: 12px;
             top: 13px;
         }
-        
         code {
             background-color: #e9ecef;
             color: #c92a2a;
             padding: 3px 6px;
             border-radius: 4px;
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-family: monospace;
         }
-
         .step img {
             max-width: 100%;
-            height: auto;
             border-radius: 6px;
             margin-top: 15px;
             border: 1px solid #ccc;
         }
-
         .attention {
             background-color: #fff3cd;
             border-left: 4px solid #ffc107;
@@ -147,69 +162,72 @@
             color: #856404;
         }
         .attention li::before {
-             content: '\f071'; /* Ícone de warning do Font Awesome */
+             content: '\f071';
              color: #856404;
         }
         .attention li {
             border-left-color: #ffc107;
         }
 
-        /* --- ESTILOS DO RODAPÉ PADRÃO --- */
+        /* --- Rodapé Padrão --- */
         .site-footer {
             background-color: #1a3b6b;
             color: #f0f0f0;
             padding: 40px 20px;
+            font-size: 14px;
         }
         .footer-container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .footer-column {
-            flex: 1;
-            min-width: 250px;
+            align-items: flex-start;
         }
         .footer-column h3 {
             color: #f0c64a;
-            font-size: 16px;
         }
         .contact-info a {
             color: #f0f0f0;
             text-decoration: none;
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
+            gap: 10px;
         }
-        .contact-info .icon {
-            color: #f0c64a;
-            margin-right: 10px;
+
+        @media (max-width: 992px) {
+            .page-layout { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
     <header class="site-header">
-        <div class="header-container">
-            <div class="header-left">
-                <i class="fa-solid fa-scale-balanced logo-icon"></i>
-                <div class="logo-text">
-                    <span class="title">TJMG</span>
-                    <span class="subtitle">Manual de Procedimentos</span>
-                </div>
+        <div class="header-content container">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <h1>Manual TJMG</h1>
             </div>
         </div>
     </header>
 
-    <main class="container">
-        <a href="index.html" class="btn-voltar">
-            <i class="fa-solid fa-arrow-left"></i>
-            <span>Voltar para o Início</span>
-        </a>
-
-        <div class="content">
+    <div class="page-layout">
+        <aside class="sidebar">
+            <h2>Navegação</h2>
+            <nav>
+                <ul>
+                    <li><a href="primeirainstancia.html"><i class="fas fa-gavel"></i> Primeira Instância</a></li>
+                    <li><a href="#"><i class="fas fa-landmark"></i> Segunda Instância</a></li>
+                    <li><a href="administrativo.html"><i class="fas fa-building-columns"></i> Administrativo</a></li>
+                    <li><a href="#"><i class="fas fa-file-alt"></i> HTML (RTF)</a></li>
+                    <li><a href="puboab.html" class="active"><i class="fas fa-paper-plane"></i> PUB</a></li>
+                    <li><a href="rateio.html"><i class="fas fa-university"></i> Rateio do Banco</a></li>
+                    <li><a href="agendatjmg.html"><i class="fas fa-address-book"></i> Agenda Telefônica</a></li>
+                    <li><a href="pjemidias.html"><i class="fas fa-video"></i> PJE Mídias</a></li>
+                    <li><a href="anotacao.html"><i class="fas fa-clipboard"></i> Anotações</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
             <h1>Manual de Envio do PUB para OAB</h1>
 
             <div class="step">
@@ -255,8 +273,8 @@
                     <li>Após a confirmação do envio, <strong>apague os arquivos originais</strong> do diretório <code>/producao/transfer/receber/publica</code> no servidor.</li>
                 </ul>
             </div>
+        </main>
         </div>
-    </main>
 
     <footer class="site-footer">
         <div class="footer-container">
@@ -266,8 +284,8 @@
             </div>
             <div class="footer-column contact-info">
                 <h3>Contato</h3>
-                <a href="tel:+553133397696"><i class="fas fa-phone icon"></i> Central: (31) 3339-7696</a>
-                <a href="mailto:operacao.informatica@tjmg.jus.br"><i class="fas fa-envelope icon"></i> operacao.informatica@tjmg.jus.br</a>
+                <a href="tel:+553133397696"><i class="fas fa-phone"></i> Central: (31) 3339-7696</a>
+                <a href="mailto:operacao.informatica@tjmg.jus.br"><i class="fas fa-envelope"></i> operacao.informatica@tjmg.jus.br</a>
             </div>
         </div>
     </footer>

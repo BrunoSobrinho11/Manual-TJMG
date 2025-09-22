@@ -6,110 +6,130 @@
     <title>Manual - Configuração do PJE Mídias</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-        /* Estilos Gerais */
+        /* Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
         body {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            background-color: #f8f9fa;
+            background: #f5f7fa;
             color: #333;
-            line-height: 1.6;
         }
 
         /* --- Cabeçalho Padrão --- */
         .site-header {
-            background-color: #2a528a;
-            color: #ffffff;
-            padding: 15px 25px;
-            display: flex;
-            justify-content: center;
+            background: linear-gradient(90deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        .header-container {
-            width: 100%;
+        .header-content {
             max-width: 1400px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .header-left {
+            margin: 0 auto;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
-        .logo-icon {
-            font-size: 40px;
-        }
-        .logo-text .title {
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .logo-text .subtitle {
-            font-size: 14px;
+        .header-content i { font-size: 32px; }
+        .header-content h1 { font-size: 26px; }
+
+        /* --- Estrutura da Página --- */
+        .page-layout {
+            display: flex;
+            gap: 30px;
+            padding: 30px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex: 1;
         }
 
-        /* --- Conteúdo Principal --- */
-        main.container {
-            flex: 1 0 auto;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 25px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        /* --- Menu Lateral (Sidebar) --- */
+        .sidebar {
+            flex: 0 0 260px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            height: fit-content;
         }
-
-        .btn-voltar {
-            display: inline-flex;
+        
+        .sidebar h2 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar li a {
+            display: flex;
             align-items: center;
-            gap: 8px;
-            background-color: #004085;
-            color: #ffffff;
-            padding: 10px 18px;
-            border-radius: 5px;
+            gap: 12px;
+            padding: 12px 15px;
             text-decoration: none;
-            font-weight: bold;
-            margin-bottom: 25px;
+            color: #333;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
-        .btn-voltar:hover {
-            background-color: #00336a;
+        .sidebar li a:hover, .sidebar li a.active {
+            background-color: #ecf0f1;
+            color: #2980b9;
+            font-weight: 700;
+        }
+        .sidebar li a i {
+            width: 20px;
+            text-align: center;
+            color: #3498db;
         }
 
-        h1, h2 {
+        /* --- Área de Conteúdo Principal --- */
+        .main-content {
+            flex: 1;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        .main-content h1, .main-content h2 {
             color: #004085;
         }
-        h1 {
+        .main-content h1 {
             text-align: center;
             margin-bottom: 20px;
         }
-        h2 {
+        .main-content h2 {
             border-bottom: 2px solid #e9ecef;
             padding-bottom: 10px;
             margin-top: 30px;
             margin-bottom: 15px;
         }
-
+        .main-content img {
+            max-width: 100%;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin: 15px 0;
+        }
         .section {
             margin-bottom: 40px;
         }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 6px;
-            margin: 15px 0;
-            border: 1px solid #ccc;
-        }
-        
         code {
             background-color: #e9ecef;
-            color: #c92a2a;
             padding: 2px 5px;
             border-radius: 4px;
             font-family: monospace;
+            color: #c92a2a;
         }
-        
         pre {
             background-color: #2c3e50;
             color: #f8f8f2;
@@ -117,13 +137,6 @@
             border-radius: 5px;
             white-space: pre-wrap;
             word-wrap: break-word;
-            margin: 10px 0;
-        }
-        
-        pre code {
-            background-color: transparent;
-            color: inherit;
-            padding: 0;
         }
 
         /* --- Rodapé Padrão --- */
@@ -131,6 +144,7 @@
             background-color: #1a3b6b;
             color: #f0f0f0;
             padding: 40px 20px;
+            font-size: 14px;
         }
         .footer-container {
             max-width: 1200px;
@@ -138,119 +152,124 @@
             display: flex;
             justify-content: space-between;
         }
-        .footer-column h3 {
-            color: #f0c64a;
-        }
-        .contact-info a {
-            color: #f0f0f0;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        .contact-info .icon {
-            color: #f0c64a;
-            margin-right: 10px;
+        
+        @media (max-width: 992px) {
+            .page-layout { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
     <header class="site-header">
-        <div class="header-container">
-            <div class="header-left">
-                <i class="fa-solid fa-scale-balanced logo-icon"></i>
-                <div class="logo-text">
-                    <span class="title">TJMG</span>
-                    <span class="subtitle">Manual de Procedimentos</span>
-                </div>
+        <div class="header-content container">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <h1>Manual TJMG</h1>
             </div>
         </div>
     </header>
 
-    <main class="container">
-        <a href="index.html" class="btn-voltar">
-            <i class="fa-solid fa-arrow-left"></i>
-            <span>Voltar para o Início</span>
-        </a>
-        <h1>Manual de Configuração do PJE Mídias via RunAs</h1>
+    <div class="page-layout">
+        <aside class="sidebar">
+            <h2>Navegação</h2>
+            <nav>
+                <ul>
+                    <li><a href="primeirainstancia.html"><i class="fas fa-gavel"></i> Primeira Instância</a></li>
+                    <li><a href="#"><i class="fas fa-landmark"></i> Segunda Instância</a></li>
+                    <li><a href="administrativo.html"><i class="fas fa-building-columns"></i> Administrativo</a></li>
+                    <li><a href="#"><i class="fas fa-file-alt"></i> HTML (RTF)</a></li>
+                    <li><a href="puboab.html"><i class="fas fa-paper-plane"></i> PUB</a></li>
+                    <li><a href="rateio.html"><i class="fas fa-university"></i> Rateio do Banco</a></li>
+                    <li><a href="agendatjmg.html"><i class="fas fa-address-book"></i> Agenda Telefônica</a></li>
+                    <li><a href="pjemidias.html" class="active"><i class="fas fa-video"></i> PJE Mídias</a></li>
+                    <li><a href="anotacao.html"><i class="fas fa-clipboard"></i> Anotações</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <h1>Manual de Configuração do PJE Mídias via RunAs</h1>
 
-        <div class="section">
-            <h2>Contexto do Problema</h2>
-            <p>Em máquinas com o "Gerenciador do Token DX" instalado, o aplicativo PJE Mídias Desktop encerrava inesperadamente durante a assinatura, sem apresentar mensagens de erro. A execução em um perfil de Administrador permitia a conclusão do processo.</p>
-            <p>Como solução paliativa, o aplicativo foi configurado para ser executado com privilégios elevados através do <code>RunAs</code>, utilizando um perfil de suporte como <strong>DIRFOR</strong> ou <strong>FIELD</strong>.</p>
-            <p><strong>Observação:</strong> Em alguns casos, o problema persistiu mesmo com perfis elevados, sendo solucionado apenas com a formatação da máquina.</p>
+            <div class="section">
+                <h2>Contexto do Problema</h2>
+                <p>Em máquinas com o "Gerenciador do Token DX" instalado, o aplicativo PJE Mídias Desktop encerrava inesperadamente durante a assinatura. A execução em um perfil de Administrador permitia a conclusão do processo.</p>
+                <p>Como solução paliativa, o aplicativo foi configurado para ser executado com privilégios elevados através do <code>RunAs</code>, utilizando um perfil de suporte como <strong>DIRFOR</strong> ou <strong>FIELD</strong>.</p>
+                <p><strong>Observação:</strong> Em alguns casos, o problema persistiu mesmo com perfis elevados, sendo solucionado apenas com a formatação da máquina.</p>
+            </div>
+    
+            <div class="section">
+                <h2>Passo a Passo para Criação do Atalho</h2>
+                <p>O método recomendado é a criação de um atalho na Área de Trabalho do usuário.</p>
+                <ol>
+                    <li>Clique com o botão direito na Área de Trabalho e selecione <strong>Novo > Atalho</strong>.</li>
+                </ol>
+                <img src="exemplo3.jpg" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
+    
+                <p>Em “Digite o local do item”, insira um dos comandos abaixo:</p>
+                <pre><code>C:\Windows\System32\runas.exe /savecred /user:dirfor "C:\Users\GVSTJMG\Arquivos de Programas CNJ\AD\app\ad.exe"</code></pre>
+                <p>OU</p>
+                <pre><code>C:\Windows\System32\runas.exe /savecred /user:tjmg\field225 "%userprofile%\Arquivos de Programas CNJ\AD\app\ad.exe"</code></pre>
+                <img src="exemplo4.jpg" alt="Janela de criação de atalho com o comando RunAs inserido no campo de local." />
+                <img src="exemplo5.jpg" alt="Tela final da criação do atalho, solicitando um nome para o mesmo." />
+    
+                <ol start="2">
+                    <li>Na primeira execução, será solicitada a senha do perfil utilizado (<code>DIRFOR</code> ou <code>FIELD</code>).</li>
+                </ol>
+                <img src="exemplo6.jpg" alt="Prompt de comando solicitando a senha para o usuário do RunAs."/>
+                
+                <ol start="3">
+                    <li>Após digitar a senha, o aplicativo será executado. Feche-o e abra novamente pelo atalho para confirmar que as credenciais foram salvas.</li>
+                </ol>
+            </div>
+    
+            <div class="section">
+                <h2>Configurações Pós-Instalação</h2>
+                <ul>
+                    <li>Como a execução ocorre em outro perfil, no primeiro acesso será necessário cadastrar novamente a <strong>Comarca, o Juiz e a Sala</strong>.</li>
+                    <li>Todas as mídias pendentes de assinatura deverão ser adicionadas novamente ao aplicativo.</li>
+                    <li>Se as mídias estiverem em uma unidade de rede mapeada, copie-as para uma pasta local antes de iniciar a assinatura.</li>
+                </ul>
+                <img src="exemplo7.jpg" alt="Tela de cadastro da comarca, juiz e sala de audiência no PJE Mídias." />
+                <img src="exemplo8.jpg" alt="Tela principal do PJE Mídias, pronta para adicionar novas mídias." />
+            </div>
+    
+            <div class="section">
+                <h2>Processo de Assinatura de Mídia</h2>
+                <ol>
+                    <li>Após adicionar a mídia, clique na opção de assinatura. A tela para localizar o driver do token será exibida.</li>
+                </ol>
+                <img src="exemplo9.jpg" alt="Janela para selecionar o arquivo de driver do token PKCS11." />
+    
+                <ol start="2">
+                    <li>Selecione o driver <strong>Token DX</strong>, localizado em: <code>C:\Windows\System32\DXSafePKCS11.dll</code></li>
+                </ol>
+                <img src="exemplo10.jpg" alt="Explorador de arquivos mostrando o caminho e a seleção do arquivo DXSafePKCS11.dll." />
+                
+                <ol start="3">
+                    <li>Digite a senha (PIN) do seu token para concluir a assinatura.</li>
+                </ol>
+                <img src="exemplo12.jpg" alt="Tela do PJE Mídias solicitando a senha do token para assinar o arquivo." />
+                
+                <p>Após a sincronização, verifique com o usuário se há mais mídias para assinar e oriente-o a repetir o processo.</p>
+            </div>
+        </main>
         </div>
-
-        <div class="section">
-            <h2>Passo a Passo para Criação do Atalho</h2>
-            <p>O método recomendado é a criação de um atalho na Área de Trabalho do usuário.</p>
-            <ol>
-                <li>Clique com o botão direito na Área de Trabalho e selecione <strong>Novo &gt; Atalho</strong>.</li>
-            </ol>
-            <img src="exemplo3.jpg" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
-
-            <p>Em “Digite o local do item”, insira um dos comandos abaixo:</p>
-            <pre><code>C:\Windows\System32\runas.exe /savecred /user:dirfor "C:\Users\GVSTJMG\Arquivos de Programas CNJ\AD\app\ad.exe"</code></pre>
-            <p>OU</p>
-            <pre><code>C:\Windows\System32\runas.exe /savecred /user:tjmg\field225 "%userprofile%\Arquivos de Programas CNJ\AD\app\ad.exe"</code></pre>
-            <img src="exemplo4.jpg" alt="Janela de criação de atalho com o comando RunAs inserido no campo de local." />
-            <img src="exemplo5.jpg" alt="Tela final da criação do atalho, solicitando um nome para o mesmo." />
-
-            <ol start="2">
-                <li>Na primeira execução, será solicitada a senha do perfil utilizado (<code>DIRFOR</code> ou <code>FIELD</code>).</li>
-            </ol>
-            <img src="exemplo6.jpg" alt="Prompt de comando solicitando a senha para o usuário do RunAs."/>
-            
-            <ol start="3">
-                <li>Após digitar a senha, o aplicativo será executado. Feche-o e abra novamente pelo atalho para confirmar que as credenciais foram salvas.</li>
-            </ol>
-        </div>
-
-        <div class="section">
-            <h2>Configurações Pós-Instalação</h2>
-            <ul>
-                <li>Como a execução ocorre em outro perfil, no primeiro acesso será necessário cadastrar novamente a <strong>Comarca, o Juiz e a Sala</strong>.</li>
-                <li>Todas as mídias pendentes de assinatura deverão ser adicionadas novamente ao aplicativo.</li>
-                <li>Se as mídias estiverem em uma unidade de rede mapeada, copie-as para uma pasta local antes de iniciar a assinatura.</li>
-            </ul>
-            <img src="exemplo7.jpg" alt="Tela de cadastro da comarca, juiz e sala de audiência no PJE Mídias." />
-            <img src="exemplo8.jpg" alt="Tela principal do PJE Mídias, pronta para adicionar novas mídias." />
-        </div>
-
-        <div class="section">
-            <h2>Processo de Assinatura de Mídia</h2>
-            <ol>
-                <li>Após adicionar a mídia, clique na opção de assinatura. A tela para localizar o driver do token será exibida.</li>
-            </ol>
-            <img src="exemplo9.jpg" alt="Janela para selecionar o arquivo de driver do token PKCS11." />
-
-            <ol start="2">
-                <li>Selecione o driver <strong>Token DX</strong>, localizado em: <code>C:\Windows\System32\DXSafePKCS11.dll</code></li>
-            </ol>
-            <img src="exemplo10.jpg" alt="Explorador de arquivos mostrando o caminho e a seleção do arquivo DXSafePKCS11.dll." />
-            
-            <ol start="3">
-                <li>Digite a senha (PIN) do seu token para concluir a assinatura.</li>
-            </ol>
-            <img src="exemplo12.jpg" alt="Tela do PJE Mídias solicitando a senha do token para assinar o arquivo." />
-            
-            <p>Após a sincronização, verifique com o usuário se há mais mídias para assinar e oriente-o a repetir o processo.</p>
-        </div>
-    </main>
 
     <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>TJMG</h3>
-                <p>Equipe Certificado Digital</p>
-            </div>
-            <div class="footer-column contact-info">
-                <h3>Contato</h3>
-                <a href="tel:+553133397696"><i class="fas fa-phone icon"></i> Central: (31) 3339-7696</a>
-                <a href="mailto:operacao.informatica@tjmg.jus.br"><i class="fas fa-envelope icon"></i> operacao.informatica@tjmg.jus.br</a>
-            </div>
-        </div>
-    </footer>
+      <div class="footer-container">
+          
+          <div class="footer-column">
+              <h3>TJMG</h3>
+              <p>Equipe Certificado Digital</p>
+          </div>
+
+         
+
+          <div class="footer-column footer-copyright">
+              <p>&copy; 2025. Equipe Certificado Digital.</p>
+          </div>
+
+      </div>
+  </footer>
 
 </body>
 </html>

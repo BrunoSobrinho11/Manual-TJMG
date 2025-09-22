@@ -3,138 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual - Certificado Digital e Soluções</title>
+    <title>Manual - Anotações e Soluções</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-        /* Estilos Gerais */
+        /* Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
         body {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f8f9fa;
+            background: #f5f7fa;
             color: #333;
-            margin: 0;
         }
 
         /* --- Cabeçalho Padrão --- */
         .site-header {
-            background-color: #2a528a;
-            color: #ffffff;
-            padding: 15px 25px;
+            background: linear-gradient(90deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        .header-container {
+        .header-content {
             max-width: 1400px;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 12px;
         }
-        .header-left {
+        .header-content i { font-size: 32px; }
+        .header-content h1 { font-size: 26px; }
+
+        /* --- Estrutura da Página --- */
+        .page-layout {
+            display: flex;
+            gap: 30px;
+            padding: 30px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex: 1;
+        }
+
+        /* --- Menu Lateral (Sidebar) --- */
+        .sidebar {
+            flex: 0 0 260px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            height: fit-content;
+        }
+        
+        .sidebar h2 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar li a {
             display: flex;
             align-items: center;
-            gap: 15px;
-        }
-        .logo-icon {
-            font-size: 40px;
-        }
-        .logo-text .title {
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .logo-text .subtitle {
-            font-size: 14px;
-        }
-
-        /* --- Conteúdo Principal --- */
-        main.container {
-            flex: 1 0 auto;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 25px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        .btn-voltar {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background-color: #004085;
-            color: #ffffff;
-            padding: 10px 18px;
-            border-radius: 5px;
+            gap: 12px;
+            padding: 12px 15px;
             text-decoration: none;
-            font-weight: bold;
-            margin-bottom: 25px;
+            color: #333;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
-        .btn-voltar:hover {
-            background-color: #00336a;
+        .sidebar li a:hover, .sidebar li a.active {
+            background-color: #ecf0f1;
+            color: #2980b9;
+            font-weight: 700;
+        }
+        .sidebar li a i {
+            width: 20px;
+            text-align: center;
+            color: #3498db;
         }
 
-        h1, h2, h3 {
+        /* --- Área de Conteúdo Principal --- */
+        .main-content {
+            flex: 1;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        .main-content h1, .main-content h2, .main-content h3 {
             color: #004085;
         }
-        h1 {
+        .main-content h1 {
             text-align: center;
             margin-bottom: 20px;
         }
-        h2 {
+        .main-content h2 {
             border-bottom: 2px solid #e9ecef;
             padding-bottom: 10px;
             margin-top: 40px;
             margin-bottom: 20px;
         }
-
+        .main-content img {
+            max-width: 100%;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin: 15px 0;
+        }
         .section {
             margin-bottom: 40px;
         }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 6px;
-            margin: 15px 0;
-            border: 1px solid #ccc;
+        .error-section {
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e9ecef;
         }
-        
+        .error-section:last-of-type {
+            border-bottom: none;
+        }
         code, pre {
             background-color: #e9ecef;
-            color: #333;
+            color: #c92a2a;
             padding: 2px 5px;
             border-radius: 4px;
             font-family: monospace;
         }
-        
-        pre {
-            padding: 15px;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
-        
-        .note, .warning {
+        .note {
             padding: 15px;
             border-radius: 6px;
             margin: 20px 0;
-            border-left: 4px solid;
-        }
-        .note {
-            border-color: #17a2b8;
+            border-left: 4px solid #17a2b8;
             background-color: #d1ecf1;
             color: #0c5460;
-        }
-        .warning {
-            border-color: #ffc107;
-            background-color: #fff3cd;
-            color: #856404;
-        }
-        
-        .error-section {
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #dee2e6;
         }
 
         /* --- Rodapé Padrão --- */
@@ -149,34 +160,44 @@
             display: flex;
             justify-content: space-between;
         }
-        .footer-column h3 {
-            color: #f0c64a;
+        
+        @media (max-width: 992px) {
+            .page-layout { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
     <header class="site-header">
-        <div class="header-container">
-            <div class="header-left">
-                <i class="fa-solid fa-scale-balanced logo-icon"></i>
-                <div class="logo-text">
-                    <span class="title">TJMG</span>
-             
-                </div>
+        <div class="header-content container">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <h1>Manual TJMG</h1>
             </div>
         </div>
     </header>
 
-    <main class="container">
-        <a href="index.html" class="btn-voltar">
-            <i class="fa-solid fa-arrow-left"></i>
-            <span>Voltar para o Início</span>
-        </a>
-        
-        <h1>Manual de Suporte ao Certificado Digital</h1>
+    <div class="page-layout">
+        <aside class="sidebar">
+            <h2>Navegação</h2>
+            <nav>
+                <ul>
+                    <li><a href="primeirainstancia.html"><i class="fas fa-gavel"></i> Primeira Instância</a></li>
+                    <li><a href="#"><i class="fas fa-landmark"></i> Segunda Instância</a></li>
+                    <li><a href="administrativo.html"><i class="fas fa-building-columns"></i> Administrativo</a></li>
+                    <li><a href="#"><i class="fas fa-file-alt"></i> HTML (RTF)</a></li>
+                    <li><a href="puboab.html"><i class="fas fa-paper-plane"></i> PUB</a></li>
+                    <li><a href="rateio.html"><i class="fas fa-university"></i> Rateio do Banco</a></li>
+                    <li><a href="agendatjmg.html"><i class="fas fa-address-book"></i> Agenda Telefônica</a></li>
+                    <li><a href="pjemidias.html"><i class="fas fa-video"></i> PJE Mídias</a></li>
+                    <li><a href="anotacao.html" class="active"><i class="fas fa-clipboard"></i> Anotações</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <h1>Manual de Suporte ao Certificado Digital</h1>
 
-        <div class="section">
+            <div class="section">
          
             <h3>Links e Caminhos Úteis</h3>
             <ul>
@@ -330,20 +351,14 @@
                           
                         </div>
 
+
+                        
         </div>
 
-    </main>
-
-    <footer class="site-footer">
+     <footer class="site-footer">
         <div class="footer-container">
-            <div class="footer-column">
-                <h3>TJMG</h3>
-                <p>Equipe Certificado Digital</p>
-            </div>
-            <div class="footer-column">
-                <h3>Contato</h3>
-                <p>Telefone: (31) 3339-7696</p>
-            </div>
+            <h3>TJMG</h3>
+            <p>&copy; 2025 Equipe Certificado Digital</p>
         </div>
     </footer>
 
