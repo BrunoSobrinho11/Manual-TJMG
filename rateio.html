@@ -209,73 +209,332 @@
             <span>Voltar para o Início</span>
         </a>
 
-        <h1>Manual Rateio do Banco</h1>
+        <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Manual - Rateio do Banco</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: #f5f7fa;
+            color: #333;
+        }
 
-        <div class="section">
-            <h2>Acesso e Configuração Inicial</h2>
-            <p>Conexão remota IP: <code>10.0.40.200</code></p>
-            <p>Usuário: <strong>(Coloque seu Field)</strong></p> 
-            <p>Senha: <strong>(Digite a senha do seu Field)</strong>.</p>
-            <img src="rateio1.jpg" alt="Tela de Conexão de Área de Trabalho Remota do Windows." />
+        /* --- ESTILOS DO CABEÇALHO --- */
+        .site-header {
+            background-color: #2a528a;
+            color: #ffffff;
+            padding: 15px 25px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .header-left, .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .header-left .logo-icon {
+            font-size: 40px;
+        }
+        .logo-text .title {
+            font-size: 20px;
+            font-weight: bold;
+            display: block;
+        }
+        .logo-text .subtitle {
+            font-size: 14px;
+            font-weight: normal;
+        }
+        .header-right p {
+            margin: 0;
+            font-size: 14px;
+        }
 
-            <p>Ao entrar na máquina virtual, abra o explorador de arquivos > Este computador > Acesse a unidade <strong>R:</strong>.</p>
-            <img src="rateio2.png" alt="Explorador de arquivos mostrando a unidade R: selecionada." />
+        /* --- Estrutura Principal da Página --- */
+        .page-layout {
+            display: flex;
+            gap: 30px;
+            padding: 30px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex: 1;
+        }
 
-            <p>Procure o aplicativo <strong>Sperr</strong>.</p>
-            <img src="rateio3.png" alt="Pasta na unidade R: com o aplicativo Sperr destacado." />
-            
-            <p>Ao clicar no Sperr, uma janela de login será exibida. Use sua <strong>matrícula P</strong> como usuário e sua senha.</p>
-            <img src="rateio4.png" alt="Janela de login do sistema Sperr pedindo usuário e senha." />
+        /* --- Menu Lateral (Sidebar) --- */
+        .sidebar {
+            flex: 0 0 260px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            height: fit-content;
+        }
+        
+        .sidebar h2 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar li a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: #333;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .sidebar li a:hover, .sidebar li a.active {
+            background-color: #ecf0f1;
+            color: #2980b9;
+            font-weight: 700;
+        }
+        .sidebar li a i {
+            width: 20px;
+            text-align: center;
+            color: #3498db;
+        }
+
+        /* --- Área de Conteúdo Principal --- */
+        .main-content {
+            flex: 1;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        .main-content h1, .main-content h2 {
+            color: #004085;
+        }
+        .main-content h1 {
+            margin-bottom: 20px;
+        }
+        .main-content h2 {
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .main-content img {
+            max-width: 100%;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin: 15px 0;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        code {
+            background-color: #e9ecef;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #c92a2a;
+        }
+        .warning {
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        /* --- ESTILOS DO RODAPÉ --- */
+        .site-footer {
+            background-color: #1a3b6b;
+            color: #f0f0f0;
+            padding: 40px 20px;
+            font-size: 14px;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        .footer-column h3 {
+            color: #f0c64a;
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .footer-column p, .footer-column a {
+            margin: 0 0 10px 0;
+            line-height: 1.6;
+            color: #f0f0f0;
+            text-decoration: none;
+        }
+        .contact-info a {
+            display: flex;
+            align-items: center;
+        }
+        .contact-info .icon {
+            color: #f0c64a;
+            margin-right: 10px;
+            width: 20px;
+        }
+        .footer-copyright {
+            text-align: right;
+        }
+        
+        @media (max-width: 992px) {
+            .page-layout { flex-direction: column; }
+            .header-container { justify-content: center; }
+        }
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .footer-copyright {
+                text-align: center;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-left">
+                <i class="fa-solid fa-scale-balanced logo-icon"></i>
+                <div class="logo-text">
+                    <span class="title">TJMG</span>
+                    
+                </div>
+            </div>
+            <div class="header-right">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <p>Atualizado em: 2025</p>
+            </div>
         </div>
+    </header>
 
-        <div class="section">
-            <h2>Processamento do Rateio</h2>
-            <p>Agora vamos processar o arquivo de rateio do banco.</p>
-            <img src="rateio5.png" alt="Menu principal do sistema Sperr com a opção de processar arquivos." />
-            
-            <div class="warning">
-                <p><strong>ATENÇÃO!</strong> Se na listagem aparecerem arquivos com <strong>menos de 1Mb</strong>, não continue. Avise o Humberto para que ele retifique a listagem antes de rodar o banco.</p>
+    <div class="page-layout">
+        <aside class="sidebar">
+            <h2>Navegação</h2>
+            <nav>
+                <ul>
+                    <li><a href="primeirainstancia.html"><i class="fas fa-gavel"></i> Primeira Instância</a></li>
+                    <li><a href="#"><i class="fas fa-landmark"></i> Segunda Instância</a></li>
+                    <li><a href="administrativo.html"><i class="fas fa-building-columns"></i> Administrativo</a></li>
+                    <li><a href="#"><i class="fas fa-file-alt"></i> HTML (RTF)</a></li>
+                    <li><a href="puboab.html"><i class="fas fa-paper-plane"></i> PUB</a></li>
+                    <li><a href="rateio.html" class="active"><i class="fas fa-university"></i> Rateio do Banco</a></li>
+                    <li><a href="agendatjmg.html"><i class="fas fa-address-book"></i> Agenda Telefônica</a></li>
+                    <li><a href="pjemidias.html"><i class="fas fa-video"></i> PJE Mídias</a></li>
+                    <li><a href="anotacao.html"><i class="fas fa-clipboard"></i> Anotações</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <h1>Manual Rateio do Banco</h1>
+
+            <div class="section">
+                <h2>Acesso e Configuração Inicial</h2>
+                <p>Conexão remota IP: <code>10.0.40.200</code></p>
+                <p>Usuário: <strong>(Coloque seu Field)</strong></p> 
+                <p>Senha: <strong>(Digite a senha do seu Field)</strong>.</p>
+                <img src="rateio1.jpg" alt="Tela de Conexão de Área de Trabalho Remota do Windows." />
+
+                <p>Ao entrar na máquina virtual, abra o explorador de arquivos > Este computador > Acesse a unidade <strong>R:</strong>.</p>
+                <img src="rateio2.png" alt="Explorador de arquivos mostrando a unidade R: selecionada." />
+
+                <p>Procure o aplicativo <strong>Sperr</strong>.</p>
+                <img src="rateio3.png" alt="Pasta na unidade R: com o aplicativo Sperr destacado." />
+                
+                <p>Ao clicar no Sperr, uma janela de login será exibida. Use sua <strong>matrícula P</strong> como usuário e sua senha.</p>
+                <img src="rateio4.png" alt="Janela de login do sistema Sperr pedindo usuário e senha." />
             </div>
 
-            <p>Selecione o arquivo <code>.RET</code> e clique em <strong>OPEN</strong>. </p>
-            <p><strong>OBS:</strong> Tire um print desta tela e salve no caminho <code>Digital\Certminas\_backup_rateio_banco\2025\09. Setembro\19.09.25</code></p>
-            <img src="rateio6.png" alt="Janela para selecionar o arquivo .RET para processamento." />
-            
-            <p>Após clicar em <strong>OPEN</strong>, o rateio começará a ser processado.</p>
-            <img src="rateio7.png" alt="Tela mostrando o progresso do processamento do rateio." />
-            
-            <p>Atenção: Após um tempo, aparecerá a mensagem perguntando se há mais arquivos <code>.RET</code> a serem carregados. Caso não haja, escolha a opção <strong>No</strong>.</p>
-            <img src="rateio8.png" alt="Caixa de diálogo perguntando se há mais arquivos a serem carregados, com opções Yes e No." />
-            
-            <p>Após escolher uma das opções acima, o rateio continuará o procedimento.</p>
-            <img src="rateio9.png" alt="Tela mostrando a continuação do processamento do rateio." />
-            
-            <p>Quando o rateio for concluído, a mensagem de finalização será exibida.</p>
-            <img src="rateio10.png" alt="Mensagem de confirmação de que o processamento foi finalizado com sucesso." />
-            
-            <p><strong>OBS:</strong> Tire um print da tela de finalizado e salve no mesmo caminho: <code>Digital\Certminas\_backup_rateio_banco\2025\09. Setembro\19.09.25</code></p>
-            <img src="rateio11.png" alt="Tela final do processamento do rateio." />
-        </div>
+            <div class="section">
+                <h2>Processamento do Rateio</h2>
+                <p>Agora vamos processar o arquivo de rateio do banco.</p>
+                <img src="rateio5.png" alt="Menu principal do sistema Sperr com a opção de processar arquivos." />
+                
+                <div class="warning">
+                    <p><strong>ATENÇÃO!</strong> Se na listagem aparecerem arquivos com <strong>menos de 1Mb</strong>, não continue. Avise o Humberto para que ele retifique a listagem antes de rodar o banco.</p>
+                </div>
 
-        <div class="section">
-            <h2>Verificação Final</h2>
-            <p>Após o procedimento, clique em <strong>Processar Arquivo</strong> novamente. Você perceberá que o arquivo <code>.RET</code> desapareceu da lista inicial, pois foi processado.</p>
-            <img src="rateio13.png" alt="Menu do sistema com o botão 'Processar Arquivo'." />
-            <img src="rateio12.png" alt="A lista de arquivos .RET agora está vazia." />
-            
-            <p>Clique na pasta <strong>Processados</strong> e verifique se o arquivo que foi selecionado no início do rateio está lá.</p>
-            <img src="rateio14.png" alt="Explorador de arquivos mostrando o arquivo .RET dentro da pasta 'Processados'." />
+                <p>Selecione o arquivo <code>.RET</code> e clique em <strong>OPEN</strong>. </p>
+                <p><strong>OBS:</strong> Tire um print desta tela e salve no caminho <code>Digital\Certminas\_backup_rateio_banco\2025\09. Setembro\19.09.25</code></p>
+                <img src="rateio6.png" alt="Janela para selecionar o arquivo .RET para processamento." />
+                
+                <p>Após clicar em <strong>OPEN</strong>, o rateio começará a ser processado.</p>
+                <img src="rateio7.png" alt="Tela mostrando o progresso do processamento do rateio." />
+                
+                <p>Atenção: Após um tempo, aparecerá a mensagem perguntando se há mais arquivos <code>.RET</code> a serem carregados. Caso não haja, escolha a opção <strong>No</strong>.</p>
+                <img src="rateio8.png" alt="Caixa de diálogo perguntando se há mais arquivos a serem carregados, com opções Yes e No." />
+                
+                <p>Após escolher uma das opções acima, o rateio continuará o procedimento.</p>
+                <img src="rateio9.png" alt="Tela mostrando a continuação do processamento do rateio." />
+                
+                <p>Quando o rateio for concluído, a mensagem de finalização será exibida.</p>
+                <img src="rateio10.png" alt="Mensagem de confirmação de que o processamento foi finalizado com sucesso." />
+                
+                <p><strong>OBS:</strong> Tire um print da tela de finalizado e salve no mesmo caminho: <code>Digital\Certminas\_backup_rateio_banco\2025\09. Setembro\19.09.25</code></p>
+                <img src="rateio11.png" alt="Tela final do processamento do rateio." />
+            </div>
+
+            <div class="section">
+                <h2>Verificação Final</h2>
+                <p>Após o procedimento, clique em <strong>Processar Arquivo</strong> novamente. Você perceberá que o arquivo <code>.RET</code> desapareceu da lista inicial, pois foi processado.</p>
+                <img src="rateio13.png" alt="Menu do sistema com o botão 'Processar Arquivo'." />
+                <img src="rateio12.png" alt="A lista de arquivos .RET agora está vazia." />
+                
+                <p>Clique na pasta <strong>Processados</strong> e verifique se o arquivo que foi selecionado no início do rateio está lá.</p>
+                <img src="rateio14.png" alt="Explorador de arquivos mostrando o arquivo .RET dentro da pasta 'Processados'." />
+            </div>
+        </main>
         </div>
-    </main>
 
     <footer class="site-footer">
         <div class="footer-container">
-            
             <div class="footer-column">
                 <h3>TJMG</h3>
                 <p>Equipe Certificado Digital</p>
             </div>
-    
             <div class="footer-column contact-info">
                 <h3>Contato</h3>
                 <a href="tel:+553133397696">
@@ -291,11 +550,9 @@
                     <span>Belo Horizonte</span>
                 </p>
             </div>
-    
             <div class="footer-column footer-copyright">
                 <p>&copy; 2025. Equipe Certificado Digital.</p>
             </div>
-    
         </div>
     </footer>
 
