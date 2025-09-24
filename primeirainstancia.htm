@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual - Primeira Instância Automático</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: #f5f7fa;
+            color: #333;
+        }
+
+        /* --- Cabeçalho Padrão --- */
+        .site-header {
+            background: linear-gradient(90deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .header-content i { font-size: 32px; }
+        .header-content h1 { font-size: 26px; }
+
+        /* --- Estrutura da Página --- */
+        .page-layout {
+            display: flex;
+            gap: 30px;
+            padding: 30px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex: 1;
+        }
+
+        /* --- Menu Lateral (Sidebar) --- */
+        .sidebar {
+            flex: 0 0 260px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            height: fit-content;
+        }
+        
+        .sidebar h2 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar li a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: #333;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .sidebar li a:hover, .sidebar li a.active {
+            background-color: #ecf0f1;
+            color: #2980b9;
+            font-weight: 700;
+        }
+        .sidebar li a i {
+            width: 20px;
+            text-align: center;
+            color: #3498db;
+        }
+
+        /* --- Área de Conteúdo Principal --- */
+        .main-content {
+            flex: 1;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        .main-content h1, .main-content h2 {
+            color: #004085;
+        }
+        .main-content h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .main-content h2 {
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .main-content img {
+            max-width: 100%;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin: 15px 0;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        code {
+            background-color: #e9ecef;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #c92a2a;
+        }
+        .note {
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid #17a2b8;
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+
+        /* --- Rodapé Padrão --- */
+        .site-footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        @media (max-width: 992px) {
+            .page-layout { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-content container">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <h1>Manual TJMG</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-layout">
+        <!-- INÍCIO DO MENU DE NAVEGAÇÃO LATERAL -->
+        <aside class="sidebar">
+            <h2>Navegação</h2>
+            <nav>
+                <ul>
+                    <li><a href="primeirainstancia.htm"><i class="fas fa-gavel"></i> Primeira Instância</a></li>
+                    <li><a href="#"><i class="fas fa-landmark"></i> Segunda Instância</a></li>
+                    <li><a href="administrativo.html"><i class="fas fa-building-columns"></i> Administrativo</a></li>
+                    <li><a href="#"><i class="fas fa-file-alt"></i> HTML (RTF)</a></li>
+                    <li><a href="puboab.html"><i class="fas fa-paper-plane"></i> PUB</a></li>
+                    <li><a href="rateio.html"><i class="fas fa-university"></i> Rateio do Banco</a></li>
+                    <li><a href="agendatjmg.html"><i class="fas fa-address-book"></i> Agenda Telefônica</a></li>
+                    <li><a href="pjemidias.html"><i class="fas fa-video"></i> PJE Mídias</a></li>
+                    <li><a href="anotacao.html"><i class="fas fa-clipboard"></i> Anotações</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- FIM DO MENU DE NAVEGAÇÃO LATERAL -->
+
+        <!-- CONTEÚDO DA PÁGINA -->
+        <main class="main-content">
+            <h1>Caderno Primeira Instância (Automático)</h1>
+
+            <div class="section">
+                <h2>Parte 1</h2>
+                <ol>
+                    <li>No FileZilla, conecte-se ao servidor <strong>suncop-2</strong> e navegue até o endereço: <br><code>/producao/oracle/sf/admin/pubadm/aux</code></li>
+                    <li>Copie o arquivo <code>RC</code> que corresponde a um dia após o expediente para a sua pasta <code>TEMP</code> local.</li>
+            
+                <img src="primeira1.png" alt="Tela do FileZilla mostrando a cópia do arquivo RC para a pasta TEMP." />
+                <div class="note">
+                    <strong>Observação:</strong> A pasta <code>TEMP</code> deve conter apenas um arquivo <code>.txt</code>. Apague quaisquer outros arquivos existentes.
+                                </div>
+                                <li>Na sua área de trabalho, abra a planilha <strong>TESTE RESUMOS.XLSM</strong> que está na área de trabalho.</li>
+
+                                <li>Clique no botão indicado abaixopara gerar a planilha com a data do expediente e a lista de comarcas a serem consultadas.</li>
+                                <img src="primeira2.png" alt="Tela do FileZilla mostrando a cópia do arquivo RC para a pasta TEMP." />
+                                <li>Após clicar no botão acima, vai abrir a planilha GERAR CÓDIGO SQLPLUS.XLSM.</li>
+                                <img src="primeira3.png" alt="Tela do FileZilla mostrando a cópia do arquivo RC para a pasta TEMP." />
+                                <li>Abra o FileZilla e entre no SUNCOP-2 e abra a pasta <strong>DJEELETRONICO</strong>.</li>
+                                <img src="primeira4.png" alt="Tela do FileZilla mostrando a cópia do arquivo RC para a pasta TEMP." />
+                                <div class="note">
+                                <strong>Observação:</strong> Verifique se na listagem tem o arquivo de BH <code>DJE_p11_0024</code>.</div>
+                                <img src="primeira5.png" alt="Tela do FileZilla mostrando a cópia do arquivo RC para a pasta TEMP." />
+                                <li>Confira se tem o arquivo DJE de Jaíba (0738) na lista do servidor SUNCOP-2.</li>
+                                <li>Se houver, pode remover a linha desta comarca nas planilhas <strong>CÓDIGO SQLPLUS.XLSM</strong> e <strong>TESTE RESUMOS.XLSM</strong>.</li>
+                                <li>Se não tiver, acrescente esta comarca nas duas planilhas.</li>
+                                    <li>Agora vamos conferir se há o arquivo DJE de JUATUBA (0740).</li>
+                                    <li>Se houver, pode remover a linha desta comarca nas planilhas <strong>CÓDIGO SQLPLUS.XLSM</strong> e <strong>TESTE RESUMOS.XLSM</strong>.</li>
+                                <li>Se não tiver, acrescente esta comarca nas duas planilhas.</li>
+                                </ol>
+            </div>
+
+            <div class="section">
+                <h2>Parte 2</h2>
+                <ol>
+                    <li>Confira se a quantidade de comarcas que ficou na planilha bateu com a quantidade de comarcas faltantes <strong>(298 - quantidade de comarcas no FileZilla suncop-2 DEJEELETRONICO)</strong>. Se não houver a mesma quantidade, apague ou acrescente as comarcas faltantes. </li>
+                    <div class="note">
+                        <strong>Observação:</strong> Só faça os passos abaixo se a contagem quantidade de comarcas estiverem certas.</div>
+                        <li>Na planilha <strong>GERAR CODIGO SQLPLUS</strong> clique no botão <strong>EXECUTAR</strong> para que o SQLPLUS abra automaticamente e verifique se as comarcas faltantes possuem processos.</li>
+                        <img src="primeira6.png" alt="Tela do FileZilla mostrando a cópia do arquivo RC para a pasta TEMP." />
+                        <li>Vai aparecer a tela abaixo mostrando que as comarcas estão sendo consultadas.</li>
+                        <img src="primeira7.png" alt="Tela do FileZilla mostrando a cópia do arquivo RC para a pasta TEMP." />
+                        <li>Quando terminar a consulta digite no SQLPLUS: <strong>SPOOL OFF</strong>.</li>
+                        <img src="primeira8.png" alt="Tela do FileZilla mostrando a cópia do arquivo RC para a pasta TEMP." />
+                        <li>Digite agora <strong>edit teste</strong> para abrir o bloco de notas para mostrar todos os comandos que foram executados.</li>
+                        <div class="note">
+                            Confira se a data do expediente está correta. </div>
+                            <img src="primeira9.png" alt="Tela do FileZilla mostrando a cópia do arquivo RC para a pasta TEMP." />
+                            <li>Abra a planilha <strong>GERAR CÓDIGO SQLPLUS.XLSM</strong>, sem fechar o SQLPLUS clique no botão <strong>X</strong> para preencher a coluna "D"</li>
+                            <img src="primeira10.png" alt="Tela do FileZilla mostrando a cópia do arquivo RC para a pasta TEMP." />
+                            <div class="note">
+                                Repare que a coluna “D” foi preenchida mostrando se a comarcas possuem processos ou se foi feriado. </div>
+                                <li>Se tiver alguma comarca que está fora do ar, como na foto abaixo faça o seguinte:</li>
+                                <img src="primeira11.png" alt="Tela do FileZilla mostrando a cópia do arquivo RC para a pasta TEMP." />
+                                <li>No SQLPLUS digite: <strong>edit teste</strong> e pressione ENTER</li>
+                                <li>O bloco de notas irá abrir. Procure a comarca que está faltando e troque a senha. Se tiver a senha <strong>SC01VERO</strong>, troque para <strong>T9999996</strong>.</li>
+                                <img src="primeira12.png" alt="Tela do FileZilla mostrando a cópia do arquivo RC para a pasta TEMP." />
+                                <li>Selecione as 3 linhas abaixo com a senha alterada.</li>
+               
+                    
+                    </ol>
+              
+            
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 TJMG - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
