@@ -185,7 +185,7 @@
 
         <!-- CONTEÚDO DA PÁGINA -->
         <main class="main-content">
-            <h1>Caderno Primeira Instância (Automático)</h1>
+            <h1>Caderno Primeira Instância </h1>
 
             <div class="section">
                 <h2>Parte 1</h2>
@@ -242,12 +242,80 @@
                                 <li>No SQLPLUS digite: <strong>edit teste</strong> e pressione ENTER</li>
                                 <li>O bloco de notas irá abrir. Procure a comarca que está faltando e troque a senha. Se tiver a senha <strong>SC01VERO</strong>, troque para <strong>T9999996</strong>.</li>
                                 <img src="primeira12.png" alt="Tela do FileZilla mostrando a cópia do arquivo RC para a pasta TEMP." />
-                                <li>Selecione as 3 linhas abaixo com a senha alterada.</li>
-               
-                    
+                                <li>Selecione as 3 linhas abaixo com a senha alterada. Pressione CTRL+C para copiar. Feche o bloco de notas sem salvar as alterações</li>
+                                <img src="primeira13.png" alt="Tela do FileZilla mostrando a cópia do arquivo RC para a pasta TEMP." />
+                                <li>Pressione CTRL + V no SQLPLUS para colar os comandos copiados e veja se a comarca está fora do ar. Se ainda estiver fora do ar, confira no SISCON se também está fora do ar.</li>
+                                <img src="primeira14.png.jpg" alt="PRINT DA TELA DO SISCON QUANDO ESTIVER INDISPONIVEL." />
+                                <img src="primeira17.png" alt="PRINT DA TELA DO SISCON QUANDO ESTIVER INDISPONIVEL." />
+                                <div class="note">
+                                    Se realmente estiver fora do ar coloque na planilha como Link indisponível.</div>
                     </ol>
-              
-            
+                    <div class="section">
+                        <h2>Parte 3</h2>
+                        <ol>
+                            <li>Se houver alguma comarca com processos, verifique no FileZilla se há o DJE e o PUB. Se houver, copie o DJE para a pasta TEMP e depois para o DJEELETRONICO do SUNCOP-2. O PUB deve ser copiado para o TEMP e enviado para a OAB (endereço remoto: /producao/transfer/enviar/publica). Por fim, remova a linha da comarca com processos na planilha GERAR CÓDIGO SQLPLUS.XLSM</li>
+                        <li>Digitar em HOST a sigla da comarca (veja imagem abaixo)</li>
+                        <li>Digitar em NOME DO USUÁRIO: sfadmin (veja imagem abaixo)</li>
+                        <div class="note">
+                            Digitar em senha: veroSIGLA_DA_COMARCA5. Exemplo:<strong>verosoi5</strong> se a sigla for SOI. </div>
+                            <img src="primeira15.png" alt="PRINT DA TELA DO SISCON QUANDO ESTIVER INDISPONIVEL." />
+                            <li>Se não aparecer DJE e PUB no Filezilla, gerar o DJE e PUB no SISCON.</li>
+                            <div class="note">
+                                SISCON CARACTER: Login:<strong>sfadmin</strong>. Senha: <strong>A senha será veroSIGLACOMARCA5</strong>.</div>
+                                <li>Pelo Siscom Caracter, conectar-se à comarca, acessar a pasta  <strong>cd /producao/oracle/sf/bin</strong>.</li>
+                                <li>Já dentro da pasta você vai digitar o comando:</li>
+                                <div class="note">
+                                   <strong>publicadje.sh 0092 22/01/2025</strong> Obs.: Troque o 0092 pelo número da comarca e a data do expediente.</div>
+                                   <li>Se aparecer a mensagem abaixo informando que está sem expediente e no filezilla não foi encontrado o DJE e PUB....</li>
+                                   <img src="primeira16.png" alt="PRINT DA TELA DO SISCON QUANDO ESTIVER INDISPONIVEL." />
+                                   <li>PROCURAR NO SUNCOP-2 NA PASTA DJELETRONICO O AQRQUIVO DJE DO EXPEDINTE ATUAL E DA COMARCA QUE ESTÁ PENDENDE. ABRI-LO E VER SE JUNTOU...</li>
+                                   <img src="primeira18.png" alt="PRINT DA TELA DO SISCON QUANDO ESTIVER INDISPONIVEL." />
+                                                          </ol>
+
+                     <div class="section">
+                        <h2>Parte 4</h2>
+                        <ol>
+                            <li>Depois que gerou o DJE e PUB no SISCON, verificar no FileZila se foi gerado.</li>
+                            <div class="note">
+                                Endereço remoto: <strong>/producao/transfer/enviar/publica</strong>. </div>
+                                <li>Digite o NOME DO USUÁRIO: sfadmin</li>
+                                <li>Digite a senha: veroSIGLA_DA_COMARCA5</li>
+                                <img src="primeira19.png" alt="PRINT DA TELA DO SISCON QUANDO ESTIVER INDISPONIVEL." />
+                                <li>Copie o DJE e PUB gerado no SISCOM para a pasta TEMP / 
+                                    Copie o DJE para a pasta DJEELETRONICO nos SUNCOP-2. </li>
+                                    <li>Enviar o PUB para OAB.</li>
+                                    <li>Apagar a linha da comarca na planilha GERAR CÓDIGO SQLPLUS.XLSM.</li>
+                                    
+
+                            </ol>
+                     </div>
+                     <div class="section">
+                        <h2>Hora de Rodar a Primeira Instância</h2>
+                        <ol>
+                                <li>Acessar conexão remota</li>
+                                <div class="note">
+                                   <ul>USUÁRIO: <strong>tjadm</strong>.</ul>
+                                   <ul>SENHA: <strong>smdadje</strong></ul>
+                                </div>
+                                <img src="primeira20.png" alt="PRINT DA TELA DO SISCON QUANDO ESTIVER INDISPONIVEL." />
+
+                                <ul>Obs.: Verifique se a pasta RTF (que está em Acesso Rápido no Windows Explorer) está vazia.</ul>
+                                <ul>Verifique no Suncop-2, no FileZilla, na pasta DJEeletrônico, subpasta PJE, se há o arquivo DJE..._PJE.ZIP do dia anterior. <strong> (Se não houver esse arquivo, não faça os passos abaixo.)</strong></ul>
+                                <li> Ao acessar a máquina virtual pela conexão remota, clique no icone abaixo: <strong>GERADje</strong>.</li>
+                                <img src="primeira21.png" alt="PRINT DA TELA DO SISCON QUANDO ESTIVER INDISPONIVEL." />
+                                <li>Selecione a opção primeira Instância</li>
+                                <li>Após um tempo, aparecerá a mensagem abaixo. Clique em YES para continuar.</li>
+                                <img src="primeira22.png" alt="PRINT DA TELA DO SISCON QUANDO ESTIVER INDISPONIVEL." />
+                            </ol>
+                        </div>
+                        <div class="section">
+                            <h2>Montando o e-mail com ckelist</h2>
+                            <ol>
+                                
+                                
+                            </ol>
+
+                            </div>
         </main>
     </div>
 
