@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual - DJE Segunda Instância</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: #f5f7fa;
+            color: #333;
+        }
+
+        /* --- Cabeçalho Padrão --- */
+        .site-header {
+            background: #2a528a;
+            color: white;
+            padding: 15px 25px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .header-content img {
+            height: 40px;
+        }
+        .header-content h1 {
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        /* --- Estrutura da Página --- */
+        .page-layout {
+            display: flex;
+            gap: 30px;
+            padding: 30px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex: 1;
+        }
+
+        /* --- Menu Lateral (Sidebar) --- */
+        .sidebar {
+            flex: 0 0 260px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            height: fit-content;
+        }
+        
+        .sidebar h2 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar li a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: #333;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .sidebar li a:hover, .sidebar li a.active {
+            background-color: #ecf0f1;
+            color: #2980b9;
+            font-weight: 700;
+        }
+        .sidebar li a i {
+            width: 20px;
+            text-align: center;
+            color: #3498db;
+        }
+
+        /* --- Área de Conteúdo Principal --- */
+        .main-content {
+            flex: 1;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        .main-content h1, .main-content h2 {
+            color: #004085;
+        }
+        .main-content h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .main-content h2 {
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .main-content img {
+            max-width: 100%;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin: 15px 0;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        code {
+            background-color: #e9ecef;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #c92a2a;
+        }
+        .note {
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid #17a2b8;
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+
+        /* --- Rodapé Padrão --- */
+        .site-footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        @media (max-width: 992px) {
+            .page-layout { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-content container">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <h1>Manual TJMG</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-layout">
+        <!-- INÍCIO DO MENU DE NAVEGAÇÃO LATERAL -->
+        <aside class="sidebar">
+            <h2>Navegação</h2>
+            <nav>
+                <ul>
+                    <li><a href="primeirainstancia.htm"><i class="fas fa-gavel"></i> Primeira Instância</a></li>
+                    <li><a href="segundainstancia.html" class="active"><i class="fas fa-landmark"></i> Segunda Instância</a></li>
+                    <li><a href="administrativo.html"><i class="fas fa-building-columns"></i> Administrativo</a></li>
+                    <li><a href="html_rtf.html"><i class="fas fa-file-alt"></i> HTML (RTF)</a></li>
+                    <li><a href="puboab.html"><i class="fas fa-paper-plane"></i> PUB</a></li>
+                    <li><a href="rateio.html"><i class="fas fa-university"></i> Rateio do Banco</a></li>
+                    <li><a href="agendatjmg.html"><i class="fas fa-address-book"></i> Agenda Telefônica</a></li>
+                    <li><a href="pjemidias.html"><i class="fas fa-video"></i> PJE Mídias</a></li>
+                    <li><a href="anotacao.html"><i class="fas fa-clipboard"></i> Anotações</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- FIM DO MENU DE NAVEGAÇÃO LATERAL -->
+
+        <!-- CONTEÚDO DA PÁGINA -->
+        <main class="main-content">
+            <h1>Manual DJE Segunda Instância</h1>
+
+            <div class="section">
+                <h2>1. Geração dos Arquivos Iniciais</h2>
+                <ol>
+                    <li>Clique no ícone <strong>(nova versão sifipub01)</strong> e faça o login.</li>
+                    <img src="segunda1.png" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
+                    <img src="segunda2.png" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
+                    <li>Informe seu usuário P, senha e no campo "Banco de Dados" cole <strong>SUNBDPROD-RAC</strong>.</li>
+                    <li>Na tela de geração, clique em <strong>Executa Processamento</strong> para criar os arquivos TXT e RTF.</li>
+                    <img src="segunda3.png" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
+                    <li>Após clicar em executa processamento aparecerá a tela abaixo:</li>
+                    <img src="segunda4.png" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
+                    <li>Pode fechar a janela acima clicando em Ok.</li>
+                </ol>
+            </div>
+
+            <div class="section">
+                <h2>2. Montagem do Arquivo RTF</h2>
+                <ol>
+                    <li>Acesse a pasta <code>C:\Sis\siap\arquivos\digital</code>.</li>
+                    <li>Execute o <strong>DJE-MONTA ARQUIVO</strong>. Isso gerará o arquivo <code>RESULTADO.RTF</code>.</li>
+                    <li>Recorte todos os arquivos (exceto "dje monta arquivos") e cole na pasta: <br><code>Z:\Arquivos PUBLICACOES\Arquivos 2a instancia</code></li>
+                    <img src="segunda5.png" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
+                </ol>
+            </div>
+
+            <div class="section">
+                <h2>3. Backup e Transferência dos Arquivos DJE</h2>
+                <ol>
+                    <li>Dentro da pasta <code>Z:\Arquivos PUBLICACOES\Arquivos 2a instancia\backupdje</code>, crie uma nova pasta com a data do expediente.</li>
+                    <img src="segunda6.png" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
+                    <li>Recorte os dois arquivos DJE gerados e cole-os nesta nova pasta de backup.</li>
+                    <img src="segunda7.png" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
+                    <li>Abra o FileZilla, conecte-se ao <strong>SUNCOP-2</strong> e navegue até a pasta <code>DJEELETRONICO</code>.</li>
+                    <li>Copie os dois arquivos DJE para esta pasta no servidor.</li>
+                    <img src="segunda8.png" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
+                    <li>Na pasta <code>Z:\Arquivos PUBLICACOES\Arquivos 2a instancia</code>, compacte os arquivos <code>adv</code>, <code>exp</code> e <code>par</code> em um único ZIP. Renomeie para <strong>SIAPIIDIAMES</strong> (com a data do expediente).</li>
+                    <img src="segunda9.png" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
+                    <div class="note">
+                        <strong>Dica:</strong> Antes de compactar o arquivo RTF, abra-o para verificar se ocorrerá algum erro. Caso haja erro ao abrir, basta clicar com o botão direito, selecionar 'Abrir com' e escolher WordPad. Após abrir, pressione Enter e depois Backspace. Feche o arquivo e salve as alterações
+                     </div>
+                    <li>Renomeie o arquivo <code>RESULTADO.RTF</code> para <code>DIAMEStjmg02.rtf</code> e depois compacte-o.</li>
+                    <li>Crie uma pasta para o dia do expediente (ex: <code>13.02.23</code>) dentro de <code>Z:\Arquivos PUBLICACOES\Arquivos 2a instancia\2023\[Mês]</code>.</li>
+                    <li>Mova os arquivos ZIP criados e o <code>DIAMEStjmg02.rtf</code> para esta pasta.</li>
+                    <li>Copie o arquivo <code>DIAMEStjmg02.txt</code> da pasta do dia anterior para a pasta atual.</li>
+                    <img src="segunda10.png" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
+                    <li>Abra o <code>.txt</code> e atualize a data e o tamanho do arquivo para que correspondam ao novo <code>DIAMEStjmg02.zip</code>.</li>
+                    <img src="segunda11.png" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
+                    <li>Renomear o arquivo acima para o dia do expediente.</li>
+                </ol>
+            </div>
+            
+            
+    
+            <div class="section">
+                <h2>5. Publicação no Site e Envio para OAB</h2>
+                <ol>
+                    <li>No FileZilla, conecte-se ao <strong>site tj ARQUIVOS RTF</strong>.</li>
+                    <img src="segunda12.png" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
+                    <li>Acesse a pasta <code>/download</code> e envie o <code>DIAMEStjmg02.zip</code>.</li>
+                    <img src="segunda13.png" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
+                    <li>Volte um diretório, acesse a pasta do dia do expediente e apague seu conteúdo (exceto se houver um arquivo <code>DIAMESTJMG01.TXT</code> do dia).</li>
+                    <img src="segunda14.png" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
+                    <li>Envie o seu <code>DIAMEStjmg02.txt</code> atualizado para esta pasta.</li>
+                    <img src="segunda15.png" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
+                    <li>RECORTAR OS ARQUIVOS ABAIXO DA PASTA Z:\Arquivos PUBLICAÇÕES\Arquivos 2ª Instância</li>
+                    <img src="segunda16.png" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
+                    <li>E COLAR NA PASTA Z:\Arquivos PUBLICACOES\Arquivos 2a instancia\Backup 2° Instancia\2023\02.Fevereiro</li>
+                    <li>Confira no site do TJMG se a publicação foi disponibilizada.</li>
+                    <img src="segunda17.png" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
+                    <li>Envie os arquivos <code>DIAMESTJMG02.ZIP</code> e <code>SIAPIIDIAMES.ZIP</code> para a OAB por e-mail.</li>
+                    <img src="segunda18.png" alt="Menu de contexto do Windows mostrando a opção 'Novo' e em seguida 'Atalho'." />
+                </ol>
+            </div>
+
+
+            <div class="section">
+                <h2>6. Rodar a Segunda Instância</h2>
+                <ol>  <li>Acessar conexão remota:</li>
+                    <div class="note">
+                       <ul>USUÁRIO: <strong>tjadm</strong>.</ul>
+                       <ul>SENHA: <strong>smdadje</strong></ul>
+                    </div>
+                    <img src="primeira20.png" alt="PRINT DA TELA DO SISCON QUANDO ESTIVER INDISPONIVEL." />
+                    <div class="note">
+                        <strong>Dica:</strong> CONFERIR NA PASTA DJEELETRONICO NO SUNCOP-2  SE TEM OS 2 ARQUIVOS DO DJE.
+                     </div>
+                    <li>ABRIR O ATALHO GERADJE </li>
+                    <li>Selecione Segunda Instância e clique em OK.</li>
+
+
+
+
+                </ol>
+
+                </div>
+        </main>
+        <!-- FIM DO CONTEÚDO -->
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 TJMG - EQUIPE CERTIFICADO DIGITAL.</p>
+    </footer>
+
+</body>
+</html>
+
