@@ -1,0 +1,1801 @@
+[
+    {
+      "comarca": "Abaeté",
+      "endereco": "Rua Aristeu Alves de Alencar, 251 - Amazonas, Abaeté - MG, 35620-000",
+      "lat": -19.1587,
+      "lon": -45.4475
+    },
+    {
+      "comarca": "Abre Campo",
+      "endereco": "Praça Santana, 7 - Centro, Abre Campo - MG, 35365-000",
+      "lat": -20.2995,
+      "lon": -42.4764
+    },
+    {
+      "comarca": "Açucena",
+      "endereco": "Rua Getúlio Vargas, 85 - Centro, Açucena - MG, 35150-000",
+      "lat": -19.0683,
+      "lon": -42.5413
+    },
+    {
+        "comarca": "Águas Formosas",
+        "endereco": "Rua Deodoro de Almeida Pinto, 132 - Centro, Águas Formosas - MG, 39880-000",
+        "lat": -17.0850,
+        "lon": -40.9362
+      },
+      {
+        "comarca": "Aimorés",
+        "endereco": "Avenida Raul Soares, 456 - Centro, Aimorés - MG, 35200-000",
+        "lat": -19.4951,
+        "lon": -41.0660
+      },
+      {
+        "comarca": "Aiuruoca",
+        "endereco": "Rua Felipe Senador, 65 - Centro, Aiuruoca - MG, 37450-000",
+        "lat": -21.9774,
+        "lon": -44.6033
+      },
+      {
+        "comarca": "Além Paraíba",
+        "endereco": "Avenida Doutor José Avelino de Freitas, 255 - Ilha do Lazareto, Além Paraíba - MG, 36660-000",
+        "lat": -21.8846,
+        "lon": -42.7051
+      },
+      {
+        "comarca": "Alfenas",
+        "endereco": "Praça Dr. Emílio da Silveira, 314 - Centro, Alfenas - MG, 37130-029",
+        "lat": -21.4260,
+        "lon": -45.9469
+      },
+      {
+        "comarca": "Almenara",
+        "endereco": "Rua Dr. Sabino Silva, 32 - Centro, Almenara - MG, 39900-000",
+        "lat": -16.1738,
+        "lon": -40.6946
+      },
+      {
+        "comarca": "Alpinópolis",
+        "endereco": "Praça Doutor José de Carvalho Faria, s/n - Centro, Alpinópolis - MG, 37940-000",
+        "lat": -20.8654,
+        "lon": -46.3887
+      },
+      {
+        "comarca": "Alto Rio Doce",
+        "endereco": "Praça Dr. Miguel Batista Vieira, s/n - Centro, Alto Rio Doce - MG, 36260-000",
+        "lat": -21.0269,
+        "lon": -43.4077
+      },
+      {
+        "comarca": "Alvinópolis",
+        "endereco": "Rua Monsenhor Bicalho, 55 - Centro, Alvinópolis - MG, 35950-000",
+        "lat": -20.1086,
+        "lon": -43.0519
+      },
+      {
+        "comarca": "Belo Horizonte",
+        "endereco": "Avenida Augusto de Lima, 1549 - Barro Preto, Belo Horizonte - MG, 30190-002",
+        "lat": -19.9279,
+        "lon": -43.9431
+      },
+      {
+        "comarca": "Andradas",
+        "endereco": "Rua da Saudade, 13 - Centro, Andradas - MG, 37795-000",
+        "lat": -22.0694,
+        "lon": -46.5707
+      },
+      {
+        "comarca": "Betim",
+        "endereco": "Rua Professor Osvaldo Franco, 55 - Centro, Betim - MG, 32600-234",
+        "lat": -19.9615,
+        "lon": -44.1956
+      },
+      {
+        "comarca": "Andrelândia",
+        "endereco": "Praça Visconde de Arantes, s/n - Centro, Andrelândia - MG, 37300-000",
+        "lat": -21.7396,
+        "lon": -44.3121
+      },
+      {
+        "comarca": "Araçuaí",
+        "endereco": "Rua Montes Claros, 1095 - Santa Tereza, Araçuaí - MG, 39600-000",
+        "lat": -16.8524,
+        "lon": -42.0673
+      },
+      {
+        "comarca": "Araguari",
+        "endereco": "Avenida Oswaldo Pieruccetti, 400 - Jardim Interlagos, Araguari - MG, 38445-135",
+        "lat": -18.6366,
+        "lon": -48.2045
+      },
+      {
+        "comarca": "Araxá",
+        "endereco": "Avenida Tancredo Neves, 330 - Vila Silvéria, Araxá - MG, 38183-380",
+        "lat": -19.5843,
+        "lon": -46.9405
+      },
+      {
+        "comarca": "Arcos",
+        "endereco": "Avenida Doutor Olinto Fonseca, 4 - Centro, Arcos - MG, 35588-000",
+        "lat": -20.2906,
+        "lon": -45.5412
+      },
+      {
+        "comarca": "Areado",
+        "endereco": "Praça Henrique Vieira, 136 - Centro, Areado - MG, 37140-000",
+        "lat": -21.3575,
+        "lon": -46.1472
+      },
+      {
+        "comarca": "Caeté",
+        "endereco": "Rua José Cerqueira, 180 - Centro, Caeté - MG, 34800-000",
+        "lat": -19.8856,
+        "lon": -43.6703
+      },
+      {
+        "comarca": "Baependi",
+        "endereco": "Praça Dr. Raul Sá, 63 - Centro, Baependi - MG, 37443-000",
+        "lat": -21.9542,
+        "lon": -44.8903
+      },
+      {
+        "comarca": "Bambuí",
+        "endereco": "Rua Padre José Tiburcio, 126 - Centro, Bambuí - MG, 38900-000",
+        "lat": -20.0055,
+        "lon": -45.9754
+      },
+      {
+        "comarca": "Barão de Cocais",
+        "endereco": "Rua Padre Mauro Farias, 290 - Viúva, Barão de Cocais - MG, 35970-000",
+        "lat": -19.9407,
+        "lon": -43.4839
+      },
+      {
+        "comarca": "Barbacena",
+        "endereco": "Rua Belisário Pena, 456 - Centro, Barbacena - MG, 36200-012",
+        "lat": -21.2255,
+        "lon": -43.7745
+      },
+      {
+        "comarca": "Três Marias",
+        "endereco": "Rua Getúlio Vargas, 155 - Centro, Três Marias - MG, 39205-000",
+        "lat": -18.2043,
+        "lon": -45.2415
+      },
+      {
+        "comarca": "Barroso",
+        "endereco": "Praça Sant'Ana, 120 - Centro, Barroso - MG, 36212-000",
+        "lat": -21.1895,
+        "lon": -43.9749
+      },
+      {
+        "comarca": "Belo Vale",
+        "endereco": "Rua Padre Jacinto Pinheiro, s/n - Centro, Belo Vale - MG, 35473-000",
+        "lat": -20.4073,
+        "lon": -44.0298
+      },
+      {
+        "comarca": "Bicas",
+        "endereco": "Rua José Maria Guarnieri, s/n - Alto das Brisas, Bicas - MG, 36600-000",
+        "lat": -21.7226,
+        "lon": -43.0583
+      },
+      {
+        "comarca": "Boa Esperança",
+        "endereco": "Rua José Júlio Pereira, 275 - Nova Esperança, Boa Esperança - MG, 37170-000",
+        "lat": -21.0927,
+        "lon": -45.5683
+      },
+      {
+        "comarca": "Bocaiuva",
+        "endereco": "Rua Domingos Ferreira Pimenta, 138 - Centro, Bocaiúva - MG, 39390-000",
+        "lat": -17.1118,
+        "lon": -43.8152
+      },
+      {
+        "comarca": "Bom Despacho",
+        "endereco": "Avenida Doutor Marco Túlio Alves Quirino, 240 - Grand Park, Bom Despacho - MG, 35600-000",
+        "lat": -19.7289,
+        "lon": -45.2635
+      },
+      {
+        "comarca": "Contagem",
+        "endereco": "Avenida Maria da Glória Rocha, 425 - Centro, Contagem - MG, 32010-375",
+        "lat": -19.9231,
+        "lon": -44.0772
+      },
+      {
+        "comarca": "Bom Sucesso",
+        "endereco": "Avenida Juscelino Kubitscheck, 191 - Palmeiras, Bom Sucesso - MG, 37220-000",
+        "lat": -21.0336,
+        "lon": -44.7591
+      },
+      {
+        "comarca": "Bonfim",
+        "endereco": "Avenida Governador Valadares, 196 - Centro, Bonfim - MG, 35521-000",
+        "lat": -20.3341,
+        "lon": -44.2407
+      },
+      {
+        "comarca": "Bonfinópolis de Minas",
+        "endereco": "Rua São José, 625, Bonfinópolis de Minas - MG, 38650-000",
+        "lat": -16.5786,
+        "lon": -46.3861
+      },
+      {
+        "comarca": "Borda da Mata",
+        "endereco": "Rua Rio Branco, 40 - Centro, Borda da Mata - MG, 37564-000",
+        "lat": -22.2741,
+        "lon": -46.1667
+      },
+      {
+        "comarca": "Botelhos",
+        "endereco": "Praça Mozart Xavier Lopes, 91 - Centro, Botelhos - MG, 37720-000",
+        "lat": -21.6429,
+        "lon": -46.3957
+      },
+      {
+        "comarca": "Brasília de Minas",
+        "endereco": "Avenida Rui Barbosa, 300 - Centro, Brasília de Minas - MG, 39330-000",
+        "lat": -16.2045,
+        "lon": -44.4283
+      },
+      {
+        "comarca": "Brasópolis",
+        "endereco": "Rua Gonçalves Torres, 94 - Centro, Brazópolis - MG, 37530-000",
+        "lat": -22.4589,
+        "lon": -45.6191
+      },
+      {
+        "comarca": "Brumadinho",
+        "endereco": "Rua Governador Valadares, 271 - Ipiranga, Brumadinho - MG, 35460-000",
+        "lat": -20.1432,
+        "lon": -44.1981
+      },
+      {
+        "comarca": "Bueno Brandão",
+        "endereco": "Avenida Bom Jesus, 105 - Centro, Bueno Brandão - MG, 37578-000",
+        "lat": -22.4414,
+        "lon": -46.3533
+      },
+      {
+        "comarca": "Buenópolis",
+        "endereco": "Praça Dr. Timbiras, 114 - Centro, Buenópolis - MG, 39230-000",
+        "lat": -17.8824,
+        "lon": -44.1834
+      },
+      {
+        "comarca": "Buritis",
+        "endereco": "Rua dos Poderes, 1 - Centro, Buritis - MG, 38660-000",
+        "lat": -15.5898,
+        "lon": -46.4251
+      },
+      {
+        "comarca": "Cabo Verde",
+        "endereco": "Avenida Pref. Duvivier da Silva Passos, 26 - São Judas Tadeu, Cabo Verde - MG, 37880-000",
+        "lat": -21.4727,
+        "lon": -46.3989
+      },
+      {
+        "comarca": "Cachoeira de Minas",
+        "endereco": "Rua Coronel Portugal, 32 - Centro, Cachoeira de Minas - MG, 37545-000",
+        "lat": -22.3553,
+        "lon": -45.7876
+      },
+      {
+        "comarca": "Caldas",
+        "endereco": "Praça Joaquim Amarante, 621 - Centro, Caldas - MG, 37780-000",
+        "lat": -21.9234,
+        "lon": -46.3862
+      },
+      {
+        "comarca": "Governador Valadares",
+        "endereco": "Praça dos Três Poderes, 1000 - Centro, Governador Valadares - MG, 35010-142",
+        "lat": -18.8547,
+        "lon": -41.9546
+      },
+      {
+        "comarca": "Cambuí",
+        "endereco": "Rua Benedito Luiz de Souza, 61 - Centro, Cambuí - MG, 37600-000",
+        "lat": -22.6102,
+        "lon": -46.0569
+      },
+      {
+        "comarca": "Cambuquira",
+        "endereco": "Praça do Fórum, 46 - Centro, Cambuquira - MG, 37420-000",
+        "lat": -21.8545,
+        "lon": -45.2952
+      },
+      {
+        "comarca": "Campanha",
+        "endereco": "Rua Professor Gérald Gougeon, 65 - Shekinah, Campanha - MG, 37400-000",
+        "lat": -21.8310,
+        "lon": -45.4057
+      },
+      {
+        "comarca": "Campestre",
+        "endereco": "Rua Aurora Ramos, 10 - Centro, Campestre - MG, 37730-000",
+        "lat": -21.7247,
+        "lon": -46.2241
+      },
+      {
+        "comarca": "Campina Verde",
+        "endereco": "Rua Trinta, 262 - Centro, Campina Verde - MG, 38270-000",
+        "lat": -19.5372,
+        "lon": -49.6848
+      },
+      {
+        "comarca": "Campo Belo",
+        "endereco": "Rua João Pinheiro, 254 - Centro, Campo Belo - MG, 37270-000",
+        "lat": -20.8926,
+        "lon": -45.2755
+      },
+      {
+        "comarca": "Ibirité",
+        "endereco": "Avenida Otacílio Negrão de Lima, 8 - Centro, Ibirité - MG, 32400-000",
+        "lat": -19.9961,
+        "lon": -44.0583
+      },
+      {
+        "comarca": "Campos Altos",
+        "endereco": "Rua Vinte e Sete de Dezembro, 151 - Centro, Campos Altos - MG, 38970-000",
+        "lat": -19.6953,
+        "lon": -46.1687
+      },
+      {
+        "comarca": "Campos Gerais",
+        "endereco": "Praça Josino de Brito, 234 - Centro, Campos Gerais - MG, 37160-000",
+        "lat": -21.2330,
+        "lon": -45.7593
+      },
+      {
+        "comarca": "Canápolis",
+        "endereco": "Rua 9, 409 - Centro, Canápolis - MG, 38380-000",
+        "lat": -18.7300,
+        "lon": -49.1912
+      },
+      {
+        "comarca": "Candeias",
+        "endereco": "Avenida Ozanan Levindo Coelho, 1000 - Vila Triângulo, Candeias - MG, 37280-000",
+        "lat": -20.7629,
+        "lon": -45.2789
+      },
+      {
+        "comarca": "Capelinha",
+        "endereco": "Rua das Hortênsias, 321 - Bouganville, Capelinha - MG, 39680-000",
+        "lat": -17.6931,
+        "lon": -42.5161
+      },
+      {
+        "comarca": "Capinópolis",
+        "endereco": "Avenida Cento e Onze, 465 - Centro, Capinópolis - MG, 38360-000",
+        "lat": -18.6836,
+        "lon": -49.5701
+      },
+      {
+        "comarca": "Carandaí",
+        "endereco": "Praça Barão de Santa Cecília, 13 - Centro, Carandaí - MG, 36280-000",
+        "lat": -21.0558,
+        "lon": -43.8055
+      },
+      {
+        "comarca": "Carangola",
+        "endereco": "Praça Coronel Maximiniano, 56 - Centro, Carangola - MG, 36800-000",
+        "lat": -20.7329,
+        "lon": -42.0298
+      },
+      {
+        "comarca": "Caratinga",
+        "endereco": "Rua Luís Antônio Bastos Cortês, 16 - Rodoviários, Caratinga - MG, 35300-274",
+        "lat": -19.7820,
+        "lon": -42.1332
+      },
+      {
+        "comarca": "Carlos Chagas",
+        "endereco": "Praça Getúlio Vargas, 68 - Centro, Carlos Chagas - MG, 39864-000",
+        "lat": -17.7029,
+        "lon": -40.7711
+      },{
+        "comarca": "Carmo da Mata",
+        "endereco": "Praça Coronel Joaquim Afonso Rodrigues, 144 - Centro, Carmo da Mata - MG, 35547-000",
+        "lat": -20.5730,
+        "lon": -44.8821
+      },
+      {
+        "comarca": "Carmo de Minas",
+        "endereco": "Rua Capitão Antônio José, 326 - Centro, Carmo de Minas - MG, 37472-000",
+        "lat": -22.1221,
+        "lon": -45.1325
+      },
+      {
+        "comarca": "Carmo do Cajuru",
+        "endereco": "Rua Nagib Mileib, 265 - Centro, Carmo do Cajuru - MG, 35557-000",
+        "lat": -20.1873,
+        "lon": -44.7738
+      },
+      {
+        "comarca": "Carmo do Paranaíba",
+        "endereco": "Avenida Costa Júnior, 285 - Centro, Carmo do Paranaíba - MG, 38840-000",
+        "lat": -19.0016,
+        "lon": -46.3117
+      },
+      {
+        "comarca": "Carmo do Rio Claro",
+        "endereco": "Rua Manoel Lemos de Carvalho, 20 - Centro, Carmo do Rio Claro - MG, 37150-000",
+        "lat": -20.9712,
+        "lon": -46.1219
+      },
+      {
+        "comarca": "Juiz de Fora",
+        "endereco": "Rua Marechal Deodoro, 662 - Centro, Juiz de Fora - MG, 36015-460",
+        "lat": -21.7645,
+        "lon": -43.3496
+      },
+      {
+        "comarca": "Juiz de Fora - Anexo",
+        "endereco": "Avenida Brasil, 1000 - Costa Carvalho, Juiz de Fora - MG, 36070-060",
+        "lat": -21.7584,
+        "lon": -43.3441
+      },
+      {
+        "comarca": "Lagoa Santa",
+        "endereco": "Alameda Dra. Vilma Edelweiss Santos, 65 - Lundcéia, Lagoa Santa - MG, 33400-000",
+        "lat": -19.6416,
+        "lon": -43.8967
+      },
+      {
+        "comarca": "Cássia",
+        "endereco": "Praça Juscelino Kubitschek, 108 - Centro, Cássia - MG, 37980-000",
+        "lat": -20.5843,
+        "lon": -46.9189
+      },
+      {
+        "comarca": "Cataguases",
+        "endereco": "Praça Dr. Cunha Neto, s/n - Centro, Cataguases - MG, 36773-006",
+        "lat": -21.3855,
+        "lon": -42.6953
+      },
+      {
+        "comarca": "Caxambu",
+        "endereco": "Rua Major Penha, 22 - Centro, Caxambu - MG, 37440-000",
+        "lat": -21.9770,
+        "lon": -44.9318
+      },
+      {
+        "comarca": "Cláudio",
+        "endereco": "Avenida Rachid Mitre, 305 - Bela Vista, Cláudio - MG, 35530-000",
+        "lat": -20.4410,
+        "lon": -44.7675
+      },
+      {
+        "comarca": "Conceição das Alagoas",
+        "endereco": "Rua Floriano Peixoto, 444 - Centro, Conceição das Alagoas - MG, 38120-000",
+        "lat": -19.9145,
+        "lon": -48.3888
+      },
+      {
+        "comarca": "Conceição do Mato Dentro",
+        "endereco": "Rua Daniel de Carvalho, 189 - Centro, Conceição do Mato Dentro - MG, 35860-000",
+        "lat": -19.0371,
+        "lon": -43.4255
+      },
+      {
+        "comarca": "Conceição do Rio Verde",
+        "endereco": "Rua José L Junqueira, 69 - Centro, Conceição do Rio Verde - MG, 37430-000",
+        "lat": -21.8906,
+        "lon": -45.0847
+      },
+      {
+        "comarca": "Congonhas",
+        "endereco": "Rua José Júlio, 25 - Centro, Congonhas - MG, 36415-000",
+        "lat": -20.5011,
+        "lon": -43.8569
+      },
+      {
+        "comarca": "Conquista",
+        "endereco": "Praça Coronel Tancredo França, 100 - Centro, Conquista - MG, 38195-000",
+        "lat": -19.9329,
+        "lon": -47.5451
+      },
+      {
+        "comarca": "Conselheiro Lafaiete",
+        "endereco": "Rua Melvin Jones, 435 - Campo Alegre, Conselheiro Lafaiete - MG, 36400-107",
+        "lat": -20.6685,
+        "lon": -43.7997
+      },
+      {
+        "comarca": "Conselheiro Pena",
+        "endereco": "Avenida Getúlio Vargas, 2051 - Centro, Conselheiro Pena - MG, 35240-000",
+        "lat": -19.1729,
+        "lon": -41.4727
+      },
+      {
+        "comarca": "Nova Lima",
+        "endereco": "Rua Pereira de Freitas, 163 - Centro, Nova Lima - MG, 34000-000",
+        "lat": -19.9856,
+        "lon": -43.8507
+      },
+      {
+        "comarca": "Corinto",
+        "endereco": "Rua Dr. Antônio Alvarenga, 235 - Centro, Corinto - MG, 39200-000",
+        "lat": -18.3768,
+        "lon": -44.4552
+      },
+      {
+        "comarca": "Coromandel",
+        "endereco": "Avenida Dr. Ermiro Rodrigues Pereira, 431 - Centro, Coromandel - MG, 38550-000",
+        "lat": -18.4735,
+        "lon": -47.2003
+      },
+      {
+        "comarca": "Coronel Fabriciano",
+        "endereco": "Rua Boa Vista, 72 - Centro, Coronel Fabriciano - MG, 35170-041",
+        "lat": -19.5173,
+        "lon": -42.6288
+      },
+      {
+        "comarca": "Cristina",
+        "endereco": "Rua João Pessoa, 16 - Centro, Cristina - MG, 37476-000",
+        "lat": -22.2114,
+        "lon": -45.2638
+      },
+      {
+        "comarca": "Cruzília",
+        "endereco": "Rua Margarida Pereira Leite Arantes, 252 - Centro, Cruzília - MG, 37445-000",
+        "lat": -21.8398,
+        "lon": -44.8118
+      },
+      {
+        "comarca": "Curvelo",
+        "endereco": "Avenida Saroba, 400 - Maria Amalia, Curvelo - MG, 35790-000",
+        "lat": -18.7610,
+        "lon": -44.4447
+      },
+      {
+        "comarca": "Pedro Leopoldo",
+        "endereco": "Rua Anélio Caldas, 424 - Dona Julia, Pedro Leopoldo - MG, 33600-000",
+        "lat": -19.6206,
+        "lon": -44.0289
+      },
+      {
+        "comarca": "Diamantina",
+        "endereco": "Rua Zeca Bruno, 4 - Centro, Diamantina - MG, 39100-000",
+        "lat": -18.2435,
+        "lon": -43.6044
+      },
+      {
+        "comarca": "Divino",
+        "endereco": "Rua Presidente Vargas, s/n - Centro, Divino - MG, 36820-000",
+        "lat": -20.6080,
+        "lon": -42.1465
+      },
+      {
+        "comarca": "Divinópolis",
+        "endereco": "Avenida Dr. Paulo de Melo Freitas, 100 - Liberdade, Divinópolis - MG, 35502-635",
+        "lat": -20.1691,
+        "lon": -44.8961
+      },
+      {
+        "comarca": "Ribeirão das Neves",
+        "endereco": "Rua Vera Lúcia de Oliveira Andrade, 85 - Vila Esplanada, Ribeirão das Neves - MG, 33805-488",
+        "lat": -19.7686,
+        "lon": -44.0903
+      },
+      {
+        "comarca": "Dores do Indaiá",
+        "endereco": "Rua Mestra Angélica, s/n - Centro, Dores do Indaiá - MG, 35610-000",
+        "lat": -19.4629,
+        "lon": -45.6015
+      },
+      {
+        "comarca": "Elói Mendes",
+        "endereco": "Avenida da Paz, 1155 - Centro, Elói Mendes - MG, 37110-000",
+        "lat": -21.6096,
+        "lon": -45.5683
+      },
+      {
+        "comarca": "Entre Rios de Minas",
+        "endereco": "Avenida Benedito Valadares, 171 - Centro, Entre Rios de Minas - MG, 35490-000",
+        "lat": -20.6725,
+        "lon": -44.0673
+      },
+      {
+        "comarca": "Ervália",
+        "endereco": "Praça Arthur Bernardes, s/n - Centro, Ervália - MG, 36555-000",
+        "lat": -20.8358,
+        "lon": -42.6534
+      },
+      {
+        "comarca": "Esmeraldas",
+        "endereco": "Praça Getúlio Vargas, 60 - Centro, Esmeraldas - MG, 35740-000",
+        "lat": -19.7634,
+        "lon": -44.3098
+      },
+      {
+        "comarca": "Espera Feliz",
+        "endereco": "Rua Fioravante Pádula, 80 - Centro, Espera Feliz - MG, 36830-000",
+        "lat": -20.6517,
+        "lon": -41.9080
+      },
+      {
+        "comarca": "Espinosa",
+        "endereco": "Rua Sebastião Bezerra Da Silva, 30 - Jardins do Lago, Espinosa - MG, 39510-000",
+        "lat": -14.9213,
+        "lon": -42.8186
+      },
+      {
+        "comarca": "Santa Luzia",
+        "endereco": "Avenida das Indústrias, 210 - Vila Olga, Santa Luzia - MG, 33030-510",
+        "lat": -19.7828,
+        "lon": -43.8647
+      },
+      {
+        "comarca": "Estrela do Sul",
+        "endereco": "Praça da Matriz, 23 - Centro, Estrela do Sul - MG, 38525-000",
+        "lat": -18.7397,
+        "lon": -47.6974
+      },
+      {
+        "comarca": "Eugenópolis",
+        "endereco": "Avenida Dr. Carlos Barbuto, 1 - Centro, Eugenópolis - MG, 36855-000",
+        "lat": -21.1009,
+        "lon": -42.2016
+      },
+      {
+        "comarca": "Extrema",
+        "endereco": "Avenida Delegado Waldemar Gomes Pinto, 1624 - Ponte Nova, Extrema - MG, 37640-000",
+        "lat": -22.8530,
+        "lon": -46.3148
+      },
+      {
+        "comarca": "Ferros",
+        "endereco": "Praça Francisco de Assis Drumond, s/n - Centro, Ferros - MG, 35800-000",
+        "lat": -19.2312,
+        "lon": -43.0189
+      },
+      {
+        "comarca": "Formiga",
+        "endereco": "Avenida Deputado João Pimenta da Veiga, s/n - Ouro Negro, Formiga - MG, 35576-210",
+        "lat": -20.4727,
+        "lon": -45.4187
+      },
+      {
+        "comarca": "Francisco Sá",
+        "endereco": "Avenida Getúlio Vargas, 881 - Centro, Francisco Sá - MG, 39580-000",
+        "lat": -16.4789,
+        "lon": -43.4938
+      },
+      {
+        "comarca": "Frutal",
+        "endereco": "Rua Osvaldo Cruz, 365 - Centro, Frutal - MG, 38200-000",
+        "lat": -20.0244,
+        "lon": -48.9406
+      },
+      {
+        "comarca": "Galiléia",
+        "endereco": "Rua Itambacuri, 301 - Centro, Galiléia - MG, 35250-000",
+        "lat": -19.0016,
+        "lon": -41.5367
+      },
+      {
+        "comarca": "Grão Mogol",
+        "endereco": "Rua Abner Martins, s/n - Centro, Grão Mogol - MG, 39570-000",
+        "lat": -16.5647,
+        "lon": -42.8931
+      },
+      {
+        "comarca": "Guanhães",
+        "endereco": "Rua Artur Luiz de Aguiar, 100 - Acrópole, Guanhães - MG, 39740-000",
+        "lat": -18.7709,
+        "lon": -42.9329
+      },
+      {
+        "comarca": "Guapé",
+        "endereco": "Praça Dr. Passos Maia, 310 - Centro, Guapé - MG, 37177-000",
+        "lat": -20.7719,
+        "lon": -45.9127
+      },
+      {
+        "comarca": "Guaranésia",
+        "endereco": "Rua Júlio Tavares, 1380 - Centro, Guaranésia - MG, 37810-000",
+        "lat": -21.2917,
+        "lon": -46.7932
+      },
+      {
+        "comarca": "Guarani",
+        "endereco": "Rua Vinte e Cinco de Março, 142 - Centro, Guarani - MG, 36160-000",
+        "lat": -21.3653,
+        "lon": -43.0457
+      },
+      {
+        "comarca": "Guaxupé",
+        "endereco": "Rua da Aparecida, 184 - Vila Santo Antônio, Guaxupé - MG, 37800-000",
+        "lat": -21.3090,
+        "lon": -46.7093
+      },
+      {
+        "comarca": "Vespasiano",
+        "endereco": "Avenida Pref. Sebastião Fernandes, 517 - Centro, Vespasiano - MG, 33200-322",
+        "lat": -19.6917,
+        "lon": -43.9221
+      },
+      {
+        "comarca": "Ibiá",
+        "endereco": "Praça Santa Cruz, s/n - Centro, Ibiá - MG, 38950-000",
+        "lat": -19.2210,
+        "lon": -46.5401
+      },
+      {
+        "comarca": "Ibiraci",
+        "endereco": "Avenida Governador Valadares, 149 - Centro, Ibiraci - MG, 37990-000",
+        "lat": -20.4632,
+        "lon": -47.1264
+      },
+      {
+        "comarca": "Igarapé",
+        "endereco": "Rua Manoel Franco Amaral, 450 - Cidade Jardim, Igarapé - MG, 32900-000",
+        "lat": -20.0631,
+        "lon": -44.3056
+      },
+      {
+        "comarca": "Iguatama",
+        "endereco": "Rua 52, 153 - Centro, Iguatama - MG, 38910-000",
+        "lat": -20.1718,
+        "lon": -45.7119
+      },
+      {
+        "comarca": "Inhapim",
+        "endereco": "Avenida Jequitibá, 246 - Centro, Inhapim - MG, 35330-000",
+        "lat": -19.5521,
+        "lon": -42.1221
+      },
+      {
+        "comarca": "Ipanema",
+        "endereco": "Avenida Sete de Setembro, 1030 - Centro, Ipanema - MG, 36950-000",
+        "lat": -19.8037,
+        "lon": -41.7139
+      },
+      {
+        "comarca": "Ipatinga",
+        "endereco": "Praça dos Três Poderes, s/n - Centro, Ipatinga - MG, 35160-011",
+        "lat": -19.4795,
+        "lon": -42.5317
+      },
+      {
+        "comarca": "Itabira",
+        "endereco": "Avenida Mauro Ribeiro Lage, 894 - Esplanada da Estação, Itabira - MG, 35900-560",
+        "lat": -19.6277,
+        "lon": -43.2201
+      },
+      {
+        "comarca": "Itabirito",
+        "endereco": "Rua João Pessoa, 251 - Centro, Itabirito - MG, 35450-000",
+        "lat": -20.2520,
+        "lon": -43.8016
+      },
+      {
+        "comarca": "Itaguara",
+        "endereco": "Rua Coronel Frazão, 135 - Centro, Itaguara - MG, 35514-000",
+        "lat": -20.3900,
+        "lon": -44.4842
+      },
+      {
+        "comarca": "Itajubá",
+        "endereco": "Rua Antônio Simão Mauad, 132 - Centro, Itajubá - MG, 37500-033",
+        "lat": -22.4277,
+        "lon": -45.4542
+      },
+      {
+        "comarca": "Itamarandiba",
+        "endereco": "Rua Capitão Paula, 66 - Centro, Itamarandiba - MG, 39670-000",
+        "lat": -17.8587,
+        "lon": -42.8617
+      },
+      {
+        "comarca": "Itambacuri",
+        "endereco": "Rua Horácio Luz, 1192 - Centro, Itambacuri - MG, 39830-000",
+        "lat": -18.0366,
+        "lon": -41.6841
+      },
+      {
+        "comarca": "Itamoji",
+        "endereco": "Rua Coronel Lucas, 529 - Centro, Itamogi - MG, 37955-000",
+        "lat": -21.1396,
+        "lon": -46.9984
+      },
+      {
+        "comarca": "Itamonte",
+        "endereco": "Rua Maria da Fé, 159 - Vila Nova, Itamonte - MG, 37466-000",
+        "lat": -22.2858,
+        "lon": -44.8690
+      },
+      {
+        "comarca": "Itanhandu",
+        "endereco": "Rua Fernando Costa, 403 - Centro, Itanhandu - MG, 37464-000",
+        "lat": -22.2964,
+        "lon": -44.9351
+      },
+      {
+        "comarca": "Itanhomi",
+        "endereco": "Rua Francisco Abreu Mafra, 80 - Centro, Itanhomi - MG, 35120-000",
+        "lat": -19.1672,
+        "lon": -41.8711
+      },
+      {
+        "comarca": "Itapagipe",
+        "endereco": "Rua 20, 5401 - Centro, Itapagipe - MG, 38240-000",
+        "lat": -19.9079,
+        "lon": -49.3752
+      },
+      {
+        "comarca": "Itapecerica",
+        "endereco": "Rua Antônio Ribeiro Avelar, 176 - Centro, Itapecerica - MG, 35550-000",
+        "lat": -20.4682,
+        "lon": -45.1320
+      },
+      {
+        "comarca": "Itaúna",
+        "endereco": "Praça Dr. Augusto Gonçalves, 10 - Centro, Itaúna - MG, 35680-054",
+        "lat": -20.0768,
+        "lon": -44.5768
+      },
+      {
+        "comarca": "Ituiutaba",
+        "endereco": "Avenida Sadala Jorge, 400 - Universitário, Ituiutaba - MG, 38302-224",
+        "lat": -18.9723,
+        "lon": -49.4641
+      },
+      {
+        "comarca": "Itumirim",
+        "endereco": "Avenida Dom Inocêncio, 143 - Centro, Itumirim - MG, 37210-000",
+        "lat": -21.3149,
+        "lon": -44.8674
+      },
+      {
+        "comarca": "Iturama",
+        "endereco": "Praça Prefeito Antônio Ferreira Barbosa, 1277 - Centro, Iturama - MG, 38280-000",
+        "lat": -19.7289,
+        "lon": -50.1945
+      },
+      {
+        "comarca": "Jabuticatubas",
+        "endereco": "Avenida Benedito Valadares, 52 - Centro, Jaboticatubas - MG, 35830-000",
+        "lat": -19.5161,
+        "lon": -43.7431
+      },
+      {
+        "comarca": "Jacinto",
+    "endereco": "Praça Políbio Ruas, 223 - Centro, Jacinto - MG, 39930-000",
+    "lat": -16.1481,
+    "lon": -40.2974
+      },
+      {
+        "comarca": "Jacuí",
+        "endereco": "Rua Coronel Procópio Dutra, 519 - Centro, Jacuí - MG, 37965-000",
+        "lat": -21.2335,
+        "lon": -46.7456
+      },
+      {
+        "comarca": "Jacutinga",
+        "endereco": "Praça Francisco Rubim, 130 - Centro, Jacutinga - MG, 37590-000",
+        "lat": -22.2850,
+        "lon": -46.6139
+      },
+      {
+        "comarca": "Janaúba",
+        "endereco": "Avenida Marechal Deodoro da Fonseca, 160 - Centro, Janaúba - MG, 39440-000",
+        "lat": -15.8016,
+        "lon": -43.3082
+      },
+      {
+        "comarca": "Januária",
+        "endereco": "Praça Artur Bernardes, 208 - Centro, Januária - MG, 39480-000",
+        "lat": -15.4893,
+        "lon": -44.3644
+      },
+      {
+        "comarca": "Jequeri",
+        "endereco": "Rua Santana, 11 - Centro, Jequeri - MG, 35390-000",
+        "lat": -20.4566,
+        "lon": -42.6685
+      },
+      {
+        "comarca": "Jequitinhonha",
+        "endereco": "Rua Coronel Ramiro, 225 - Centro, Jequitinhonha - MG, 39960-000",
+        "lat": -16.4357,
+        "lon": -41.0028
+      },
+      {
+        "comarca": "João Monlevade",
+        "endereco": "Rua São Mateus, 50 - Aclimação, João Monlevade - MG, 35931-398",
+        "lat": -19.8219,
+        "lon": -43.1670
+      },
+      {
+        "comarca": "João Pinheiro",
+        "endereco": "Rua Astolfo Moreira, 710 - Centro, João Pinheiro - MG, 38770-000",
+        "lat": -17.7423,
+        "lon": -46.1738
+      },
+      {
+        "comarca": "Lagoa da Prata",
+        "endereco": "Rua Olegário Maciel, 1421 - Centro, Lagoa da Prata - MG, 35590-000",
+        "lat": -20.0210,
+        "lon": -45.5414
+      },
+      {
+        "comarca": "Lajinha",
+        "endereco": "Rua Dr. Sidney Hubner França Camargo, 104 - Centro, Lajinha - MG, 36980-000",
+        "lat": -20.1491,
+        "lon": -41.6248
+      },
+      {
+        "comarca": "Lambari",
+        "endereco": "Praça Duque de Caxias, 79 - Centro, Lambari - MG, 37480-000",
+        "lat": -21.9754,
+        "lon": -45.3503
+      },
+      {
+        "comarca": "Lavras",
+        "endereco": "Travessa Ernesto Matioli, 950 - Bela Vista, Lavras - MG, 37200-000",
+        "lat": -21.2515,
+        "lon": -44.9918
+      },
+      {
+        "comarca": "Leopoldina",
+        "endereco": "Rua Geraldo Campana, 200 - Pirineus, Leopoldina - MG, 36700-000",
+        "lat": -21.5230,
+        "lon": -42.6465
+      },
+      {
+        "comarca": "Lima Duarte",
+        "endereco": "Praça Juscelino Kubitschek, 55 - Centro, Lima Duarte - MG, 36140-000",
+        "lat": -21.8443,
+        "lon": -43.7937
+      },
+      {
+        "comarca": "Luz",
+        "endereco": "Rua Coronel José Tomás, 321 - Centro, Luz - MG, 35595-000",
+        "lat": -19.8000,
+        "lon": -45.6841
+      },
+      {
+        "comarca": "Machado",
+        "endereco": "Avenida Dr. Renato Azeredo, s/n - Centro, Machado - MG, 37750-000",
+        "lat": -21.6669,
+        "lon": -45.9224
+      },
+      {
+        "comarca": "Malacacheta",
+        "endereco": "Praça Coronel Binas, 100 - Centro, Malacacheta - MG, 39690-000",
+        "lat": -17.8427,
+        "lon": -42.0766
+      },
+      {
+        "comarca": "Manga",
+        "endereco": "Avenida Tiradentes, 758 - Centro, Manga - MG, 39460-000",
+        "lat": -14.7570,
+        "lon": -43.9315
+      },
+      {
+        "comarca": "Manhuaçu",
+        "endereco": "Avenida Centenário, 280 - Centro, Manhuaçu - MG, 36900-000",
+        "lat": -20.2560,
+        "lon": -42.0366
+      },
+      {
+        "comarca": "Manhumirim",
+        "endereco": "Avenida Teófilo Tostes, 143 - Centro, Manhumirim - MG, 36970-000",
+        "lat": -20.3582,
+        "lon": -41.9567
+      },
+      {
+        "comarca": "Mantena",
+        "endereco": "Rua Sete de Setembro, 554 - Centro, Mantena - MG, 35290-000",
+        "lat": -18.7842,
+        "lon": -40.9789
+      },
+      {
+        "comarca": "Mar de Espanha",
+        "endereco": "Avenida Nestor Rodrigues de Oliveira, s/n - Centro, Mar de Espanha - MG, 36640-000",
+        "lat": -21.8659,
+        "lon": -43.0116
+      },
+      {
+        "comarca": "Mariana",
+        "endereco": "Rua José Vicente de Souza, 220 - Centro, Mariana - MG, 35420-000",
+        "lat": -20.3756,
+        "lon": -43.4150
+      },
+      {
+        "comarca": "Martinho Campos",
+        "endereco": "Avenida Coronel Pedro Lino, 146 - Centro, Martinho Campos - MG, 35606-000",
+        "lat": -19.3338,
+        "lon": -45.2422
+      },
+      {
+        "comarca": "Mateus Leme",
+        "endereco": "Praça Benedito Valadares, 28 - Centro, Mateus Leme - MG, 35670-000",
+        "lat": -19.9829,
+        "lon": -44.4283
+      },
+      {
+        "comarca": "Matias Barbosa",
+        "endereco": "Rua Dr. Álvaro Braga, 44 - Centro, Matias Barbosa - MG, 36120-000",
+        "lat": -21.8741,
+        "lon": -43.2081
+      },
+      {
+        "comarca": "Matozinhos",
+        "endereco": "Avenida Caio Martins, 1161 - Floresta, Matozinhos - MG, 35720-000",
+        "lat": -19.5543,
+        "lon": -44.0837
+      },
+      {
+        "comarca": "Medina",
+        "endereco": "Rua Francisco Figueiredo, 250 - Centro, Medina - MG, 39620-000",
+        "lat": -16.2234,
+        "lon": -41.4770
+      },
+      {
+        "comarca": "Mercês",
+        "endereco": "Praça Bias Fortes, 221 - Centro, Mercês - MG, 36190-000",
+        "lat": -21.1895,
+        "lon": -43.3441
+      },
+      {
+        "comarca": "Mesquita",
+        "endereco": "Praça Benedito Valadares, 200 - Centro, Mesquita - MG, 35166-000",
+        "lat": -19.2201,
+        "lon": -42.6791
+      },
+      {
+        "comarca": "Minas Novas",
+        "endereco": "Rua Alaíde Fernandes, 210 - Saudade, Minas Novas - MG, 39650-000",
+        "lat": -17.2274,
+        "lon": -42.5901
+      },
+      {
+        "comarca": "Miradouro",
+        "endereco": "Avenida Vicente de Paula Lima, 60 - Centro, Miradouro - MG, 36893-000",
+        "lat": -20.9818,
+        "lon": -42.3551
+      },
+      {
+        "comarca": "Miraí",
+        "endereco": "Praça Dr. Miguel Pereira, s/n - Centro, Miraí - MG, 36790-000",
+        "lat": -21.1963,
+        "lon": -42.6145
+      },
+      {
+        "comarca": "Montalvânia",
+        "endereco": "Rua Pernambuco, 331 - Centro, Montalvânia - MG, 39495-000",
+        "lat": -14.4285,
+        "lon": -44.3644
+      },
+      {
+        "comarca": "Monte Alegre de Minas",
+        "endereco": "Avenida Dezesseis de Setembro, 467 - Centro, Monte Alegre de Minas - MG, 38475-000",
+        "lat": -18.8711,
+        "lon": -48.8833
+      },
+      {
+        "comarca": "Monte Azul",
+        "endereco": "Alameda Antônio Oliveira Neto, 256 - Centro, Monte Azul - MG, 39500-000",
+        "lat": -15.1561,
+        "lon": -42.8718
+      },
+      {
+        "comarca": "Monte Belo",
+        "endereco": "Avenida Getúlio Vargas, 101 - Centro, Monte Belo - MG, 37115-000",
+        "lat": -21.3308,
+        "lon": -46.3813
+      },
+      {
+        "comarca": "Monte Carmelo",
+        "endereco": "Avenida Brasil Oeste, s/n - Jardim Zeni, Monte Carmelo - MG, 38500-000",
+        "lat": -18.7297,
+        "lon": -47.4984
+      },
+      {
+        "comarca": "Monte Santo de Minas",
+        "endereco": "Rua Dr. Pedro Paulino da Costa, 193 - Centro, Monte Santo de Minas - MG, 37958-000",
+        "lat": -21.1923,
+        "lon": -46.9806
+      },
+      {
+        "comarca": "Montes Claros",
+        "endereco": "Rua Raimundo Penalva, 70 - Vila Guilhermina, Montes Claros - MG, 39401-010",
+        "lat": -16.7196,
+        "lon": -43.8587
+      },
+      {
+        "comarca": "Monte Sião",
+        "endereco": "Rua Napoli, 77 - Bairro Alves, Monte Sião - MG, 37580-000",
+        "lat": -22.4284,
+        "lon": -46.5779
+      },
+      {
+        "comarca": "Morada Nova de Minas",
+        "endereco": "Avenida Coronel Sebastião Pereira Magalhães Castro, 190 - Centro, Morada Nova de Minas - MG, 35628-000",
+        "lat": -18.5959,
+        "lon": -45.3524
+      },
+      {
+        "comarca": "Muriaé",
+        "endereco": "Rua Presidente Artur Bernardes, 123 - Centro, Muriaé - MG, 36880-005",
+        "lat": -21.1292,
+        "lon": -42.3734
+      },
+      {
+        "comarca": "Mutum",
+        "endereco": "Rua Dom Cavati, 333 - Centro, Mutum - MG, 36955-000",
+        "lat": -19.8091,
+        "lon": -41.4402
+      },
+      {
+        "comarca": "Muzambinho",
+        "endereco": "Rua Raul Soares, s/n - Centro, Muzambinho - MG, 37890-000",
+        "lat": -21.3755,
+        "lon": -46.5276
+      },
+      {
+        "comarca": "Nanuque",
+        "endereco": "Rua Eliosino de Souza Barbeitos, 315 - Jardim Novo Horizonte, Nanuque - MG, 39860-000",
+        "lat": -17.8427,
+        "lon": -40.3541
+      },
+      {
+        "comarca": "Natércia",
+        "endereco": "Rua João Fernandes dos Reis, 1645 - Centro, Natércia - MG, 37524-000",
+        "lat": -22.1245,
+        "lon": -45.4988
+      },
+      {
+        "comarca": "Nepomuceno",
+        "endereco": "Avenida Monsenhor Luís de Gonzaga, 22 - Centro, Nepomuceno - MG, 37250-000",
+        "lat": -21.2335,
+        "lon": -45.2393
+      },
+      {
+        "comarca": "Nova Era",
+        "endereco": "Rua Levindo Pereira, 100 - Centro, Nova Era - MG, 35920-000",
+        "lat": -19.7497,
+        "lon": -43.0361
+      },
+      {
+        "comarca": "Nova Ponte",
+        "endereco": "Avenida Florêncio Gonçalves Fernandes, 2045 - Centro, Nova Ponte - MG, 38160-000",
+        "lat": -19.1368,
+        "lon": -47.7011
+      },
+      {
+        "comarca": "Nova Resende",
+        "endereco": "Rodovia Osvaldo Américo dos Réis, 310 - Centro, Nova Resende - MG, 37860-000",
+        "lat": -21.1197,
+        "lon": -46.4179
+      },
+      {
+        "comarca": "Nova Serrana",
+        "endereco": "Avenida Coronel Pacífico Pinto, 281 - Fausto Pinto da Fonseca I, Nova Serrana - MG, 35519-000",
+        "lat": -19.8788,
+        "lon": -44.9818
+      },
+      {
+        "comarca": "Novo Cruzeiro",
+        "endereco": "Avenida Júlio Campos, 201 - Centro, Novo Cruzeiro - MG, 39820-000",
+        "lat": -17.4710,
+        "lon": -41.8767
+      },
+      {
+        "comarca": "Oliveira",
+        "endereco": "Avenida Maracanã, 280 - Acácio Ribeiro, Oliveira - MG, 35540-000",
+        "lat": -20.6974,
+        "lon": -44.8239
+      },
+      {
+        "comarca": "Ouro Branco",
+        "endereco": "Rua Olga Roberta Pereira, 17 - Centro, Ouro Branco - MG, 36420-000",
+        "lat": -20.5218,
+        "lon": -43.6934
+      },
+      {
+        "comarca": "Ouro Fino",
+        "endereco": "Avenida Cyro Gonçalves, 209 - Centro, Ouro Fino - MG, 37570-000",
+        "lat": -22.2818,
+        "lon": -46.3687
+      },
+      {
+      
+        "comarca": "Ouro Preto",
+        "endereco": "Rua Pandiá Calógeras, 15 - Bauxita, Ouro Preto - MG, 35400-000",
+        "lat": -20.3813,
+        "lon": -43.5100
+  
+      },
+      {
+        "comarca": "Palma",
+        "endereco": "Avenida Eurico Miguel Paula, s/n - Centro, Palma - MG, 36750-000",
+        "lat": -21.4111,
+        "lon": -42.3168
+      },
+      {
+        "comarca": "Paracatu",
+        "endereco": "Avenida Olegário Maciel, 193 - Centro, Paracatu - MG, 38600-210",
+        "lat": -17.2215,
+        "lon": -46.8748
+      },
+      {
+        "comarca": "Pará de Minas",
+        "endereco": "Praça Afonso Pena, 15 - Centro, Pará de Minas - MG, 35660-013",
+        "lat": -19.8624,
+        "lon": -44.6074
+      },
+      {
+        "comarca": "Paraguaçu",
+        "endereco": "Rua Prefeito Nestor Eustáquio, 237 - Centro, Paraguaçu - MG, 37120-000",
+        "lat": -21.5739,
+        "lon": -45.7410
+      },
+      {
+        "comarca": "Paraisópolis",
+        "endereco": "Praça Centenário, 50 - Centro, Paraisópolis - MG, 37660-000",
+        "lat": -22.5564,
+        "lon": -45.7801
+      },
+      {
+        "comarca": "Paraopeba",
+        "endereco": "Rua Primeiro de Junho, 12 - Centro, Paraopeba - MG, 35774-000",
+        "lat": -19.2789,
+        "lon": -44.4027
+      },
+      {
+        "comarca": "Passa Quatro",
+        "endereco": "Rua Dr. Gilberto Guedes, s/n - Centro, Passa Quatro - MG, 37460-000",
+        "lat": -22.3900,
+        "lon": -44.9687
+      },
+      {
+        "comarca": "Passa Tempo",
+        "endereco": "Praça Bolivar de Andrade, 76 - Centro, Passa Tempo - MG, 35537-000",
+        "lat": -20.6508,
+        "lon": -44.4842
+      },
+      {
+        "comarca": "Passos",
+        "endereco": "Avenida Arlindo Figueiredo, 850 - São Francisco, Passos - MG, 37902-026",
+        "lat": -20.7247,
+        "lon": -46.6133
+      },
+      {
+        "comarca": "Patos de Minas",
+        "endereco": "Avenida Padre Almir Neves de Medeiros, 1600 - Sobradinho, Patos de Minas - MG, 38701-118",
+        "lat": -18.5919,
+        "lon": -46.5130
+      },
+      {
+        "comarca": "Patrocínio",
+        "endereco": "Avenida João Alves do Nascimento, s/n - Cidade Jardim, Patrocínio - MG, 38740-000",
+        "lat": -18.9407,
+        "lon": -46.9928
+      },
+      {
+        "comarca": "Peçanha",
+        "endereco": "Rua José Pinto da Rocha, 60 - Centro, Peçanha - MG, 39700-000",
+        "lat": -18.5471,
+        "lon": -42.5563
+      },
+      {
+        "comarca": "Pedra Azul",
+        "endereco": "Avenida Netércio de Almeida, 135 - Centro, Pedra Azul - MG, 39970-000",
+        "lat": -16.0048,
+        "lon": -41.2982
+      },
+      {
+        "comarca": "Pedralva",
+        "endereco": "Praça Gaspar de Paiva Magalhães, 25 - Centro, Pedralva - MG, 37520-000",
+        "lat": -22.2530,
+        "lon": -45.4660
+      },
+      {
+        "comarca": "Perdizes",
+        "endereco": "Avenida Gercino Coutinho, 500 - Centro, Perdizes - MG, 38170-000",
+        "lat": -19.3524,
+        "lon": -47.2917
+      },
+      {
+        "comarca": "Perdões",
+        "endereco": "Rua Ciríaco Capitalucci, 181 - Centro, Perdões - MG, 37260-000",
+        "lat": -20.8604,
+        "lon": -45.0886
+      },
+      {
+        "comarca": "Piranga",
+        "endereco": "Rua Santa Efigênia, 240 - Centro, Piranga - MG, 36480-000",
+        "lat": -20.6720,
+        "lon": -43.2982
+      },
+      {
+        "comarca": "Pirapetinga",
+        "endereco": "Rua Governador Valadares, s/n - Centro, Pirapetinga - MG, 36730-000",
+        "lat": -21.6429,
+        "lon": -42.3457
+      },
+      {
+        "comarca": "Pirapora",
+        "endereco": "Rua Tiradentes, 300 - Centro, Pirapora - MG, 39270-000",
+        "lat": -17.3486,
+        "lon": -44.9427
+      },
+      {
+        "comarca": "Pitangui",
+        "endereco": "Avenida Via Romana, 1000 - Pitangueiras, Pitangui - MG, 35650-000",
+        "lat": -19.6738,
+        "lon": -44.8974
+      },
+      {
+        "comarca": "Piumhi",
+        "endereco": "Rua Helvídio Menezes, 350 - Centro, Piumhi - MG, 37925-000",
+        "lat": -20.4651,
+        "lon": -45.9610
+      },
+      {
+        "comarca": "Poços de Caldas",
+        "endereco": "Rua Pernambuco, 707 - Centro, Poços de Caldas - MG, 37701-021",
+        "lat": -21.7876,
+        "lon": -46.5654
+      },
+      {
+        "comarca": "Poço Fundo",
+        "endereco": "Praça Dr. Gouvêa, 100 - Centro, Poço Fundo - MG, 37757-000",
+        "lat": -21.5312,
+        "lon": -45.9680
+      },
+      {
+        "comarca": "Pompéu",
+        "endereco": "Rua Maria Custódia dos Santos, s/n - Centro, Pompéu - MG, 35640-000",
+        "lat": -19.2248,
+        "lon": -44.9351
+      },
+      {
+        "comarca": "Ponte Nova",
+        "endereco": "Avenida Caetano Marinho, 209 - Centro, Ponte Nova - MG, 35430-001",
+        "lat": -20.4121,
+        "lon": -42.9037
+      },
+      {
+        "comarca": "Porteirinha",
+        "endereco": "Rua Dr. Ailson Mendes Brito Binha, 365 - Renascença, Porteirinha - MG, 39520-000",
+        "lat": -15.7388,
+        "lon": -43.0249
+      },
+      {
+        "comarca": "Pouso Alegre",
+        "endereco": "Avenida Luiz Carlos Vilela, 245 - Santa Rita, Pouso Alegre - MG, 37550-000",
+        "lat": -22.2274,
+        "lon": -45.9348
+      },
+      {
+        "comarca": "Prados",
+        "endereco": "Rua Odilon G de Andrade, 8 - Centro, Prados - MG, 36320-000",
+        "lat": -21.0573,
+        "lon": -44.0805
+      },
+      {
+        "comarca": "Prata",
+        "endereco": "Praça XV de Novembro, 273 - Centro, Prata - MG, 38140-000",
+        "lat": -19.3090,
+        "lon": -48.9240
+      },
+      {
+        "comarca": "Pratápolis",
+        "endereco": "Rua Leônidas D. Pedroso, s/n - Centro, Pratápolis - MG, 37970-000",
+        "lat": -20.7483,
+        "lon": -46.8524
+      },
+      {
+        "comarca": "Presidente Olegário",
+        "endereco": "Praça da Bandeira, s/n - Centro, Presidente Olegário - MG, 38750-000",
+        "lat": -18.4140,
+        "lon": -46.4215
+      },
+      {
+        "comarca": "Raul Soares",
+        "endereco": "MG-329, 100 - Centro, Raul Soares - MG, 35350-000",
+        "lat": -20.1009,
+        "lon": -42.4552
+      },
+      {
+        "comarca": "Resende Costa",
+        "endereco": "Praça Professor Rosa Soares Penido, 7 - Centro, Resende Costa - MG, 36340-000",
+        "lat": -20.9126,
+        "lon": -44.2368
+      },
+      {
+        "comarca": "Resplendor",
+        "endereco": "Rua Morais de Carvalho, 474 - Centro, Resplendor - MG, 35230-000",
+        "lat": -19.3283,
+        "lon": -41.2562
+      },
+      {
+        "comarca": "Rio Casca",
+        "endereco": "Praça Prefeito José Monteiro, 100 - Centro, Rio Casca - MG, 35370-000",
+        "lat": -20.2263,
+        "lon": -42.9463
+      },
+      {
+        "comarca": "Rio Novo",
+        "endereco": "Rua Visconde do Rio Branco, 157 - Centro, Rio Novo - MG, 36150-000",
+        "lat": -21.4640,
+        "lon": -43.1293
+      },
+      {
+        "comarca": "Rio Paranaíba",
+        "endereco": "Rua Trajano José da Silva, 108 - Centro, Rio Paranaíba - MG, 38810-000",
+        "lat": -19.1963,
+        "lon": -46.2483
+      },
+      {
+        "comarca": "Rio Pardo de Minas",
+        "endereco": "Rua Cel. João de Almeida, 120 - Centro, Rio Pardo de Minas - MG, 39530-000",
+        "lat": -15.6174,
+        "lon": -42.5393
+      },
+      {
+        "comarca": "Rio Piracicaba",
+        "endereco": "Rua Padre Pinto, 13 - Centro, Rio Piracicaba - MG, 35940-000",
+        "lat": -19.9298,
+        "lon": -43.1755
+      },
+      {
+        "comarca": "Rio Pomba",
+        "endereco": "Praça Dr. Último de Carvalho, 234 - Centro, Rio Pomba - MG, 36180-000",
+        "lat": -21.2503,
+        "lon": -43.1793
+      },
+      {
+        "comarca": "Rio Preto",
+        "endereco": "Rua Dr. Ramalho Pinto, 1 - Centro, Rio Preto - MG, 36130-000",
+        "lat": -22.0831,
+        "lon": -43.8966
+      },
+      {
+        "comarca": "Rio Vermelho",
+        "endereco": "Rua Bernardino Carvalhais, 42 - Centro, Rio Vermelho - MG, 39170-000",
+        "lat": -18.2323,
+        "lon": -43.0064
+      },
+      {
+        "comarca": "Sabará",
+        "endereco": "Praça Melo Viana, 71 - Centro, Sabará - MG, 34505-300",
+        "lat": -19.8890,
+        "lon": -43.8051
+      },
+      {
+        "comarca": "Sabinópolis",
+        "endereco": "Rua Alencar J. Pimenta, 82 - Centro, Sabinópolis - MG, 39750-000",
+        "lat": -18.6656,
+        "lon": -43.0850
+      },
+      {
+        "comarca": "Sacramento",
+        "endereco": "Rua Visconde do Rio Branco, 227 - Centro, Sacramento - MG, 38190-000",
+        "lat": -19.8643,
+        "lon": -47.4429
+      },
+      {
+        "comarca": "Salinas",
+        "endereco": "Praça João Pessoa, 18 - Centro, Salinas - MG, 39560-000",
+        "lat": -16.1687,
+        "lon": -42.2905
+      },
+      {
+        "comarca": "Santa Bárbara",
+        "endereco": "Rua Rabelo Horta, 64 - Centro, Santa Bárbara - MG, 35960-000",
+        "lat": -20.0243,
+        "lon": -43.4116
+      },
+      {
+        "comarca": "Santa Maria do Suaçuí",
+        "endereco": "Rua Uberaba, 918 - Centro, Santa Maria do Suaçuí - MG, 39780-000",
+        "lat": -18.2001,
+        "lon": -42.4140
+      },
+      {
+        "comarca": "Santa Rita de Caldas",
+        "endereco": "Rua João Firmino do Couto, 75 - Centro, Santa Rita de Caldas - MG, 37775-000",
+        "lat": -21.9054,
+        "lon": -46.3359
+      },
+      {
+        "comarca": "Santa Rita do Sapucaí",
+        "endereco": "Avenida Embaixador Bilac Pinto, s/n - Colina das Palmeiras, Santa Rita do Sapucaí - MG, 37540-000",
+        "lat": -22.2530,
+        "lon": -45.7001
+      },
+      {
+        "comarca": "Santa Vitória",
+        "endereco": "Avenida Reinaldo Franco de Morais, 776 - Centro, Santa Vitória - MG, 38320-000",
+        "lat": -18.8471,
+        "lon": -50.1226
+      },
+      {
+        "comarca": "Santo Antônio do Monte",
+        "endereco": "Praça Getúlio Vargas, s/n - Centro, Santo Antônio do Monte - MG, 35560-000",
+        "lat": -20.0862,
+        "lon": -45.2952
+      },
+      {
+        "comarca": "Santos Dumont",
+        "endereco": "Rua Galileu Fonseca, 80 - Centro, Santos Dumont - MG, 36240-000",
+        "lat": -21.4608,
+        "lon": -43.5516
+      },
+      {
+        "comarca": "São Domingos do Prata",
+        "endereco": "Rua Getúlio Vargas, 192 - Centro, São Domingos do Prata - MG, 35995-000",
+        "lat": -19.8407,
+        "lon": -42.9463
+      },
+      {
+        "comarca": "São Francisco",
+        "endereco": "Avenida Presidente Juscelino Kubitscheck, 775 - Centro, São Francisco - MG, 39300-000",
+        "lat": -15.9497,
+        "lon": -44.8653
+      },
+      {
+        "comarca": "São Gonçalo do Sapucaí",
+        "endereco": "Praça Monsenhor Hélio, 10 - Centro, São Gonçalo do Sapucaí - MG, 37490-000",
+        "lat": -21.8920,
+        "lon": -45.5976
+      },
+      {
+        "comarca": "São Gotardo",
+        "endereco": "Avenida Presidente Vargas, 595 - Centro, São Gotardo - MG, 38800-000",
+        "lat": -19.3113,
+        "lon": -45.7958
+      },
+      {
+        "comarca": "São João da Ponte",
+        "endereco": "Rua Trinta e Um de Dezembro, 245 - Centro, São João da Ponte - MG, 39430-000",
+        "lat": -15.9351,
+        "lon": -44.0090
+      },
+      {
+        "comarca": "São João Del Rei",
+        "endereco": "Rua Antônio Manoel de Souza Guerra, 125 - Vila Marchetti, São João del Rei - MG, 36307-201",
+        "lat": -21.1347,
+        "lon": -44.2562
+      },
+      {
+        "comarca": "São João do Paraíso",
+        "endereco": "Avenida Dr. Osório Adrião da Rocha, 282 - Centro, São João do Paraíso - MG, 39540-000",
+        "lat": -15.3134,
+        "lon": -42.0125
+      },
+      {
+        "comarca": "São João Evangelista",
+        "endereco": "Rua E, 45 - Centro, São João Evangelista - MG, 39705-000",
+        "lat": -18.5510,
+        "lon": -42.7663
+      },
+      {
+        "comarca": "São João Nepomuceno",
+        "endereco": "Rua Coronel José Dutra, 39 - Centro, São João Nepomuceno - MG, 36680-000",
+        "lat": -21.5385,
+        "lon": -43.0113
+      },
+      {
+        "comarca": "São Lourenço",
+        "endereco": "Avenida Dr. Emílio Abdon Póvoa, s/n - Centro, São Lourenço - MG, 37470-000",
+        "lat": -22.1154,
+        "lon": -45.0531
+      },
+      {
+        "comarca": "São Romão",
+        "endereco": "Avenida Newton Gonçalves Pereira, 1285 - Centro, São Romão - MG, 39290-000",
+        "lat": -16.3701,
+        "lon": -45.0716
+      },
+      {
+        "comarca": "São Roque de Minas",
+        "endereco": "Avenida Padre Murilo de Almeida Conceição, 54 - Centro, São Roque de Minas - MG, 37928-000",
+        "lat": -20.2474,
+        "lon": -46.3651
+      },
+      {
+        "comarca": "São Sebastião do Paraíso",
+        "endereco": "Avenida Doutor José de Oliveira Brandão Filho, 300 - Jardim Coolapa, São Sebastião do Paraíso - MG, 37950-000",
+        "lat": -20.9168,
+        "lon": -46.9936
+      },
+      {
+        "comarca": "Senador Firmino",
+        "endereco": "Praça Raimundo Carneiro, 111 - Centro, Senador Firmino - MG, 36540-000",
+        "lat": -20.9388,
+        "lon": -42.9984
+      },
+      {
+        "comarca": "Serro",
+        "endereco": "Rua Santa Rita, 66 - Centro, Serro - MG, 39150-000",
+        "lat": -18.6044,
+        "lon": -43.3792
+      },
+      {
+        "comarca": "Sete Lagoas",
+        "endereco": "Rua José Duarte de Paiva, 715 - Santa Luzia, Sete Lagoas - MG, 35700-709",
+        "lat": -19.4533,
+        "lon": -44.2384
+      },
+      {
+        "comarca": "Silvianópolis",
+        "endereco": "Praça Horácio Guimarães, 3 - Centro, Silvianópolis - MG",
+        "lat": -22.0384,
+        "lon": -45.8562
+      },
+      {
+        "comarca": "Taiobeiras",
+        "endereco": "Rua Conrado Rocha, 387 - Centro, Taiobeiras - MG, 39550-000",
+        "lat": -15.8080,
+        "lon": -42.2223
+      },
+      {
+        "comarca": "Tarumirim",
+        "endereco": "Rua Benedito Valadares, 58 - Centro, Tarumirim - MG, 35140-000",
+        "lat": -19.2882,
+        "lon": -42.0125
+      },
+      {
+        "comarca": "Teixeiras",
+        "endereco": "Avenida Francisco Pena, 83 - Centro, Teixeiras - MG, 36580-000",
+        "lat": -20.6548,
+        "lon": -42.8596
+      },
+      {
+        "comarca": "Teófilo Otoni",
+        "endereco": "Avenida Dr. Júlio Rodrigues, 415 - Marajoara, Teófilo Otoni - MG, 39803-902",
+        "lat": -17.8599,
+        "lon": -41.5037
+      },
+      {
+        "comarca": "Timóteo",
+        "endereco": "Praça Olímpica, 65 - Funcionários, Timóteo - MG, 35180-000",
+        "lat": -19.5818,
+        "lon": -42.6461
+      },
+      {
+        "comarca": "Tiros",
+        "endereco": "Avenida José Ferreira Capetinga, 152 - Centro, Tiros - MG, 38880-000",
+        "lat": -19.0021,
+        "lon": -45.9625
+      },
+      {
+        "comarca": "Tombos",
+        "endereco": "Rua Juvenal Batista de Almeida, 66 - Centro, Tombos - MG, 36844-000",
+        "lat": -20.9022,
+        "lon": -42.0253
+      },
+      {
+        "comarca": "Três Corações",
+        "endereco": "Avenida Conrado Crossi Dângelo, s/n - São Conrado, Três Corações - MG, 37410-000",
+        "lat": -21.6917,
+        "lon": -45.2530
+      },
+      {
+        "comarca": "Três Pontas",
+        "endereco": "Rua Américo Miari, 30 - Centro, Três Pontas - MG, 37190-000",
+        "lat": -21.3705,
+        "lon": -45.5126
+      },
+      {
+        "comarca": "Tupaciguara",
+        "endereco": "Rua Padre Simão, s/n - Bom Sucesso, Tupaciguara - MG, 38430-000",
+        "lat": -18.5912,
+        "lon": -48.7055
+      },
+      {
+        "comarca": "Turmalina",
+        "endereco": "Rua Teotônio Pinheiro, 123 - Centro, Turmalina - MG, 39660-000",
+        "lat": -17.2847,
+        "lon": -42.7303
+      },
+      {
+        "comarca": "Ubá",
+        "endereco": "Avenida Senador Levindo Coelho, 735 - Novo Centro, Ubá - MG, 36500-000",
+        "lat": -21.1207,
+        "lon": -42.9427
+      },
+      {
+        "comarca": "Uberaba",
+        "endereco": "Avenida Maranhão, 1580 - Santa Maria, Uberaba - MG, 38050-470",
+        "lat": -19.7483,
+        "lon": -47.9392
+      },
+      {
+        "comarca": "Uberlândia",
+        "endereco": "Avenida Rondon Pacheco, 6130 - Tibery, Uberlândia - MG, 38405-142",
+        "lat": -18.9105,
+        "lon": -48.2621
+      },
+      {
+        "comarca": "Unaí",
+        "endereco": "Rua Virgílio Justiniano Ribeiro, 555 - Centro, Unaí - MG, 38610-000",
+        "lat": -16.3578,
+        "lon": -46.9067
+      },
+      {
+        "comarca": "Varginha",
+        "endereco": "Avenida Isaltina Moraes Braga, 125 - Vale das Palmeiras, Varginha - MG, 37031-300",
+        "lat": -21.5645,
+        "lon": -45.4370
+      },
+      {
+        "comarca": "Várzea da Palma",
+        "endereco": "Rua Claudio Manoel da Costa, s/n - Centro, Várzea da Palma - MG, 39260-000",
+        "lat": -17.5976,
+        "lon": -44.7317
+      },
+      {
+        "comarca": "Vazante",
+        "endereco": "Rua Osório Soares, 200 - Centro, Vazante - MG, 38780-000",
+        "lat": -17.9866,
+        "lon": -46.8924
+      },
+      {
+        "comarca": "Viçosa",
+        "endereco": "Rua Gomes Barbosa, 865 - Centro, Viçosa - MG, 36570-101",
+        "lat": -20.7548,
+        "lon": -42.8787
+      },
+      {
+        "comarca": "Virginópolis",
+        "endereco": "Rua Padre Bento Ferreira, 14 - Centro, Virginópolis - MG, 39730-000",
+        "lat": -18.8105,
+        "lon": -42.7042
+      },
+      {
+        "comarca": "Visconde do Rio Branco",
+        "endereco": "Praça 28 de Setembro, 281 - Centro, Visconde do Rio Branco - MG, 36520-000",
+        "lat": -21.0118,
+        "lon": -42.8423
+      },
+      {
+        "comarca": "Coração de Jesus",
+        "endereco": "Rua Professora Maria Lídia, 380 - Centro, Coração de Jesus - MG, 39340-000",
+        "lat": -16.6853,
+        "lon": -44.3644
+      },
+      {
+        "comarca": "Arinos",
+        "endereco": "Rua Major Saint Clair, 1003 - Centro, Arinos - MG, 38680-000",
+        "lat": -15.9149,
+        "lon": -46.1051
+      },
+      {
+        "comarca": "Camanducaia",
+        "endereco": "Praça do Centenário, 237 - Centro, Camanducaia - MG, 37650-000",
+        "lat": -22.7766,
+        "lon": -46.1444
+      },
+      {
+        "comarca": "Carmópolis de Minas",
+        "endereco": "Praça Nossa Senhora do Carmo, 190 - Centro, Carmópolis de Minas - MG, 35534-000",
+        "lat": -20.5401,
+        "lon": -44.6318
+      },
+      {
+        "comarca": "Jaíba",
+        "endereco": "Avenida João Teixeira Filho, 1000 - Centro, Jaíba - MG, 39508-000",
+        "lat": -15.3377,
+        "lon": -43.6826
+      },
+      {
+        "comarca": "Juatuba",
+        "endereco": "Rua Mário Teixeira, 10 - Centro, Juatuba - MG, 35675-000",
+        "lat": -19.9536,
+        "lon": -44.3315
+      }
+
+    
+  ]
+
+  

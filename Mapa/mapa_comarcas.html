@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa das Comarcas de Minas Gerais</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Mapa Interativo das Comarcas do TJMG</h1>
+    
+    <div class="container-principal">
+        <div id="lista-comarcas" class="lista-container">
+            <h2>Comarcas</h2>
+            
+            <input type="text" id="campo-pesquisa" placeholder="Pesquisar comarca...">
+            
+            <div id="lista-itens"></div>
+        </div>
+        
+        <div id="mapa" class="mapa-container"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+        // 1. Inicializar o mapa
+        const map = L.map('mapa').setView([-18.5122, -44.5550], 7);
+
+        // 2. Adicionar o "tile layer"
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        const markers = {};
+
+        // 3. Carregar os dados do JSON e criar a lista/marcadores
+        fetch('comarcas.json')
+            .then(response => response.json())
+            .then(data => {
+                const listaContainer = document.getElementById('lista-itens');
+
+                data.forEach(comarca => {
+                    const marker = L.marker([comarca.lat, comarca.lon]).addTo(map);
+                    const popupContent = `<b>${comarca.comarca}</b><br>${comarca.endereco}`;
+                    marker.bindPopup(popupContent);
+                    markers[comarca.comarca] = marker;
+
+                    const listItem = document.createElement('a');
+                    listItem.href = '#';
+                    listItem.className = 'item-lista';
+                    listItem.textContent = comarca.comarca;
+                    
+                    listItem.onclick = () => {
+                        map.flyTo([comarca.lat, comarca.lon], 15);
+                        marker.openPopup();
+                    };
+                    
+                    listaContainer.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Erro ao carregar os dados das comarcas:', error));
+
+        // --- NOVA LÓGICA DE PESQUISA ---
+        // Pega a referência do campo de pesquisa
+        const campoPesquisa = document.getElementById('campo-pesquisa');
+
+        // Adiciona um "escutador" que dispara a função a cada tecla digitada
+        campoPesquisa.addEventListener('input', () => {
+            const termoPesquisa = campoPesquisa.value.toLowerCase();
+            const listaItens = document.getElementById('lista-itens');
+            const todosOsItens = listaItens.getElementsByClassName('item-lista');
+
+            // Passa por cada item da lista
+            for (const item of todosOsItens) {
+                const nomeComarca = item.textContent.toLowerCase();
+                
+                // Se o nome da comarca incluir o texto digitado, ele aparece
+                if (nomeComarca.includes(termoPesquisa)) {
+                    item.style.display = 'block';
+                } else {
+                    // Senão, ele fica oculto
+                    item.style.display = 'none';
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
