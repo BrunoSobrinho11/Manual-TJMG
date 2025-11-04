@@ -1,0 +1,226 @@
+/* --- ESTILOS GERAIS (Layout Novo) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- HEADER (Layout Novo) --- */
+header {
+    background: linear-gradient(90deg, #2c3e50 0%, #3498db 100%);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo i {
+    font-size: 32px;
+}
+
+.logo h1 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* --- LAYOUT DE PÁGINA (Layout Novo) --- */
+.page-layout {
+    display: flex;
+    gap: 30px;
+    padding: 30px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* --- MENU LATERAL (Layout Novo) --- */
+.sidebar {
+    flex: 0 0 260px; /* Tamanho fixo para a sidebar */
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    height: fit-content;
+}
+
+.sidebar h2 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+}
+
+.sidebar li a:hover {
+    background-color: #ecf0f1;
+    color: #2980b9;
+}
+
+.sidebar li a i {
+    width: 20px;
+    text-align: center;
+    color: #3498db;
+}
+
+/* --- CONTEÚDO PRINCIPAL (Layout Novo) --- */
+.main-content {
+    flex: 1; /* Ocupa o resto do espaço */
+}
+
+/* --- FOOTER (Layout Novo) --- */
+.footer {
+    background-color: #343a40; /* Cor escura do footer */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+/* --- ESTILOS PÁGINA MAPA (Seus estilos adaptados) --- */
+
+/* Caixa do título do mapa */
+.map-header-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+}
+
+.map-header-box h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin: 0;
+}
+
+/* Container que segura a lista e o mapa */
+.container-principal {
+    display: flex;
+    gap: 20px;
+    height: 75vh; /* Altura do mapa e lista */
+}
+
+/* Caixa da lista de comarcas */
+.lista-container {
+    flex: 0 0 300px; /* Largura da lista */
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Caixa do mapa */
+.mapa-container {
+    flex-grow: 1; /* Ocupa o resto do espaço */
+    border-radius: 12px;
+    overflow: hidden; /* Importante para o Leaflet */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Campo de pesquisa da lista (estilo adaptado) */
+#campo-pesquisa {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: border-color 0.3s;
+}
+#campo-pesquisa:focus {
+    border-color: #3498db;
+}
+
+/* Div que segura os itens da lista */
+#lista-itens {
+    overflow-y: auto; /* Adiciona barra de rolagem */
+    flex-grow: 1;
+}
+
+/* Itens individuais da lista */
+.item-lista {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #444;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.item-lista:hover {
+    background-color: #f0f0f0;
+}
+
+/* --- RESPONSIVIDADE (Layout Novo + Mapa) --- */
+@media (max-width: 992px) {
+    .page-layout {
+        flex-direction: column;
+    }
+    .sidebar {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-principal {
+        flex-direction: column;
+        height: auto; /* Altura automática em telas pequenas */
+    }
+    .lista-container {
+        flex-basis: auto; /* Remove a largura fixa */
+        height: 300px; /* Altura fixa para a lista */
+    }
+    .mapa-container {
+        flex-basis: auto; /* Remove o flex: 1 */
+        height: 50vh; /* Altura para o mapa */
+    }
+}

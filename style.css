@@ -1,0 +1,371 @@
+/* --- ESTILOS GERAIS (do exemplo TJMG) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Usando 'Inter' que já tínhamos, no lugar de 'Segoe UI' */
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- HEADER (do exemplo TJMG) --- */
+header {
+    background: linear-gradient(90deg, #2c3e50 0%, #3498db 100%);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo i {
+    font-size: 32px;
+}
+
+.logo h1 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* --- LAYOUT DE PÁGINA (do exemplo TJMG) --- */
+.page-layout {
+    display: flex;
+    gap: 30px;
+    padding: 30px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* --- MENU LATERAL (do exemplo TJMG) --- */
+.sidebar {
+    flex: 0 0 260px; /* Tamanho fixo para a sidebar */
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    height: fit-content;
+}
+
+.sidebar h2 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+}
+
+.sidebar li a:hover {
+    background-color: #ecf0f1;
+    color: #2980b9;
+}
+
+.sidebar li a i {
+    width: 20px;
+    text-align: center;
+    color: #3498db;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.main-content {
+    flex: 1; /* Ocupa o resto do espaço */
+    /* Variáveis que usávamos antes (movidas para cá) */
+    --primary-color: #007bff;
+    --danger-color: #dc3545;
+    --border-color: #dee2e6;
+    --dark-bg: #343a40;
+}
+
+/* --- ESTILOS DA BARRA DE PESQUISA (NOVO/CORRIGIDO) --- */
+.search-section {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px; /* Espaço antes dos filtros */
+}
+
+.search-box {
+    max-width: 700px; /* Largura da barra */
+    margin: 0 auto;
+    position: relative;
+    display: flex; /* Para alinhar o input e o botão */
+}
+
+.search-box input {
+    flex-grow: 1; /* Input ocupa o espaço */
+    padding: 12px 20px;
+    border: 2px solid #ddd;
+    border-radius: 50px 0 0 50px; /* Arredonda à esquerda */
+    font-size: 1rem;
+    outline: none;
+    border-right: none;
+    font-family: 'Inter', sans-serif; /* Garante a fonte correta */
+}
+
+.search-box input:focus {
+    border-color: #3498db;
+}
+
+.search-button {
+    flex-shrink: 0; /* Botão não encolhe */
+    padding: 0 25px;
+    border: 2px solid #ddd;
+    border-left: none;
+    background: #f9f9f9;
+    color: #555;
+    cursor: pointer;
+    border-radius: 0 50px 50px 0; /* Arredonda à direita */
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.search-button:hover {
+    background: #e9e9e9;
+    color: #2980b9;
+}
+
+
+/* --- ESTILOS DA APLICAÇÃO (Filtros, Tabela, Paginação) --- */
+.filters {
+    background-color: white;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+}
+
+.filter-group label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 0.9em;
+}
+
+.filter-group select {
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: white;
+    font-size: 0.95em;
+    min-width: 120px;
+    outline: none;
+}
+
+.clear-filters {
+    padding: 10px 15px;
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    align-self: flex-end;
+}
+
+.clear-filters:hover {
+    background-color: #c82333;
+}
+
+.results-table {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+table th {
+    background-color: #f5f7fa;
+    font-weight: 600;
+    color: var(--dark-bg);
+    white-space: nowrap;
+}
+
+table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.item-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.item-img:hover {
+    transform: scale(1.1);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    gap: 5px;
+}
+
+.pagination button {
+    background-color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pagination button:hover:not(.active) {
+    background-color: #e9ecef;
+}
+
+.pagination button.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    font-weight: 600;
+}
+
+.pagination button:disabled {
+    background-color: #e9ecef;
+    color: #adb5bd;
+    cursor: not-allowed;
+    border-color: #dee2e6;
+}
+
+/* --- FOOTER --- */
+.footer {
+    background-color: var(--dark-bg);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+/* --- MODAL (Com correção de centralização) --- */
+.modal-overlay {
+    position: fixed; 
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); 
+    
+    /* Centralização com Flexbox */
+    display: none; /* JavaScript vai mudar para 'flex' */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    animation-name: zoom;
+    animation-duration: 0.4s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0.1)}
+    to {transform: scale(1)}
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 992px) {
+    .page-layout {
+        flex-direction: column;
+    }
+    .sidebar {
+        flex: 1;
+    }
+}

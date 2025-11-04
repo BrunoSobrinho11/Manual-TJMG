@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa das Comarcas de Minas Gerais</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="mapa.css"> 
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-map-marked-alt"></i>
+                <h1>Mapa das Comarcas</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-layout">
+        
+        <aside class="sidebar">
+            <h2>Navegação</h2>
+            <nav>
+                <ul>
+                    <li><a href="primeirainstancia.htm"><i class="fas fa-gavel"></i> Primeira Instância</a></li>
+                    <li><a href="segundainstancia.html"><i class="fas fa-landmark"></i> Segunda Instância</a></li>
+                    <li><a href="administrativo.html"><i class="fas fa-building-columns"></i> Administrativo</a></li>
+                    <li><a href="rtf.html"><i class="fas fa-file-alt"></i> HTML (RTF)</a></li>
+                    <li><a href="puboab.html"><i class="fas fa-paper-plane"></i> PUB</a></li>
+                    <li><a href="rateio.html"><i class="fas fa-university"></i> Rateio do Banco</a></li>
+                    <li><a href="agendatjmg.html"><i class="fas fa-address-book"></i> Agenda Telefônica</a></li>
+                    <li><a href="pjemidias.html"><i class="fas fa-video"></i> PJE Mídias</a></li>
+                    <li><a href="anotacao.html"><i class="fas fa-clipboard"></i> Anotações</a></li>
+                    <li><a href="mapa_comarcas.html"class="active"><i class="fas fa-map-marked-alt"></i> Mapa das Comarcas</a></li>
+                    <li><a href="inventario.html"><i class="fas fa-clipboard"></i> Inventário</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <div class="map-header-box">
+                <h2>Mapa Interativo das Comarcas do TJMG</h2>
+            </div>
+            
+            <div class="container-principal">
+                <div id="lista-comarcas" class="lista-container">
+                    <input type="text" id="campo-pesquisa" placeholder="Pesquisar comarca...">
+                    <div id="lista-itens"></div>
+                </div>
+                
+                <div id="mapa" class="mapa-container"></div>
+            </div>
+
+        </main> </div> <footer class="footer">
+        <p>&copy; 2025 Sistema de Mapa. Equipe Certificado Digital TJMG.</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+        // 1. Inicializar o mapa
+        const map = L.map('mapa').setView([-18.5122, -44.5550], 7);
+
+        // 2. Adicionar o "tile layer"
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        const markers = {};
+
+        // 3. Carregar os dados do JSON e criar a lista/marcadores
+        fetch('comarcas.json')
+            .then(response => response.json())
+            .then(data => {
+                const listaContainer = document.getElementById('lista-itens');
+
+                data.forEach(comarca => {
+                    const marker = L.marker([comarca.lat, comarca.lon]).addTo(map);
+                    const popupContent = `<b>${comarca.comarca}</b><br>${comarca.endereco}`;
+                    marker.bindPopup(popupContent);
+                    markers[comarca.comarca] = marker;
+
+                    const listItem = document.createElement('a');
+                    listItem.href = '#';
+                    listItem.className = 'item-lista';
+                    listItem.textContent = comarca.comarca;
+                    
+                    // Corrigido para prevenir o pulo da página
+                    listItem.onclick = (e) => {
+                        e.preventDefault(); 
+                        map.flyTo([comarca.lat, comarca.lon], 15);
+                        marker.openPopup();
+                    };
+                    
+                    listaContainer.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Erro ao carregar os dados das comarcas:', error));
+
+        // Lógica de Pesquisa
+        const campoPesquisa = document.getElementById('campo-pesquisa');
+
+        campoPesquisa.addEventListener('input', () => {
+            const termoPesquisa = campoPesquisa.value.toLowerCase();
+            const listaItens = document.getElementById('lista-itens');
+            const todosOsItens = listaItens.getElementsByClassName('item-lista');
+
+            for (const item of todosOsItens) {
+                const nomeComarca = item.textContent.toLowerCase();
+                
+                if (nomeComarca.includes(termoPesquisa)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Patrimônio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-archive"></i>
+                <h1>Consulta de Patrimônio</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-layout">
+        
+        <aside class="sidebar">
+            <h2>Navegação</h2>
+            <nav>
+                <ul>
+                    <li><a href="primeirainstancia.htm"><i class="fas fa-gavel"></i> Primeira Instância</a></li>
+                    <li><a href="segundainstancia.html"><i class="fas fa-landmark"></i> Segunda Instância</a></li>
+                    <li><a href="administrativo.html"><i class="fas fa-building-columns"></i> Administrativo</a></li>
+                    <li><a href="rtf.html"><i class="fas fa-file-alt"></i> HTML (RTF)</a></li>
+                    <li><a href="puboab.html"><i class="fas fa-paper-plane"></i> PUB</a></li>
+                    <li><a href="rateio.html"><i class="fas fa-university"></i> Rateio do Banco</a></li>
+                    <li><a href="agendatjmg.html"><i class="fas fa-address-book"></i> Agenda Telefônica</a></li>
+                    <li><a href="pjemidias.html"><i class="fas fa-video"></i> PJE Mídias</a></li>
+                    <li><a href="anotacao.html"><i class="fas fa-clipboard"></i> Anotações</a></li>
+                    <li><a href="mapa_comarcas.html"><i class="fas fa-map-marked-alt"></i> Mapa das Comarcas</a></li>
+                    <li><a href="inventario.html" class="active"><i class="fas fa-clipboard"></i> Inventário</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <section class="search-section">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Buscar por número, data, local, usuário...">
+                    <button id="searchButton" class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </section>
+            
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="local">Local:</label>
+                    <select id="local">
+                        <option value="">Todos</option>
+                        <option value="COOPE">COOPE</option>
+                        <option value="GOOGLE">GOOGLE</option>
+                        <option value="WYNTECH OPERADORES">Wyntech Operadores</option>
+                        <option value="WYNTECH SALA">Wyntech Sala</option>
+                        <option value="EPROC">EPROC</option>
+                        <option value="RAJA">Raja</option>
+                        <option value="GONÇALVES DIAS">Gonçalves Dias</option>
+                        <option value="FÓRUM LAFAETE">Fórum Lafaete</option>
+                        <option value="ÁLVARO">Álvaro</option>
+                        <option value="WYNTECH SEDE">Wyntech SEDE</option>
+                        <option value="GOIAS ANEXO I">Goias Anexo I</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="categoria">Categoria:</label>
+                    <select id="categoria">
+                        <option value="">Todas</option>
+                        <option value="MESA">Mesa</option>
+                        <option value="CADEIRA">Cadeira</option>
+                        <option value="ARMÁRIO">Armário</option>
+                        <option value="TELEFONE">Telefone</option>
+                        <option value="COMPUTADOR">Computador</option>
+                        <option value="NOTEBOOK">Notebook</option>
+                        <option value="GAVETEIRO">Gaveteiro</option>
+                        <option value="WEBCAM">Webcam</option>
+                        <option value="HUB">Hub</option>
+                        <option value="NOBREAK">Nobreak</option>
+                        <option value="VENTILADOR">Ventilador</option>
+                        <option value="APOIO DE PÉ">Apoio de pé</option>
+                        <option value="MONITOR">Monitor</option>
+                        <option value="SWITCH">Switch</option>
+                    </select>
+                </div>
+                <button class="clear-filters" id="clearFiltersButton">Limpar Filtros</button>
+            </div>
+
+            <div class="results-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th> 
+                            <th>Nº Patrimônio</th>
+                            <th>Data</th> <th>Local</th>
+                            <th>Categoria</th>
+                            <th>Usuário</th>
+                            <th>Observação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        </tbody>
+                </table>
+            </div>
+
+            <div id="paginationControls" class="pagination">
+                </div>
+
+        </main> </div> <footer class="footer">
+        <p>&copy; 2025 Sistema de Patrimônio. Equipe Certificado Digital TJMG.</p>
+    </footer>
+
+    <div id="imageModal" class="modal-overlay">
+        <span class="modal-close" id="modalClose">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
