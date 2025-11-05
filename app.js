@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             observacao: ''
         },
         {
-            img: 'Página1_Images/99931486.FOTO PATrimônio.165730.jpg',
+            img: 'Página1_Images/99931486.FOTO PATRIMÔNIO.165730.jpg',
             nPatrimonio: '99931486',
             date: "Julho/2025",
             local: 'WYNTECH OPERADORES',
@@ -1022,5 +1022,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Chama as funções para mostrar os dados na primeira carga
     updatePaginationUI();
     displayCurrentPage();
+
 
 }); // Fim do 'DOMContentLoaded'
