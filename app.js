@@ -1562,6 +1562,519 @@ document.addEventListener('DOMContentLoaded', () => {
             usuario: 'Embaixo mesa',
             observacao: ''
         },
+        {
+            img: 'Página2_Images/100000304.FOTO PATRIMÔNIO.161835.jpg',
+            nPatrimonio: '100000304',
+            date: "Novembro/2025",
+            local: 'WYNTECH SALA',
+            categoria: 'CADEIRA',
+            usuario: 'Pollyanna',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/580338.FOTO PATRIMÔNIO.162007.jpg',
+            nPatrimonio: '580338',
+            date: "Novembro/2025",
+            local: 'WYNTECH SALA',
+            categoria: 'MONITOR',
+            usuario: 'Pollyanna',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/582773.FOTO PATRIMÔNIO.162112.jpg',
+            nPatrimonio: '582773',
+            date: "Novembro/2025",
+            local: 'WYNTECH SALA',
+            categoria: 'GAVETEIRO',
+            usuario: 'Pollyanna',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/637642.FOTO PATRIMÔNIO.162233.jpg',
+            nPatrimonio: '637642',
+            date: "Novembro/2025",
+            local: 'WYNTECH SALA',
+            categoria: 'MESA',
+            usuario: 'Pollyanna',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99931060.FOTO PATRIMÔNIO.162354.jpg',
+            nPatrimonio: '99931060',
+            date: "Novembro/2025",
+            local: 'WYNTECH SALA',
+            categoria: 'NOTEBOOK',
+            usuario: 'Pollyanna',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83534474.FOTO PATRIMÔNIO.162607.jpg',
+            nPatrimonio: '83534474',
+            date: "Novembro/2025",
+            local: 'WYNTECH SALA',
+            categoria: 'MONITOR',
+            usuario: 'Bárbara Augusta',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/100000355.FOTO PATRIMÔNIO.162723.jpg',
+            nPatrimonio: '100000355',
+            date: "Novembro/2025",
+            local: 'WYNTECH SALA',
+            categoria: 'MESA',
+            usuario: 'Bárbara Augusta',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99998580.FOTO PATRIMÔNIO.162904.jpg',
+            nPatrimonio: '99998580',
+            date: "Novembro/2025",
+            local: 'WYNTECH SALA',
+            categoria: 'MESA',
+            usuario: 'Bárbara Augusta',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/129617970.FOTO PATRIMÔNIO.162909.jpg',
+            nPatrimonio: '129617970',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'GAVETEIRO',
+            usuario: 'Central de serviços',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/84187069.FOTO PATRIMÔNIO.162919.jpg',
+            nPatrimonio: '84187069',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'GAVETEIRO',
+            usuario: 'Central de serviços',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/129621340.FOTO PATRIMÔNIO.163003.jpg',
+            nPatrimonio: '129621340',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'MESA',
+            usuario: 'Central de serviços',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/522351.FOTO PATRIMÔNIO.163034.jpg',
+            nPatrimonio: '522351',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'MESA',
+            usuario: 'Central de serviços',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/434684.FOTO PATRIMÔNIO.163053.jpg',
+            nPatrimonio: '434684',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'GAVETEIRO',
+            usuario: 'Central de serviços',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/84579641.FOTO PATRIMÔNIO.163103.jpg',
+            nPatrimonio: '84579641',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'MESA',
+            usuario: 'Central de serviços',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/453590.FOTO PATRIMÔNIO.163113.jpg',
+            nPatrimonio: '453590',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'MESA',
+            usuario: 'Central de serviços',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/434688.FOTO PATRIMÔNIO.163125.jpg',
+            nPatrimonio: '434688',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'GAVETEIRO',
+            usuario: 'Central de serviços',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/421607.FOTO PATRIMÔNIO.163150.jpg',
+            nPatrimonio: '421607',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'CADEIRA',
+            usuario: 'Central de serviços',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/129648345.FOTO PATRIMÔNIO.163156.jpg',
+            nPatrimonio: '129648345',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'CADEIRA',
+            usuario: 'Central de serviços',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/510018.FOTO PATRIMÔNIO.163225.jpg',
+            nPatrimonio: '510018',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'GAVETEIRO',
+            usuario: 'Central de serviços',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99930765.FOTO PATRIMÔNIO.163231.jpg',
+            nPatrimonio: '99930765',
+            date: "Novembro/2025",
+            local: 'WYNTECH SALA',
+            categoria: 'NOTEBOOK',
+            usuario: 'Bárbara Augusta',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/369781.FOTO PATRIMÔNIO.163245.jpg',
+            nPatrimonio: '369781',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'MESA',
+            usuario: 'Central de serviços',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/GDGBEJIHA.FOTO PATRIMÔNIO.163301.jpg',
+            nPatrimonio: 'GDGBEJIHA',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'CADEIRA',
+            usuario: 'Central de serviços',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/66719798.FOTO PATRIMÔNIO.163344.jpg',
+            nPatrimonio: '66719798',
+            date: "Novembro/2025",
+            local: 'WYNTECH SALA',
+            categoria: 'TELEFONE',
+            usuario: 'Bárbara Augusta',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99932024.FOTO PATRIMÔNIO.171041.jpg',
+            nPatrimonio: '99932024',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'NOTEBOOK',
+            usuario: 'Eider Ribeiro',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99932008.FOTO PATRIMÔNIO.171111.jpg',
+            nPatrimonio: '99932008',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'NOTEBOOK',
+            usuario: 'Júlio César',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99931966.FOTO PATRIMÔNIO.171117.jpg',
+            nPatrimonio: '99931966',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'NOTEBOOK',
+            usuario: 'André Luiz',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63626926.FOTO PATRIMÔNIO.171147.jpg',
+            nPatrimonio: '63626926',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'ARMÁRIO',
+            usuario: 'Armário dos notebook',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99931958.FOTO PATRIMÔNIO.171152.jpg',
+            nPatrimonio: '99931958',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'NOTEBOOK',
+            usuario: 'Jeferson Alfaia',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/516915.FOTO PATRIMÔNIO.171207.jpg',
+            nPatrimonio: '516915',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'ARMÁRIO',
+            usuario: 'Armário dos notebook',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/84280530.FOTO PATRIMÔNIO.171235.jpg',
+            nPatrimonio: '84280530',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'VENTILADOR',
+            usuario: 'Ventilador próximo armários',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63605139.FOTO PATRIMÔNIO.171240.jpg',
+            nPatrimonio: '63605139',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'ARMÁRIO',
+            usuario: 'Armário do café',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/75324300.FOTO PATRIMÔNIO.171308.jpg',
+            nPatrimonio: '75324300',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'ARMÁRIO',
+            usuario: 'Armário do café',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/637661.FOTO PATRIMÔNIO.171322.jpg',
+            nPatrimonio: '637661',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'MESA',
+            usuario: 'EPROC 1',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/481509.FOTO PATRIMÔNIO.171340.jpg',
+            nPatrimonio: '481509',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'GAVETEIRO',
+            usuario: 'EPROC 2',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/556439.FOTO PATRIMÔNIO.171351.jpg',
+            nPatrimonio: '556439',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'GAVETEIRO',
+            usuario: 'EPROC 1',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/66736021.FOTO PATRIMÔNIO.171401.jpg',
+            nPatrimonio: '66736021',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'TELEFONE',
+            usuario: 'EPROC 2',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/465564.FOTO PATRIMÔNIO.171421.jpg',
+            nPatrimonio: '465564',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'TELEFONE',
+            usuario: 'EPROC 1',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/67558240.FOTO PATRIMÔNIO.171423.jpg',
+            nPatrimonio: '67558240',
+            date: "Novembro/2Fevereiro/2025",
+            local: 'EPROC',
+            categoria: 'MONITOR',
+            usuario: 'EPROC 2',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/75025540.FOTO PATRIMÔNIO.171449.jpg',
+            nPatrimonio: '75025540',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'CADEIRA',
+            usuario: 'EPROC 1',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99934566.FOTO PATRIMÔNIO.171456.jpg',
+            nPatrimonio: '99934566',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'NOTEBOOK',
+            usuario: 'EPROC 2',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/75679108.FOTO PATRIMÔNIO.171521.jpg',
+            nPatrimonio: '75679108',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'MESA',
+            usuario: 'EPROC 2',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/75285045.FOTO PATRIMÔNIO.171523.jpg',
+            nPatrimonio: '75285045',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'MONITOR',
+            usuario: 'EPROC 1',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/74741675.FOTO PATRIMÔNIO.171544.jpg',
+            nPatrimonio: '74741675',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'MONITOR',
+            usuario: 'EPROC 1',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/75025531.FOTO PATRIMÔNIO.171615.jpg',
+            nPatrimonio: '75025531',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'CADEIRA',
+            usuario: 'EPROC 2',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/510024.FOTO PATRIMÔNIO.171632.jpg',
+            nPatrimonio: '510024',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'GAVETEIRO',
+            usuario: 'EPROC 3',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/481511.FOTO PATRIMÔNIO.171709.jpg',
+            nPatrimonio: '481511',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'GAVETEIRO',
+            usuario: 'EPROC 4',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/66751764.FOTO PATRIMÔNIO.171731.jpg',
+            nPatrimonio: '66751764',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'TELEFONE',
+            usuario: 'EPROC 4',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99877600.FOTO PATRIMÔNIO.171757.jpg',
+            nPatrimonio: '99877600',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'MONITOR',
+            usuario: 'EPROC 4',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/128538562.FOTO PATRIMÔNIO.171810.jpg',
+            nPatrimonio: '128538562',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'CADEIRA',
+            usuario: 'EPROC 3',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/75678616.FOTO PATRIMÔNIO.171824.jpg',
+            nPatrimonio: '75678616',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'MESA',
+            usuario: 'EPROC 4',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/999954230.FOTO PATRIMÔNIO.171853.jpg',
+            nPatrimonio: '999954230',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'NOTEBOOK',
+            usuario: 'EPROC 4',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99935090.FOTO PATRIMÔNIO.171852.jpg',
+            nPatrimonio: '99935090',
+            date: "Novembro/2Fevereiro/2025",
+            local: 'EPROC',
+            categoria: 'NOTEBOOK',
+            usuario: 'EPROC 3',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/75771713.FOTO PATRIMÔNIO.171921.jpg',
+            nPatrimonio: '75771713',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'MONITOR',
+            usuario: 'EPROC 3',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/128538597.FOTO PATRIMÔNIO.171953.jpg',
+            nPatrimonio: '128538597',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'CADEIRA',
+            usuario: 'EPROC 4',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83005749.FOTO PATRIMÔNIO.171956.jpg',
+            nPatrimonio: '83005749',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'MONITOR',
+            usuario: 'EPROC 3',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/465547.FOTO PATRIMÔNIO.172013.jpg',
+            nPatrimonio: '465547',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'TELEFONE',
+            usuario: 'EPROC 3',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/637693.FOTO PATRIMÔNIO.172049.jpg',
+            nPatrimonio: '637693',
+            date: "Novembro/2025",
+            local: 'EPROC',
+            categoria: 'MESA',
+            usuario: 'EPROC 3',
+            observacao: ''
+        },
         
     ];
 
