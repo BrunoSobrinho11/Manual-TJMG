@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             observacao: ''
         },
         {
-            img: 'Página1_Images/100000452.FOTO PATRIMÔNIO.165904.jpg',
+            img: 'Página1_Images/100000452.FOTO PATRIMÔNIO.111924.jpg',
             nPatrimonio: '100000452',
             date: "Julho/2025",
             local: 'WYNTECH OPERADORES',
@@ -1536,7 +1536,7 @@ document.addEventListener('DOMContentLoaded', () => {
             observacao: ''
         },
         {
-            img: 'Página2_Images/100000452.FOTO PATrimônio.111924.jpg',
+            img: 'Página2_Images/100000452.FOTO PATRIMÔNIO.111924.jpg',
             nPatrimonio: '100000452',
             date: "Novembro/2025",
             local: 'WYNTECH OPERADORES',
@@ -1728,3 +1728,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 }); // Fim do 'DOMContentLoaded'
+
