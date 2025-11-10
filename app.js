@@ -2160,25 +2160,66 @@ document.addEventListener('DOMContentLoaded', () => {
         renderTable(paginatedItems);
     }
 
-    function updatePaginationUI() {
-        paginationControls.innerHTML = '';
-        const totalPages = Math.ceil(currentFilteredItems.length / itemsPerPage);
-        if (totalPages <= 1) return; 
+    // --- FUNÇÕES DE PAGINAÇÃO (COM NOVA LÓGICA DE ELIPSE) ---
+    function displayCurrentPage() {
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const paginatedItems = currentFilteredItems.slice(startIndex, endIndex);
+        renderTable(paginatedItems);
+    }
 
+    function updatePaginationUI() {
+        paginationControls.innerHTML = ''; // Limpa os controles antigos
+        const totalPages = Math.ceil(currentFilteredItems.length / itemsPerPage);
+        if (totalPages <= 1) return; // Não mostra nada se só tem 1 página
+
+        // --- 1. Botão "Anterior" ---
         const prevButton = document.createElement('button');
         prevButton.innerHTML = '&laquo; Anterior';
         prevButton.dataset.page = 'prev';
         if (currentPage === 1) prevButton.disabled = true;
         paginationControls.appendChild(prevButton);
 
+        // --- 2. Lógica dos Números de Página com "..." ---
+        const window = 1; // Quantos botões mostrar ao lado da página atual (ex: 11, [12], 13)
+        const maxVisiblePages = (window * 2) + 5; // 1 + ... + (janela) + ... + total
+        
+        let showedEllipsisStart = false;
+        let showedEllipsisEnd = false;
+
         for (let i = 1; i <= totalPages; i++) {
             const pageButton = document.createElement('button');
             pageButton.innerText = i;
             pageButton.dataset.page = i;
             if (i === currentPage) pageButton.classList.add('active');
-            paginationControls.appendChild(pageButton);
+
+            if (totalPages <= maxVisiblePages) {
+                // Se não houver páginas suficientes para precisar do "..."
+                paginationControls.appendChild(pageButton);
+            } else {
+                // Lógica para mostrar o "..."
+                if (i === 1 || i === totalPages || (i >= currentPage - window && i <= currentPage + window)) {
+                    // Sempre mostrar: 1, Última, e a "janela" (ex: 11, 12, 13)
+                    paginationControls.appendChild(pageButton);
+                } else if (i < currentPage && !showedEllipsisStart) {
+                    // Mostrar "..." pela primeira vez (antes da pág atual)
+                    const ellipsis = document.createElement('span');
+                    ellipsis.innerText = '...';
+                    ellipsis.className = 'pagination-ellipsis'; // Classe para o CSS
+                    paginationControls.appendChild(ellipsis);
+                    showedEllipsisStart = true;
+                } else if (i > currentPage && !showedEllipsisEnd) {
+                    // Mostrar "..." pela primeira vez (depois da pág atual)
+                    const ellipsis = document.createElement('span');
+                    ellipsis.innerText = '...';
+                    ellipsis.className = 'pagination-ellipsis';
+                    paginationControls.appendChild(ellipsis);
+                    showedEllipsisEnd = true;
+                }
+            }
         }
 
+        // --- 3. Botão "Próximo" ---
         const nextButton = document.createElement('button');
         nextButton.innerHTML = 'Próximo &raquo;';
         nextButton.dataset.page = 'next';
