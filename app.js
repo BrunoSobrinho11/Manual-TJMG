@@ -1898,7 +1898,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             img: 'Página2_Images/67558240.FOTO PATRIMÔNIO.171423.jpg',
             nPatrimonio: '67558240',
-            date: "Novembro/2Fevereiro/2025",
+            date: "Novembro/2025",
             local: 'EPROC',
             categoria: 'MONITOR',
             usuario: 'EPROC 2',
@@ -2024,7 +2024,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             img: 'Página2_Images/99935090.FOTO PATRIMÔNIO.171852.jpg',
             nPatrimonio: '99935090',
-            date: "Novembro/2Fevereiro/2025",
+            date: "Novembro/2025",
             local: 'EPROC',
             categoria: 'NOTEBOOK',
             usuario: 'EPROC 3',
@@ -2282,5 +2282,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 }); // Fim do 'DOMContentLoaded'
+
 
 
