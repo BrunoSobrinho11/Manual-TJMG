@@ -2573,7 +2573,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'Página2_Images/67542972.FOTO PATRIMÔNIO.105604.jpg',
             nPatrimonio: '67542972',
             date: "Novembro/2025",
-            local: 'COOPE',
+            local: 'GOOGLE',
             categoria: 'MONITOR',
             usuario: 'Roger',
             observacao: ''
@@ -2591,7 +2591,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'Página2_Images/629650.FOTO PATRIMÔNIO.105622.jpg',
             nPatrimonio: '629650',
             date: "Novembro/2025",
-            local: 'COOPE',
+            local: 'GOOGLE',
             categoria: 'MONITOR',
             usuario: 'Roger',
             observacao: ''
@@ -2609,7 +2609,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'Página2_Images/99954192.FOTO PATRIMÔNIO.105651.jpg',
             nPatrimonio: '99954192',
             date: "Novembro/2025",
-            local: 'COOPE',
+            local: 'GOOGLE',
             categoria: 'NOTEBOOK',
             usuario: 'Roger',
             observacao: ''
@@ -2627,7 +2627,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'Página2_Images/465542.FOTO PATRIMÔNIO.105708.jpg',
             nPatrimonio: '465542',
             date: "Novembro/2025",
-            local: 'COOPE',
+            local: 'GOOGLE',
             categoria: 'TELEFONE',
             usuario: 'Roger',
             observacao: ''
@@ -2645,7 +2645,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'Página2_Images/517236.FOTO PATRIMÔNIO.105726.jpg',
             nPatrimonio: '517236',
             date: "Novembro/2025",
-            local: 'COOPE',
+            local: 'GOOGLE',
             categoria: 'GAVETEIRO',
             usuario: 'Roger',
             observacao: ''
@@ -2663,7 +2663,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'Página2_Images/637710.FOTO PATRIMÔNIO.105744.jpg',
             nPatrimonio: '637710',
             date: "Novembro/2025",
-            local: 'COOPE',
+            local: 'GOOGLE',
             categoria: 'MESA',
             usuario: 'Roger',
             observacao: ''
@@ -2681,7 +2681,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'Página2_Images/100000240.FOTO PATRIMÔNIO.105819.jpg',
             nPatrimonio: '100000240',
             date: "Novembro/2025",
-            local: 'COOPE',
+            local: 'GOOGLE',
             categoria: 'CADEIRA',
             usuario: 'Roger',
             observacao: ''
@@ -2717,7 +2717,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'Página2_Images/100000398.FOTO PATRIMÔNIO.105902.jpg',
             nPatrimonio: '100000398',
             date: "Novembro/2025",
-            local: 'COOPE',
+            local: 'GOOGLE',
             categoria: 'CADEIRA',
             usuario: 'Marcelo',
             observacao: ''
@@ -2735,7 +2735,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'Página2_Images/74865803.FOTO PATRIMÔNIO.105923.jpg',
             nPatrimonio: '74865803',
             date: "Novembro/2025",
-            local: 'COOPE',
+            local: 'GOOGLE',
             categoria: 'MONITOR',
             usuario: 'Marcelo',
             observacao: ''
@@ -2744,7 +2744,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'Página2_Images/67544304.FOTO PATRIMÔNIO.105941.jpg',
             nPatrimonio: '67544304',
             date: "Novembro/2025",
-            local: 'COOPE',
+            local: 'GOOGLE',
             categoria: 'MONITOR',
             usuario: 'Marcelo',
             observacao: ''
@@ -2762,7 +2762,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'Página2_Images/351781.FOTO PATRIMÔNIO.110006.jpg',
             nPatrimonio: '351781',
             date: "Novembro/2025",
-            local: 'COOPE',
+            local: 'GOOGLE',
             categoria: 'TELEFONE',
             usuario: 'Marcelo',
             observacao: ''
@@ -2780,7 +2780,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'Página2_Images/514576.FOTO PATRIMÔNIO.110025.jpg',
             nPatrimonio: '514576',
             date: "Novembro/2025",
-            local: 'COOPE',
+            local: 'GOOGLE',
             categoria: 'GAVETEIRO',
             usuario: 'Marcelo',
             observacao: ''
@@ -2789,7 +2789,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'Página2_Images/637708.FOTO PATRIMÔNIO.110043.jpg',
             nPatrimonio: '637708',
             date: "Novembro/2025",
-            local: 'COOPE',
+            local: 'GOOGLE',
             categoria: 'MESA',
             usuario: 'Marcelo',
             observacao: ''
@@ -2807,7 +2807,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'Página2_Images/99955822.FOTO PATRIMÔNIO.110110.jpg',
             nPatrimonio: '99955822',
             date: "Novembro/2025",
-            local: 'COOPE',
+            local: 'GOOGLE',
             categoria: 'NOTEBOOK',
             usuario: 'Marcelo',
             observacao: ''
