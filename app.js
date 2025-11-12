@@ -3297,7 +3297,1493 @@ document.addEventListener('DOMContentLoaded', () => {
             categoria: 'NOTEBOOK',
             usuario: 'Dani',
             observacao: ''
-        },        
+        },      
+        {
+            img: 'Página2_Images/479815.FOTO PATRIMÔNIO.115111.jpg',
+            nPatrimonio: '479815',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'ARMÁRIO',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63728940.FOTO PATRIMÔNIO.115129.jpg',
+            nPatrimonio: '63728940',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'ARMÁRIO',
+            usuario: 'sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/Prateleira.FOTO PATRIMÔNIO.115215.jpg',
+            nPatrimonio: 'Prateleira',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'ARMÁRIO',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63652099.FOTO PATRIMÔNIO.115236.jpg',
+            nPatrimonio: '63652099',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'ARMÁRIO',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63655853.FOTO PATRIMÔNIO.115252.jpg',
+            nPatrimonio: '63655853',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'ARMÁRIO',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/65688260.FOTO PATRIMÔNIO.115324.jpg',
+            nPatrimonio: '65688260',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'MESA',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/489615.FOTO PATRIMÔNIO.115404.jpg',
+            nPatrimonio: '489615',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'Switch',
+            usuario: 'Sala',
+            observacao: 'Frigobar'
+        },
+        {
+            img: 'Página2_Images/83428003.FOTO PATRIMÔNIO.115440.jpg',
+            nPatrimonio: '83428003',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'MONITOR',
+            usuario: 'Pericles',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/Sem patrimônio.FOTO PATRIMÔNIO.115535.jpg',
+            nPatrimonio: 'Sem patrimônio',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'MONITOR',
+            usuario: 'Pericles',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/501362.FOTO PATRIMÔNIO.115604.jpg',
+            nPatrimonio: '501362',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'GAVETEIRO',
+            usuario: 'Pericles',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99921855.FOTO PATRIMÔNIO.115637.jpg',
+            nPatrimonio: '99921855',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'CADEIRA',
+            usuario: 'Pericles',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/75305992.FOTO PATRIMÔNIO.115712.jpg',
+            nPatrimonio: '75305992',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'MESA',
+            usuario: 'Pericles',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63226308.FOTO PATRIMÔNIO.115741.jpg',
+            nPatrimonio: '63226308',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'MESA',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/9041462.FOTO PATRIMÔNIO.115820.jpg',
+            nPatrimonio: '9041462',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'Switch',
+            usuario: 'Sala',
+            observacao: 'Impressora'
+        },
+        {
+            img: 'Página2_Images/83461795.FOTO PATRIMÔNIO.115854.jpg',
+            nPatrimonio: '83461795',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'COMPUTADOR',
+            usuario: 'Pericles',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/66742358.FOTO PATRIMÔNIO.120003.jpg',
+            nPatrimonio: '66742358',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'TELEFONE',
+            usuario: 'Na frente do pericles',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/75130840.FOTO PATRIMÔNIO.120021.jpg',
+            nPatrimonio: '75130840',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'COMPUTADOR',
+            usuario: 'Na frente do pericles',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/556943.FOTO PATRIMÔNIO.120057.jpg',
+            nPatrimonio: '556943',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'MONITOR',
+            usuario: 'Na frente do pericles',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/67554172.FOTO PATRIMÔNIO.120154.jpg',
+            nPatrimonio: '67554172',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'MONITOR',
+            usuario: 'Na frente do pericles',
+            observacao: 'Sem etiqueta'
+        },
+        {
+            img: 'Página2_Images/63220326.FOTO PATRIMÔNIO.120212.jpg',
+            nPatrimonio: '63220326',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'MESA',
+            usuario: 'Na frente do pericles',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/501361.FOTO PATRIMÔNIO.120228.jpg',
+            nPatrimonio: '501361',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'GAVETEIRO',
+            usuario: 'Na frente do pericles',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99921847.FOTO PATRIMÔNIO.120254.jpg',
+            nPatrimonio: '99921847',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'CADEIRA',
+            usuario: 'Na frente do pericles',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/66828538.FOTO PATRIMÔNIO.120326.jpg',
+            nPatrimonio: '66828538',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'Switch',
+            usuario: 'Sala',
+            observacao: 'Carrinho de mão'
+        },
+        {
+            img: 'Página2_Images/4700002084352.FOTO PATRIMÔNIO.120356.jpg',
+            nPatrimonio: '4700002084352',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'MONITOR',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/213223.FOTO PATRIMÔNIO.120430.jpg',
+            nPatrimonio: '213223',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'Switch',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/65335490.FOTO PATRIMÔNIO.120508.jpg',
+            nPatrimonio: '65335490',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'CADEIRA',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/65335503.FOTO PATRIMÔNIO.120533.jpg',
+            nPatrimonio: '65335503',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'CADEIRA',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/466934.FOTO PATRIMÔNIO.120557.jpg',
+            nPatrimonio: '466934',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'COMPUTADOR',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63950340.FOTO PATRIMÔNIO.120808.jpg',
+            nPatrimonio: '63950340',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'GAVETEIRO',
+            usuario: 'Cleuber',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/66751160.FOTO PATRIMÔNIO.120831.jpg',
+            nPatrimonio: '66751160',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'TELEFONE',
+            usuario: 'Cleuber',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/65734548.FOTO PATRIMÔNIO.120849.jpg',
+            nPatrimonio: '65734548',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'MESA',
+            usuario: 'Cleuber',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83427996.FOTO PATRIMÔNIO.120910.jpg',
+            nPatrimonio: '83427996',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'MONITOR',
+            usuario: 'Cleuber',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/75019531.FOTO PATRIMÔNIO.120958.jpg',
+            nPatrimonio: '75019531',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'CADEIRA',
+            usuario: 'Cleuber',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/M786401729011.FOTO PATRIMÔNIO.121035.jpg',
+            nPatrimonio: 'M786401729011',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'MONITOR',
+            usuario: 'Cleuber',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83461817.FOTO PATRIMÔNIO.121102.jpg',
+            nPatrimonio: '83461817',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'COMPUTADOR',
+            usuario: 'Cleuber',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/A094333789370651.FOTO PATRIMÔNIO.121154.jpg',
+            nPatrimonio: 'A094333789370651',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'Switch',
+            usuario: 'Sala',
+            observacao: 'Impressora'
+        },
+        {
+            img: 'Página2_Images/7898555219595.FOTO PATRIMÔNIO.121235.jpg',
+            nPatrimonio: '7898555219595',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'Switch',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/66720150.FOTO PATRIMÔNIO.124544.jpg',
+            nPatrimonio: '66720150',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'TELEFONE',
+            usuario: 'Alexandre',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83477942.FOTO PATRIMÔNIO.124606.jpg',
+            nPatrimonio: '83477942',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MONITOR',
+            usuario: 'Alexandre',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/75630818.FOTO PATRIMÔNIO.124624.jpg',
+            nPatrimonio: '75630818',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MONITOR',
+            usuario: 'Alexandre',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63090350.FOTO PATRIMÔNIO.124648.jpg',
+            nPatrimonio: '63090350',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MESA',
+            usuario: 'Alexandre',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/100053157.FOTO PATRIMÔNIO.124731.jpg',
+            nPatrimonio: '100053157',
+            date: "Novembro/2U/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'CADEIRA',
+            usuario: 'Alexandre',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83504419.FOTO PATRIMÔNIO.124801.jpg',
+            nPatrimonio: '83504419',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'COMPUTADOR',
+            usuario: 'Alexandre',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/201116.FOTO PATRIMÔNIO.124835.jpg',
+            nPatrimonio: '201116',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'GAVETEIRO',
+            usuario: 'Alexandre',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/572536.FOTO PATRIMÔNIA.124915.jpg',
+            nPatrimonio: '572536',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'Switch',
+            usuario: 'Alexandre',
+            observacao: 'Impressora'
+        },
+        {
+            img: 'Página2_Images/479814.FOTO PATRIMÔNIO.124930.jpg',
+            nPatrimonio: '479814',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'ARMÁRIO',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/9042913.FOTO PATRIMÔNIO.124952.jpg',
+            nPatrimonio: '9042913',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'Switch',
+            usuario: 'Sala',
+            observacao: 'Impressora'
+        },
+        {
+            img: 'Página2_Images/83483420.FOTO PATRIMÔNIO.125019.jpg',
+            nPatrimonio: '83483420',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MONITOR',
+            usuario: 'Jaime',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/543364.FOTO PATRIMÔNIA.125033.jpg',
+            nPatrimonio: '543364',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MONITOR',
+            usuario: 'Jaime',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83507388.FOTO PATRIMÔNIO.125049.jpg',
+            nPatrimonio: '83507388',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'COMPUTADOR',
+            usuario: 'Jaime',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83504575.FOTO PATRIMÔNIO.125600.jpg',
+            nPatrimonio: '83504575',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'COMPUTADOR',
+            usuario: 'Luiz  - Stefanini',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/626773.FOTO PATRIMÔNIO.125617.jpg',
+            nPatrimonio: '626773',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MONITOR',
+            usuario: 'Leonardo',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83477977.FOTO PATRIMÔNIO.125634.jpg',
+            nPatrimonio: '83477977',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MONITOR',
+            usuario: 'Leonardo',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83504427.FOTO PATRIMÔNIO.125652.jpg',
+            nPatrimonio: '83504427',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'COMPUTADOR',
+            usuario: 'Leonardo',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63860139.FOTO PATRIMÔNIO.125716.jpg',
+            nPatrimonio: '63860139',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'GAVETEIRO',
+            usuario: 'Leonardo',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99840464.FOTO PATRIMÔNIO.125733.jpg',
+            nPatrimonio: '99840464',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MESA',
+            usuario: 'Leonardo',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/445436.FOTO PATRIMÔNIO.125756.jpg',
+            nPatrimonio: '445436',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'Switch',
+            usuario: 'Leonardo',
+            observacao: 'Impressora'
+        },
+        {
+            img: 'Página2_Images/99788829.FOTO PATRIMÔNIO.125821.jpg',
+            nPatrimonio: '99788829',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'CADEIRA',
+            usuario: 'Leonardo',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/165812.FOTO PATRIMÔNIO.125842.jpg',
+            nPatrimonio: '165812',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'GAVETEIRO',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/66721598.FOTO PATRIMÔNIO.125907.jpg',
+            nPatrimonio: '66721598',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'TELEFONE',
+            usuario: 'Peterson',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83477950.FOTO PATRIMÔNIO.125920.jpg',
+            nPatrimonio: '83477950',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MONITOR',
+            usuario: 'Peterson',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/1098.FOTO PATRIMÔNIO.125940.jpg',
+            nPatrimonio: '1098',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MONITOR',
+            usuario: 'Peterson',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83504435.FOTO PATRIMÔNIO.125959.jpg',
+            nPatrimonio: '83504435',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'COMPUTADOR',
+            usuario: 'Peterson',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63090597.FOTO PATRIMÔNIO.130018.jpg',
+            nPatrimonio: '63090597',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MESA',
+            usuario: 'Peterson',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/84546689.FOTO PATRIMÔNIO.130039.jpg',
+            nPatrimonio: '84546689',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'CADEIRA',
+            usuario: 'Peterson',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83504559.FOTO PATRIMÔNIO.130057.jpg',
+            nPatrimonio: '83504559',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'COMPUTADOR',
+            usuario: 'Marcela',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83478094.FOTO PATRIMÔNIO.130113.jpg',
+            nPatrimonio: '83478094',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MONITOR',
+            usuario: 'Marcela',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/Sem patrimônioo.FOTO PATRIMÔNIO.130158.jpg',
+            nPatrimonio: 'Sem patrimônio',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MONITOR',
+            usuario: 'Marcela',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/349367.FOTO PATRIMÔNIO.130215.jpg',
+            nPatrimonio: '349367',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'TELEFONE',
+            usuario: 'Marcela',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/582297.FOTO PATRIMÔNIO.130236.jpg',
+            nPatrimonio: '582297',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'GAVETEIRO',
+            usuario: 'Marcela',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/Sem etiqueta.FOTO PATRIMÔNIO.130328.jpg',
+            nPatrimonio: 'Sem etiqueta',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MESA',
+            usuario: 'Marcela',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/100053149.FOTO PATRIMÔNIO.130351.jpg',
+            nPatrimonio: '100053149',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'CADEIRA',
+            usuario: 'Marcela',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83497447.FOTO PATRIMÔNIO.130430.jpg',
+            nPatrimonio: '83497447',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'COMPUTADOR',
+            usuario: 'Elias',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/349806.FOTO PATRIMÔNIO.130500.jpg',
+            nPatrimonio: '349806',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'TELEFONE',
+            usuario: 'Elias',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83469931.FOTO PATRIMÔNIO.130514.jpg',
+            nPatrimonio: '83469931',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MONITOR',
+            usuario: 'Elias',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/591646.FOTO PATRIMÔNIO.130529.jpg',
+            nPatrimonio: '591646',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MONITOR',
+            usuario: 'Elias',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/201110.FOTO PATRIMÔNIO.130554.jpg',
+            nPatrimonio: '201110',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'GAVETEIRO',
+            usuario: 'Elias',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83366490.FOTO PATRIMÔNIO.130612.jpg',
+            nPatrimonio: '83366490',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MESA',
+            usuario: 'Elias',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/100053122.FOTO PATRIMÔNIO.130638.jpg',
+            nPatrimonio: '100053122',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'CADEIRA',
+            usuario: 'Elias',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63726106.FOTO PATRIMÔNIO.130707.jpg',
+            nPatrimonio: '63726106',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'ARMÁRIO',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/420536.FOTO PATRIMÔNIO.130720.jpg',
+            nPatrimonio: '420536',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'ARMÁRIO',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/Não tem.FOTO PATRIMÔNIO.130804.jpg',
+            nPatrimonio: 'Sem patrimônio',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'Switch',
+            usuario: 'Sala',
+            observacao: 'Sem patrimônio. Apresentando barulho'
+        },
+        {
+            img: 'Página2_Images/63091445.FOTO PATRIMÔNIO.133113.jpg',
+            nPatrimonio: '63091445',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MESA',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/9042970.FOTO PATRIMÔNIO.133132.jpg',
+            nPatrimonio: '9042970',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'Switch',
+            usuario: 'Sala',
+            observacao: 'Impressora'
+        },
+        {
+            img: 'Página2_Images/65938089.FOTO PATRIMÔNIO.133148.jpg',
+            nPatrimonio: '65938089',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MESA',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63653451.FOTO PATRIMÔNIO.133240.jpg',
+            nPatrimonio: '63653451',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'ARMÁRIO',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63653435.FOTO PATRIMÔNIO.133255.jpg',
+            nPatrimonio: '63653435',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'ARMÁRIO',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/211934.FOTO PATRIMÔNIO.133316.jpg',
+            nPatrimonio: '211934',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'GAVETEIRO',
+            usuario: 'Fabrício',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/202809.FOTO PATRIMÔNIO.133348.jpg',
+            nPatrimonio: '202809',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MESA',
+            usuario: 'Fabrício',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63093189.FOTO PATRIMÔNIO.133403.jpg',
+            nPatrimonio: '63093189',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MESA',
+            usuario: 'Fabrício',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/66739349.FOTO PATRIMÔNIO.133423.jpg',
+            nPatrimonio: '66739349',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'TELEFONE',
+            usuario: 'Fabrício',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/75545888.FOTO PATRIMÔNIO.133441.jpg',
+            nPatrimonio: '75545888',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MONITOR',
+            usuario: 'Fabrício',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/1099.FOTO PATRIMÔNIO.133500.jpg',
+            nPatrimonio: '1099',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MONITOR',
+            usuario: 'Fabrício',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/100060412.FOTO PATRIMÔNIO.133528.jpg',
+            nPatrimonio: '100060412',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'CADEIRA',
+            usuario: 'Fabrício',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/75557592.FOTO PATRIMÔNIO.133553.jpg',
+            nPatrimonio: '75557592',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'COMPUTADOR',
+            usuario: 'Fabrício',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/393595.FOTO PATRIMÔNIO.133607.jpg',
+            nPatrimonio: '393595',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'VENTILADOR',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63091399.FOTO PATRIMÔNIO.133644.jpg',
+            nPatrimonio: '63091399',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MESA',
+            usuario: 'Vanderson',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/287545.FOTO PATRIMÔNIO.133659.jpg',
+            nPatrimonio: '287545',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'GAVETEIRO',
+            usuario: 'Vanderson',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/483444.FOTO PATRIMÔNIO.133716.jpg',
+            nPatrimonio: '483444',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MESA',
+            usuario: 'Vanderson',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/75545896.FOTO PATRIMÔNIO.133734.jpg',
+            nPatrimonio: '75545896',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MONITOR',
+            usuario: 'Vanderson',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/75557584.FOTO PATRIMÔNIO.133757.jpg',
+            nPatrimonio: '75557584',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'COMPUTADOR',
+            usuario: 'Vanderson',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99790106.FOTO PATRIMÔNIO.133816.jpg',
+            nPatrimonio: '99790106',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'CADEIRA',
+            usuario: 'Vanderson',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/84568100.FOTO PATRIMÔNIO.133926.jpg',
+            nPatrimonio: '84568100',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'Switch',
+            usuario: 'Cristiano',
+            observacao: 'Impressora'
+        },
+        {
+            img: 'Página2_Images/75545870.FOTO PATRIMÔNIO.133946.jpg',
+            nPatrimonio: '75545870',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MONITOR',
+            usuario: 'Cristiano',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63092484.FOTO PATRIMÔNIA.134004.jpg',
+            nPatrimonio: '63092484',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MESA',
+            usuario: 'Cristiano',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/211929.FOTO PATRIMÔNIO.134023.jpg',
+            nPatrimonio: '211929',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'GAVETEIRO',
+            usuario: 'Cristiano',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/501573.FOTO PATRIMÔNIO.134040.jpg',
+            nPatrimonio: '501573',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MESA',
+            usuario: 'Cristiano',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99790114.FOTO PATRIMÔNIO.134101.jpg',
+            nPatrimonio: '99790114',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'CADEIRA',
+            usuario: 'Cristiano',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/75557576.FOTO PATRIMÔNIO.134128.jpg',
+            nPatrimonio: '75557576',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'COMPUTADOR',
+            usuario: 'Cristiano',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83517766.FOTO PATRIMÔNIO.134147.jpg',
+            nPatrimonio: '83517766',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MONITOR',
+            usuario: 'Matheus',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/350189.FOTO PATRIMÔNIO.134201.jpg',
+            nPatrimonio: '350189',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'TELEFONE',
+            usuario: 'Matheus',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83524991.FOTO PATRIMÔNIO.134220.jpg',
+            nPatrimonio: '83524991',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'COMPUTADOR',
+            usuario: 'Matheus',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/75956853.FOTO PATRIMÔNIO.134247.jpg',
+            nPatrimonio: '75956853',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MESA',
+            usuario: 'Matheus',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/501381.FOTO PATRIMÔNIO.134254.jpg',
+            nPatrimonio: '501381',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'GAVETEIRO',
+            usuario: 'Matheus',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/84597488.FOTO PATRIMÔNIO.134310.jpg',
+            nPatrimonio: '84597488',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MESA',
+            usuario: 'Matheus',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99790084.FOTO PATRIMÔNIA.134334.jpg',
+            nPatrimonio: '99790084',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'CADEIRA',
+            usuario: 'Matheus',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/66726239.FOTO PATRIMÔNIO.134410.jpg',
+            nPatrimonio: '66726239',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'TELEFONE',
+            usuario: 'Vitor',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63039567.FOTO PATRIMÔNIO.134441.jpg',
+            nPatrimonio: '63039567',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MESA',
+            usuario: 'Vitor',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99904810.FOTO PATRIMÔNIO.134457.jpg',
+            nPatrimonio: '99904810',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'GAVETEIRO',
+            usuario: 'Vitor',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/75545837.FOTO PATRIMÔNIO.134512.jpg',
+            nPatrimonio: '75545837',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MONITOR',
+            usuario: 'Vitor',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/202677.FOTO PATRIMÔNIO.134547.jpg',
+            nPatrimonio: '202677',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MESA',
+            usuario: 'Vitor',
+            observacao: 'Sem etiqueta'
+        },
+        {
+            img: 'Página2_Images/Nao tem.FOTO PATRIMÔNIO.134647.jpg',
+            nPatrimonio: 'Sem patrimônio',
+            date: "Novembro/2V/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MONITOR',
+            usuario: 'Vitor',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/75557568.FOTO PATRIMÔNIO.134704.jpg',
+            nPatrimonio: '75557568',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'COMPUTADOR',
+            usuario: 'Vitor',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99790076.FOTO PATRIMÔNIO.134727.jpg',
+            nPatrimonio: '99790076',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'CADEIRA',
+            usuario: 'Vitor',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/435752.FOTO PATRIMÔNIO.134757.jpg',
+            nPatrimonio: '435752',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'VENTILADOR',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63603705.FOTO PATRIMÔNIO.134823.jpg',
+            nPatrimonio: '63603705',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'ARMÁRIO',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/MN3Z196898.FOTO PATRIMÔNIO.134936.jpg',
+            nPatrimonio: 'MN3Z196898',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'Switch',
+            usuario: 'Sala',
+            observacao: 'Impressora'
+        },
+        {
+            img: 'Página2_Images/63603047.FOTO PATRIMÔNIO.135029.jpg',
+            nPatrimonio: '63603047',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MESA',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63603721.FOTO PATRIMÔNIO.135106.jpg',
+            nPatrimonio: '63603721',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'ARMÁRIO',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63094495.FOTO PATRIMÔNIO.135121.jpg',
+            nPatrimonio: '63094495',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MESA',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99790092.FOTO PATRIMÔNIO.135155.jpg',
+            nPatrimonio: '99790092',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'CADEIRA',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/66175844.FOTO PATRIMÔNIO.135226.jpg',
+            nPatrimonio: '66175844',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MESA',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/66175852.FOTO PATRIMÔNIO.135254.jpg',
+            nPatrimonio: '66175852',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MESA',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99790068.FOTO PATRIMÔNIO.135322.jpg',
+            nPatrimonio: '99790068',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'CADEIRA',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/470585.FOTO PATRIMÔNIO.135344.jpg',
+            nPatrimonio: '470585',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'VENTILADOR',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/910SPFX19723.FOTO PATRIMÔNIO.135413.jpg',
+            nPatrimonio: '910SPFX19723',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MONITOR',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/0978.FOTO PATRIMÔNIO.135443.jpg',
+            nPatrimonio: '0978',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MONITOR',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/Semm.FOTO PATRIMÔNIO.135524.jpg',
+            nPatrimonio: 'Sem patrimônio',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'MONITOR',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/64242714.FOTO PATRIMÔNIO.135609.jpg',
+            nPatrimonio: '64242714',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'ARMÁRIO',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/64243427.FOTO PATRIMÔNIO.135630.jpg',
+            nPatrimonio: '64243427',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'ARMÁRIO',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/6423391.FOTO PATRIMÔNIO.135700.jpg',
+            nPatrimonio: '6423391',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'ARMÁRIO',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/66828619.FOTO PATRIMÔNIO.135729.jpg',
+            nPatrimonio: '66828619',
+            date: "Novembro/2025",
+            local: 'GOIAS ANEXO I',
+            categoria: 'Switch',
+            usuario: 'Sala',
+            observacao: 'Carrinho de mão'
+        },
+        {
+            img: 'Página2_Images/63652870.FOTO PATRIMÔNIO.140836.jpg',
+            nPatrimonio: '63652870',
+            date: "Novembro/2025",
+            local: 'GONÇALVES DIAS',
+            categoria: 'ARMÁRIO',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63619415.FOTO PATRIMÔNIO.140918.jpg',
+            nPatrimonio: '63619415',
+            date: "Novembro/2025",
+            local: 'GONÇALVES DIAS',
+            categoria: 'ARMÁRIO',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/65494954.FOTO PATRIMÔNIO.140958.jpg',
+            nPatrimonio: '65494954',
+            date: "Novembro/2025",
+            local: 'GONÇALVES DIAS',
+            categoria: 'CADEIRA',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63011255.FOTO PATRIMÔNIO.141034.jpg',
+            nPatrimonio: '63011255',
+            date: "Novembro/2025",
+            local: 'GONÇALVES DIAS',
+            categoria: 'CADEIRA',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/66833574.FOTO PATRIMÔNIO.141104.jpg',
+            nPatrimonio: '66833574',
+            date: "Novembro/2025",
+            local: 'GONÇALVES DIAS',
+            categoria: 'Switch',
+            usuario: 'Sala',
+            observacao: 'Carrinho de mão'
+        },
+        {
+            img: 'Página2_Images/128648066.FOTO PATRIMÔNIO.141131.jpg',
+            nPatrimonio: '128648066',
+            date: "Novembro/2025",
+            local: 'GONÇALVES DIAS',
+            categoria: 'CADEIRA',
+            usuario: 'Rodrigo',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/67404820.FOTO PATRIMÔNIO.141149.jpg',
+            nPatrimonio: '67404820',
+            date: "Novembro/2025",
+            local: 'GONÇALVES DIAS',
+            categoria: 'MESA',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/128620161.FOTO PATRIMÔNIO.141241.jpg',
+            nPatrimonio: '128620161',
+            date: "Novembro/2025",
+            local: 'GONÇALVES DIAS',
+            categoria: 'VENTILADOR',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83487140.FOTO PATRIMÔNIO.141258.jpg',
+            nPatrimonio: '83487140',
+            date: "Novembro/2025",
+            local: 'GONÇALVES DIAS',
+            categoria: 'MONITOR',
+            usuario: 'Rodrigo',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/Não.FOTO PATRIMÔNIO.141322.jpg',
+            nPatrimonio: 'Sem patrimônio',
+            date: "Novembro/2025",
+            local: 'GONÇALVES DIAS',
+            categoria: 'MONITOR',
+            usuario: 'Rodrigo',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/66738784.FOTO PATRIMÔNIO.141340.jpg',
+            nPatrimonio: '66738784',
+            date: "Novembro/2025",
+            local: 'GONÇALVES DIAS',
+            categoria: 'TELEFONE',
+            usuario: 'Rodrigo',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/74789325.FOTO PATRIMÔNIO.141402.jpg',
+            nPatrimonio: '74789325',
+            date: "Novembro/2025",
+            local: 'GONÇALVES DIAS',
+            categoria: 'MESA',
+            usuario: 'Rodrigo',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/84568089.FOTO PATRIMÔNIO.141441.jpg',
+            nPatrimonio: '84568089',
+            date: "Novembro/2025",
+            local: 'GONÇALVES DIAS',
+            categoria: 'Switch',
+            usuario: 'Rodrigo',
+            observacao: 'Impressora'
+        },
+        {
+            img: 'Página2_Images/234301.FOTO PATRIMÔNIO.141506.jpg',
+            nPatrimonio: '234301',
+            date: "Novembro/2025",
+            local: 'GONÇALVES DIAS',
+            categoria: 'GAVETEIRO',
+            usuario: 'Rodrigo',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/62858785.FOTO PATRIMÔNIO.141648.jpg',
+            nPatrimonio: '62858785',
+            date: "Novembro/2025",
+            local: 'GONÇALVES DIAS',
+            categoria: 'COMPUTADOR',
+            usuario: 'Sala',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/Não possui.FOTO PATRIMÔNIO.141715.jpg',
+            nPatrimonio: 'Sem patrimônio',
+            date: "Novembro/2025",
+            local: 'GONÇALVES DIAS',
+            categoria: 'MONITOR',
+            usuario: 'Sem',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83507388.FOTO PATRIMÔNIO.125049.jpg',
+            nPatrimonio: '83507388',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'COMPUTADOR',
+            usuario: 'Jaime',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/63082594.FOTO PATRIMÔNIO.125108.jpg',
+            nPatrimonio: '63082594',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MESA',
+            usuario: 'Jaime',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/100053130.FOTO PATRIMÔNIO.125134.jpg',
+            nPatrimonio: '100053130',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'CADEIRA',
+            usuario: 'Jaime',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83478132.FOTO PATRIMÔNIO.125216.jpg',
+            nPatrimonio: '83478132',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MONITOR',
+            usuario: 'Luiz  - Stefanini',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/Sem.FOTO PATRIMÔNIO.125258.jpg',
+            nPatrimonio: 'Sem',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MONITOR',
+            usuario: 'Luiz  - Stefanini',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/83366202.FOTO PATRIMÔNIO.125335.jpg',
+            nPatrimonio: '83366202',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'MESA',
+            usuario: 'Luiz  - Stefanini',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/100053165.FOTO PATRIMÔNIO.125441.jpg',
+            nPatrimonio: '100053165',
+            date: "Novembro/2025",
+            local: 'FÓRUM LAFAETE',
+            categoria: 'CADEIRA',
+            usuario: 'Luiz  - Stefanini',
+            observacao: ''
+        },
+
         
     ];
 
