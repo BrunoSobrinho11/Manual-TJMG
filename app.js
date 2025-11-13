@@ -3731,7 +3731,7 @@ document.addEventListener('DOMContentLoaded', () => {
             observacao: ''
         },
         {
-            img: 'Página2_Images/543364.FOTO PATRIMÔNIA.125033.jpg',
+            img: 'Página2_Images/543364.FOTO PATRIMÔNIO.125033.jpg',
             nPatrimonio: '543364',
             date: "Novembro/2025",
             local: 'FÓRUM LAFAETE',
@@ -4235,7 +4235,7 @@ document.addEventListener('DOMContentLoaded', () => {
             observacao: ''
         },
         {
-            img: 'Página2_Images/63092484.FOTO PATRIMÔNIA.134004.jpg',
+            img: 'Página2_Images/63092484.FOTO PATRIMÔNIO.134004.jpg',
             nPatrimonio: '63092484',
             date: "Novembro/2025",
             local: 'GOIAS ANEXO I',
@@ -4334,7 +4334,7 @@ document.addEventListener('DOMContentLoaded', () => {
             observacao: ''
         },
         {
-            img: 'Página2_Images/99790084.FOTO PATRIMÔNIA.134334.jpg',
+            img: 'Página2_Images/99790084.FOTO PATRIMÔNIO.134334.jpg',
             nPatrimonio: '99790084',
             date: "Novembro/2025",
             local: 'GOIAS ANEXO I',
@@ -5288,7 +5288,7 @@ document.addEventListener('DOMContentLoaded', () => {
             observacao: ''
         },
         {
-            img: 'Página2_Images/99790971.FOTO PATRIMÔNJIO.130720.jpg',
+            img: 'Página2_Images/99790971.FOTO PATRIMÔNIO.130720.jpg',
             nPatrimonio: '99790971',
             date: "Novembro/2025",
             local: 'SALA DA WYNTECH SEDE',
@@ -5342,7 +5342,7 @@ document.addEventListener('DOMContentLoaded', () => {
             observacao: ''
         },
         {
-            img: 'Página2_Images/75125544.FOTO PATRIMÔNJO.130951.jpg',
+            img: 'Página2_Images/75125544.FOTO PATRIMÔNIO.130951.jpg',
             nPatrimonio: '75125544',
             date: "Novembro/2025",
             local: 'SALA DA WYNTECH SEDE',
@@ -5603,7 +5603,7 @@ document.addEventListener('DOMContentLoaded', () => {
             observacao: ''
         },
         {
-            img: 'Página2_Images/75881195.FOTO PATRIMÔNJIO.132523.jpg',
+            img: 'Página2_Images/75881195.FOTO PATRIMÔNIO.132523.jpg',
             nPatrimonio: '75881195',
             date: "Novembro/2025",
             local: 'SALA DA WYNTECH SEDE',
@@ -5873,7 +5873,7 @@ document.addEventListener('DOMContentLoaded', () => {
             observacao: ''
         },
         {
-            img: 'Página2_Images/75060159.FOTO PATRIMÔNNIO.133745.jpg',
+            img: 'Página2_Images/75060159.FOTO PATRIMÔNIO.133745.jpg',
             nPatrimonio: '75060159',
             date: "Novembro/2025",
             local: 'SALA DA WYNTECH SEDE',
@@ -6287,5 +6287,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 }); // Fim do 'DOMContentLoaded'
+
 
 
