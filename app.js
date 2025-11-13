@@ -1,8 +1,7 @@
-// Aguarda o HTML ser totalmente carregado antes de executar o script
+
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- SEU BANCO DE DADOS DE PATRIMÔNIO (96 ITENS) ---
-    // ATENÇÃO: Adicione 'date: "Julho/2025",' em TODOS os itens!
+
     const patrimonioData = [
        
         {
@@ -6083,12 +6082,12 @@ document.addEventListener('DOMContentLoaded', () => {
         
     ];
 
-    // --- VARIÁVEIS DE ESTADO DA PAGINAÇÃO ---
+    
     const itemsPerPage = 10;
     let currentPage = 1;
     let currentFilteredItems = [...patrimonioData];
 
-    // --- REFERÊNCIAS DO DOM ---
+  
     const tableBody = document.getElementById('tableBody');
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImage");
@@ -6102,7 +6101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const paginationControls = document.getElementById('paginationControls');
 
 
-    // --- LÓGICA PARA RENDERIZAR A TABELA (ATUALIZADA) ---
+   
     function renderTable(data) {
         tableBody.innerHTML = '';
 
@@ -6116,7 +6115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const row = document.createElement('tr');
             const obsText = item.observacao ? item.observacao : 'N/A';
             
-            // Adicionada a célula da data
+          
             row.innerHTML = `
                 <td><img src="${item.img}" alt="Imagem do item" class="item-img" onerror="this.style.display='none'"></td>
                 <td>${item.nPatrimonio}</td>
@@ -6129,14 +6128,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- FUNÇÃO DE FILTRAGEM (ATUALIZADA) ---
+   
     function applyFilters() {
         const searchTerm = searchInput.value.toLowerCase();
         const localValue = localSelect.value;
         const categoriaValue = categoriaSelect.value;
 
         let filteredData = patrimonioData.filter(item => {
-            // Adicionado "item.date" à busca
+           
             const searchTermMatch = (
                 item.nPatrimonio.toLowerCase().includes(searchTerm) ||
                 (item.date && item.date.toLowerCase().includes(searchTerm)) || // BUSCA PELA DATA
@@ -6157,7 +6156,7 @@ document.addEventListener('DOMContentLoaded', () => {
         displayCurrentPage();
     }
 
-    // --- FUNÇÕES DE PAGINAÇÃO ---
+    
     function displayCurrentPage() {
         const startIndex = (currentPage - 1) * itemsPerPage;
         const endIndex = startIndex + itemsPerPage;
@@ -6165,7 +6164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderTable(paginatedItems);
     }
 
-    // --- FUNÇÕES DE PAGINAÇÃO (COM NOVA LÓGICA DE ELIPSE) ---
+
     function displayCurrentPage() {
         const startIndex = (currentPage - 1) * itemsPerPage;
         const endIndex = startIndex + itemsPerPage;
@@ -6174,20 +6173,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updatePaginationUI() {
-        paginationControls.innerHTML = ''; // Limpa os controles antigos
+        paginationControls.innerHTML = ''; 
         const totalPages = Math.ceil(currentFilteredItems.length / itemsPerPage);
-        if (totalPages <= 1) return; // Não mostra nada se só tem 1 página
+        if (totalPages <= 1) return; 
 
-        // --- 1. Botão "Anterior" ---
+        
         const prevButton = document.createElement('button');
         prevButton.innerHTML = '&laquo; Anterior';
         prevButton.dataset.page = 'prev';
         if (currentPage === 1) prevButton.disabled = true;
         paginationControls.appendChild(prevButton);
 
-        // --- 2. Lógica dos Números de Página com "..." ---
-        const window = 1; // Quantos botões mostrar ao lado da página atual (ex: 11, [12], 13)
-        const maxVisiblePages = (window * 2) + 5; // 1 + ... + (janela) + ... + total
+        
+        const window = 1; 
+        const maxVisiblePages = (window * 2) + 5; 
         
         let showedEllipsisStart = false;
         let showedEllipsisEnd = false;
@@ -6199,22 +6198,22 @@ document.addEventListener('DOMContentLoaded', () => {
             if (i === currentPage) pageButton.classList.add('active');
 
             if (totalPages <= maxVisiblePages) {
-                // Se não houver páginas suficientes para precisar do "..."
+               
                 paginationControls.appendChild(pageButton);
             } else {
-                // Lógica para mostrar o "..."
+               
                 if (i === 1 || i === totalPages || (i >= currentPage - window && i <= currentPage + window)) {
-                    // Sempre mostrar: 1, Última, e a "janela" (ex: 11, 12, 13)
+                   
                     paginationControls.appendChild(pageButton);
                 } else if (i < currentPage && !showedEllipsisStart) {
-                    // Mostrar "..." pela primeira vez (antes da pág atual)
+                   
                     const ellipsis = document.createElement('span');
                     ellipsis.innerText = '...';
-                    ellipsis.className = 'pagination-ellipsis'; // Classe para o CSS
+                    ellipsis.className = 'pagination-ellipsis'; 
                     paginationControls.appendChild(ellipsis);
                     showedEllipsisStart = true;
                 } else if (i > currentPage && !showedEllipsisEnd) {
-                    // Mostrar "..." pela primeira vez (depois da pág atual)
+                    
                     const ellipsis = document.createElement('span');
                     ellipsis.innerText = '...';
                     ellipsis.className = 'pagination-ellipsis';
@@ -6224,7 +6223,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // --- 3. Botão "Próximo" ---
+     
         const nextButton = document.createElement('button');
         nextButton.innerHTML = 'Próximo &raquo;';
         nextButton.dataset.page = 'next';
@@ -6232,7 +6231,7 @@ document.addEventListener('DOMContentLoaded', () => {
         paginationControls.appendChild(nextButton);
     }
 
-    // --- EVENT LISTENERS ---
+    
     searchInput.addEventListener('input', applyFilters);
     searchButton.addEventListener('click', applyFilters);
     localSelect.addEventListener('change', applyFilters);
@@ -6262,10 +6261,10 @@ document.addEventListener('DOMContentLoaded', () => {
         displayCurrentPage();
     });
 
-    // --- LÓGICA DO MODAL (Com correção de 'flex') ---
+    
     tableBodyForModal.addEventListener('click', (event) => {
         if (event.target.classList.contains('item-img')) {
-            modal.style.display = "flex"; // Garantindo que está 'flex'
+            modal.style.display = "flex"; 
             modalImg.src = event.target.src;
         }
     });
@@ -6280,13 +6279,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // --- INICIALIZAÇÃO ---
-    // Chama as funções para mostrar os dados na primeira carga
+   
     updatePaginationUI();
     displayCurrentPage();
 
 
-}); // Fim do 'DOMContentLoaded'
+}); 
+
 
 
 
