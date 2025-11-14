@@ -5973,7 +5973,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             img: 'Página2_Images/75060582.FOTO PATRIMÔNIO.134152.jpg',
             nPatrimonio: '75060582',
-            date: "Novembro/2Do/2025",
+            date: "Novembro/2025",
             local: 'ÁLVARO',
             categoria: 'GAVETEIRO',
             usuario: 'Álvaro',
@@ -6285,6 +6285,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 }); 
+
 
 
 
