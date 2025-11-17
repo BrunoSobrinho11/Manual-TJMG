@@ -6083,7 +6083,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '332451',
             date: "Novembro/2025",
             local: 'RAJA',
-            categoria: 'Mesa',
+            categoria: 'MESA',
             usuario: 'SALA',
             observacao: ''
         },
@@ -6303,6 +6303,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 }); 
+
 
 
 
