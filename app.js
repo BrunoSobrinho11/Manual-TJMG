@@ -3356,7 +3356,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '489615',
             date: "Novembro/2025",
             local: 'RAJA',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Sala',
             observacao: 'Frigobar'
         },
@@ -3419,7 +3419,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '9041462',
             date: "Novembro/2025",
             local: 'RAJA',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Sala',
             observacao: 'Impressora'
         },
@@ -3500,7 +3500,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '66828538',
             date: "Novembro/2025",
             local: 'RAJA',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Sala',
             observacao: 'Carrinho de mão'
         },
@@ -3518,7 +3518,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '213223',
             date: "Novembro/2025",
             local: 'RAJA',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Sala',
             observacao: ''
         },
@@ -3617,7 +3617,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: 'A094333789370651',
             date: "Novembro/2025",
             local: 'RAJA',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Sala',
             observacao: 'Impressora'
         },
@@ -3626,7 +3626,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '7898555219595',
             date: "Novembro/2025",
             local: 'RAJA',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Sala',
             observacao: ''
         },
@@ -3698,7 +3698,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '572536',
             date: "Novembro/2025",
             local: 'FÓRUM LAFAETE',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Alexandre',
             observacao: 'Impressora'
         },
@@ -3716,7 +3716,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '9042913',
             date: "Novembro/2025",
             local: 'FÓRUM LAFAETE',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Sala',
             observacao: 'Impressora'
         },
@@ -3806,7 +3806,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '445436',
             date: "Novembro/2025",
             local: 'FÓRUM LAFAETE',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Leonardo',
             observacao: 'Impressora'
         },
@@ -4031,7 +4031,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: 'Sem patrimônio',
             date: "Novembro/2025",
             local: 'FÓRUM LAFAETE',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Sala',
             observacao: 'Sem patrimônio. Apresentando barulho'
         },
@@ -4049,7 +4049,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '9042970',
             date: "Novembro/2025",
             local: 'GOIAS ANEXO I',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Sala',
             observacao: 'Impressora'
         },
@@ -4220,7 +4220,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '84568100',
             date: "Novembro/2025",
             local: 'GOIAS ANEXO I',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Cristiano',
             observacao: 'Impressora'
         },
@@ -4436,7 +4436,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: 'MN3Z196898',
             date: "Novembro/2025",
             local: 'GOIAS ANEXO I',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Sala',
             observacao: 'Impressora'
         },
@@ -4571,7 +4571,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '66828619',
             date: "Novembro/2025",
             local: 'GOIAS ANEXO I',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Sala',
             observacao: 'Carrinho de mão'
         },
@@ -4616,7 +4616,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '66833574',
             date: "Novembro/2025",
             local: 'GONÇALVES DIAS',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Sala',
             observacao: 'Carrinho de mão'
         },
@@ -4688,7 +4688,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '84568089',
             date: "Novembro/2025",
             local: 'GONÇALVES DIAS',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Rodrigo',
             observacao: 'Impressora'
         },
@@ -4841,7 +4841,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '66828678',
             date: "Novembro/2025",
             local: 'SALA DA WYNTECH SEDE',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Sala',
             observacao: 'Carrinho de mão'
         },
@@ -5390,7 +5390,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '84209003',
             date: "Novembro/2025",
             local: 'SALA DA WYNTECH SEDE',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Sala',
             observacao: 'Quadro'
         },
@@ -5399,7 +5399,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '128606444',
             date: "Novembro/2025",
             local: 'SALA DA WYNTECH SEDE',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Geladeira',
             observacao: ''
         },
@@ -5840,7 +5840,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '65777328',
             date: "Novembro/2025",
             local: 'SALA DA WYNTECH SEDE',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Sala',
             observacao: ''
         },
@@ -5849,7 +5849,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '9050788',
             date: "Novembro/2025",
             local: 'SALA DA WYNTECH SEDE',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Sala',
             observacao: 'Impressora'
         },
@@ -5858,7 +5858,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '100432379',
             date: "Novembro/2025",
             local: 'SALA DA WYNTECH SEDE',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Sala',
             observacao: 'Sofá'
         },
@@ -6074,7 +6074,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nPatrimonio: '84448199',
             date: "Novembro/2025",
             local: 'SALA DA WYNTECH SEDE',
-            categoria: 'Switch',
+            categoria: 'Outros',
             usuario: 'Sem',
             observacao: 'Gravador de dvd'
         },
@@ -6285,6 +6285,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 }); 
+
 
 
 
