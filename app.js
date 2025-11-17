@@ -6096,6 +6096,16 @@ document.addEventListener('DOMContentLoaded', () => {
             usuario: 'SALA',
             observacao: 'Scaner'
         },
+         {
+            img: 'Página2_Images/Página2_Images.FOTO PATRIMÔNIO.99954257.jpg',
+            nPatrimonio: '99954257',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'NOTEBOOK',
+            usuario: 'Mesas do lado Paulinho',
+            observacao: ''
+        },
+
 
         
     ];
@@ -6303,6 +6313,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 }); 
+
 
 
 
