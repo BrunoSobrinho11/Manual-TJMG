@@ -3316,8 +3316,8 @@ document.addEventListener('DOMContentLoaded', () => {
             observacao: ''
         },
         {
-            img: 'Página2_Images/Prateleira.FOTO PATRIMÔNIO.115215.jpg',
-            nPatrimonio: 'Prateleira',
+            img: 'Página2_Images.FOTO PATRIMÔNIO.348247.jpg',
+            nPatrimonio: '348247',
             date: "Novembro/2025",
             local: 'RAJA',
             categoria: 'ARMÁRIO',
@@ -6285,6 +6285,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 }); 
+
 
 
 
