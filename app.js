@@ -3316,7 +3316,7 @@ document.addEventListener('DOMContentLoaded', () => {
             observacao: ''
         },
         {
-            img: 'Página2_Images.FOTO PATRIMÔNIO.348247.jpg',
+            img: 'Página2_Images/Página2_Images.FOTO PATRIMÔNIO.348247.jpg',
             nPatrimonio: '348247',
             date: "Novembro/2025",
             local: 'RAJA',
@@ -6079,7 +6079,7 @@ document.addEventListener('DOMContentLoaded', () => {
             observacao: 'Gravador de dvd'
         },
           {
-            img: 'Página2_Images.FOTO PATRIMÔNIO.332451.jpg',
+            img: 'Página2_Images/Página2_Images.FOTO PATRIMÔNIO.332451.jpg',
             nPatrimonio: '332451',
             date: "Novembro/2025",
             local: 'RAJA',
@@ -6088,7 +6088,7 @@ document.addEventListener('DOMContentLoaded', () => {
             observacao: ''
         },
           {
-            img: 'Página2_Images.FOTO PATRIMÔNIO.75523485.jpg',
+            img: 'Página2_Images/Página2_Images.FOTO PATRIMÔNIO.75523485.jpg',
             nPatrimonio: '75523485',
             date: "Novembro/2025",
             local: 'RAJA',
@@ -6303,6 +6303,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 }); 
+
 
 
 
