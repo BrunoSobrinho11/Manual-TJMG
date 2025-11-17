@@ -6078,6 +6078,24 @@ document.addEventListener('DOMContentLoaded', () => {
             usuario: 'Sem',
             observacao: 'Gravador de dvd'
         },
+          {
+            img: 'Página2_Images.FOTO PATRIMÔNIO.332451.jpg',
+            nPatrimonio: '332451',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'Mesa',
+            usuario: 'SALA',
+            observacao: ''
+        },
+          {
+            img: 'Página2_Images.FOTO PATRIMÔNIO.75523485.jpg',
+            nPatrimonio: '75523485',
+            date: "Novembro/2025",
+            local: 'RAJA',
+            categoria: 'Outros',
+            usuario: 'SALA',
+            observacao: 'Scaner'
+        },
 
         
     ];
@@ -6285,6 +6303,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 }); 
+
 
 
 
