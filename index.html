@@ -25,21 +25,45 @@
             padding: 0 20px;
         }
         
-        header {
-            background: linear-gradient(90deg, #2c3e50 0%, #3498db 100%);
-            color: white;
-            padding: 20px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+     /* --- HEADER (Padronizado) --- */
+.site-header {
+    background-color: #2a528a; /* Azul padrão */
+    color: #ffffff;
+    padding: 12px 25px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Joga logo p/ esquerda e data p/ direita */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Configuração da Logo */
+.header-logo {
+    height: 60px;
+    width: auto;
+    display: block;
+    filter: brightness(0) invert(1); /* Deixa branca se for preta */
+}
+
+.header-right p {
+    margin: 0;
+    font-size: 14px;
+}
         
         .logo {
             display: flex;
@@ -230,11 +254,10 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="container header-content">
-            <div class="logo">
-                <i class="fas fa-book-open"></i>
-                <h1>Manual TJMG</h1>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-left">
+                <img src="logo_tjmg_nova.png" alt="Logo TJMG" class="header-logo">
             </div>
         </div>
     </header>
@@ -378,4 +401,5 @@
         });
     </script>
 </body>
+
 </html>
