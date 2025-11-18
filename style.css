@@ -1,9 +1,8 @@
-/* --- ESTILOS GERAIS (do exemplo TJMG) --- */
+/* --- ESTILOS GERAIS --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Usando 'Inter' que já tínhamos, no lugar de 'Segoe UI' */
     font-family: 'Inter', sans-serif;
 }
 
@@ -11,6 +10,9 @@ body {
     background: #f5f7fa;
     color: #333;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o rodapé vá para o final */
 }
 
 .container {
@@ -19,58 +21,59 @@ body {
     padding: 0 20px;
 }
 
-/* --- ESTILOS DO CABEÇALHO (Padronizado) --- */
-        .site-header {
-            background-color: #2a528a;
-            color: #ffffff;
-            padding: 12px 25px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .header-container {
-            max-width: 1400px; /* Alinha com o conteúdo */
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between; /* Separa Logo e Data */
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+/* --- CABEÇALHO PADRÃO --- */
+.site-header {
+    background-color: #2a528a;
+    color: #ffffff;
+    padding: 12px 25px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
-        .header-left, .header-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
 
-        /* Configuração da Logo */
-        .header-logo {
-            height: 60px; /* Tamanho ideal */
-            width: auto;
-            display: block;
-            filter: brightness(0) invert(1); /* Deixa branca se for preta */
-        }
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
 
-        .header-right p {
-            margin: 0;
-            font-size: 14px;
-        }
+.header-logo {
+    height: 60px;
+    width: auto;
+    display: block;
+    filter: brightness(0) invert(1); /* Deixa o logo branco */
+}
 
-/* --- LAYOUT DE PÁGINA (do exemplo TJMG) --- */
+.header-right p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* --- LAYOUT --- */
 .page-layout {
     display: flex;
     gap: 30px;
     padding: 30px 20px;
     max-width: 1400px;
     margin: 0 auto;
+    flex: 1;
+    width: 100%;
 }
 
-/* --- MENU LATERAL (do exemplo TJMG) --- */
+/* --- MENU LATERAL (SIDEBAR) --- */
 .sidebar {
-    flex: 0 0 260px; /* Tamanho fixo para a sidebar */
+    flex: 0 0 260px;
     background: #ffffff;
     padding: 20px;
     border-radius: 12px;
@@ -102,9 +105,10 @@ body {
     font-weight: 500;
 }
 
-.sidebar li a:hover {
+.sidebar li a:hover, .sidebar li a.active {
     background-color: #ecf0f1;
     color: #2980b9;
+    font-weight: 700;
 }
 
 .sidebar li a i {
@@ -115,39 +119,37 @@ body {
 
 /* --- CONTEÚDO PRINCIPAL --- */
 .main-content {
-    flex: 1; /* Ocupa o resto do espaço */
-    /* Variáveis que usávamos antes (movidas para cá) */
+    flex: 1;
     --primary-color: #007bff;
     --danger-color: #dc3545;
     --border-color: #dee2e6;
     --dark-bg: #343a40;
 }
 
-/* --- ESTILOS DA BARRA DE PESQUISA (NOVO/CORRIGIDO) --- */
+/* --- BARRA DE PESQUISA --- */
 .search-section {
     background: white;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    margin-bottom: 20px; /* Espaço antes dos filtros */
+    margin-bottom: 20px;
 }
 
 .search-box {
-    max-width: 700px; /* Largura da barra */
+    max-width: 700px;
     margin: 0 auto;
     position: relative;
-    display: flex; /* Para alinhar o input e o botão */
+    display: flex;
 }
 
 .search-box input {
-    flex-grow: 1; /* Input ocupa o espaço */
+    flex-grow: 1;
     padding: 12px 20px;
     border: 2px solid #ddd;
-    border-radius: 50px 0 0 50px; /* Arredonda à esquerda */
+    border-radius: 50px 0 0 50px;
     font-size: 1rem;
     outline: none;
     border-right: none;
-    font-family: 'Inter', sans-serif; /* Garante a fonte correta */
 }
 
 .search-box input:focus {
@@ -155,14 +157,13 @@ body {
 }
 
 .search-button {
-    flex-shrink: 0; /* Botão não encolhe */
     padding: 0 25px;
     border: 2px solid #ddd;
     border-left: none;
     background: #f9f9f9;
     color: #555;
     cursor: pointer;
-    border-radius: 0 50px 50px 0; /* Arredonda à direita */
+    border-radius: 0 50px 50px 0;
     font-size: 1rem;
     transition: background 0.3s;
 }
@@ -172,8 +173,7 @@ body {
     color: #2980b9;
 }
 
-
-/* --- ESTILOS DA APLICAÇÃO (Filtros, Tabela, Paginação) --- */
+/* --- FILTROS --- */
 .filters {
     background-color: white;
     padding: 15px 20px;
@@ -218,13 +218,13 @@ body {
     cursor: pointer;
     font-size: 0.9em;
     transition: background-color 0.3s ease;
-    align-self: flex-end;
 }
 
 .clear-filters:hover {
     background-color: #c82333;
 }
 
+/* --- TABELA --- */
 .results-table {
     background-color: white;
     border-radius: 8px;
@@ -239,8 +239,7 @@ table {
     font-size: 0.9em;
 }
 
-table th,
-table td {
+table th, table td {
     padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid var(--border-color);
@@ -271,6 +270,7 @@ table tbody tr:hover {
     transform: scale(1.1);
 }
 
+/* --- PAGINAÇÃO --- */
 .pagination {
     display: flex;
     justify-content: center;
@@ -288,10 +288,9 @@ table tbody tr:hover {
     border-radius: 5px;
     cursor: pointer;
     font-size: 0.9em;
-    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.pagination button:hover:not(.active) {
+.pagination button:hover:not(.active):not(:disabled) {
     background-color: #e9ecef;
 }
 
@@ -306,16 +305,15 @@ table tbody tr:hover {
     background-color: #e9ecef;
     color: #adb5bd;
     cursor: not-allowed;
-    border-color: #dee2e6;
 }
 
-/* --- ESTILOS DO RODAPÉ PADRÃO (Atualizado) --- */
+/* --- RODAPÉ PADRÃO --- */
 .site-footer {
-    background-color: #1a3b6b; /* Azul escuro do padrão */
+    background-color: #1a3b6b;
     color: #f0f0f0;
     padding: 40px 20px;
     font-size: 14px;
-    margin-top: auto; /* Garante que fique no fundo se a página for curta */
+    margin-top: auto;
 }
 
 .footer-container {
@@ -334,7 +332,7 @@ table tbody tr:hover {
 }
 
 .footer-column h3 {
-    color: #f0c64a; /* Dourado do padrão */
+    color: #f0c64a;
     font-size: 16px;
     margin-top: 0;
     margin-bottom: 15px;
@@ -353,10 +351,6 @@ table tbody tr:hover {
     align-items: center;
 }
 
-.contact-info a:hover {
-    text-decoration: underline;
-}
-
 .contact-info .icon {
     color: #f0c64a;
     margin-right: 10px;
@@ -368,14 +362,64 @@ table tbody tr:hover {
     text-align: right;
 }
 
+/* --- MODAL DE IMAGEM (CORRIGIDO) --- */
+.modal-overlay {
+    position: fixed; /* Isso garante que flutue na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 10000; /* Fica na frente de tudo */
+    
+    /* Centralização Flexbox */
+    display: none; /* Escondido por padrão */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Classe ativada via JS */
+.modal-overlay.active {
+    display: flex !important;
+    opacity: 1;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border: 4px solid #fff;
+    border-radius: 4px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10001;
+    transition: color 0.3s;
+}
+
+.modal-close:hover {
+    color: #f0c64a;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 992px) {
+    .page-layout { flex-direction: column; }
+    .sidebar { flex: 1; }
+}
+
 @media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .footer-copyright {
-        text-align: center;
-        width: 100%;
-    }
+    .footer-container { flex-direction: column; align-items: center; text-align: center; }
+    .footer-copyright { text-align: center; width: 100%; }
 }
