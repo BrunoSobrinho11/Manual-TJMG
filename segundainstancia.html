@@ -22,28 +22,44 @@
             color: #333;
         }
 
-        /* --- Cabeçalho Padrão --- */
+       /* --- ESTILOS DO CABEÇALHO (Padronizado) --- */
         .site-header {
-            background: #2a528a;
-            color: white;
-            padding: 15px 25px;
+            background-color: #2a528a;
+            color: #ffffff;
+            padding: 12px 25px;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .header-content {
-            max-width: 1400px;
+        
+        .header-container {
+            max-width: 1400px; /* Alinha com o conteúdo */
             margin: 0 auto;
+            display: flex;
+            justify-content: space-between; /* Separa Logo e Data */
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header-left, .header-right {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        .header-content img {
-            height: 40px;
+
+        /* Configuração da Logo */
+        .header-logo {
+            height: 60px; /* Tamanho ideal */
+            width: auto;
+            display: block;
+            filter: brightness(0) invert(1); /* Deixa branca se for preta */
         }
-        .header-content h1 {
-            font-size: 24px;
-            font-weight: 500;
+
+        .header-right p {
+            margin: 0;
+            font-size: 14px;
         }
 
         /* --- Estrutura da Página --- */
@@ -165,11 +181,10 @@
 </head>
 <body>
 
-    <header class="site-header">
-        <div class="header-content container">
-            <div class="logo">
-                <i class="fas fa-book-open"></i>
-                <h1>Manual TJMG</h1>
+   <header class="site-header">
+        <div class="header-container">
+            <div class="header-left">
+                <img src="logo_tjmg_nova.png" alt="Logo TJMG" class="header-logo">
             </div>
         </div>
     </header>
@@ -305,5 +320,6 @@
 
 </body>
 </html>
+
 
 
