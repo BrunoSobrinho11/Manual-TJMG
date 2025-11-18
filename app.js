@@ -3694,7 +3694,7 @@ document.addEventListener('DOMContentLoaded', () => {
             observacao: ''
         },
         {
-            img: 'Página2_Images/572536.FOTO PATRIMÔNIA.124915.jpg',
+            img: 'Página2_Images/572536.FOTO PATRIMÔNIO.124915.jpg',
             nPatrimonio: '572536',
             date: "Novembro/2025",
             local: 'FÓRUM LAFAETE',
@@ -6313,6 +6313,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 }); 
+
 
 
 
