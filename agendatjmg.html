@@ -150,36 +150,45 @@
           font-family: sans-serif; /* Use a fonte principal do seu site */
       }
 
-      /* --- ESTILOS DO CABEÇALHO --- */
-      .site-header {
-          background-color: #2a528a; /* Cor de fundo azul escuro, igual à imagem */
-          color: #ffffff; /* Cor do texto e ícones */
-          padding: 15px 25px; /* Espaçamento interno (vertical e horizontal) */
-          display: flex;
-          justify-content: center; /* Centraliza o container principal */
-      }
+    /* --- ESTILOS DO CABEÇALHO (Padronizado) --- */
+        .site-header {
+            background-color: #2a528a;
+            color: #ffffff;
+            padding: 12px 25px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            max-width: 1400px; /* Alinha com o conteúdo */
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between; /* Separa Logo e Data */
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-      .header-container {
-          width: 100%;
-          max-width: 1400px; /* Largura máxima do conteúdo */
-          display: flex;
-          justify-content: space-between; /* Empurra o logo para a esquerda e a data para a direita */
-          align-items: center; /* Alinha verticalmente os itens ao centro */
-          flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
-          gap: 15px; /* Espaço entre os elementos quando quebram a linha */
-      }
+        .header-left, .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-      /* Estilo dos blocos da esquerda (logo) e direita (data) */
-      .header-left, .header-right {
-          display: flex;
-          align-items: center; /* Alinha o ícone com o texto */
-          gap: 15px; /* Espaço entre o ícone e o texto */
-      }
+        /* Configuração da Logo */
+        .header-logo {
+            height: 60px; /* Tamanho ideal */
+            width: auto;
+            display: block;
+            filter: brightness(0) invert(1); /* Deixa branca se for preta */
+        }
 
-      /* Estilo específico do ícone do logo */
-      .header-left .logo-icon {
-          font-size: 40px; /* Tamanho do ícone de balança */
-      }
+        .header-right p {
+            margin: 0;
+            font-size: 14px;
+        }
       
       /* Título "TJMG" */
       .logo-text .title {
@@ -290,12 +299,13 @@
 </head>
 <body>
   <header class="site-header">
-        <div class="header-content container">
-           
-            
-                <h1>Agenda TJMG</h1>
+        <div class="header-container">
+            <div class="header-left">
+                <img src="logo_tjmg_nova.png" alt="Logo TJMG" class="header-logo">
             </div>
-        
+      
+            
+        </div>
     </header>
 
     <div class="page-layout">
@@ -2383,3 +2393,4 @@
 </body>
 </body>
 </html>
+
