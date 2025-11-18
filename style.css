@@ -309,80 +309,73 @@ table tbody tr:hover {
     border-color: #dee2e6;
 }
 
-/* --- FOOTER --- */
-.footer {
-    background-color: var(--dark-bg);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-    font-size: 0.9em;
+/* --- ESTILOS DO RODAPÉ PADRÃO (Atualizado) --- */
+.site-footer {
+    background-color: #1a3b6b; /* Azul escuro do padrão */
+    color: #f0f0f0;
+    padding: 40px 20px;
+    font-size: 14px;
+    margin-top: auto; /* Garante que fique no fundo se a página for curta */
 }
 
-/* --- MODAL (Com correção de centralização) --- */
-.modal-overlay {
-    position: fixed; 
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85); 
-    
-    /* Centralização com Flexbox */
-    display: none; /* JavaScript vai mudar para 'flex' */
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; 
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.modal-content {
-    max-width: 90%;
-    max-height: 90vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    animation-name: zoom;
-    animation-duration: 0.4s;
+.footer-column {
+    flex: 1;
+    min-width: 250px;
 }
 
-@keyframes zoom {
-    from {transform: scale(0.1)}
-    to {transform: scale(1)}
-}
-
-.modal-close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
+.footer-column h3 {
+    color: #f0c64a; /* Dourado do padrão */
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 15px;
     font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
 }
 
-.modal-close:hover,
-.modal-close:focus {
-    color: #bbb;
+.footer-column p, .footer-column a {
+    margin: 0 0 10px 0;
+    line-height: 1.6;
+    color: #f0f0f0;
     text-decoration: none;
 }
 
-/* --- RESPONSIVIDADE --- */
-@media (max-width: 992px) {
-    .page-layout {
-        flex-direction: column;
-    }
-    .sidebar {
-        flex: 1;
-    }
+.contact-info a {
+    display: flex;
+    align-items: center;
 }
-/* --- ESTILO PARA A PAGINAÇÃO "..." --- */
-.pagination-ellipsis {
-    padding: 8px 12px;
-    color: #adb5bd; /* Cor de texto desabilitado */
-    font-size: 0.9em;
-    vertical-align: middle; /* Alinha com os botões */
-    line-height: 1.5; /* Garante alinhamento vertical */
 
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-info .icon {
+    color: #f0c64a;
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.footer-copyright {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-copyright {
+        text-align: center;
+        width: 100%;
+    }
 }
