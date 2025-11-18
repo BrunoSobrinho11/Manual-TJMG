@@ -18,36 +18,44 @@ body {
     padding: 0 20px;
 }
 
-/* --- HEADER (Layout Novo) --- */
-header {
-    background: linear-gradient(90deg, #2c3e50 0%, #3498db 100%);
-    color: white;
-    padding: 20px 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* --- HEADER (Padronizado) --- */
+.site-header {
+    background-color: #2a528a; /* Azul padrão */
+    color: #ffffff;
+    padding: 12px 25px;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.header-content {
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Joga logo p/ esquerda e data p/ direita */
     align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-.logo {
+.header-left, .header-right {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
 }
 
-.logo i {
-    font-size: 32px;
+/* Configuração da Logo */
+.header-logo {
+    height: 60px;
+    width: auto;
+    display: block;
+    filter: brightness(0) invert(1); /* Deixa branca se for preta */
 }
 
-.logo h1 {
-    font-size: 26px;
-    font-weight: 700;
+.header-right p {
+    margin: 0;
+    font-size: 14px;
 }
 
 /* --- LAYOUT DE PÁGINA (Layout Novo) --- */
@@ -223,4 +231,5 @@ header {
         flex-basis: auto; /* Remove o flex: 1 */
         height: 50vh; /* Altura para o mapa */
     }
+
 }
