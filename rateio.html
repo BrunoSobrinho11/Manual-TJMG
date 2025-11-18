@@ -22,41 +22,41 @@
             color: #333;
         }
 
-        /* --- ESTILOS DO CABEÇALHO --- */
+     /* --- ESTILOS DO CABEÇALHO (Padronizado) --- */
         .site-header {
             background-color: #2a528a;
             color: #ffffff;
-            padding: 15px 25px;
+            padding: 12px 25px;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+        
         .header-container {
-            max-width: 1400px;
+            max-width: 1400px; /* Alinha com o conteúdo */
             margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Separa Logo e Data */
             align-items: center;
             flex-wrap: wrap;
             gap: 15px;
         }
+
         .header-left, .header-right {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        .header-left .logo-icon {
-            font-size: 40px;
-        }
-        .logo-text .title {
-            font-size: 20px;
-            font-weight: bold;
+
+        /* Configuração da Logo */
+        .header-logo {
+            height: 60px; /* Tamanho ideal */
+            width: auto;
             display: block;
+            filter: brightness(0) invert(1); /* Deixa branca se for preta */
         }
-        .logo-text .subtitle {
-            font-size: 14px;
-            font-weight: normal;
-        }
+
         .header-right p {
             margin: 0;
             font-size: 14px;
@@ -224,18 +224,10 @@
 </head>
 <body>
 
-    <header class="site-header">
+   <header class="site-header">
         <div class="header-container">
             <div class="header-left">
-                <i class="fa-solid fa-scale-balanced logo-icon"></i>
-                <div class="logo-text">
-                    <span class="title">TJMG</span>
-                    
-                </div>
-            </div>
-            <div class="header-right">
-                <i class="fa-solid fa-clock-rotate-left"></i>
-                <p>Atualizado em: 2025</p>
+                <img src="logo_tjmg_nova.png" alt="Logo TJMG" class="header-logo">
             </div>
         </div>
     </header>
@@ -348,4 +340,5 @@
     </footer>
 
 </body>
+
 </html>
