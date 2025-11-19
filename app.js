@@ -6105,9 +6105,69 @@ document.addEventListener('DOMContentLoaded', () => {
             usuario: 'Mesas do lado Paulinho',
             observacao: ''
         },
-
-
-        
+{
+            img: 'Página2_Images/Página2_Images.FOTO PATRIMÔNIO.100374816.jpg',
+            nPatrimonio: '100374816',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'COMPUTADOR',
+            usuario: 'Rodrigo Abras',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/Página2_Images.FOTO PATRIMÔNIO.129648353.jpg',
+            nPatrimonio: '129648353',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'CADEIRA',
+            usuario: 'Sem Usuario',
+            observacao: ''
+        },
+ {
+            img: 'Página2_Images/Página2_Images.FOTO PATRIMÔNIO.129648345.jpg',
+            nPatrimonio: '129648345',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'CADEIRA',
+            usuario: 'Sem Usuario',
+            observacao: ''
+        },
+         {
+            img: 'Página2_Images/Página2_Images.FOTO PATRIMÔNIO.129648329.jpg',
+            nPatrimonio: '129648329',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'CADEIRA',
+            usuario: 'Sem Usuario',
+            observacao: ''
+        },
+         {
+            img: 'Página2_Images/Página2_Images.FOTO PATRIMÔNIO.129628476.jpg',
+            nPatrimonio: '129628476',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'CADEIRA',
+            usuario: 'Sem Usuario',
+            observacao: ''
+        },
+         {
+            img: 'Página2_Images/Página2_Images.FOTO PATRIMÔNIO.100427871.jpg',
+            nPatrimonio: '100427871',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'Outros',
+            usuario: 'Milaine',
+            observacao: 'Apoio de pé'
+        },
+         {
+            img: 'Página2_Images/Página2_Images.FOTO PATRIMÔNIO.84339870.jpg',
+            nPatrimonio: '84339870',
+            date: "Novembro/2025",
+            local: 'COOPE',
+            categoria: 'WEBCAM',
+            usuario: 'Milaine',
+            observacao: ''
+        },
     ];
 
     
@@ -6308,6 +6368,7 @@ document.addEventListener('DOMContentLoaded', () => {
     displayCurrentPage();
 
 });
+
 
 
 
