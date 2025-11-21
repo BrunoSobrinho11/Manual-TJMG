@@ -171,22 +171,79 @@
             color: #0c5460;
         }
 
-        /* --- Rodapé Padrão --- */
-        .site-footer {
-            background-color: #1a3b6b;
-            color: #f0f0f0;
-            padding: 40px 20px;
-        }
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        @media (max-width: 992px) {
-            .page-layout { flex-direction: column; }
-        }
+       /* --- ESTILOS DO RODAPÉ PADRÃO --- */
+.site-footer {
+    background-color: #1a3b6b;
+    color: #f0f0f0;
+    padding: 18px 20px; /* Tamanho compacto */
+    font-size: 14px;
+    margin-top: auto; 
+}
+
+.footer-container {
+    max-width: 1400px; /* Alinhamento central com o conteúdo principal */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px; /* Garante que o conteúdo não encoste na borda em telas menores */
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-column h3 {
+    color: #f0c64a;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 10px; 
+    font-weight: bold;
+}
+
+.footer-column p, .footer-column a {
+    margin: 0 0 5px 0; 
+    line-height: 1.6;
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
+/* --- ESTILO DO BOTÃO VOLTAR AO TOPO (Fixo) --- */
+.back-to-top {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    background-color: #2a528a;
+    color: white;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s;
+    text-decoration: none;
+    z-index: 999;
+    opacity: 0.8;
+}
+
+.back-to-top:hover {
+    background-color: #1a3b6b; 
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
     </style>
 </head>
 <body>
@@ -285,21 +342,37 @@
         </div>
 
     <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>TJMG</h3>
-                <p>Equipe Certificado Digital</p>
-            </div>
-            <div class="footer-column">
-                <h3>Contato</h3>
-                <p>Central: (31) 3339-7696</p>
-            </div>
+    <div class="footer-container">
+        
+        <div class="footer-column footer-branding">
+            <h3>TJMG</h3> 
+            <p>Equipe Certificado Digital</p>
+            <p>&copy; 2025. Equipe Certificado Digital.</p>
         </div>
-    </footer>
+        
+        <div class="footer-column contact-info">
+            <h3>Contato</h3>
+            <p>Central: <a href="tel:+553133397696">(31) 3339-7696</a></p>
+            <p>Email: <a href="mailto:operacao.informatica@tjmg.jus.br">operacao.informatica@tjmg.jus.br</a></p>
+        </div>
+        
+        <div class="footer-column address-info">
+            <h3>Endereço</h3>
+            <p>R. Ouro Preto, 1564 - Santo Agostinho</p>
+            <p>Belo Horizonte - MG, 30170-048</p>
+        </div>
+        
+    </div>
+</footer>
+
+<a href="#top" class="back-to-top" title="Voltar ao topo">
+    <i class="fas fa-arrow-up"></i>
+</a>
 
 </body>
 
 </html>
+
 
 
 
