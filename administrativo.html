@@ -171,90 +171,144 @@
             color: #0c5460;
         }
 
+        /* --- ESTILOS DO BLOCO DE CÓDIGO COPIÁVEL (NOVO) --- */
+        .code-block-viewer {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .code-screenshot {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        #codeSnippet {
+            background: #f4f4f4;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            white-space: pre-wrap; 
+            font-family: monospace;
+            font-size: 0.9em;
+            margin-bottom: 0; 
+        }
+
+        .copy-button {
+            background-color: #2a528a;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            margin-bottom: 0; 
+        }
+
+        .copy-button:hover {
+            background-color: #1a3b6b;
+        }
+
        /* --- ESTILOS DO RODAPÉ PADRÃO --- */
-.site-footer {
-    background-color: #1a3b6b;
-    color: #f0f0f0;
-    padding: 18px 20px; /* Tamanho compacto */
-    font-size: 14px;
-    margin-top: auto; 
-}
+        .site-footer {
+            background-color: #1a3b6b;
+            color: #f0f0f0;
+            padding: 18px 20px; /* Tamanho compacto */
+            font-size: 14px;
+            margin-top: auto; 
+        }
 
-.footer-container {
-    max-width: 1400px; /* Alinhamento central com o conteúdo principal */
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 0 20px; /* Garante que o conteúdo não encoste na borda em telas menores */
-}
+        .footer-container {
+            max-width: 1400px; /* Alinhamento central com o conteúdo principal */
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 0 20px; /* Garante que o conteúdo não encoste na borda em telas menores */
+        }
 
-.footer-column {
-    flex: 1;
-    min-width: 250px;
-}
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
 
-.footer-column h3 {
-    color: #f0c64a;
-    font-size: 16px;
-    margin-top: 0;
-    margin-bottom: 10px; 
-    font-weight: bold;
-}
+        .footer-column h3 {
+            color: #f0c64a;
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 10px; 
+            font-weight: bold;
+        }
 
-.footer-column p, .footer-column a {
-    margin: 0 0 5px 0; 
-    line-height: 1.6;
-    color: #f0f0f0;
-    text-decoration: none;
-}
+        .footer-column p, .footer-column a {
+            margin: 0 0 5px 0; 
+            line-height: 1.6;
+            color: #f0f0f0;
+            text-decoration: none;
+        }
 
-/* --- ESTILO DO BOTÃO VOLTAR AO TOPO (Fixo) --- */
-.back-to-top {
-    position: fixed;
-    bottom: 20px; 
-    right: 20px; 
-    background-color: #2a528a;
-    color: white;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    font-size: 20px;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: background-color 0.3s, opacity 0.3s;
-    text-decoration: none;
-    z-index: 999;
-    opacity: 0.8;
-}
+        /* --- ESTILO DO BOTÃO VOLTAR AO TOPO (Fixo) --- */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px; 
+            right: 20px; 
+            background-color: #2a528a;
+            color: white;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background-color 0.3s, opacity 0.3s;
+            text-decoration: none;
+            z-index: 999;
+            opacity: 0.8;
+        }
 
-.back-to-top:hover {
-    background-color: #1a3b6b; 
-    opacity: 1;
-}
+        .back-to-top:hover {
+            background-color: #1a3b6b; 
+            opacity: 1;
+        }
 
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-}
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
 
+    <a id="top"></a>
+
     <header class="site-header">
         <div class="header-container">
             <div class="header-left">
-    <a href="index.html" style="text-decoration: none;">
-        <img src="logo_tjmg_nova.png" alt="Logo TJMG" class="header-logo">
-    </a>
-</div>
+                <a href="index.html" style="text-decoration: none;">
+                    <img src="logo_tjmg_nova.png" alt="Logo TJMG" class="header-logo">
+                </a>
+            </div>
+    
+        </div>
     </header>
 
     <div class="page-layout">
@@ -277,103 +331,167 @@
             </nav>
         </aside>
         <main class="main-content">
-            <h1>Manual de Publicação (Administrativo)</h1>
+            <h1> Jornal Administrativo</h1>
 
             <div class="section">
-                <h2>Passo 1 </h2>
+                <h2>Download dos Arquivos</h2>
                 <ol>
-                    <li>Abra o e-mail da "OPERAÇÃO" e localize a mensagem do dia anterior referente ao expediente.</li>
-                    <li>Clique na seta do último anexo e selecione "Salvar todos os anexos".</li>
+                    <li>Abra o gmail da "OPERAÇÃO" e localize a mensagem do dia anterior referente ao expediente.</li>
+                    <li>Clique na seta e faça o download.</li>
+                    <img src="adm1.jpg" alt="Interface de e-mail mostrando a opção para salvar todos os anexos." />
                     <li>Salve os arquivos em uma nova pasta com a data do expediente, seguindo o caminho: <br><code>Z:\Arquivos PUBLICACOES\Arquivos administrativos\2023\5. Maio\03.05.23</code></li>
+                    <img src="adm14.jpg" alt="Interface de e-mail mostrando a opção para salvar todos os anexos." />
                 </ol>
-                <img src="adm1.jpg" alt="Interface de e-mail mostrando a opção para salvar todos os anexos." />
+              
                 <div class="note">
                     <strong>OBSERVAÇÃO:</strong> Se o e-mail "Publicação DJe" não for encontrado, contate Paula ou Michele da presidência.
                 </div>
             </div>
     
             <div class="section">
-                <h2>Passo 2</h2>
+                <h2>Nomeando os Arquivos</h2>
                 <ol>
                     <li>Navegue até a pasta do dia e abra o arquivo Word (.docx) com o <strong>LibreOffice</strong>.</li>
                     <li>No LibreOffice, vá em <strong>Arquivo > Salvar como...</strong></li>
                     <li>Em "Tipo", selecione <strong>Texto em Formato Rich Text (.rtf)</strong>.</li>
-                    <li>Nomeie o arquivo como <code>diamestjmg01</code> (ex: para 15 de março, ficaria <strong>1503tjmg01</strong>). Salve e feche o documento.</li>
+                    <img src="adm15.jpg" alt="Interface de e-mail mostrando a opção para salvar todos os anexos." />
+                    <li>Nomeie o arquivo como <code>diamestjmg01</code> (ex: para 25 de novembro, ficaria <strong>2511tjmg01</strong>). Salve e feche o documento.</li>
+                    <img src="adm16.jpg" alt="Interface de e-mail mostrando a opção para salvar todos os anexos." />
                 </ol>
             </div>
     
             <div class="section">
-                <h2>Passo 3</h2>
+                <h2>Enviando para o Servidor</h2>
                 <ol>
                     <li>Abra o <strong>FileZilla</strong> e conecte-se ao site <strong>TJ_Arquivos RTF</strong>.</li>
+                    <img src="adm17.jpg" alt="Interface de e-mail mostrando a opção para salvar todos os anexos." />
                     <li>Navegue até o diretório remoto: <code>/web1/www/arquivos/juridico/sf/diario</code> e entre na pasta <code>rtf</code>.</li>
-                    <li>Transfira o arquivo <code>.rtf</code> que você acabou de salvar para esta pasta.</li>
+                    <img src="adm18.jpg" alt="Interface de e-mail mostrando a opção para salvar todos os anexos." />
+                    <li>Transfira o arquivo <code>.rtf</code> que você acabou de salvar para esta pasta RTF no servidor.</li>
+                    <img src="adm19.jpg" alt="Interface de e-mail mostrando a opção para salvar todos os anexos." />
                 </ol>
-                <img src="adm2.jpg" alt="Tela do FileZilla mostrando a navegação de pastas no servidor remoto." />
+               
             </div>
     
             <div class="section">
-                <h2>Passo 4</h2>
+                <h2>Enviando para o Site</h2>
                 <ol>
-                    <li>Acesse o servidor <code>SOLWEB-5</code> (via PuTTY ou outro cliente SSH).</li>
-                    <img src="adm3.jpg" alt="Janela de configuração de sessão do PuTTY." />
-                    <li>Clique em "Profiles" e depois em "SOLWEB-5" para conectar.</li>
-                    <img src="adm4.jpg" alt="Tela do PuTTY mostrando perfis de sessão salvos." />
-                    <li>Quando solicitado, utilize a senha: <code>imprensa</code>.</li>
-                    <li>Cole o primeiro comando para navegar até a pasta e pressione Enter:</li>
-                    <pre><code>cd /home/publica/rotina</code></pre>
-                    <img src="adm5.jpg" alt="Terminal do servidor após a execução do comando 'cd'." />
-                    <li>Cole o segundo comando para executar a conversão e pressione Enter:</li>
-                    <pre><code>./rtf2html.pl –t</code></pre>
-                    <li><strong>AGUARDE!</strong> Espere até que o cursor com o cifrão (<code>$</code>) apareça novamente no final.</li>
+                    <li>Acesse o servidor <code>SOLWEB-5</code> (via PuTTY).</li>
+                    <img src="adm20.jpg" alt="Janela de configuração de sessão do PuTTY." />
+                    <li>Clique em "Bastion" e depois em "Load" e "Open" para conectar.</li>
+                    <img src="adm21.jpg" alt="Tela do PuTTY mostrando perfis de sessão salvos." />
+                    <li> Ao clicar em 'Open', aparecerá uma tela preta escrita "login as". Nessa hora, digite seu field, no meu caso, é field225. Aperte enter.</li>
+                    <img src="adm22.jpg" alt="Tela do PuTTY mostrando perfis de sessão salvos." />
+                    <li>Coloque o código <code>ssh publica@solweb-5</code>. Obs.: Não é permitido usar CTRL + V; copie o código e clique com o botão direito do mouse para colar. Aperte enter.</li>
+                    <img src="adm24.jpg" alt="Tela do PuTTY mostrando perfis de sessão salvos." />
+                    <li>Digite a senha <code>imprensa</code>e de enter. </li> 
+                    <img src="adm25.jpg" alt="Tela do PuTTY mostrando perfis de sessão salvos." />
+                    <li>Coloque o código <code>cd /home/publica/rotina</code>. Lembando que não é permitido CTRL + V; Use o botão direito do mouse para colar. Apete enter.</li>
+                    <img src="adm26.jpg" alt="Tela do PuTTY mostrando perfis de sessão salvos." />
+                    <li>Coloque o código <code>./rtf2html.pl –t</code>. Lembando que não é permitido CTRL + V; Use o botão direito do mouse para colar.</li>
+                    <img src="adm27.jpg" alt="Tela do PuTTY mostrando perfis de sessão salvos." />
+                    <li><strong>AGUARDE!</strong> Espere até que o cursor com o cifrão (<code>$</code>) apareça no final.</li>
                 </ol>
             </div>
     
             <div class="section">
-                <h2>Passo 5 </h2>
+                <h2>Verificação Final </h2>
                 <ol>
                     <li>No FileZilla, pressione F5 para atualizar a pasta <code>rtf</code>. O arquivo que você enviou deve ter desaparecido.</li>
                     <li>Acesse o site do <strong>DJe (Diário Judiciário Eletrônico)</strong> e verifique se a publicação foi criada corretamente.</li>
-                    <img src="adm6.jpg" alt="Página do Diário Judiciário Eletrônico mostrando as publicações do dia." />
+                    <img src="adm28.jpg" alt="Página do Diário Judiciário Eletrônico mostrando as publicações do dia." />
                     <li>No servidor, procure pelo arquivo gerado <code>diamestjmg01.txt</code> e copie-o para a pasta do dia correspondente.</li>
-                </ol>
+                    <img src="adm7.jpg" alt="Página do Diário Judiciário Eletrônico mostrando as publicações do dia." />
+                    <li>Sua pasta vai ficar com esses Arquivos</li>
+                    <img src="adm8.jpg" alt="Página do Diário Judiciário Eletrônico mostrando as publicações do dia." />
+                    <li>Abra o arquivo TXT, e vai para o final <code>ctrl + End</code>.</li>
+                    <li>Conte a quantidade de arquivos PDF que estão na pasta e remova os espaços dos nomes dos PDFs, se houver.</li>
+                    <img src="adm9.jpg" alt="Página do Diário Judiciário Eletrônico mostrando as publicações do dia." />
+                    <div class="code-block-viewer">
+                    <li>Cole o código abaixo no final do arquivo TXT. Esse código será adicionado para cada PDF que estiver na pasta. No lugar dos XXX será colocado as informações dos PDFs.</li>
+                        <img src="adm10.jpg" alt="Exemplo do Código TXT a ser copiado" class="code-screenshot">
+                        <pre id="codeSnippet">
+&lt;p&gt;&lt;/p&gt;
+
+&lt;div align="center"&gt;
+    &lt;a href="/info/pdf/index.jsp?uri=/juridico/sf/diario/download/XX.pdf"
+    target="_blank"&gt; 
+        &lt;font size="4"&gt;Acesse aqui: XXXXX &lt;/font&gt;
+    &lt;/a&gt; 
+&lt;/div&gt;
+                        </pre>
+                        
+                        <button class="copy-button" onclick="copyCode()">
+                            <i class="fas fa-copy"></i> Copiar Código
+                        </button>
+                    </div>
+                    <li>Copiar o nome dos arquivos e abri-los para copiar os títulos.</li>
+                    <img src="adm11.jpg" alt="Página do Diário Judiciário Eletrônico mostrando as publicações do dia." />
+                    <li>Após colocar todos os PDFs no TXT, feche o arquivo e salve as alterações.</li>
+                    <li>Copie esse novo TXT para o servidor.</li>
+                    <img src="adm12.jpg" alt="Página do Diário Judiciário Eletrônico mostrando as publicações do dia." />
+                    <img src="adm13.jpg" alt="Página do Diário Judiciário Eletrônico mostrando as publicações do dia." />
+                    <li>Vamos enviar todos os arquivos PDFs para a pasta Download no servidor Site TJ_Arquivos RTF</li>
+                    <img src="adm29.jpg" alt="Página do Diário Judiciário Eletrônico mostrando as publicações do dia." />
+                    <li> Abra o site do TJ e vá para o final da página para verificar se os anexos estão abrindo corretamente.</li>
+                    <img src="adm30.jpg" alt="Página do Diário Judiciário Eletrônico mostrando as publicações do dia." />
+
+                    </ol>
+                
+
             </div>
         </main>
         </div>
 
     <footer class="site-footer">
-    <div class="footer-container">
-        
-        <div class="footer-column footer-branding">
-            <h3>TJMG</h3> 
-            <p>Equipe Certificado Digital</p>
-            <p>&copy; 2025. Equipe Certificado Digital.</p>
+        <div class="footer-container">
+            
+            <div class="footer-column footer-branding">
+                <h3>TJMG</h3> 
+                <p>Equipe Certificado Digital</p>
+                <p>&copy; 2025. Equipe Certificado Digital.</p>
+            </div>
+            
+            <div class="footer-column contact-info">
+                <h3>Contato</h3>
+                <p>Central: <a href="tel:+553133397696">(31) 3339-7696</a></p>
+                <p>Email: <a href="mailto:operacao.informatica@tjmg.jus.br">operacao.informatica@tjmg.jus.br</a></p>
+            </div>
+            
+            <div class="footer-column address-info">
+                <h3>Endereço</h3>
+                <p>R. Ouro Preto, 1564 - Santo Agostinho</p>
+                <p>Belo Horizonte - MG, 30170-048</p>
+            </div>
+            
         </div>
-        
-        <div class="footer-column contact-info">
-            <h3>Contato</h3>
-            <p>Central: <a href="tel:+553133397696">(31) 3339-7696</a></p>
-            <p>Email: <a href="mailto:operacao.informatica@tjmg.jus.br">operacao.informatica@tjmg.jus.br</a></p>
-        </div>
-        
-        <div class="footer-column address-info">
-            <h3>Endereço</h3>
-            <p>R. Ouro Preto, 1564 - Santo Agostinho</p>
-            <p>Belo Horizonte - MG, 30170-048</p>
-        </div>
-        
-    </div>
-</footer>
+    </footer>
 
-<a href="#top" class="back-to-top" title="Voltar ao topo">
-    <i class="fas fa-arrow-up"></i>
-</a>
+    <a href="#top" class="back-to-top" title="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
+    <script>
+        function copyCode() {
+            const codeToCopy = `<p></p>
+
+<div align="center">
+    <a href="/info/pdf/index.jsp?uri=/juridico/sf/diario/download/XX.pdf"
+    target="_blank"> 
+        <font size="4">Acesse aqui: XXXXX </font>
+    </a> 
+</div>`;
+            
+            navigator.clipboard.writeText(codeToCopy)
+                .then(() => {
+                    alert('Código copiado para a área de transferência!');
+                })
+                .catch(err => {
+                    console.error('Erro ao copiar: ', err);
+                    alert('Erro ao copiar o código. Verifique se o navegador tem permissão.');
+                });
+        }
+    </script>
 </body>
 
 </html>
-
-
-
-
-
