@@ -3,203 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual | Anotações</title>
+    <title>Base de Conhecimento: Erros e Soluções</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="shortcut icon" type="image/x-icon" href="TJMG.ico">
-    <style>
-        /* Estilos Globais */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background: #f5f7fa;
-            color: #333;
-        }
-
-      /* --- ESTILOS DO CABEÇALHO (Padronizado) --- */
-        .site-header {
-            background-color: #2a528a;
-            color: #ffffff;
-            padding: 12px 25px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .header-container {
-            max-width: 1400px; /* Alinha com o conteúdo */
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between; /* Separa Logo e Data */
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .header-left, .header-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        /* Configuração da Logo */
-        .header-logo {
-            height: 60px; /* Tamanho ideal */
-            width: auto;
-            display: block;
-            filter: brightness(0) invert(1); /* Deixa branca se for preta */
-        }
-
-        .header-right p {
-            margin: 0;
-            font-size: 14px;
-        }
-
-        /* --- Estrutura da Página --- */
-        .page-layout {
-            display: flex;
-            gap: 30px;
-            padding: 30px 20px;
-            max-width: 1400px;
-            margin: 0 auto;
-            flex: 1;
-        }
-
-        /* --- Menu Lateral (Sidebar) --- */
-        .sidebar {
-            flex: 0 0 260px;
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            height: fit-content;
-        }
-        
-        .sidebar h2 {
-            font-size: 1.4rem;
-            color: #2c3e50;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar li a {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 15px;
-            text-decoration: none;
-            color: #333;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        .sidebar li a:hover, .sidebar li a.active {
-            background-color: #ecf0f1;
-            color: #2980b9;
-            font-weight: 700;
-        }
-        .sidebar li a i {
-            width: 20px;
-            text-align: center;
-            color: #3498db;
-        }
-
-        /* --- Área de Conteúdo Principal --- */
-        .main-content {
-            flex: 1;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        }
-        .main-content h1, .main-content h2, .main-content h3 {
-            color: #004085;
-        }
-        .main-content h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .main-content h2 {
-            border-bottom: 2px solid #e9ecef;
-            padding-bottom: 10px;
-            margin-top: 40px;
-            margin-bottom: 20px;
-        }
-        .main-content img {
-            max-width: 100%;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            margin: 15px 0;
-        }
-        .section {
-            margin-bottom: 40px;
-        }
-        .error-section {
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #e9ecef;
-        }
-        .error-section:last-of-type {
-            border-bottom: none;
-        }
-        code, pre {
-            background-color: #e9ecef;
-            color: #c92a2a;
-            padding: 2px 5px;
-            border-radius: 4px;
-            font-family: monospace;
-        }
-        .note {
-            padding: 15px;
-            border-radius: 6px;
-            margin: 20px 0;
-            border-left: 4px solid #17a2b8;
-            background-color: #d1ecf1;
-            color: #0c5460;
-        }
-
-        /* --- Rodapé Padrão --- */
-        .site-footer {
-            background-color: #1a3b6b;
-            color: #f0f0f0;
-            padding: 40px 20px;
-        }
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        @media (max-width: 992px) {
-            .page-layout { flex-direction: column; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="erro.css"> 
 </head>
 <body>
+    
+    <a id="top"></a> 
 
-     <header class="site-header">
+    <header class="site-header">
         <div class="header-container">
             <div class="header-left">
-    <a href="index.html" style="text-decoration: none;">
-        <img src="logo_tjmg_nova.png" alt="Logo TJMG" class="header-logo">
-    </a>
-</div>
+                <a href="index.html" style="text-decoration: none;">
+                    <img src="logo_tjmg_nova.png" alt="Logo TJMG" class="header-logo">
+                </a>
+            </div>
+          
+        </div>
     </header>
 
     <div class="page-layout">
+        
         <aside class="sidebar">
             <h2>Navegação</h2>
             <nav>
@@ -211,180 +36,158 @@
                     <li><a href="puboab.html"><i class="fas fa-paper-plane"></i> PUB</a></li>
                     <li><a href="rateio.html"><i class="fas fa-university"></i> Rateio do Banco</a></li>
                     <li><a href="agendatjmg.html"><i class="fas fa-address-book"></i> Agenda Telefônica</a></li>
-                    <li><a href="pjemidias.html"><i class="fas fa-video"></i> PJE Mídias</a></li>
                     <li><a href="anotacao.html" class="active"><i class="fas fa-clipboard"></i> Anotações</a></li>
                     <li><a href="mapa_comarcas.html"><i class="fas fa-map-marked-alt"></i> Mapa das Comarcas</a></li>
                     <li><a href="inventario.html"><i class="fas fa-clipboard"></i> Inventário</a></li>
                 </ul>
             </nav>
         </aside>
+
         <main class="main-content">
-            <h1>Manual de Suporte ao Certificado Digital</h1>
-
-            <div class="section">
-         
-            <h3>Links e Caminhos Úteis</h3>
-            <ul>
-                <li><strong>Instalador SafeNet, Soluti, Aladdin:</strong> <a href="https://youtu.be/0TMIOBWSt6k" target="_blank">https://youtu.be/0TMIOBWSt6k</a></li>
-                <li><strong>Drivers de Tokens (Certisign):</strong> <a href="https://www.certisign.com.br/duvidas-suporte/downloads" target="_blank">https://www.certisign.com.br/duvidas-suporte/downloads</a>]</li>
-                <li><strong>Verificar Acesso a E-mail:</strong> <a href="http://linngs-1.intra.tjmg.gov.br/busca/" target="_blank">http://linngs-1.intra.tjmg.gov.br/busca/</a> </li>
-                <li><strong>Acesso PJe (Suporte):</strong> <a href="http://pjesup.intra.tjmg.gov.br/pje/login.seam" target="_blank">http://pjesup.intra.tjmg.gov.br/pje/login.seam</a> </li>
-                <li><strong>Agendamento Videoconferência (Certisign):</strong> <a href="https://gestaoar.certisign.com.br/AgendamentoOnLine/cliente/actionPedido.action" target="_blank">https://gestaoar.certisign.com.br/AgendamentoOnLine/cliente/actionPedido.action</a> </li>
-               <li><strong>Atalho Opções de Internet:</strong> Tecla Windows + R, depois digitar <code>inetcpl.cpl</code> </li>
-                <li><strong>Caminho Internet Explorer:</strong> <code>"C:\Program Files\Internet Explorer\iexplore.exe"</code> </li>
-                <li><strong>Caminho Token GD:</strong> <code>C:\Program Files (x86)\A.E.T.Europe B.V\SafeSign\Management Utility</code> </li>
-            </ul>
-            
-            <h3>Contatos para aberturas de chamados</h3>
-            <ul>
-               <li><strong>Telefone Suporte Servidor TJ:</strong> 31 3237-7060 </li>
-                <li><strong>Telefone Suporte Advogado:</strong> 0800 3535600 </li>
-               
-            </ul>
-            <h3>Senhas PUK dos Tokens</h3>
-            <li><strong>Token DX:</strong> <code>Tjmg2018</code>
-            
-            <li><strong>Token Soluti 5110/Aladin72k:</strong> <code>Tjmg2018</code> / <code>123456</code>
-            <li><strong>Token Epass:</strong> <code>SOLUTICD</code>
-            <li><strong>Token GD:</strong> <code>1234</code> / <code>123456</code> / <code>12345678</code> / <code>1234567890</code>  / <code>Tjmg2018</code></li>
-                <li><strong>Chave de Inicialização SafeNet:</strong> <code>SolutiAC</code> </li>
-                <div class="note">
-                    <p>Caso encontre algum usuário com o Aladin64k, faça a troca, pois não é mais homologado.</p>
+            <div class="content-wrapper"> 
+                
+                <div class="search-container">
+                    <input type="text" id="errorSearch" placeholder="Digite o erro">
                 </div>
-        </div>
+                            
+                <div id="errorViewer" class="solution-viewer">
+                    <div class="viewer-image-container">
+                        <img id="viewerImage" src="placeholder.png" alt="Imagem do Erro Selecionado" style="display:none;">
+                    </div>
+                    <div class="viewer-solution-container">
+                        <h2>Solução para o Erro</h2>
+                        <p id="viewerSolutionText">Clique em um dos cartões abaixo para visualizar a solução completa.</p>
+                        <button id="closeViewer">Fechar</button>
+                    </div>
+                </div>
 
-        <div class="section">
-            <h2>Emissão de Novo Certificado Digital</h2>
-            <ol>
-                <li>Acesse o Portal de Serviços de Informática: <a href="http://informatica.tjmg.jus.br" target="_blank">http://informatica.tjmg.jus.br</a>. </li>
-                <li>Siga o caminho: <strong>Certificado digital > Escolha de acordo com a instância em que está lotado</strong>. </li>
-                <li>Após receber o voucher, envie um e-mail para <code>agendamento@3rcertificadora.com.br</code> com o número do voucher no assunto.</li>
-               <li>Anexe uma imagem (JPG ou PDF) do seu documento de identificação (RG ou CNH). </li>
-                <li>No corpo do e-mail, forneça os dados solicitados (Órgão, Nome, CPF, Data de Nascimento, etc.).</li>
-                <img src="anotacao1.png" alt="Uma descrição clara do que a imagem mostra">
-            </ol>
-             <div class="note">
-                <p>A certificadora (3R Certificadora) entrará em contato em até 48 horas para agendar a emissão, que pode ser presencial ou por videochamada.</p>
-            </div>
-            <h3>Documentação Necessária</h3>
-            <ul>
-                <li>Dois documentos de identificação diferentes (preferencialmente RG e CNH). </li>
-                <li>Comprovante de endereço recente (máximo 90 dias). </li>
-                <li>Foto 3x4 colorida (dispensada se a identidade tiver sido emitida há menos de 5 anos). </li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Solução de Problemas Comuns</h2>
-
-            <div class="error-section">
-                <h3>Se aparecer o erro abaixo encaminhar para GSE - FIELD ATENDIMENTOS de acordo com o IN1712356, foi reinstalado a imagem do Windows 
-                <img src="anotacao2.png" alt="Erro de certificado não encontrado no PJe"> </h3>
-              
-            </div>
-
-            <div class="error-section">
-                <h3>Se aparecer o erro abaixo no PJE troque a versão 8 para a versão 9 do gerenciador Soluti 5110. No Epass deu este erro e foi reinstalado o gerenciador do epass. 
-                <img src="anotacao3.png" alt="Erro de certificado não encontrado no PJe"> </h3>
-              
-            </div>
-
-            <div class="error-section">
-                <h3>Se der o erro abaixo, eu resolvi removendo certificados expirados e válidos que não estava sendo usando mais no opções de Internet. 
-                <img src="anotacao4.png" alt="Erro de certificado não encontrado no PJe"> </h3>
-              
-            </div>
-
-            <div class="error-section">
-                <h3>Se aparecer a mensagem abaixo é só formatar com a chave SolutiAC.
-                <img src="anotacao5.png" alt="Erro de certificado não encontrado no PJe"> </h3>
-                <img src="anotacao11.png" alt="Erro de certificado não encontrado no PJe"> </h3>
-            </div>
-
-            <div class="error-section">
-                <h3>Se aparecer o erro abaixo, acessar o usuário administrador e fazer o teste para ver se o token funciona. Se funcionar é problema no perfil do usuário. </h3>
-                   <h3>Se for o token DX escolher a DLL:  DXSafePKCS11.dll no pjeoffece e orientar o usuário a clicar nesta dll no pjeoofice o colocar a senha para poder acessar o PJE.</h3>
-                <h3><img src="anotacao6.png" alt="Erro de certificado não encontrado no PJe"> </h3>
-                        </div>
-
-                        <div class="error-section">
-                            <h3>Atualizei o driver no gerenciador de dispositivos para WUDF. Se não funcionar baixar os driver do site da fabricante e repetir a atualização.
-                            <img src="anotacao7.png" alt="Erro de certificado não encontrado no PJe"> </h3>
                           
-                        </div>
+                <div class="error-grid">
+                    
+                    <div class="error-card" onclick="showSolution(
+                        'anotacao2.png', 
+                        'Se aparecer o erro abaixo encaminhar para GSE - FIELD ATENDIMENTOS de acordo com o IN1712356, foi reinstalado a imagem do Windows'
+                    )">
+                        <img src="anotacao2.png" alt="AKS ifdh 0">
+                        <span class="card-title">AKS ifdh 0</span>
+                    </div>
+                    
+                    <div class="error-card" onclick="showSolution(
+                        'anotacao3.png', 
+                        'Se aparecer o erro abaixo no PJE troque a versão 8 para a versão 9 do gerenciador Soluti 5110. No Epass deu este erro e foi reinstalado o gerenciador do epass.'
+                    )">
+                        <img src="anotacao3.png" alt="Java.security">
+                        <span class="card-title">Java.security</span>
+                    </div>
 
-                        <div class="error-section">
-                            <h3>Fechar o chamado com o texto abaixo:
-                                Prezado(a) Sr.(a) Usuário(a),
+                    <div class="error-card" onclick="showSolution(
+                        'anotacao4.png', 
+                        'Se der o erro abaixo, eu resolvi removendo certificados expirados e válidos que não estava sendo usando mais no opções de Internet.'
+                    )">
+                        <img src="anotacao4.png" alt="Certificado não encontrado">
+                        <span class="card-title">Certificado não encontrado</span>
+                    </div>
 
-                                Informamos que já foram realizados ajustes/atualizações no Sistema PJe que solucionaram o erro reportado.
-                                Gentileza tente novamente efetue o auto cadastro e assine o termo de compromisso.
-                                Nesse contexto, encerraremos este chamado. Seguimos a disposição.
-                                
-                                Atenciosamente,
-                                Equipe de Suporte -TJMG / DIRFOR / GEJUD/  Núcleo Técnico do Processo Judicial Eletrônico – NTPJe
-                                
-                            <img src="anotacao8.png" alt="Erro de certificado não encontrado no PJe"> </h3>
-                          
-                        </div>
-                        <div class="error-section">
-                            <h3>Se aparecer o erro abaixo no DEPOX, você PODE ENVIAR DIRETO PARA A FILA DO DEPOX. OBS.: Lembrando que após instalar o novo certificado tem que aguardar o prazo de 48hrs para acessar o Dexpox.
-                            <img src="anotacao9.png" alt="Erro de certificado não encontrado no PJe"> </h3>
-                          
-                        </div>
-                        <div class="error-section">
-                            <h3>A mensagem abaixo é token com PIN bloqueado
-                            <img src="anotacao10.png" alt="Erro de certificado não encontrado no PJe"> </h3>
-                          
-                        </div>
-
-
-                        <div class="error-section">
-                            <h3>O erro abaixo apareceu no SERASAJUD eu reinstalei o gerenciador e funcionou
-                            <img src="anotacao12.png" alt="Erro de certificado não encontrado no PJe"> </h3>
-                          
-                        </div>
-
-                        <div class="error-section">
-                            <h3>Para resolver o erro, foi removido um certificado que não havia vencido, mas que não estava sendo utilizado, pois foi feita a instalação de um novo certificado. O gerenciador do GD foi reinstalado porque havia dois gerenciadores instalados.
-
-                                Obs.: Este erro ocorreu apenas no PJE e RUPE. Em outros sites, o acesso foi bem-sucedido.
-                            <img src="anotacao13.png" alt="Erro de certificado não encontrado no PJe"> </h3>
-                            <h3>Peguei este erro acima com um magistrado que usava o token Soluti 5110 e estava com dois certificados: um do token físico e outro da nuvem. Para conseguir acessar o sistema, foi necessário digitar a senha no PJE Office e escolher o certificado a ser conectado.</h3>
-                          
-                        </div>
-
-                        <div class="error-section">
-                            <h3>A mensagem abaixo tem que solicitar um novo certificado
-                            <img src="anotacao14.png" alt="Erro de certificado não encontrado no PJe"> </h3>
-                          
-                        </div>
-                        <div class="error-section">
-                            <h3>Erro 105 ao instalar o novo certificado no token GD: troque a senha e faça a instalação. Se não funcionar, formate o token.
-                        </h3>
-                          
-                        </div>
+                    <div class="error-card" onclick="showSolution(
+                        [
+                            'anotacao5.png', 
+                            'anotacao11.png'
+                        ], 
+                        'Se aparecer a mensagem abaixo é só formatar com a chave SolutiAC.'
+                    )">
+                        <img src="anotacao5.png" alt="Falha na autenticação">
+                        <span class="card-title">Falha na autenticação</span>
+                    </div>
+                    
+                   <div class="error-card" onclick="showSolution(
+    'anotacao6.png', 
+    'Se aparecer o erro abaixo, acessar o usuário administrador e fazer o teste para ver se o token funciona. Se funcionar é problema no perfil do usuário. Se for o token DX escolher a DLL `DXSafePKCS11.dll` no pjeoffice e orientar o usuário a clicar nesta dll no pjeoofice o colocar a senha para poder acessar o PJE.'
+)">
+    <img src="anotacao6.png" alt="Parâmetro Incorreto">
+    <span class="card-title">Parâmetro Incorreto</span>
+</div>
 
 
-                        <div class="error-section">
-                            <h3>ESSE ERRO DEU NA HORA DE GRAVAR CERTIFICADO</h3>
-                               <h3>No Token EPASS: É SÓ REINSTALAR O GERENCIADOR.</h3>
-                                <h3>Não precisa fazer a instalação novamente do certicado. Só entrar no gerenciador e conferir se já foi instalado.</h3>
-                                <h3>No Token soluti 5110: Foi reinstalado o driver e formatado o token e funcionou</h3>
-                                <img src="anotacao15.png" alt="Erro de certificado não encontrado no PJe">
-                        </h3>
-                          
-                        </div>
+<div class="error-card" onclick="showSolution(
+    'anotacao7.png', 
+    'Atualizei o driver no gerenciador de dispositivos para WUDF. Se não funcionar baixar os driver do site da fabricante e repetir a atualização.'
+)">
+    <img src="anotacao7.png" alt="O software do driver não foi instalado com exito">
+    <span class="card-title">O software do driver não foi instalado com exito</span>
+</div>
+
+<div class="error-card" onclick="showSolution(
+    'anotacao9.png', 
+    'Se aparecer o erro abaixo no DEPOX, você pode enviar direto para a fila do Depox. OBS.: Lembrando que após instalar o novo certificado tem que aguardar o prazo de 48hrs para acessar o Dexpox.'
+)">
+    <img src="anotacao9.png" alt="Falha no acolhimento do certificado">
+    <span class="card-title">Falha no acolhimento do certificado</span>
+</div>
+
+<div class="error-card" onclick="showSolution(
+    'anotacao10.png', 
+    'A mensagem abaixo é token com PIN bloqueado. Possivel desbloquear usando a senha PUK.Token DX: Tjmg2018<br>Token Soluti 5110/Aladin72k: Tjmg2018 / 123456<br>Token Epass: SOLUTICD<br>Token GD: 1234 / 123456 / 12345678 / 1234567890 / Tjmg2018<br>'
+)">
+    <img src="anotacao10.png" alt="PIN bloqueado">
+    <span class="card-title">PIN bloqueado</span>
+</div>
+
+<div class="error-card" onclick="showSolution(
+    'anotacao12.png', 
+    'O erro abaixo apareceu no SERASAJUD eu reinstalei o gerenciador do token e funcionou.'
+)">
+    <img src="anotacao12.png" alt="403 - Forbidden">
+    <span class="card-title">403 - Forbidden</span>
+</div>
+
+<div class="error-card" onclick="showSolution(
+    'anotacao14.png', 
+    'A mensagem abaixo tem que solicitar um novo certificado'
+)">
+    <img src="anotacao14.png" alt="PUK bloqueado">
+    <span class="card-title">PUK bloqueado</span>
+</div>
+
+<div class="error-card" onclick="showSolution(
+    [
+        'anotacao16.png', 
+        'anotacao17.png'
+    ], 
+    'Ajuste a configuração do navegador: Faça o procedimetno da foto ao lado'
+                                         
+)">
+    <img src="anotacao16.png" alt="O aplicativo PjeOffice não está disponível!">
+    <span class="card-title">O aplicativo PjeOffice não está disponível!</span>
+</div>
 
 
-                        
-        </div>
 
-     
 
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+                </div>
+        </main>
+    </div>
+
+    <a href="#top" class="back-to-top" title="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <div id="imageModal" class="modal-overlay">
+        <span class="modal-close" id="modalClose">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+    
+    <script src="erro.js" defer></script> 
 </body>
-
 </html>
-
-
-
