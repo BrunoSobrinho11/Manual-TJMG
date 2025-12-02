@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual | Assinador Serpro</title>
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="TJMG.ico">
+
+    <style>
+        /* Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: #f5f7fa;
+            color: #333;
+        }
+
+    
+        .site-header {
+            background-color: #2a528a;
+            color: #ffffff;
+            padding: 12px 25px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            max-width: 1400px; 
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header-left, .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+       
+        .header-logo {
+            height: 60px; 
+            width: auto;
+            display: block;
+            filter: brightness(0) invert(1); 
+        }
+
+        .header-right p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .page-layout {
+            display: flex;
+            gap: 30px;
+            padding: 30px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex: 1;
+        }
+
+        
+        .sidebar {
+            flex: 0 0 260px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            height: fit-content;
+        }
+        
+        .sidebar h2 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar li a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 12px 12px 15px; /* Ajuste o padding para compensar */
+            text-decoration: none;
+            color: #333;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .sidebar li a:hover, .sidebar li a.active {
+            background-color: #ecf0f1;
+            color: #2980b9;
+            font-weight: 700;
+        }
+        .sidebar li a i {
+            width: 20px;
+            text-align: center;
+            color: #3498db;
+        }
+
+        /* --- Área de Conteúdo Principal --- */
+        .main-content {
+            flex: 1;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        .main-content h1 {
+            color: #2a528a;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .step h3 {
+            font-size: 1.3em;
+            color: #1d3557;
+            margin-bottom: 15px;
+        }
+        .main-content ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .main-content li {
+            background-color: #f1f3f5;
+            padding: 12px 12px 12px 40px;
+            border-left: 4px solid #457b9d;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            position: relative;
+        }
+        .main-content li::before {
+            content: '\f058'; /* Ícone de checagem */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #2a528a;
+            position: absolute;
+            left: 12px;
+            top: 13px;
+        }
+        code {
+            background-color: #e9ecef;
+            color: #c92a2a;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .step img {
+            max-width: 100%;
+            border-radius: 6px;
+            margin-top: 15px;
+            border: 1px solid #ccc;
+        }
+        .attention {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            color: #856404;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 30px 0;
+        }
+        .attention h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+        .attention li::before {
+             content: '\f071'; 
+             color: #856404;
+        }
+        .attention li {
+            border-left-color: #ffc107;
+        }
+
+       
+.site-footer {
+    background-color: #1a3b6b;
+    color: #f0f0f0;
+    padding: 18px 20px; 
+    font-size: 14px;
+    margin-top: auto; 
+}
+
+.footer-container {
+    max-width: 1400px; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-column h3 {
+    color: #f0c64a;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 10px; 
+    font-weight: bold;
+}
+
+.footer-column p, .footer-column a {
+    margin: 0 0 5px 0; 
+    line-height: 1.6;
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    background-color: #2a528a;
+    color: white;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s;
+    text-decoration: none;
+    z-index: 999;
+    opacity: 0.8;
+}
+
+.back-to-top:hover {
+    background-color: #1a3b6b; 
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+    </style>
+</head>
+<body>
+    <a id="top"></a> 
+
+     <header class="site-header">
+        <div class="header-container">
+            <div class="header-left">
+    <a href="index.html" style="text-decoration: none;">
+        <img src="logo_tjmg_nova.png" alt="Logo TJMG" class="header-logo">
+    </a>
+</div>
+
+    </header>
+
+    <div class="page-layout">
+        <aside class="sidebar">
+            <h2>Navegação</h2>
+            <nav>
+                <ul>
+                    <li><a href="primeirainstancia.htm"><i class="fas fa-gavel"></i> Primeira Instância</a></li>
+                    <li><a href="segundainstancia.html"><i class="fas fa-landmark"></i> Segunda Instância</a></li>
+                    <li><a href="administrativo.html"><i class="fas fa-building-columns"></i> Administrativo</a></li>
+                    <li><a href="rtf.html"><i class="fas fa-file-alt"></i> HTML (RTF)</a></li>
+                    <li><a href="puboab.html"><i class="fas fa-paper-plane"></i> PUB</a></li>
+                    <li><a href="rateio.html"><i class="fas fa-university"></i> Rateio do Banco</a></li>
+                    <li><a href="agendatjmg.html"><i class="fas fa-address-book"></i> Agenda Telefônica</a></li>
+                    <li><a href="pjemidias.html"><i class="fas fa-video"></i> PJE Mídias</a></li>
+                    <li class="active"><a href="assinadorserpro.html" class="active"><i class="fas fa-file-signature"></i> Assinador Serpro</a></li> 
+                    <li><a href="anotacao.html"><i class="fas fa-clipboard"></i> Anotações</a></li>
+                    <li><a href="mapa_comarcas.html"><i class="fas fa-map-marked-alt"></i> Mapa das Comarcas</a></li>
+                    <li><a href="inventario.html"><i class="fas fa-clipboard"></i> Inventário</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <h1>Erro Assinador Serpro (ASSPR0017)</h1>
+
+            <div class="attention">
+                        <ul>
+                    <li>O erro indica falha ao iniciar os serviços web do assinador-desktop.serpro.gov.br.</li>
+                   
+                </ul>
+                <img src="assinador1.png" alt="Caixa de erro ASSPR0017 - Erro ao iniciar os serviços web." class="step-img">
+                <img src="assinador2.png" alt="Caixa de erro ASSPR0017 - Erro ao iniciar os serviços web." class="step-img">
+                
+            </div>
+
+            <div class="step">
+                <h3>Abrir Configurações do Assinador</h3>
+                <ul>
+                    <li>Clique no atalho do Assinador Serpro e escolha abrir local do arquivo.</li>
+
+                    <li>Localize o arquivo `signerDesktopAgent.bat`.</li>
+                    <img src="assinador3.png" alt="Caixa de erro ASSPR0017 - Erro ao iniciar os serviços web." class="step-img">
+                    <li>Clique com o botão direito no arquivo e escolha Editar no Bloco de Notas.</li>
+                    <img src="assinador4.png" alt="Caixa de erro ASSPR0017 - Erro ao iniciar os serviços web." class="step-img">
+                </ul>
+            
+            </div>
+
+            <div class="step">
+                
+                <ul>
+                    <li>Dentro do Bloco de Notas, procure pela linha que define as configurações de Proxies.</li>
+                    <li>Altere o valor dessa configuração de <code>true</code> para <code>false</code>.</li>
+                    <img src="assinador5.png" alt="Caixa de erro ASSPR0017 - Erro ao iniciar os serviços web." class="step-img">
+                </ul>
+        
+        
+            </div>
+
+            <div class="step">
+               
+                <ul>
+                    <li>Salve e feche o arquivo.</li>
+                    <li>Reinicie o Assinador Serpro. O erro ASSPR0017 deve ser resolvido.</li>
+                </ul>
+            </div>
+        </main>
+        </div>
+
+    <footer class="site-footer">
+    <div class="footer-container">
+        
+        <div class="footer-column footer-branding">
+            <h3>TJMG</h3> 
+            <p>Equipe Certificado Digital</p>
+            <p>&copy; 2025. Equipe Certificado Digital.</p>
+        </div>
+        
+        <div class="footer-column contact-info">
+            <h3>Contato</h3>
+            <p>Central: <a href="tel:+553133397696">(31) 3339-7696</a></p>
+            <p>Email: <a href="mailto:operacao.informatica@tjmg.jus.br">operacao.informatica@tjmg.jus.br</a></p>
+        </div>
+        
+        <div class="footer-column address-info">
+            <h3>Endereço</h3>
+            <p>R. Ouro Preto, 1564 - Santo Agostinho</p>
+            <p>Belo Horizonte - MG, 30170-048</p>
+        </div>
+        
+    </div>
+</footer>
+
+<a href="#top" class="back-to-top" title="Voltar ao topo">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+</body>
+
+</html>
