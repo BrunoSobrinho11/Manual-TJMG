@@ -6168,6 +6168,132 @@ document.addEventListener('DOMContentLoaded', () => {
             usuario: 'Milaine',
             observacao: ''
         },
+        {
+            img: 'Página2_Images/542760.FOTO PATRIMÔNIO.184023.jpg',
+            nPatrimonio: '542760',
+            date: "Dezembro/2025",
+            local: 'Sonda CTIS',
+            categoria: 'MONITOR',
+            usuario: 'Davi Herique Martins',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99934574.FOTO PATRIMÔNIO.184136.jpg',
+            nPatrimonio: '99934574',
+            date: "Dezembro/2025",
+            local: 'Sonda CTIS',
+            categoria: 'NOTEBOOK',
+            usuario: 'Davi Henrique Martins',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99935120.FOTO PATRIMÔNIO.184313.jpg',
+            nPatrimonio: '99935120',
+            date: "Dezembro/2025",
+            local: 'Sonda CTIS',
+            categoria: 'NOTEBOOK',
+            usuario: 'Welder Paulo Miguel chavier',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99875152.FOTO PATRIMÔNIO.184347.jpg',
+            nPatrimonio: '99875152',
+            date: "Dezembro/2025",
+            local: 'Sonda CTIS',
+            categoria: 'MONITOR',
+            usuario: 'Welder Paulo Miguel chavier',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/128538880.FOTO PATRIMÔNIO.190701.jpg',
+            nPatrimonio: '128538880',
+            date: "Dezembro/2025",
+            local: 'Sonda CTIS',
+            categoria: 'CADEIRA',
+            usuario: 'Welder Paulo Miguel chavier',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/128538937.FOTO PATRIMÔNIO.191018.jpg',
+            nPatrimonio: '128538937',
+            date: "Dezembro/2025",
+            local: 'Sonda CTIS',
+            categoria: 'CADEIRA',
+            usuario: 'Davi Herique Martins',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/128538945.FOTO PATRIMÔNIO.150645.jpg',
+            nPatrimonio: '128538945',
+            date: "Dezembro/2025",
+            local: 'Sonda CTIS',
+            categoria: 'CADEIRA',
+            usuario: 'Michele Pontes',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99875144.FOTO PATRIMÔNIO.150853.jpg',
+            nPatrimonio: '99875144',
+            date: "Dezembro/2025",
+            local: 'Sonda CTIS',
+            categoria: 'MONITOR',
+            usuario: 'Muchele pontes',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99932610.FOTO PATRIMÔNIO.151116.jpg',
+            nPatrimonio: '99932610',
+            date: "Dezembro/2025",
+            local: 'Sonda CTIS',
+            categoria: 'NOTEBOOK',
+            usuario: 'Michele pontes',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/350064.FOTO PATRIMÔNIO.151222.jpg',
+            nPatrimonio: '350064',
+            date: "Dezembro/2025",
+            local: 'Sonda CTIS',
+            categoria: 'TELEFONE',
+            usuario: 'Davi Henrique Martins',
+            observacao: 'Telefone pertence a todo setor da sonda'
+        },
+        {
+            img: 'Página2_Images/128538953.FOTO PATRIMÔNIO.153310.jpg',
+            nPatrimonio: '128538953',
+            date: "Dezembro/2025",
+            local: 'Sonda CTIS',
+            categoria: 'CADEIRA',
+            usuario: 'Eduardo Martins de Almeida',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/99931028.FOTO PATRIMÔNIO.153818.jpg',
+            nPatrimonio: '99931028',
+            date: "Dezembro/2025",
+            local: 'Sonda CTIS',
+            categoria: 'NOTEBOOK',
+            usuario: 'Eduardo Martins de Almeida',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/509224.FOTO PATRIMÔNIO.174627.jpg',
+            nPatrimonio: '509224',
+            date: "Dezembro/2025",
+            local: 'Sonda CTIS',
+            categoria: 'ARMÁRIO',
+            usuario: 'Armário do setor',
+            observacao: ''
+        },
+        {
+            img: 'Página2_Images/585433.FOTO PATRIMÔNIO.174658.jpg',
+            nPatrimonio: '585433',
+            date: "Dezembro/2025",
+            local: 'Sonda CTIS',
+            categoria: 'ARMÁRIO',
+            usuario: 'Armário do setor',
+            observacao: ''
+        },
     ];
 
     
@@ -6368,6 +6494,7 @@ document.addEventListener('DOMContentLoaded', () => {
     displayCurrentPage();
 
 });
+
 
 
 
