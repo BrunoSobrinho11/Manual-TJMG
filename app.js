@@ -6294,6 +6294,15 @@ document.addEventListener('DOMContentLoaded', () => {
             usuario: 'Armário do setor',
             observacao: ''
         },
+         {
+            img: 'Página2_Images/350064.FOTO PATRIMÔNIO SIAD.151222.jpg',
+            nPatrimonio: '66736323',
+            date: "Dezembro/2025",
+            local: 'Sonda CTIS',
+            categoria: 'TELEFONE',
+            usuario: 'Davi Henrique Martins',
+            observacao: 'Telefone pertence a todo setor da sonda'
+        },
     ];
 
     
@@ -6494,6 +6503,7 @@ document.addEventListener('DOMContentLoaded', () => {
     displayCurrentPage();
 
 });
+
 
 
 
