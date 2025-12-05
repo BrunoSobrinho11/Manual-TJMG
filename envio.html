@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envio de Token | Inventário</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="TJMG.ico">
+
+    <style>
+        /* --- ESTILOS GERAIS (Mantidos para consistência) --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { display: flex; flex-direction: column; min-height: 100vh; background: #f5f7fa; color: #333; }
+        
+        /* Cabeçalho */
+        .site-header { background-color: #2a528a; color: #ffffff; padding: 12px 25px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .header-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .header-logo { height: 60px; filter: brightness(0) invert(1); }
+        .header-right p { margin: 0; font-size: 14px; }
+        .header-left, .header-right { display: flex; align-items: center; gap: 15px; }
+
+        /* Layout */
+        .page-layout { display: flex; gap: 30px; padding: 30px 20px; max-width: 1400px; margin: 0 auto; flex: 1; }
+        
+        /* Sidebar */
+        .sidebar { flex: 0 0 260px; background: #ffffff; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); height: fit-content; }
+        .sidebar h2 { font-size: 1.4rem; color: #2c3e50; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; }
+        .sidebar ul { list-style: none; padding: 0; }
+        .sidebar li a { display: flex; align-items: center; gap: 12px; padding: 12px 15px; text-decoration: none; color: #333; border-radius: 8px; font-weight: 500; transition: all 0.3s ease; }
+        .sidebar li a:hover, .sidebar li a.active { background-color: #ecf0f1; color: #2980b9; font-weight: 700; }
+        .sidebar li a i { width: 20px; text-align: center; color: #3498db; }
+
+        /* Conteúdo Principal */
+        .main-content { flex: 1; background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); }
+        .main-content h1 { color: #2a528a; border-bottom: 2px solid #e9ecef; padding-bottom: 10px; font-size: 2em; text-align: center; margin-bottom: 30px; }
+
+        /* Formulário */
+        .form-container { max-width: 600px; margin: 0 auto; padding: 30px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .form-container h2 { color: #2a528a; border-bottom: 2px solid #e9ecef; padding-bottom: 10px; margin-bottom: 20px; }
+        .form-container label { display: block; font-weight: 600; margin-top: 15px; margin-bottom: 5px; color: #333; }
+        
+        /* Inputs */
+        .form-container input[type="text"], 
+        .form-container input[type="date"], 
+        .form-container select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 1em; box-sizing: border-box; }
+        
+        /* Input de Endereço (Destaque leve para indicar que é automático) */
+        #endereco { background-color: #f9f9f9; border-color: #d1d1d1; }
+        #endereco:focus { background-color: #fff; border-color: #2a528a; }
+
+        .form-container button[type="submit"] { display: block; width: 100%; padding: 12px; margin-top: 30px; background-color: #457b9d; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1.1em; font-weight: 700; transition: background-color 0.3s; }
+        .form-container button[type="submit"]:hover { background-color: #1d3557; }
+
+        /* Checkbox */
+        .checkbox-container { margin: 20px 0; padding: 15px; background: #e8f4f8; border-radius: 5px; border-left: 5px solid #2a528a; display: flex; align-items: center; }
+        .checkbox-container input { width: 20px; height: 20px; cursor: pointer; margin-right: 10px; }
+        .checkbox-container label { margin: 0; cursor: pointer; display: inline; }
+
+        /* Rodapé */
+        .site-footer { background-color: #1a3b6b; color: #f0f0f0; padding: 18px 20px; font-size: 14px; margin-top: auto; }
+        .footer-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; padding: 0 20px; }
+        .footer-column { flex: 1; min-width: 250px; }
+        .footer-column h3 { color: #f0c64a; font-size: 16px; margin-top: 0; margin-bottom: 10px; font-weight: bold; }
+        .footer-column p, .footer-column a { margin: 0 0 5px 0; line-height: 1.6; color: #f0f0f0; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <a id="top"></a> 
+
+     <header class="site-header">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="index.html" style="text-decoration: none;">
+                    <img src="logo_tjmg_nova.png" alt="Logo TJMG" class="header-logo">
+                </a>
+            </div>
+            <div class="header-right">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <p>Atualizado em: 2025</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-layout">
+        
+        <aside class="sidebar">
+            <h2>Navegação</h2>
+            <nav>
+                <ul>
+                    <li><a href="primeirainstancia.htm"><i class="fas fa-gavel"></i> Primeira Instância</a></li>
+                    <li><a href="segundainstancia.html"><i class="fas fa-landmark"></i> Segunda Instância</a></li>
+                    <li><a href="administrativo.html"><i class="fas fa-building-columns"></i> Administrativo</a></li>
+                    <li><a href="rtf.html"><i class="fas fa-file-alt"></i> HTML (RTF)</a></li>
+                    <li><a href="puboab.html"><i class="fas fa-paper-plane"></i> PUB</a></li>
+                    <li><a href="rateio.html"><i class="fas fa-university"></i> Rateio do Banco</a></li>
+                    <li><a href="agendatjmg.html"><i class="fas fa-address-book"></i> Agenda Telefônica</a></li>
+                    <li><a href="pjemidias.html"><i class="fas fa-video"></i> PJE Mídias</a></li>
+                    <li><a href="anotacao.html"><i class="fas fa-clipboard"></i> Anotações</a></li>
+                    <li><a href="mapa_comarcas.html"><i class="fas fa-map-marked-alt"></i> Mapa das Comarcas</a></li>
+                    <li><a href="inventario.html"><i class="fas fa-clipboard"></i> Inventário</a></li>
+                    <li><a href="envio.html" class="active"><i class="fas fa-truck"></i> Envio de Token </a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <h1>Registro de Envio de Token</h1>
+            
+            <div class="form-container">
+                <h2>Informações da Operação</h2>
+                
+                <form action="https://script.google.com/macros/s/AKfycbyypz79iJdPhyDtpepDqke3u265aIFFMKgCOZONUqDk1D9IbQeKSdeSoLXMcsqR1B8wtg/exec" method="POST" target="_blank">
+                    
+                    <label for="nome">Nome Completo do Servidor:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Ex: João da Silva" required>
+
+                    <label for="matricula">Requisição (ID/Chamado):</label>
+                    <input type="text" id="matricula" name="matricula" placeholder="Ex: RS123456" required>
+                    
+                    <label for="lotacao">Lotação:</label>
+                    <input type="text" id="lotacao" name="lotacao" placeholder="Ex: Vara Cível, Gabinete..." required>
+
+                    <label for="tipo">Tipo de Token:</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="">Selecione o Tipo</option>
+                        <option value="DX-TOKEN">DX-TOKEN</option>
+                        <option value="Soluti 5110">Soluti 5110</option>
+                        <option value="Epass">Epass</option>
+                        <option value="ALADDIN 72K">ALADDIN 72K</option>
+                        <option value="GD">GD</option>
+                    </select>
+
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="isRetirada" name="isRetirada" value="true" onchange="toggleRastreio()">
+                        <label for="isRetirada">É retirada no local? (Não gera envio)</label>
+                    </div>
+
+                    <div id="divRastreio">
+                        <label for="serie">Rastreio (Série/Lote):</label>
+                        <input type="text" id="serie" name="serie" placeholder="Ex: S2025XX123456" required>
+                    </div>
+
+                    <label for="comarca">Comarca/Local de Destino:</label>
+                    <select id="comarca" name="comarca" required onchange="carregarEndereco()">
+                        <option value="">Selecione a Comarca...</option>
+                        </select>
+
+                    <label for="endereco">Endereço (Preenchimento Automático):</label>
+                    <input type="text" id="endereco" name="endereco" placeholder="Selecione a comarca acima..." required>
+
+                    <label for="data">Data de Envio/Operação:</label>
+                    <input type="date" id="data" name="data" required>
+
+                    <button type="submit">Registrar Operação</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column footer-branding">
+                <h3>TJMG</h3> 
+                <p>Equipe Certificado Digital &copy; 2025.</p>
+            </div>
+            <div class="footer-column contact-info">
+                <h3>Contato</h3>
+                <p>Central: (31) 3339-7696</p>
+                <p>Email: operacao.informatica@tjmg.jus.br</p>
+            </div>
+            <div class="footer-column address-info">
+                <h3>Endereço</h3>
+                <p>R. Ouro Preto, 1564 - Santo Agostinho</p>
+                <p>Belo Horizonte - MG</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- 1. BASE DE DADOS DE COMARCAS ---
+        // Aqui estão os dados que você forneceu. O Script vai ler daqui.
+        const baseComarcas = [
+            { "comarca": "Abaeté", "endereco": "Rua Aristeu Alves de Alencar, 251 - Amazonas, Abaeté - MG, 35620-000" },
+            { "comarca": "Abre Campo", "endereco": "Praça Santana, 7 - Centro, Abre Campo - MG, 35365-000" },
+            { "comarca": "Açucena", "endereco": "Rua Getúlio Vargas, 85 - Centro, Açucena - MG, 35150-000" },
+            { "comarca": "Águas Formosas", "endereco": "Rua Deodoro de Almeida Pinto, 132 - Centro, Águas Formosas - MG, 39880-000" },
+            { "comarca": "Aimorés", "endereco": "Avenida Raul Soares, 456 - Centro, Aimorés - MG, 35200-000" },
+            { "comarca": "Aiuruoca", "endereco": "Rua Felipe Senador, 65 - Centro, Aiuruoca - MG, 37450-000" },
+            { "comarca": "Além Paraíba", "endereco": "Avenida Doutor José Avelino de Freitas, 255 - Ilha do Lazareto, Além Paraíba - MG, 36660-000" },
+            { "comarca": "Alfenas", "endereco": "Praça Dr. Emílio da Silveira, 314 - Centro, Alfenas - MG, 37130-029" },
+            { "comarca": "Almenara", "endereco": "Rua Dr. Sabino Silva, 32 - Centro, Almenara - MG, 39900-000" },
+            { "comarca": "Alpinópolis", "endereco": "Praça Doutor José de Carvalho Faria, s/n - Centro, Alpinópolis - MG, 37940-000" },
+            { "comarca": "Alto Rio Doce", "endereco": "Praça Dr. Miguel Batista Vieira, s/n - Centro, Alto Rio Doce - MG, 36260-000" },
+            { "comarca": "Alvinópolis", "endereco": "Rua Monsenhor Bicalho, 55 - Centro, Alvinópolis - MG, 35950-000" },
+            { "comarca": "Andradas", "endereco": "Rua da Saudade, 13 - Centro, Andradas - MG, 37795-000" },
+            { "comarca": "Andrelândia", "endereco": "Praça Visconde de Arantes, s/n - Centro, Andrelândia - MG, 37300-000" },
+            { "comarca": "Araçuaí", "endereco": "Rua Montes Claros, 1095 - Santa Tereza, Araçuaí - MG, 39600-000" },
+            { "comarca": "Araguari", "endereco": "Avenida Oswaldo Pieruccetti, 400 - Jardim Interlagos, Araguari - MG, 38445-135" },
+            { "comarca": "Araxá", "endereco": "Avenida Tancredo Neves, 330 - Vila Silvéria, Araxá - MG, 38183-380" },
+            { "comarca": "Arcos", "endereco": "Avenida Doutor Olinto Fonseca, 4 - Centro, Arcos - MG, 35588-000" },
+            { "comarca": "Arinos", "endereco": "Rua Major Saint Clair, 1003 - Centro, Arinos - MG, 38680-000" },
+            { "comarca": "Areado", "endereco": "Praça Henrique Vieira, 136 - Centro, Areado - MG, 37140-000" },
+            { "comarca": "Baependi", "endereco": "Praça Dr. Raul Sá, 63 - Centro, Baependi - MG, 37443-000" },
+            { "comarca": "Bambuí", "endereco": "Rua Padre José Tiburcio, 126 - Centro, Bambuí - MG, 38900-000" },
+            { "comarca": "Barão de Cocais", "endereco": "Rua Padre Mauro Farias, 290 - Viúva, Barão de Cocais - MG, 35970-000" },
+            { "comarca": "Barbacena", "endereco": "Rua Belisário Pena, 456 - Centro, Barbacena - MG, 36200-012" },
+            { "comarca": "Barroso", "endereco": "Praça Sant'Ana, 120 - Centro, Barroso - MG, 36212-000" },
+            { "comarca": "Belo Horizonte", "endereco": "Avenida Augusto de Lima, 1549 - Barro Preto, Belo Horizonte - MG, 30190-002" },
+            { "comarca": "Belo Vale", "endereco": "Rua Padre Jacinto Pinheiro, s/n - Centro, Belo Vale - MG, 35473-000" },
+            { "comarca": "Betim", "endereco": "Rua Professor Osvaldo Franco, 55 - Centro, Betim - MG, 32600-234" },
+            { "comarca": "Bicas", "endereco": "Rua José Maria Guarnieri, s/n - Alto das Brisas, Bicas - MG, 36600-000" },
+            { "comarca": "Boa Esperança", "endereco": "Rua José Júlio Pereira, 275 - Nova Esperança, Boa Esperança - MG, 37170-000" },
+            { "comarca": "Bocaiuva", "endereco": "Rua Domingos Ferreira Pimenta, 138 - Centro, Bocaiúva - MG, 39390-000" },
+            { "comarca": "Bom Despacho", "endereco": "Avenida Doutor Marco Túlio Alves Quirino, 240 - Grand Park, Bom Despacho - MG, 35600-000" },
+            { "comarca": "Bom Sucesso", "endereco": "Avenida Juscelino Kubitscheck, 191 - Palmeiras, Bom Sucesso - MG, 37220-000" },
+            { "comarca": "Bonfim", "endereco": "Avenida Governador Valadares, 196 - Centro, Bonfim - MG, 35521-000" },
+            { "comarca": "Bonfinópolis de Minas", "endereco": "Rua São José, 625, Bonfinópolis de Minas - MG, 38650-000" },
+            { "comarca": "Borda da Mata", "endereco": "Rua Rio Branco, 40 - Centro, Borda da Mata - MG, 37564-000" },
+            { "comarca": "Botelhos", "endereco": "Praça Mozart Xavier Lopes, 91 - Centro, Botelhos - MG, 37720-000" },
+            { "comarca": "Brasília de Minas", "endereco": "Avenida Rui Barbosa, 300 - Centro, Brasília de Minas - MG, 39330-000" },
+            { "comarca": "Brasópolis", "endereco": "Rua Gonçalves Torres, 94 - Centro, Brazópolis - MG, 37530-000" },
+            { "comarca": "Brumadinho", "endereco": "Rua Governador Valadares, 271 - Ipiranga, Brumadinho - MG, 35460-000" },
+            { "comarca": "Bueno Brandão", "endereco": "Avenida Bom Jesus, 105 - Centro, Bueno Brandão - MG, 37578-000" },
+            { "comarca": "Buenópolis", "endereco": "Praça Dr. Timbiras, 114 - Centro, Buenópolis - MG, 39230-000" },
+            { "comarca": "Buritis", "endereco": "Rua dos Poderes, 1 - Centro, Buritis - MG, 38660-000" },
+            { "comarca": "Cabo Verde", "endereco": "Avenida Pref. Duvivier da Silva Passos, 26 - São Judas Tadeu, Cabo Verde - MG, 37880-000" },
+            { "comarca": "Cachoeira de Minas", "endereco": "Rua Coronel Portugal, 32 - Centro, Cachoeira de Minas - MG, 37545-000" },
+            { "comarca": "Caeté", "endereco": "Rua José Cerqueira, 180 - Centro, Caeté - MG, 34800-000" },
+            { "comarca": "Caldas", "endereco": "Praça Joaquim Amarante, 621 - Centro, Caldas - MG, 37780-000" },
+            { "comarca": "Camanducaia", "endereco": "Praça do Centenário, 237 - Centro, Camanducaia - MG, 37650-000" },
+            { "comarca": "Cambuí", "endereco": "Rua Benedito Luiz de Souza, 61 - Centro, Cambuí - MG, 37600-000" },
+            { "comarca": "Cambuquira", "endereco": "Praça do Fórum, 46 - Centro, Cambuquira - MG, 37420-000" },
+            { "comarca": "Campanha", "endereco": "Rua Professor Gérald Gougeon, 65 - Shekinah, Campanha - MG, 37400-000" },
+            { "comarca": "Campestre", "endereco": "Rua Aurora Ramos, 10 - Centro, Campestre - MG, 37730-000" },
+            { "comarca": "Campina Verde", "endereco": "Rua Trinta, 262 - Centro, Campina Verde - MG, 38270-000" },
+            { "comarca": "Campo Belo", "endereco": "Rua João Pinheiro, 254 - Centro, Campo Belo - MG, 37270-000" },
+            { "comarca": "Campos Altos", "endereco": "Rua Vinte e Sete de Dezembro, 151 - Centro, Campos Altos - MG, 38970-000" },
+            { "comarca": "Campos Gerais", "endereco": "Praça Josino de Brito, 234 - Centro, Campos Gerais - MG, 37160-000" },
+            { "comarca": "Canápolis", "endereco": "Rua 9, 409 - Centro, Canápolis - MG, 38380-000" },
+            { "comarca": "Candeias", "endereco": "Avenida Ozanan Levindo Coelho, 1000 - Vila Triângulo, Candeias - MG, 37280-000" },
+            { "comarca": "Capelinha", "endereco": "Rua das Hortênsias, 321 - Bouganville, Capelinha - MG, 39680-000" },
+            { "comarca": "Capinópolis", "endereco": "Avenida Cento e Onze, 465 - Centro, Capinópolis - MG, 38360-000" },
+            { "comarca": "Carandaí", "endereco": "Praça Barão de Santa Cecília, 13 - Centro, Carandaí - MG, 36280-000" },
+            { "comarca": "Carangola", "endereco": "Praça Coronel Maximiniano, 56 - Centro, Carangola - MG, 36800-000" },
+            { "comarca": "Caratinga", "endereco": "Rua Luís Antônio Bastos Cortês, 16 - Rodoviários, Caratinga - MG, 35300-274" },
+            { "comarca": "Carlos Chagas", "endereco": "Praça Getúlio Vargas, 68 - Centro, Carlos Chagas - MG, 39864-000" },
+            { "comarca": "Carmópolis de Minas", "endereco": "Praça Nossa Senhora do Carmo, 190 - Centro, Carmópolis de Minas - MG, 35534-000" },
+            { "comarca": "Carmo da Mata", "endereco": "Praça Coronel Joaquim Afonso Rodrigues, 144 - Centro, Carmo da Mata - MG, 35547-000" },
+            { "comarca": "Carmo de Minas", "endereco": "Rua Capitão Antônio José, 326 - Centro, Carmo de Minas - MG, 37472-000" },
+            { "comarca": "Carmo do Cajuru", "endereco": "Rua Nagib Mileib, 265 - Centro, Carmo do Cajuru - MG, 35557-000" },
+            { "comarca": "Carmo do Paranaíba", "endereco": "Avenida Costa Júnior, 285 - Centro, Carmo do Paranaíba - MG, 38840-000" },
+            { "comarca": "Carmo do Rio Claro", "endereco": "Rua Manoel Lemos de Carvalho, 20 - Centro, Carmo do Rio Claro - MG, 37150-000" },
+            { "comarca": "Cássia", "endereco": "Praça Juscelino Kubitschek, 108 - Centro, Cássia - MG, 37980-000" },
+            { "comarca": "Cataguases", "endereco": "Praça Dr. Cunha Neto, s/n - Centro, Cataguases - MG, 36773-006" },
+            { "comarca": "Caxambu", "endereco": "Rua Major Penha, 22 - Centro, Caxambu - MG, 37440-000" },
+            { "comarca": "Cláudio", "endereco": "Avenida Rachid Mitre, 305 - Bela Vista, Cláudio - MG, 35530-000" },
+            { "comarca": "Conceição das Alagoas", "endereco": "Rua Floriano Peixoto, 444 - Centro, Conceição das Alagoas - MG, 38120-000" },
+            { "comarca": "Conceição do Mato Dentro", "endereco": "Rua Daniel de Carvalho, 189 - Centro, Conceição do Mato Dentro - MG, 35860-000" },
+            { "comarca": "Conceição do Rio Verde", "endereco": "Rua José L Junqueira, 69 - Centro, Conceição do Rio Verde - MG, 37430-000" },
+            { "comarca": "Congonhas", "endereco": "Rua José Júlio, 25 - Centro, Congonhas - MG, 36415-000" },
+            { "comarca": "Conquista", "endereco": "Praça Coronel Tancredo França, 100 - Centro, Conquista - MG, 38195-000" },
+            { "comarca": "Conselheiro Lafaiete", "endereco": "Rua Melvin Jones, 435 - Campo Alegre, Conselheiro Lafaiete - MG, 36400-107" },
+            { "comarca": "Conselheiro Pena", "endereco": "Avenida Getúlio Vargas, 2051 - Centro, Conselheiro Pena - MG, 35240-000" },
+            { "comarca": "Contagem", "endereco": "Avenida Maria da Glória Rocha, 425 - Centro, Contagem - MG, 32010-375" },
+            { "comarca": "Coração de Jesus", "endereco": "Rua Professora Maria Lídia, 380 - Centro, Coração de Jesus - MG, 39340-000" },
+            { "comarca": "Corinto", "endereco": "Rua Dr. Antônio Alvarenga, 235 - Centro, Corinto - MG, 39200-000" },
+            { "comarca": "Coromandel", "endereco": "Avenida Dr. Ermiro Rodrigues Pereira, 431 - Centro, Coromandel - MG, 38550-000" },
+            { "comarca": "Coronel Fabriciano", "endereco": "Rua Boa Vista, 72 - Centro, Coronel Fabriciano - MG, 35170-041" },
+            { "comarca": "Cristina", "endereco": "Rua João Pessoa, 16 - Centro, Cristina - MG, 37476-000" },
+            { "comarca": "Cruzília", "endereco": "Rua Margarida Pereira Leite Arantes, 252 - Centro, Cruzília - MG, 37445-000" },
+            { "comarca": "Curvelo", "endereco": "Avenida Saroba, 400 - Maria Amalia, Curvelo - MG, 35790-000" },
+            { "comarca": "Diamantina", "endereco": "Rua Zeca Bruno, 4 - Centro, Diamantina - MG, 39100-000" },
+            { "comarca": "Divinópolis", "endereco": "Avenida Dr. Paulo de Melo Freitas, 100 - Liberdade, Divinópolis - MG, 35502-635" },
+            { "comarca": "Divino", "endereco": "Rua Presidente Vargas, s/n - Centro, Divino - MG, 36820-000" },
+            { "comarca": "Dores do Indaiá", "endereco": "Rua Mestra Angélica, s/n - Centro, Dores do Indaiá - MG, 35610-000" },
+            { "comarca": "Elói Mendes", "endereco": "Avenida da Paz, 1155 - Centro, Elói Mendes - MG, 37110-000" },
+            { "comarca": "Entre Rios de Minas", "endereco": "Avenida Benedito Valadares, 171 - Centro, Entre Rios de Minas - MG, 35490-000" },
+            { "comarca": "Ervália", "endereco": "Praça Arthur Bernardes, s/n - Centro, Ervália - MG, 36555-000" },
+            { "comarca": "Esmeraldas", "endereco": "Praça Getúlio Vargas, 60 - Centro, Esmeraldas - MG, 35740-000" },
+            { "comarca": "Espera Feliz", "endereco": "Rua Fioravante Pádula, 80 - Centro, Espera Feliz - MG, 36830-000" },
+            { "comarca": "Espinosa", "endereco": "Rua Sebastião Bezerra Da Silva, 30 - Jardins do Lago, Espinosa - MG, 39510-000" },
+            { "comarca": "Estrela do Sul", "endereco": "Praça da Matriz, 23 - Centro, Estrela do Sul - MG, 38525-000" },
+            { "comarca": "Eugenópolis", "endereco": "Avenida Dr. Carlos Barbuto, 1 - Centro, Eugenópolis - MG, 36855-000" },
+            { "comarca": "Extrema", "endereco": "Avenida Delegado Waldemar Gomes Pinto, 1624 - Ponte Nova, Extrema - MG, 37640-000" },
+            { "comarca": "Ferros", "endereco": "Praça Francisco de Assis Drumond, s/n - Centro, Ferros - MG, 35800-000" },
+            { "comarca": "Formiga", "endereco": "Avenida Deputado João Pimenta da Veiga, s/n - Ouro Negro, Formiga - MG, 35576-210" },
+            { "comarca": "Francisco Sá", "endereco": "Avenida Getúlio Vargas, 881 - Centro, Francisco Sá - MG, 39580-000" },
+            { "comarca": "Frutal", "endereco": "Rua Osvaldo Cruz, 365 - Centro, Frutal - MG, 38200-000" },
+            { "comarca": "Galiléia", "endereco": "Rua Itambacuri, 301 - Centro, Galiléia - MG, 35250-000" },
+            { "comarca": "Governador Valadares", "endereco": "Praça dos Três Poderes, 1000 - Centro, Governador Valadares - MG, 35010-142" },
+            { "comarca": "Grão Mogol", "endereco": "Rua Abner Martins, s/n - Centro, Grão Mogol - MG, 39570-000" },
+            { "comarca": "Guanhães", "endereco": "Rua Artur Luiz de Aguiar, 100 - Acrópole, Guanhães - MG, 39740-000" },
+            { "comarca": "Guapé", "endereco": "Praça Dr. Passos Maia, 310 - Centro, Guapé - MG, 37177-000" },
+            { "comarca": "Guaranésia", "endereco": "Rua Júlio Tavares, 1380 - Centro, Guaranésia - MG, 37810-000" },
+            { "comarca": "Guarani", "endereco": "Rua Vinte e Cinco de Março, 142 - Centro, Guarani - MG, 36160-000" },
+            { "comarca": "Guaxupé", "endereco": "Rua da Aparecida, 184 - Vila Santo Antônio, Guaxupé - MG, 37800-000" },
+            { "comarca": "Ibiá", "endereco": "Praça Santa Cruz, s/n - Centro, Ibiá - MG, 38950-000" },
+            { "comarca": "Ibiraci", "endereco": "Avenida Governador Valadares, 149 - Centro, Ibiraci - MG, 37990-000" },
+            { "comarca": "Ibirité", "endereco": "Avenida Otacílio Negrão de Lima, 8 - Centro, Ibirité - MG, 32400-000" },
+            { "comarca": "Igarapé", "endereco": "Rua Manoel Franco Amaral, 450 - Cidade Jardim, Igarapé - MG, 32900-000" },
+            { "comarca": "Iguatama", "endereco": "Rua 52, 153 - Centro, Iguatama - MG, 38910-000" },
+            { "comarca": "Inhapim", "endereco": "Avenida Jequitibá, 246 - Centro, Inhapim - MG, 35330-000" },
+            { "comarca": "Ipanema", "endereco": "Avenida Sete de Setembro, 1030 - Centro, Ipanema - MG, 36950-000" },
+            { "comarca": "Ipatinga", "endereco": "Praça dos Três Poderes, s/n - Centro, Ipatinga - MG, 35160-011" },
+            { "comarca": "Itabira", "endereco": "Avenida Mauro Ribeiro Lage, 894 - Esplanada da Estação, Itabira - MG, 35900-560" },
+            { "comarca": "Itabirito", "endereco": "Rua João Pessoa, 251 - Centro, Itabirito - MG, 35450-000" },
+            { "comarca": "Itaguara", "endereco": "Rua Coronel Frazão, 135 - Centro, Itaguara - MG, 35514-000" },
+            { "comarca": "Itajubá", "endereco": "Rua Antônio Simão Mauad, 132 - Centro, Itajubá - MG, 37500-033" },
+            { "comarca": "Itamarandiba", "endereco": "Rua Capitão Paula, 66 - Centro, Itamarandiba - MG, 39670-000" },
+            { "comarca": "Itambacuri", "endereco": "Rua Horácio Luz, 1192 - Centro, Itambacuri - MG, 39830-000" },
+            { "comarca": "Itamoji", "endereco": "Rua Coronel Lucas, 529 - Centro, Itamogi - MG, 37955-000" },
+            { "comarca": "Itamonte", "endereco": "Rua Maria da Fé, 159 - Vila Nova, Itamonte - MG, 37466-000" },
+            { "comarca": "Itanhandu", "endereco": "Rua Fernando Costa, 403 - Centro, Itanhandu - MG, 37464-000" },
+            { "comarca": "Itanhomi", "endereco": "Rua Francisco Abreu Mafra, 80 - Centro, Itanhomi - MG, 35120-000" },
+            { "comarca": "Itapagipe", "endereco": "Rua 20, 5401 - Centro, Itapagipe - MG, 38240-000" },
+            { "comarca": "Itapecerica", "endereco": "Rua Antônio Ribeiro Avelar, 176 - Centro, Itapecerica - MG, 35550-000" },
+            { "comarca": "Itaúna", "endereco": "Praça Dr. Augusto Gonçalves, 10 - Centro, Itaúna - MG, 35680-054" },
+            { "comarca": "Ituiutaba", "endereco": "Avenida Sadala Jorge, 400 - Universitário, Ituiutaba - MG, 38302-224" },
+            { "comarca": "Itumirim", "endereco": "Avenida Dom Inocêncio, 143 - Centro, Itumirim - MG, 37210-000" },
+            { "comarca": "Iturama", "endereco": "Praça Prefeito Antônio Ferreira Barbosa, 1277 - Centro, Iturama - MG, 38280-000" },
+            { "comarca": "Jabuticatubas", "endereco": "Avenida Benedito Valadares, 52 - Centro, Jaboticatubas - MG, 35830-000" },
+            { "comarca": "Jacinto", "endereco": "Praça Políbio Ruas, 223 - Centro, Jacinto - MG, 39930-000" },
+            { "comarca": "Jacuí", "endereco": "Rua Coronel Procópio Dutra, 519 - Centro, Jacuí - MG, 37965-000" },
+            { "comarca": "Jacutinga", "endereco": "Praça Francisco Rubim, 130 - Centro, Jacutinga - MG, 37590-000" },
+            { "comarca": "Jaíba", "endereco": "Avenida João Teixeira Filho, 1000 - Centro, Jaíba - MG, 39508-000" },
+            { "comarca": "Janaúba", "endereco": "Avenida Marechal Deodoro da Fonseca, 160 - Centro, Janaúba - MG, 39440-000" },
+            { "comarca": "Januária", "endereco": "Praça Artur Bernardes, 208 - Centro, Januária - MG, 39480-000" },
+            { "comarca": "Jequeri", "endereco": "Rua Santana, 11 - Centro, Jequeri - MG, 35390-000" },
+            { "comarca": "Jequitinhonha", "endereco": "Rua Coronel Ramiro, 225 - Centro, Jequitinhonha - MG, 39960-000" },
+            { "comarca": "João Monlevade", "endereco": "Rua São Mateus, 50 - Aclimação, João Monlevade - MG, 35931-398" },
+            { "comarca": "João Pinheiro", "endereco": "Rua Astolfo Moreira, 710 - Centro, João Pinheiro - MG, 38770-000" },
+            { "comarca": "Juatuba", "endereco": "Rua Mário Teixeira, 10 - Centro, Juatuba - MG, 35675-000" },
+            { "comarca": "Juiz de Fora", "endereco": "Rua Marechal Deodoro, 662 - Centro, Juiz de Fora - MG, 36015-460" },
+            { "comarca": "Juiz de Fora - Anexo", "endereco": "Avenida Brasil, 1000 - Costa Carvalho, Juiz de Fora - MG, 36070-060" },
+            { "comarca": "Lagoa da Prata", "endereco": "Rua Olegário Maciel, 1421 - Centro, Lagoa da Prata - MG, 35590-000" },
+            { "comarca": "Lagoa Santa", "endereco": "Alameda Dra. Vilma Edelweiss Santos, 65 - Lundcéia, Lagoa Santa - MG, 33400-000" },
+            { "comarca": "Lajinha", "endereco": "Rua Dr. Sidney Hubner França Camargo, 104 - Centro, Lajinha - MG, 36980-000" },
+            { "comarca": "Lambari", "endereco": "Praça Duque de Caxias, 79 - Centro, Lambari - MG, 37480-000" },
+            { "comarca": "Lavras", "endereco": "Travessa Ernesto Matioli, 950 - Bela Vista, Lavras - MG, 37200-000" },
+            { "comarca": "Leopoldina", "endereco": "Rua Geraldo Campana, 200 - Pirineus, Leopoldina - MG, 36700-000" },
+            { "comarca": "Lima Duarte", "endereco": "Praça Juscelino Kubitschek, 55 - Centro, Lima Duarte - MG, 36140-000" },
+            { "comarca": "Luz", "endereco": "Rua Coronel José Tomás, 321 - Centro, Luz - MG, 35595-000" },
+            { "comarca": "Machado", "endereco": "Avenida Dr. Renato Azeredo, s/n - Centro, Machado - MG, 37750-000" },
+            { "comarca": "Malacacheta", "endereco": "Praça Coronel Binas, 100 - Centro, Malacacheta - MG, 39690-000" },
+            { "comarca": "Manga", "endereco": "Avenida Tiradentes, 758 - Centro, Manga - MG, 39460-000" },
+            { "comarca": "Manhuaçu", "endereco": "Avenida Centenário, 280 - Centro, Manhuaçu - MG, 36900-000" },
+            { "comarca": "Manhumirim", "endereco": "Avenida Teófilo Tostes, 143 - Centro, Manhumirim - MG, 36970-000" },
+            { "comarca": "Mantena", "endereco": "Rua Sete de Setembro, 554 - Centro, Mantena - MG, 35290-000" },
+            { "comarca": "Mar de Espanha", "endereco": "Avenida Nestor Rodrigues de Oliveira, s/n - Centro, Mar de Espanha - MG, 36640-000" },
+            { "comarca": "Mariana", "endereco": "Rua José Vicente de Souza, 220 - Centro, Mariana - MG, 35420-000" },
+            { "comarca": "Martinho Campos", "endereco": "Avenida Coronel Pedro Lino, 146 - Centro, Martinho Campos - MG, 35606-000" },
+            { "comarca": "Mateus Leme", "endereco": "Praça Benedito Valadares, 28 - Centro, Mateus Leme - MG, 35670-000" },
+            { "comarca": "Matias Barbosa", "endereco": "Rua Dr. Álvaro Braga, 44 - Centro, Matias Barbosa - MG, 36120-000" },
+            { "comarca": "Matozinhos", "endereco": "Avenida Caio Martins, 1161 - Floresta, Matozinhos - MG, 35720-000" },
+            { "comarca": "Medina", "endereco": "Rua Francisco Figueiredo, 250 - Centro, Medina - MG, 39620-000" },
+            { "comarca": "Mercês", "endereco": "Praça Bias Fortes, 221 - Centro, Mercês - MG, 36190-000" },
+            { "comarca": "Mesquita", "endereco": "Praça Benedito Valadares, 200 - Centro, Mesquita - MG, 35166-000" },
+            { "comarca": "Minas Novas", "endereco": "Rua Alaíde Fernandes, 210 - Saudade, Minas Novas - MG, 39650-000" },
+            { "comarca": "Miradouro", "endereco": "Avenida Vicente de Paula Lima, 60 - Centro, Miradouro - MG, 36893-000" },
+            { "comarca": "Miraí", "endereco": "Praça Dr. Miguel Pereira, s/n - Centro, Miraí - MG, 36790-000" },
+            { "comarca": "Montalvânia", "endereco": "Rua Pernambuco, 331 - Centro, Montalvânia - MG, 39495-000" },
+            { "comarca": "Monte Alegre de Minas", "endereco": "Avenida Dezesseis de Setembro, 467 - Centro, Monte Alegre de Minas - MG, 38475-000" },
+            { "comarca": "Monte Azul", "endereco": "Alameda Antônio Oliveira Neto, 256 - Centro, Monte Azul - MG, 39500-000" },
+            { "comarca": "Monte Belo", "endereco": "Avenida Getúlio Vargas, 101 - Centro, Monte Belo - MG, 37115-000" },
+            { "comarca": "Monte Carmelo", "endereco": "Avenida Brasil Oeste, s/n - Jardim Zeni, Monte Carmelo - MG, 38500-000" },
+            { "comarca": "Monte Santo de Minas", "endereco": "Rua Dr. Pedro Paulino da Costa, 193 - Centro, Monte Santo de Minas - MG, 37958-000" },
+            { "comarca": "Monte Sião", "endereco": "Rua Napoli, 77 - Bairro Alves, Monte Sião - MG, 37580-000" },
+            { "comarca": "Montes Claros", "endereco": "Rua Raimundo Penalva, 70 - Vila Guilhermina, Montes Claros - MG, 39401-010" },
+            { "comarca": "Morada Nova de Minas", "endereco": "Avenida Coronel Sebastião Pereira Magalhães Castro, 190 - Centro, Morada Nova de Minas - MG, 35628-000" },
+            { "comarca": "Muriaé", "endereco": "Rua Presidente Artur Bernardes, 123 - Centro, Muriaé - MG, 36880-005" },
+            { "comarca": "Mutum", "endereco": "Rua Dom Cavati, 333 - Centro, Mutum - MG, 36955-000" },
+            { "comarca": "Muzambinho", "endereco": "Rua Raul Soares, s/n - Centro, Muzambinho - MG, 37890-000" },
+            { "comarca": "Nanuque", "endereco": "Rua Eliosino de Souza Barbeitos, 315 - Jardim Novo Horizonte, Nanuque - MG, 39860-000" },
+            { "comarca": "Natércia", "endereco": "Rua João Fernandes dos Reis, 1645 - Centro, Natércia - MG, 37524-000" },
+            { "comarca": "Nepomuceno", "endereco": "Avenida Monsenhor Luís de Gonzaga, 22 - Centro, Nepomuceno - MG, 37250-000" },
+            { "comarca": "Nova Era", "endereco": "Rua Levindo Pereira, 100 - Centro, Nova Era - MG, 35920-000" },
+            { "comarca": "Nova Lima", "endereco": "Rua Pereira de Freitas, 163 - Centro, Nova Lima - MG, 34000-000" },
+            { "comarca": "Nova Ponte", "endereco": "Avenida Florêncio Gonçalves Fernandes, 2045 - Centro, Nova Ponte - MG, 38160-000" },
+            { "comarca": "Nova Resende", "endereco": "Rodovia Osvaldo Américo dos Réis, 310 - Centro, Nova Resende - MG, 37860-000" },
+            { "comarca": "Nova Serrana", "endereco": "Avenida Coronel Pacífico Pinto, 281 - Fausto Pinto da Fonseca I, Nova Serrana - MG, 35519-000" },
+            { "comarca": "Novo Cruzeiro", "endereco": "Avenida Júlio Campos, 201 - Centro, Novo Cruzeiro - MG, 39820-000" },
+            { "comarca": "Oliveira", "endereco": "Avenida Maracanã, 280 - Acácio Ribeiro, Oliveira - MG, 35540-000" },
+            { "comarca": "Ouro Branco", "endereco": "Rua Olga Roberta Pereira, 17 - Centro, Ouro Branco - MG, 36420-000" },
+            { "comarca": "Ouro Fino", "endereco": "Avenida Cyro Gonçalves, 209 - Centro, Ouro Fino - MG, 37570-000" },
+            { "comarca": "Ouro Preto", "endereco": "Rua Pandiá Calógeras, 15 - Bauxita, Ouro Preto - MG, 35400-000" },
+            { "comarca": "Palma", "endereco": "Avenida Eurico Miguel Paula, s/n - Centro, Palma - MG, 36750-000" },
+            { "comarca": "Pará de Minas", "endereco": "Praça Afonso Pena, 15 - Centro, Pará de Minas - MG, 35660-013" },
+            { "comarca": "Paracatu", "endereco": "Avenida Olegário Maciel, 193 - Centro, Paracatu - MG, 38600-210" },
+            { "comarca": "Paraguaçu", "endereco": "Rua Prefeito Nestor Eustáquio, 237 - Centro, Paraguaçu - MG, 37120-000" },
+            { "comarca": "Paraisópolis", "endereco": "Praça Centenário, 50 - Centro, Paraisópolis - MG, 37660-000" },
+            { "comarca": "Paraopeba", "endereco": "Rua Primeiro de Junho, 12 - Centro, Paraopeba - MG, 35774-000" },
+            { "comarca": "Passa Quatro", "endereco": "Rua Dr. Gilberto Guedes, s/n - Centro, Passa Quatro - MG, 37460-000" },
+            { "comarca": "Passa Tempo", "endereco": "Praça Bolivar de Andrade, 76 - Centro, Passa Tempo - MG, 35537-000" },
+            { "comarca": "Passos", "endereco": "Avenida Arlindo Figueiredo, 850 - São Francisco, Passos - MG, 37902-026" },
+            { "comarca": "Patos de Minas", "endereco": "Avenida Padre Almir Neves de Medeiros, 1600 - Sobradinho, Patos de Minas - MG, 38701-118" },
+            { "comarca": "Patrocínio", "endereco": "Avenida João Alves do Nascimento, s/n - Cidade Jardim, Patrocínio - MG, 38740-000" },
+            { "comarca": "Peçanha", "endereco": "Rua José Pinto da Rocha, 60 - Centro, Peçanha - MG, 39700-000" },
+            { "comarca": "Pedra Azul", "endereco": "Avenida Netércio de Almeida, 135 - Centro, Pedra Azul - MG, 39970-000" },
+            { "comarca": "Pedralva", "endereco": "Praça Gaspar de Paiva Magalhães, 25 - Centro, Pedralva - MG, 37520-000" },
+            { "comarca": "Pedro Leopoldo", "endereco": "Rua Anélio Caldas, 424 - Dona Julia, Pedro Leopoldo - MG, 33600-000" },
+            { "comarca": "Perdizes", "endereco": "Avenida Gercino Coutinho, 500 - Centro, Perdizes - MG, 38170-000" },
+            { "comarca": "Perdões", "endereco": "Rua Ciríaco Capitalucci, 181 - Centro, Perdões - MG, 37260-000" },
+            { "comarca": "Piranga", "endereco": "Rua Santa Efigênia, 240 - Centro, Piranga - MG, 36480-000" },
+            { "comarca": "Pirapetinga", "endereco": "Rua Governador Valadares, s/n - Centro, Pirapetinga - MG, 36730-000" },
+            { "comarca": "Pirapora", "endereco": "Rua Tiradentes, 300 - Centro, Pirapora - MG, 39270-000" },
+            { "comarca": "Pitangui", "endereco": "Avenida Via Romana, 1000 - Pitangueiras, Pitangui - MG, 35650-000" },
+            { "comarca": "Piumhi", "endereco": "Rua Helvídio Menezes, 350 - Centro, Piumhi - MG, 37925-000" },
+            { "comarca": "Poço Fundo", "endereco": "Praça Dr. Gouvêa, 100 - Centro, Poço Fundo - MG, 37757-000" },
+            { "comarca": "Poços de Caldas", "endereco": "Rua Pernambuco, 707 - Centro, Poços de Caldas - MG, 37701-021" },
+            { "comarca": "Pompéu", "endereco": "Rua Maria Custódia dos Santos, s/n - Centro, Pompéu - MG, 35640-000" },
+            { "comarca": "Ponte Nova", "endereco": "Avenida Caetano Marinho, 209 - Centro, Ponte Nova - MG, 35430-001" },
+            { "comarca": "Porteirinha", "endereco": "Rua Dr. Ailson Mendes Brito Binha, 365 - Renascença, Porteirinha - MG, 39520-000" },
+            { "comarca": "Pouso Alegre", "endereco": "Avenida Luiz Carlos Vilela, 245 - Santa Rita, Pouso Alegre - MG, 37550-000" },
+            { "comarca": "Prados", "endereco": "Rua Odilon G de Andrade, 8 - Centro, Prados - MG, 36320-000" },
+            { "comarca": "Prata", "endereco": "Praça XV de Novembro, 273 - Centro, Prata - MG, 38140-000" },
+            { "comarca": "Pratápolis", "endereco": "Rua Leônidas D. Pedroso, s/n - Centro, Pratápolis - MG, 37970-000" },
+            { "comarca": "Presidente Olegário", "endereco": "Praça da Bandeira, s/n - Centro, Presidente Olegário - MG, 38750-000" },
+            { "comarca": "Raul Soares", "endereco": "MG-329, 100 - Centro, Raul Soares - MG, 35350-000" },
+            { "comarca": "Resende Costa", "endereco": "Praça Professor Rosa Soares Penido, 7 - Centro, Resende Costa - MG, 36340-000" },
+            { "comarca": "Resplendor", "endereco": "Rua Morais de Carvalho, 474 - Centro, Resplendor - MG, 35230-000" },
+            { "comarca": "Ribeirão das Neves", "endereco": "Rua Vera Lúcia de Oliveira Andrade, 85 - Vila Esplanada, Ribeirão das Neves - MG, 33805-488" },
+            { "comarca": "Rio Casca", "endereco": "Praça Prefeito José Monteiro, 100 - Centro, Rio Casca - MG, 35370-000" },
+            { "comarca": "Rio Novo", "endereco": "Rua Visconde do Rio Branco, 157 - Centro, Rio Novo - MG, 36150-000" },
+            { "comarca": "Rio Paranaíba", "endereco": "Rua Trajano José da Silva, 108 - Centro, Rio Paranaíba - MG, 38810-000" },
+            { "comarca": "Rio Pardo de Minas", "endereco": "Rua Cel. João de Almeida, 120 - Centro, Rio Pardo de Minas - MG, 39530-000" },
+            { "comarca": "Rio Piracicaba", "endereco": "Rua Padre Pinto, 13 - Centro, Rio Piracicaba - MG, 35940-000" },
+            { "comarca": "Rio Pomba", "endereco": "Praça Dr. Último de Carvalho, 234 - Centro, Rio Pomba - MG, 36180-000" },
+            { "comarca": "Rio Preto", "endereco": "Rua Dr. Ramalho Pinto, 1 - Centro, Rio Preto - MG, 36130-000" },
+            { "comarca": "Rio Vermelho", "endereco": "Rua Bernardino Carvalhais, 42 - Centro, Rio Vermelho - MG, 39170-000" },
+            { "comarca": "Sabará", "endereco": "Praça Melo Viana, 71 - Centro, Sabará - MG, 34505-300" },
+            { "comarca": "Sabinópolis", "endereco": "Rua Alencar J. Pimenta, 82 - Centro, Sabinópolis - MG, 39750-000" },
+            { "comarca": "Sacramento", "endereco": "Rua Visconde do Rio Branco, 227 - Centro, Sacramento - MG, 38190-000" },
+            { "comarca": "Salinas", "endereco": "Praça João Pessoa, 18 - Centro, Salinas - MG, 39560-000" },
+            { "comarca": "Santa Bárbara", "endereco": "Rua Rabelo Horta, 64 - Centro, Santa Bárbara - MG, 35960-000" },
+            { "comarca": "Santa Luzia", "endereco": "Avenida das Indústrias, 210 - Vila Olga, Santa Luzia - MG, 33030-510" },
+            { "comarca": "Santa Maria do Suaçuí", "endereco": "Rua Uberaba, 918 - Centro, Santa Maria do Suaçuí - MG, 39780-000" },
+            { "comarca": "Santa Rita de Caldas", "endereco": "Rua João Firmino do Couto, 75 - Centro, Santa Rita de Caldas - MG, 37775-000" },
+            { "comarca": "Santa Rita do Sapucaí", "endereco": "Avenida Embaixador Bilac Pinto, s/n - Colina das Palmeiras, Santa Rita do Sapucaí - MG, 37540-000" },
+            { "comarca": "Santa Vitória", "endereco": "Avenida Reinaldo Franco de Morais, 776 - Centro, Santa Vitória - MG, 38320-000" },
+            { "comarca": "Santo Antônio do Monte", "endereco": "Praça Getúlio Vargas, s/n - Centro, Santo Antônio do Monte - MG, 35560-000" },
+            { "comarca": "Santos Dumont", "endereco": "Rua Galileu Fonseca, 80 - Centro, Santos Dumont - MG, 36240-000" },
+            { "comarca": "São Domingos do Prata", "endereco": "Rua Getúlio Vargas, 192 - Centro, São Domingos do Prata - MG, 35995-000" },
+            { "comarca": "São Francisco", "endereco": "Avenida Presidente Juscelino Kubitscheck, 775 - Centro, São Francisco - MG, 39300-000" },
+            { "comarca": "São Gonçalo do Sapucaí", "endereco": "Praça Monsenhor Hélio, 10 - Centro, São Gonçalo do Sapucaí - MG, 37490-000" },
+            { "comarca": "São Gotardo", "endereco": "Avenida Presidente Vargas, 595 - Centro, São Gotardo - MG, 38800-000" },
+            { "comarca": "São João da Ponte", "endereco": "Rua Trinta e Um de Dezembro, 245 - Centro, São João da Ponte - MG, 39430-000" },
+            { "comarca": "São João Del Rei", "endereco": "Rua Antônio Manoel de Souza Guerra, 125 - Vila Marchetti, São João del Rei - MG, 36307-201" },
+            { "comarca": "São João do Paraíso", "endereco": "Avenida Dr. Osório Adrião da Rocha, 282 - Centro, São João do Paraíso - MG, 39540-000" },
+            { "comarca": "São João Evangelista", "endereco": "Rua E, 45 - Centro, São João Evangelista - MG, 39705-000" },
+            { "comarca": "São João Nepomuceno", "endereco": "Rua Coronel José Dutra, 39 - Centro, São João Nepomuceno - MG, 36680-000" },
+            { "comarca": "São Lourenço", "endereco": "Avenida Dr. Emílio Abdon Póvoa, s/n - Centro, São Lourenço - MG, 37470-000" },
+            { "comarca": "São Romão", "endereco": "Avenida Newton Gonçalves Pereira, 1285 - Centro, São Romão - MG, 39290-000" },
+            { "comarca": "São Roque de Minas", "endereco": "Avenida Padre Murilo de Almeida Conceição, 54 - Centro, São Roque de Minas - MG, 37928-000" },
+            { "comarca": "São Sebastião do Paraíso", "endereco": "Avenida Doutor José de Oliveira Brandão Filho, 300 - Jardim Coolapa, São Sebastião do Paraíso - MG, 37950-000" },
+            { "comarca": "Senador Firmino", "endereco": "Praça Raimundo Carneiro, 111 - Centro, Senador Firmino - MG, 36540-000" },
+            { "comarca": "Serro", "endereco": "Rua Santa Rita, 66 - Centro, Serro - MG, 39150-000" },
+            { "comarca": "Sete Lagoas", "endereco": "Rua José Duarte de Paiva, 715 - Santa Luzia, Sete Lagoas - MG, 35700-709" },
+            { "comarca": "Silvianópolis", "endereco": "Praça Horácio Guimarães, 3 - Centro, Silvianópolis - MG" },
+            { "comarca": "Taiobeiras", "endereco": "Rua Conrado Rocha, 387 - Centro, Taiobeiras - MG, 39550-000" },
+            { "comarca": "Tarumirim", "endereco": "Rua Benedito Valadares, 58 - Centro, Tarumirim - MG, 35140-000" },
+            { "comarca": "Teixeiras", "endereco": "Avenida Francisco Pena, 83 - Centro, Teixeiras - MG, 36580-000" },
+            { "comarca": "Teófilo Otoni", "endereco": "Avenida Dr. Júlio Rodrigues, 415 - Marajoara, Teófilo Otoni - MG, 39803-902" },
+            { "comarca": "Timóteo", "endereco": "Praça Olímpica, 65 - Funcionários, Timóteo - MG, 35180-000" },
+            { "comarca": "Tiros", "endereco": "Avenida José Ferreira Capetinga, 152 - Centro, Tiros - MG, 38880-000" },
+            { "comarca": "Tombos", "endereco": "Rua Juvenal Batista de Almeida, 66 - Centro, Tombos - MG, 36844-000" },
+            { "comarca": "Três Corações", "endereco": "Avenida Conrado Crossi Dângelo, s/n - São Conrado, Três Corações - MG, 37410-000" },
+            { "comarca": "Três Marias", "endereco": "Rua Getúlio Vargas, 155 - Centro, Três Marias - MG, 39205-000" },
+            { "comarca": "Três Pontas", "endereco": "Rua Américo Miari, 30 - Centro, Três Pontas - MG, 37190-000" },
+            { "comarca": "Tupaciguara", "endereco": "Rua Padre Simão, s/n - Bom Sucesso, Tupaciguara - MG, 38430-000" },
+            { "comarca": "Turmalina", "endereco": "Rua Teotônio Pinheiro, 123 - Centro, Turmalina - MG, 39660-000" },
+            { "comarca": "Ubá", "endereco": "Avenida Senador Levindo Coelho, 735 - Novo Centro, Ubá - MG, 36500-000" },
+            { "comarca": "Uberaba", "endereco": "Avenida Maranhão, 1580 - Santa Maria, Uberaba - MG, 38050-470" },
+            { "comarca": "Uberlândia", "endereco": "Avenida Rondon Pacheco, 6130 - Tibery, Uberlândia - MG, 38405-142" },
+            { "comarca": "Unaí", "endereco": "Rua Virgílio Justiniano Ribeiro, 555 - Centro, Unaí - MG, 38610-000" },
+            { "comarca": "Varginha", "endereco": "Avenida Isaltina Moraes Braga, 125 - Vale das Palmeiras, Varginha - MG, 37031-300" },
+            { "comarca": "Várzea da Palma", "endereco": "Rua Claudio Manoel da Costa, s/n - Centro, Várzea da Palma - MG, 39260-000" },
+            { "comarca": "Vazante", "endereco": "Rua Osório Soares, 200 - Centro, Vazante - MG, 38780-000" },
+            { "comarca": "Vespasiano", "endereco": "Avenida Pref. Sebastião Fernandes, 517 - Centro, Vespasiano - MG, 33200-322" },
+            { "comarca": "Viçosa", "endereco": "Rua Gomes Barbosa, 865 - Centro, Viçosa - MG, 36570-101" },
+            { "comarca": "Virginópolis", "endereco": "Rua Padre Bento Ferreira, 14 - Centro, Virginópolis - MG, 39730-000" },
+            { "comarca": "Visconde do Rio Branco", "endereco": "Praça 28 de Setembro, 281 - Centro, Visconde do Rio Branco - MG, 36520-000" },
+        ];
+
+        // --- 2. FUNÇÃO PARA CARREGAR AS OPÇÕES NO SELECT ---
+        function carregarComarcas() {
+            const select = document.getElementById('comarca');
+            
+            // Ordenar por nome (opcional, mas bom para o usuário)
+            baseComarcas.sort((a, b) => a.comarca.localeCompare(b.comarca));
+
+            baseComarcas.forEach(item => {
+                const option = document.createElement('option');
+                option.value = item.comarca;
+                option.text = item.comarca;
+                select.appendChild(option);
+            });
+        }
+
+        // --- 3. FUNÇÃO PARA PREENCHER O ENDEREÇO AUTOMATICAMENTE ---
+        function carregarEndereco() {
+            const select = document.getElementById('comarca');
+            const inputEndereco = document.getElementById('endereco');
+            
+            // Pega a comarca selecionada
+            const comarcaSelecionada = select.value;
+            
+            // Procura na base de dados
+            const itemEncontrado = baseComarcas.find(item => item.comarca === comarcaSelecionada);
+            
+            if (itemEncontrado) {
+                inputEndereco.value = itemEncontrado.endereco;
+            } else {
+                inputEndereco.value = ""; // Limpa se não achar ou se selecionar vazio
+            }
+        }
+
+        // --- 4. FUNÇÃO DE CONTROLE DO RASTREIO ---
+        function toggleRastreio() {
+            var check = document.getElementById("isRetirada");
+            var div = document.getElementById("divRastreio");
+            var inputSerie = document.getElementById("serie");
+
+            if (check.checked) {
+                div.style.display = "none";
+                inputSerie.required = false;
+                inputSerie.value = ""; 
+            } else {
+                div.style.display = "block";
+                inputSerie.required = true;
+            }
+        }
+
+        // Inicializa a lista ao carregar a página
+        window.onload = carregarComarcas;
+
+    </script>
+</body>
+</html>
