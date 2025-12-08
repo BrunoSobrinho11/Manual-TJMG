@@ -35,6 +35,52 @@
         .main-content { flex: 1; background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); }
         .main-content h1 { color: #2a528a; border-bottom: 2px solid #e9ecef; padding-bottom: 10px; font-size: 2em; text-align: center; margin-bottom: 30px; }
 
+        /* --- ESTILOS ADICIONAIS PARA O CONTADOR --- */
+        .counter-display-container {
+            max-width: 600px;
+            margin: 0 auto 30px auto; 
+            padding: 20px;
+            background: #f8f8f8;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .counter-display-container h2 {
+            color: #457b9d;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        .token-counters-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .token-counter-item {
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            border-left: 5px solid #2a528a;
+            padding: 10px 15px;
+            border-radius: 6px;
+            min-width: 150px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .token-counter-item strong {
+            display: block;
+            font-size: 1.5rem;
+            color: #1d3557;
+            margin-top: 5px;
+        }
+        /* --- FIM DOS ESTILOS ADICIONAIS --- */
+
+
         /* Formulário */
         .form-container { max-width: 600px; margin: 0 auto; padding: 30px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .form-container h2 { color: #2a528a; border-bottom: 2px solid #e9ecef; padding-bottom: 10px; margin-bottom: 20px; }
@@ -102,12 +148,18 @@
         </aside>
 
         <main class="main-content">
+            <div class="counter-display-container">
+                <h2>Contagem de Tokens Enviados (Total)</h2>
+                <div id="token-counters" class="token-counters-grid">
+                    <p>Carregando contagens...</p>
+                </div>
+            </div>
             <h1>Registro de Envio de Token</h1>
             
             <div class="form-container">
                 <h2>Informações da Operação</h2>
                 
-                <form action="https://script.google.com/macros/s/AKfycbyypz79iJdPhyDtpepDqke3u265aIFFMKgCOZONUqDk1D9IbQeKSdeSoLXMcsqR1B8wtg/exec" method="POST" target="_blank">
+                <form action="https://script.google.com/macros/s/AKfycbw_9xLS5TTif9vkJze3OIZnvjSfDgPA9isUQDm2zCd44aHERtlAwwso3lP-X13IJDUh6w/exec" method="POST" target="_blank">
                     
                     <label for="nome">Nome Completo do Servidor:</label>
                     <input type="text" id="nome" name="nome" placeholder="Ex: João da Silva" required>
@@ -178,7 +230,6 @@
 
     <script>
         // --- 1. BASE DE DADOS DE COMARCAS ---
-        // Aqui estão os dados que você forneceu. O Script vai ler daqui.
         const baseComarcas = [
             { "comarca": "Abaeté", "endereco": "Rua Aristeu Alves de Alencar, 251 - Amazonas, Abaeté - MG, 35620-000" },
             { "comarca": "Abre Campo", "endereco": "Praça Santana, 7 - Centro, Abre Campo - MG, 35365-000" },
@@ -530,12 +581,60 @@
             }
         }
 
-        // Inicializa a lista ao carregar a página
-        window.onload = carregarComarcas;
+        // --- 5. FUNÇÃO PARA CARREGAR E EXIBIR OS CONTADORES (AJAX) ---
+
+        // SUA NOVA URL DE IMPLANTAÇÃO FINAL
+        const URL_BASE_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbwVOvTFI9NoAaqqt3ecWF8tM1PKVWMZnEl7YmqM0oBzjQcDwdpZegzfalBorQ05AL9IPA/exec"; 
+        
+        const TIPOS_DE_TOKEN = ["DX-TOKEN", "Soluti 5110", "Epass", "ALADDIN 72K", "GD"];
+
+        async function buscarContagens() {
+            const container = document.getElementById('token-counters');
+            container.innerHTML = '<p>Buscando contagens...</p>'; 
+
+            try {
+                // Requisição GET com o parâmetro 'action=get_counts'
+                const response = await fetch(URL_BASE_APPS_SCRIPT + '?action=get_counts');
+                
+                if (!response.ok) {
+                    throw new Error('Falha ao buscar contagens: ' + response.statusText);
+                }
+                
+                const contagens = await response.json(); 
+                
+                container.innerHTML = ''; // Limpa o carregamento
+
+                TIPOS_DE_TOKEN.forEach(tipo => {
+                    const contagem = contagens[tipo] || 0; 
+                    
+                    const item = document.createElement('div');
+                    item.className = 'token-counter-item';
+                    
+                    const tipoElement = document.createElement('span');
+                    tipoElement.textContent = tipo;
+                    
+                    const valorElement = document.createElement('strong');
+                    valorElement.textContent = contagem;
+                    
+                    item.appendChild(tipoElement);
+                    item.appendChild(valorElement);
+                    container.appendChild(item);
+                });
+
+            } catch (error) {
+                console.error("Erro na contagem:", error);
+                // Exibe uma mensagem de erro clara se a requisição falhar
+                container.innerHTML = `<p style="color: red;">⚠️ Erro ao carregar os dados. Verifique a URL do Apps Script e a publicação.</p>`;
+            }
+        }
+
+        // Inicializa a lista de comarcas E o contador ao carregar a página
+        window.onload = function() {
+            carregarComarcas();
+            buscarContagens(); 
+        };
 
     </script>
 </body>
 
 </html>
-
-
